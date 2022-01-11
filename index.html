@@ -105,7 +105,14 @@ sport="football"
 <!-- <script src="http://widget.cloud.opta.net/v3/v3.opta-widgets.js"></script> -->
 <script src="https://secure.widget.cloud.opta.net/v3/v3.opta-widgets.js"></script>
 
+<!-- <script src="local/script/script.js"></script> -->
+
 <script>
+
+	console.log(document.location.protocol)
+	console.log(document.location.href)
+	console.log(document.location.host)
+
 	var opta_settings = {
 			subscription_id: 'b7b73f836f5975bc4752b7b54aced1da',
 			language: 'en_GB',
@@ -115,11 +122,11 @@ sport="football"
 	Opta.events.subscribe('widget.drawn', function (widget) {
 		var attr = widget.widget.attr;
 
-		console.log('drawn')
-		console.log(document.location.href)
+		// console.log('drawn')
+		// console.log(document.location.href)
 
 		if (attr.widget === 'fixtures') {
-			console.log(1)
+			// console.log(1)
 			
 			Opta(widget.widget.wid + ' .Opta-MatchLink').each(function (num, element) {
 					
