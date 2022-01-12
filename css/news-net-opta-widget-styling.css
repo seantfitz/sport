@@ -1,0 +1,111 @@
+.Opta{
+	font-family: "Gilroy";
+	/*font-size: 14px;
+	font-weight: 500;*/
+}
+
+.Opta .Opta-H2, .Opta h2{
+	background-color: #1f1f1f;
+
+	/*.text-under-video*/
+/*	font-size: 18px;
+    line-height: 26px;
+    padding-top: 10px;
+    font-weight: 600;*/
+
+    margin: 0 0 4px;
+}
+
+.Opta .Opta-H2 .Opta-Title, .Opta .Opta-H2 .Opta-Title-Extra, .Opta h2 .Opta-Title, .Opta h2 .Opta-Title-Extra {
+    /*width: 100%;*/
+    /*font-size: 14px;*/
+    font-size: 18px;
+    /*font-weight: bold;*/
+    font-weight: 600;
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+}
+
+.Opta .Opta-Nav li {
+    float: left;
+    clear: none;
+    border-right: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+}
+.Opta .Opta-Nav a {
+    display: inline-block;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    /*font-size: 12px;*/
+    font-size: 14px;
+	font-weight: 500;
+
+    background-color: #e6e6e6;
+    color: #404040;
+    cursor: pointer;
+    text-decoration: none;
+}
+.Opta .Opta-Nav a:hover {
+	/*background-color: unset;*/
+	/*background-color: #404040;*/
+	color: #de2508;
+}
+.Opta .Opta-Nav li.Opta-On a {
+    color: #fff;
+    /*color: #de2508;*/
+    /*background-color: #117ea9;*/
+    background-color: #1f1f1f;
+}
+.Opta .Opta-Nav li.Opta-On a:hover {
+    /*background-color: #006590;*/
+    background-color: #404040;
+   /* color: #de2508;*/
+}
+
+.Opta-Scroller{
+	/*height: 30px!important;*/
+	/*top: 5px!important;*/
+	/*margin: 5px!important;*/
+	/*border-radius: 50%;*/
+	/*background-color: #fc0;*/
+}
+.Opta_AFL .Opta-Scroller{
+	/*background-color: #0f0;*/
+}
+.Opta-Nav .Opta-Scroller{
+	/*background-color: #00f;*/
+}
+.Opta-Nav .Opta_AFL .Opta-Scroller{
+	/*background-color: #f00;*/
+}
+.Opta .Opta-Tabs.Opta-TabsScroll .Opta-Nav .Opta-Scroller{
+	/*background-color: rgba(255,0,255,0.25);*/
+}
+.Opta .Opta-Tabs.Opta-TabsScroll .Opta-Nav .Opta-Scroller.Opta-Active{
+	/*background-color: #f0f;*/
+	/*background-color: rgba(255,0,255,0.5);*/
+	background-color: #1f1f1f;
+}
+
+
+
+
+.Opta div, .Opta span, .Opta h2, .Opta h3, .Opta h4, .Opta p, .Opta a, .Opta abbr, .Opta img, .Opta dl, .Opta dt, .Opta dd, .Opta ul, .Opta ol, .Opta li, .Opta form, .Opta fieldset, .Opta figure, .Opta figcaption, .Opta label, .Opta legend, .Opta table, .Opta tbody, .Opta thead, .Opta tfoot, .Opta tr, .Opta th, .Opta td, .Opta canvas {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+
+.Opta .Opta-Tabs.Opta-TabsScroll .Opta-Nav{
+	margin: 0 0 4px;
+}
+
+.Opta .Opta_F_F.Opta_F_F_N .Opta-fixture{
+	border-top: 1px solid #e6e6e6;
+}
+
+.Opta .Opta_F_F.Opta_F_F_N .Opta-fixture:last-child{
+	border-bottom: 1px solid #e6e6e6;
+}
