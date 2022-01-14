@@ -109,7 +109,7 @@ var opta_settings = {
 	timezone: 'user',
 
 	link_callback: function(params){
-		// console.log(params)
+		console.log(params)
 		let link = `${params['base_url']}?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
 
 		if(document.location.host == 'localhost:8000' && query.i){
@@ -181,5 +181,119 @@ Opta.events.subscribe('widget.drawn', function (widget) {
 
 			// console.log(element['href'].replace(document.location.href,'https://'))
 		})
+	}
+});
+
+
+/*refresh*/
+// let d = new Date()
+// let h = d.getHours()
+// let m = d.getMinutes()
+// let s = d.getSeconds()
+// console.log(d,h,m)
+
+// if(localStorage["d"]){
+// 	alert(`${localStorage["d"]}\n${d}`)
+// }
+// localStorage["d"] = d
+// // localStorage.clear()
+// // console.log(localStorage)
+/*refresh*/
+
+
+
+/*WIDGETS IN TABS*/
+//http://widget.cloud.opta.net/helper/v3/docs/#!/example/tabs
+$(function() {
+	var loadNewWidgets = function(dom) {
+		var opta_widget_tags = $(dom).find('opta-widget[load="false"]');
+
+		if (opta_widget_tags.length) {
+			opta_widget_tags.removeAttr('load');
+			Opta.start();
+		}
+	},
+	resumeFocusedWidgets = function(dom) {
+		var widget_containers = $(dom).find('.Opta');
+
+		widget_containers.each(function() {
+			var element = $(this),
+			widget_id = element.attr('id'),
+			Widget = Opta.widgets[widget_id];
+
+			Widget.resume(Widget.live, Widget.first_time);
+			console.info('Resumed', Widget.attr.widget);
+		});
+	},
+	pauseHiddenWidgets = function(dom) {
+		var widget_containers = $(dom).find('.Opta');
+
+		widget_containers.each(function() {
+			var element = $(this),
+			widget_id = element.attr('id'),
+			Widget = Opta.widgets[widget_id];
+
+			Widget.pause();
+			console.info('Paused', Widget.attr.widget);
+		});
+	};
+
+	$('#tabs').tabs({
+		create: function(event, ui) {
+			// Load widgets in default tab
+			loadNewWidgets(ui.panel);
+		},
+		activate: function(event, ui) {
+			console.group();
+			// Load any new widgets in selected tab
+			loadNewWidgets(ui.newPanel);
+
+			// Resume focussed widgets that have already been loaded
+			resumeFocusedWidgets(ui.newPanel);
+
+			// Pause hidden widgets
+			pauseHiddenWidgets(ui.oldPanel);
+			console.groupEnd();
+		}
+	});
+
+
+
+
+
+	/*VISIBILITY API - https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API*/
+	// Set the name of the hidden property and the change event for visibility
+	var hidden, visibilityChange;
+	if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support
+		hidden = "hidden";
+		visibilityChange = "visibilitychange";
+	} else if (typeof document.msHidden !== "undefined") {
+		hidden = "msHidden";
+		visibilityChange = "msvisibilitychange";
+	} else if (typeof document.webkitHidden !== "undefined") {
+		hidden = "webkitHidden";
+		visibilityChange = "webkitvisibilitychange";
+	}
+
+
+	function handleVisibilityChange() {
+		// console.log(document.visibilityState)
+		if (document[hidden]) {
+		// videoElement.pause();
+		console.log('is hidden')
+		pauseHiddenWidgets();
+		} else {
+		// videoElement.play();
+		console.log('is visible')
+		resumeFocusedWidgets();
+		}
+	}
+
+	// Warn if the browser doesn't support addEventListener or the Page Visibility API
+	if (typeof document.addEventListener === "undefined" || hidden === undefined) {
+		console.log("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
+	} else {
+		// Handle page visibility change
+		document.addEventListener(visibilityChange, handleVisibilityChange, false);
 	}
 });

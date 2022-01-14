@@ -1,0 +1,102 @@
+.ui-widget{
+	font-family: unset;
+	font-size: 1em;
+}
+.ui-tabs{
+	padding: unset;
+}
+.ui-widget-header {
+	border: unset;
+	background: unset;
+	color: unset;
+	font-weight: bold;
+}
+.ui-tabs .ui-tabs-panel{
+	padding: unset;
+}
+.ui-widget.ui-widget-content{
+	border: unset;
+}
+.ui-widget-content{
+	border: unset;
+}
+.ui-corner-all{
+	border-radius: unset;
+}
+.ui-tabs .ui-tabs-nav{
+	padding: unset;
+}
+.ui-tabs .ui-tabs-nav li {
+	/*margin: unset;*/
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active{
+	/*margin: unset;*/
+	/*padding: unset;*/
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor{
+	/*padding: unset;*/
+}
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+	color: #ffffff;
+	color: unset;
+	text-decoration: none;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+	border: 1px solid #c5c5c5;
+	background: #5c5c5c;
+	font-weight: normal;
+	color: #454545;
+
+	border: unset;
+	background: unset;
+	color: unset;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+	/*selected*/
+	border: 1px solid #003eff;
+	background: #007fff;
+	font-weight: normal;
+	color: #ffffff;
+
+	border: unset;
+	background: unset;
+	color: unset;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor, 
+.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor, 
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+	cursor: default;
+}
+
+/*red underline on tabs nav - reference https://codepen.io/anon/pen/emNjGo*/
+.ui-tabs .ui-tabs-nav li{
+	display: inline-block;
+	position: relative;
+}
+
+.ui-tabs .ui-tabs-nav li:before {
+	position: absolute;
+	bottom: 0px;
+	content: '';
+	display: block;
+	height: 1px;
+	width: 0px;
+	background: #de2508;
+	transition: width .3s;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active:before{
+	margin-bottom: 1px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active:before, .ui-tabs .ui-tabs-nav li:hover:before{
+	width: 100%;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active:hover:before{
+/*.ui-tabs .ui-tabs-nav li.ui-state-disabled:hover:before{*/
+/*.ui-tabs .ui-tabs-nav li.ui-tabs-loading:hover:before{*/
+	/*width: 0px!important;*/
+}
+/*red underline on tabs nav - reference https://codepen.io/anon/pen/emNjGo*/
