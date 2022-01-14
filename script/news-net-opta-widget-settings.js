@@ -22,10 +22,13 @@ console.log(document.location.host)
 if(document.location.host == 'localhost:8000' && query.i){
 	window['sub_id'] = query.i
 }else{
-	window['sub_id'] = 'b7b73f836f5975bc4752b7b54aced1da'	
+	window['sub_id'] = 'b7b73f836f5975bc4752b7b54aced1da'
+	// window['doc-location']
 }
 
-
+console.log(document.location.href)
+console.log(document.location.href.substring(0,document.location.href.indexOf('.html')))
+console.log(document.location.href.substring(0,document.location.href.lastIndexOf('/')))
 /*MATCH CENTRE STUFF*/
 if(document.location.href.indexOf('football.html') >= 0){
 
@@ -109,7 +112,7 @@ var opta_settings = {
 	timezone: 'user',
 
 	link_callback: function(params){
-		console.log(params)
+		// console.log(params)
 		let link = `${params['base_url']}?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
 
 		if(document.location.host == 'localhost:8000' && query.i){
