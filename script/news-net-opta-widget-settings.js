@@ -21,11 +21,12 @@ let query = getQueryParams(document.location.search)
 // console.log(document.location.host)
 if(document.location.host == 'localhost:8000' && query.i){
 	window['sub_id'] = query.i
-	window['doc-location'] = document.location.href.substring(0,document.location.href.lastIndexOf('/')+1)//for localhost
+	window['doc_location'] = document.location.href.substring(0,document.location.href.lastIndexOf('/')+1)//for localhost
 }else{
 	window['sub_id'] = 'b7b73f836f5975bc4752b7b54aced1da'
-	window['doc-location'] = document.location.href//for live page
+	window['doc_location'] = document.location.href//for live page
 }
+console.log(doc_location)
 
 // console.log(document.location.href)//for live page
 // console.log(document.location.href.substring(0,document.location.href.lastIndexOf('/')+1))//for localhost
@@ -122,7 +123,7 @@ var opta_settings = {
 
 	link_callback: function(params){
 
-		let link = window['doc-location']
+		let link = window['doc_location']
 
 		// Competitions
 		switch(params.competition){
