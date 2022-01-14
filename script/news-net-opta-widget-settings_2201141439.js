@@ -113,27 +113,22 @@ var opta_settings = {
 
 	link_callback: function(params){
 		// console.log(params)
-		// let link = `${params['base_url']}?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
+		let link = `${params['base_url']}?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
 
-		
+		if(document.location.host == 'localhost:8000' && query.i){
+			link += `&i=${sub_id}`
+		}
 
-		// return link
+		return link
 
 		// var link = 'football.html';
 
-
-		let link = window['doc-location']
-
-		// Competitions
-		switch(params.competition){
-			case 8: link += 'Premier-League/'; break;
-			case 214: link += 'A-League-Mens/'; break;
-			case 684: link += 'A-League-Womens/'; break;
-			// etc...
-			default: link += 'Comp-' + params.competition + '/';
-		}
-
-		link += `${params['base_url']}?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
+		// // Competitions
+		// switch(params.competition){
+		// 	case 8: link += 'Premier-League/'; break;
+		// 	// etc...
+		// 	default: link += 'Comp-' + params.competition + '/';
+		// }
 
 		// // Season
 		// link += params.season + '/';
@@ -158,12 +153,7 @@ var opta_settings = {
 		// 	}
 		// }
 
-
-		if(document.location.host == 'localhost:8000' && query.i){
-			link += `&i=${sub_id}`
-		}
-
-		return link;
+		// return link;
 	}
 };
 
