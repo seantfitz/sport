@@ -18,7 +18,7 @@ let query = getQueryParams(document.location.search)
 
 //use a different ID key between live page and localhost (localhost not supported by provided key)
 //substitute key value given as query string parameter on localhost
-console.log(document.location.host)
+// console.log(document.location.host)
 if(document.location.host == 'localhost:8000' && query.i){
 	window['sub_id'] = query.i
 	window['doc-location'] = document.location.href.substring(0,document.location.href.lastIndexOf('/')+1)//for localhost
@@ -27,80 +27,89 @@ if(document.location.host == 'localhost:8000' && query.i){
 	window['doc-location'] = document.location.href//for live page
 }
 
-console.log(document.location.href)//for live page
-console.log(document.location.href.substring(0,document.location.href.lastIndexOf('/')+1))//for localhost
+// console.log(document.location.href)//for live page
+// console.log(document.location.href.substring(0,document.location.href.lastIndexOf('/')+1))//for localhost
 /*MATCH CENTRE STUFF*/
-if(document.location.href.indexOf('football.html') >= 0){
+if(document.location.href.indexOf('match.html') >= 0){//check that this is a match centre page
 
-	let matchSummary = document.getElementById('match-centre-top-left')
-	let standingsWidget = document.getElementById('standings-widget')
+	switch(query['competition']){
 
-	matchSummary.innerHTML=(`
-		<opta-widget
-			widget="match_summary"
-			competition="${query['competition']}"
-			season="${query['season']}"
-			match="${query['match']}"
-			template="normal"
-			live="true"
-			show_match_header="true"
-			show_score="true"
-			show_attendance="true"
-			show_date="true"
-			date_format="dddd D MMMM YYYY HH:mm"
-			show_cards="all"
-			show_crests="true"
-			show_team_formation="true"
-			show_goals="true"
-			show_goals_combined="false"
-			show_penalties_missed="true"
-			show_halftime_score="false"
-			show_referee="true"
-			show_subs="true"
-			show_venue="true"
-			show_shootouts="true"
-			show_tooltips="true"
-			show_images="false"
-			show_competition_name="true"
-			competition_naming="full"
-			team_naming="full"
-			player_naming="full"
-			show_live="true"
-			show_logo="false"
-			show_title="true"
-			breakpoints="400, 700"
-			sport="football"
-			image_size="large"
-		></opta-widget>
-	`)
+		//soccer
+		case '8': //premier-league
+		case '214': //a-league-mens
+		case '684': //a-league-womens
 
-	standingsWidget.innerHTML=(`
-		<opta-widget
-			widget="standings"
-			competition="${query['competition']}"
-			season="${query['season']}"
-			template="normal"
-			live="false"
-			default_nav="1"
-			side="combined"
-			data_detail="default"
-			show_key="false"
-			show_crests="true"
-			points_in_first_column="false"
-			lose_before_draw="false"
-			show_form="6"
-			competition_naming="full"
-			team_naming="full"
-			date_format="dddd D MMMM YYYY"
-			sorting="true"
-			show_live="true"
-			show_relegation_average="false"
-			show_logo="false"
-			show_title="true"
-			breakpoints="400,700"
-			sport="football"
-		></opta-widget>
-	`)
+		let matchSummary = document.getElementById('match-centre-top-left')
+		let standingsWidget = document.getElementById('standings-widget')
+
+		matchSummary.innerHTML=(`
+			<opta-widget
+				widget="match_summary"
+				competition="${query['competition']}"
+				season="${query['season']}"
+				match="${query['match']}"
+				template="normal"
+				live="true"
+				show_match_header="true"
+				show_score="true"
+				show_attendance="true"
+				show_date="true"
+				date_format="dddd D MMMM YYYY HH:mm"
+				show_cards="all"
+				show_crests="true"
+				show_team_formation="true"
+				show_goals="true"
+				show_goals_combined="false"
+				show_penalties_missed="true"
+				show_halftime_score="false"
+				show_referee="true"
+				show_subs="true"
+				show_venue="true"
+				show_shootouts="true"
+				show_tooltips="true"
+				show_images="false"
+				show_competition_name="true"
+				competition_naming="full"
+				team_naming="full"
+				player_naming="full"
+				show_live="true"
+				show_logo="false"
+				show_title="true"
+				breakpoints="400, 700"
+				sport="football"
+				image_size="large"
+			></opta-widget>
+		`)
+
+		standingsWidget.innerHTML=(`
+			<opta-widget
+				widget="standings"
+				competition="${query['competition']}"
+				season="${query['season']}"
+				template="normal"
+				live="false"
+				default_nav="1"
+				side="combined"
+				data_detail="default"
+				show_key="false"
+				show_crests="true"
+				points_in_first_column="false"
+				lose_before_draw="false"
+				show_form="6"
+				competition_naming="full"
+				team_naming="full"
+				date_format="dddd D MMMM YYYY"
+				sorting="true"
+				show_live="true"
+				show_relegation_average="false"
+				show_logo="false"
+				show_title="true"
+				breakpoints="400,700"
+				sport="football"
+			></opta-widget>
+		`)
+		break;
+	}
 }
 
 /*WIDGET SETTINGS*/
@@ -112,52 +121,18 @@ var opta_settings = {
 	timezone: 'user',
 
 	link_callback: function(params){
-		// console.log(params)
-		// let link = `${params['base_url']}?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
-
-		
-
-		// return link
-
-		// var link = 'football.html';
-
 
 		let link = window['doc-location']
 
 		// Competitions
 		switch(params.competition){
-			case 8: link += 'Premier-League/'; break;
-			case 214: link += 'A-League-Mens/'; break;
-			case 684: link += 'A-League-Womens/'; break;
-			// etc...
-			default: link += 'Comp-' + params.competition + '/';
+			//soccer
+			case 8: //premier-league
+			case 214: //a-league-mens
+			case 684: //a-league-womens
+			link += `${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
+			break;
 		}
-
-		link += `${params['base_url']}?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
-
-		// // Season
-		// link += params.season + '/';
-
-		// // Teams
-		// if(params.team){
-		// 	switch(params.team){
-		// 		case 14: link += 'Liverpool/'; break;
-		// 		case 110: link += 'Stoke/'; break;
-		// 		// etc...
-		// 		default: link += 'Team-' + params.team + '/';
-		// 	}
-		// }
-
-		// // Players
-		// if(params.player){
-		// 	switch(params.player){
-		// 		case 61858: link += 'Diouf/'; break;
-		// 		case 12450: link += 'Touré/'; break;
-		// 		// etc...
-		// 		default: link += 'Player-' + params.player + '/';
-		// 	}
-		// }
-
 
 		if(document.location.host == 'localhost:8000' && query.i){
 			link += `&i=${sub_id}`
@@ -166,9 +141,6 @@ var opta_settings = {
 		return link;
 	}
 };
-
-//link without callback
-//http://localhost:8000/SPORT/sport-test/football.html?competition=8&season=2021&match=2210446
 
 //edit behaviour of hyperlinks
 //test case for customisation
@@ -187,8 +159,8 @@ Opta.events.subscribe('widget.drawn', function (widget) {
 			// link.attr('target','_blank')
 			link.attr({
 				'target': '_blank',
-				// 'title': `Season: ${params['season']}, Match: ${params['match']}`
-				'title': `number: ${num}`,
+				// 'title': `Season: ${params['season']}, Match: ${params['match']}`,
+				// 'title': `number: ${num}`,
 				'href': element['href'].replace(document.location.href,'https://')
 			})
 
@@ -196,22 +168,6 @@ Opta.events.subscribe('widget.drawn', function (widget) {
 		})
 	}
 });
-
-
-/*refresh*/
-// let d = new Date()
-// let h = d.getHours()
-// let m = d.getMinutes()
-// let s = d.getSeconds()
-// console.log(d,h,m)
-
-// if(localStorage["d"]){
-// 	alert(`${localStorage["d"]}\n${d}`)
-// }
-// localStorage["d"] = d
-// // localStorage.clear()
-// // console.log(localStorage)
-/*refresh*/
 
 
 
