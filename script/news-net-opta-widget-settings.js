@@ -124,7 +124,8 @@ var opta_settings = {
 	link_callback: function(params){
 
 		let link = window['doc_location']
-
+console.log(link)
+console.log(window['doc_location'])
 		// Competitions
 		switch(params.competition){
 			//soccer
