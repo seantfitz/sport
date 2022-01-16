@@ -112,7 +112,7 @@ if(document.location.href.indexOf('match.html') >= 0){//check that this is a mat
 		break;
 	}
 }
-
+console.log(document.location.hostname)
 /*WIDGET SETTINGS*/
 //basic setup
 //must use "var" - "const" and "let" throw errors for some reason
@@ -135,7 +135,7 @@ console.log(window['doc_location'])
 			link += `${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
 			break;
 		}
-
+// https://match.html/?competition=8&season=2021&match=2210449
 		if(document.location.host == 'localhost:8000' && query.i){
 			link += `&i=${sub_id}`
 		}
