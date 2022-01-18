@@ -13,7 +13,7 @@
 
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-<title>Match Centre</title>
+<title>Football</title>
 <meta name='robots' content='max-image-preview:large' />
 <link rel='dns-prefetch' href='//newstestingbvi.com' />
 <link rel='dns-prefetch' href='//unpkg.com' />
@@ -36,6 +36,9 @@
 
 <!--added custom stylesheet for opta widgets-->
 <link rel="stylesheet" href="css/news-net-opta-widget-styling.css">
+
+<!--added custom stylesheet to overwrite jquery-ui styling-->
+<link rel="stylesheet" type="text/css" href="css/news-net-jquery-ui-styling.css">
 
 <!--added script for opta widgets-->
 <script src="https://secure.widget.cloud.opta.net/v3/v3.opta-widgets.js"></script>
@@ -107,21 +110,21 @@ var newsnet = {"nonce":"db390272a3","url":"https:\/\/newstestingbvi.com\/wp-admi
 			<nav>
 				
 				<div class="main-menu-container"><ul id="menu-main" class="menu"><a href="https://newstestingbvi.com/section/top-stories/" data-cat="top" class="category main-menu-link">Top</a></li>
-</li>
-</li>
-<a href="https://newstestingbvi.com/section/business/" data-cat="24" class="category main-menu-link">Business</a></li>
-<a href="https://newstestingbvi.com/section/politics/" data-cat="25" class="category main-menu-link">Politics</a></li>
-<a href="https://newstestingbvi.com/section/opinion/" data-cat="26" class="category main-menu-link">Opinion</a></li>
-<a href="https://newstestingbvi.com/section/entertainment/" data-cat="entertain" class="category main-menu-link">Entertain</a></li>
-<a href="https://newstestingbvi.com/section/technology/" data-cat="tech" class="category main-menu-link">Tech</a></li>
-<a href="https://newstestingbvi.com/section/health-science/" data-cat="health-science" class="category main-menu-link">Health/Science</a></li>
-<a href="https://newstestingbvi.com/section/travel/" data-cat="31" class="category main-menu-link">Travel</a></li>
-<a href="https://newstestingbvi.com/section/videos/" data-cat="32" class="category main-menu-link">Videos</a></li>
-<a href="https://newstestingbvi.com/section/life-style/" data-cat="life-style" class="category main-menu-link">Life/Style</a></li>
-<a href="https://newstestingbvi.com/section/photo-gallery/" data-cat="34" class="category main-menu-link">Photos</a></li>
-<a href="https://newstestingbvi.com/section/sport/" data-cat="35" class="category active main-menu-link">Sport</a></li>
-<a href="https://newstestingbvi.com/section/weird/" data-cat="36" class="category main-menu-link">Weird</a></li>
-</ul></div>			</nav>
+		</li>
+		</li>
+		<a href="https://newstestingbvi.com/section/business/" data-cat="24" class="category main-menu-link">Business</a></li>
+		<a href="https://newstestingbvi.com/section/politics/" data-cat="25" class="category main-menu-link">Politics</a></li>
+		<a href="https://newstestingbvi.com/section/opinion/" data-cat="26" class="category main-menu-link">Opinion</a></li>
+		<a href="https://newstestingbvi.com/section/entertainment/" data-cat="entertain" class="category main-menu-link">Entertain</a></li>
+		<a href="https://newstestingbvi.com/section/technology/" data-cat="tech" class="category main-menu-link">Tech</a></li>
+		<a href="https://newstestingbvi.com/section/health-science/" data-cat="health-science" class="category main-menu-link">Health/Science</a></li>
+		<a href="https://newstestingbvi.com/section/travel/" data-cat="31" class="category main-menu-link">Travel</a></li>
+		<a href="https://newstestingbvi.com/section/videos/" data-cat="32" class="category main-menu-link">Videos</a></li>
+		<a href="https://newstestingbvi.com/section/life-style/" data-cat="life-style" class="category main-menu-link">Life/Style</a></li>
+		<a href="https://newstestingbvi.com/section/photo-gallery/" data-cat="34" class="category main-menu-link">Photos</a></li>
+		<a href="https://newstestingbvi.com/section/sport/" data-cat="35" class="category active main-menu-link">Sport</a></li>
+		<a href="https://newstestingbvi.com/section/weird/" data-cat="36" class="category main-menu-link">Weird</a></li>
+		</ul></div>			</nav>
 
 			<div class="header-search">
 					<form action="https://newstestingbvi.com/" method="GET">
@@ -386,48 +389,16 @@ var newsnet = {"nonce":"db390272a3","url":"https:\/\/newstestingbvi.com\/wp-admi
 	</div>
 </div>
 
+<!--dropdown navigation-->
+<!--https://www.w3schools.com/howto/howto_css_dropdown.asp-->
+<div class="desct business newsnet_sport_nav_container"></div>
+<!--dropdown navigation-->
+
 <section class="category">
 	<div class="content">
 		<div class="right-banner-wr padd-bottom-40">
 			
-			<div class="left" id="match-centre-top-left">
-				<!-- <opta-widget
-					widget="match_summary"
-					competition="8"
-					season="2021"
-					match="2210271"
-					template="normal"
-					live="true"
-					show_match_header="true"
-					show_score="true"
-					show_attendance="true"
-					show_date="true"
-					date_format="dddd D MMMM YYYY HH:mm"
-					show_cards="all"
-					show_crests="true"
-					show_team_formation="true"
-					show_goals="true"
-					show_goals_combined="false"
-					show_penalties_missed="true"
-					show_halftime_score="false"
-					show_referee="true"
-					show_subs="true"
-					show_venue="true"
-					show_shootouts="true"
-					show_tooltips="true"
-					show_images="false"
-					show_competition_name="true"
-					competition_naming="full"
-					team_naming="full"
-					player_naming="full"
-					show_live="true"
-					show_logo="false"
-					show_title="true"
-					breakpoints="400, 700"
-					sport="football"
-					image_size="large"
-				></opta-widget> -->
-			</div>
+			<div class="left fixtures-top-left"></div>
 
 			<!--ADVERT-->
 			<div class="right">					
@@ -440,111 +411,13 @@ var newsnet = {"nonce":"db390272a3","url":"https:\/\/newstestingbvi.com\/wp-admi
 
 		<!--adding widget block-->
 		<div class="fl-block mob-padding-top-0 mob-col-pad-bot-20 padd-bottom-40 mob-padd">
-			<div class="one-col" id="standings-widget">
-				<!--*****-->
-				<!-- <opta-widget widget="fixtures" competition="8" season="2021" template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_scroll" default_nav="1" start_on_current="true" sub_grouping="round" show_subgrouping="true" order_by="date_ascending" show_crests="true" date_format="dddd D MMMM YYYY" time_format="HH:mm" month_date_format="MMMM" competition_naming="full" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="football"></opta-widget> -->
-<!-- 				<opta-widget
-					widget="fixtures"
-					competition="8"season="2021"
-					template="normal"
-					live="true"show_venue="true"
-					match_status="all"
-					grouping="date"
-					show_grouping="true"
-					navigation="tabs_scroll"
-					default_nav="1"start_on_current="true"
-					sub_grouping="round"show_subgrouping="false"
-					order_by="date_ascending"
-					show_crests="true"
-					date_format="dddd D MMMM YYYY"
-					time_format="HH:mm"month_date_format="MMM"
-					competition_naming="full"
-					team_naming="full"
-					match_link="football.html"
-					pre_match="false"
-					show_live="true"
-					show_logo="false"
-					show_title="true"
-					breakpoints="400"
-					sport="football"
-					image_size="medium"
-				></opta-widget> -->
-
-				<!-- <opta-widget
-					widget="standings"
-					competition="8"
-					season="2021"template="normal"
-					live="false"
-					default_nav="1"
-					side="combined"
-					data_detail="default"
-					show_key="false"
-					show_crests="true"
-					points_in_first_column="false"
-					lose_before_draw="false"
-					show_form="6"
-					competition_naming="full"
-					team_naming="full"
-					date_format="dddd D MMMM YYYY"
-					sorting="true"
-					show_live="true"
-					show_relegation_average="false"
-					show_logo="false"
-					show_title="true"
-					breakpoints="400,700"
-					sport="football"
-				></opta-widget> -->
-				<!--*****-->
-			</div>
+			<div class="one-col" id="standings-widget"></div>
 		</div>
-		<!--adding widget block-->
-
 
 		<div class="fl-block mob-padding-top-0 mob-col-pad-bot-20 padd-bottom-40 mob-padd">
-														<div class="fourd-col">
-					<div class="video-wr">
-						<div class="wp-no-caption"><img loading="lazy" src="https://newsnetsite.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2021/12/17133916/cricket-ashes-australia-england-jos-buttler-here-pictured-after-one-of-his-dropped-catches-is-being-urged-to-play-on-with-a-smile-280x150.jpg" height="150" width="280" alt="England challenged to show Ashes fight" data-id="213159" data-blog-id="1"></div>
-											</div>
-					<div class="text-under-video"><a href="https://newstestingbvi.com/news/2022/01/11/england-challenged-to-show-ashes-fight/" data-id="213159" data-blog-id="1">England challenged to show Ashes fight</a></div>
-				</div>
-											<div class="fourd-col">
-					<div class="video-wr">
-						<div class="wp-no-caption"><img loading="lazy" src="https://newsnetsite.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2021/12/16000228/cricket-australia-training-david-warner-will-play-in-the-second-ashes-test-in-adelaide-despite-his-rib-injury-280x150.jpg" height="150" width="280" alt="Australia's Dave Warner fit for Adelaide's Ashes Test" data-id="209313" data-blog-id="1"></div>
-											</div>
-					<div class="text-under-video"><a href="https://newstestingbvi.com/news/2022/01/11/australias-warner-fit-for-ashes-test-2/" data-id="209313" data-blog-id="1">Australia's Dave Warner fit for Adelaide's Ashes Test</a></div>
-				</div>
-											<div class="fourd-col">
-					<div class="video-wr">
-						<div class="wp-no-caption"><img loading="lazy" src="https://newsnetsite.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2021/12/17074413/uae-formula-one-grand-prix-mercedes-has-withdrawn-its-appeal-against-max-verstappens-victory-in-the-abu-dhabi-grand-prix-280x150.jpg" height="150" width="280" alt="Mercedes withdraws appeal over F1 result" data-id="212604" data-blog-id="1"></div>
-											</div>
-					<div class="text-under-video"><a href="https://newstestingbvi.com/news/2022/01/11/mercedes-withdraws-appeal-over-f1-result/" data-id="212604" data-blog-id="1">Mercedes withdraws appeal over F1 result</a></div>
-				</div>
-											<div class="fourd-col">
-					<div class="video-wr">
-						<div class="wp-no-caption"><img loading="lazy" src="https://newsnetsite.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2021/12/05072753/india-new-zealand-cricket-new-zealands-ajaz-patel-is-the-toast-of-the-cricketing-world-after-taking-10-119-against-india-280x150.jpg" height="150" width="280" alt="Kiwi bowler Ajaz Patel spins his way into Test history with a 10-wicket haul" data-id="182697" data-blog-id="1"></div>
-											</div>
-					<div class="text-under-video"><a href="https://newstestingbvi.com/news/2022/01/11/ajaz-patel-spins-his-way-into-test-history/" data-id="182697" data-blog-id="1">Kiwi bowler Ajaz Patel spins his way into Test history with a 10-wicket haul</a></div>
-				</div>
-
+			<div class="one-col" id="match-centre">*</div>
 		</div>
-
-		
-
-		<div class="fl-block">
-			<div class="one-col">
-				<div class="img-wr mob-scale cat-one-col">
-					<div class="wp-no-caption">
-						<img loading="lazy" src="https://newsnetsite.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2021/12/09005019/How_Beijing_Landed_Olympics_Explainer_94398-scaled-aspect-ratio-1200-380.jpg" height="380" width="1200" alt="Australia joins US in diplomatic boycott of next year's Beijing Winter Olympics" data-id="192183" data-blog-id="1">
-					</div>
-					<a href="https://newstestingbvi.com/news/2022/01/11/no-officials-for-winter-olympics-morrison-2/" class="block-text" data-id="192183" data-blog-id="1">
-						<div class="title">Australia joins US in diplomatic boycott of next year's Beijing Winter Olympics</div>
-						<!-- <div class="text">Weekly tallies of jobless claims were not meant to be treated as an economic indicator. The pandemic has exposed the shortcomings of doing so.</div> -->
-					</a>
-				</div>
-			</div>
-		</div>
-		
-		
+		<!--adding widget block-->
 	</div>
 
 	<!--ADVERT-->
@@ -556,8 +429,6 @@ var newsnet = {"nonce":"db390272a3","url":"https:\/\/newstestingbvi.com\/wp-admi
 		</div>
 	</div>
 	<!--ADVERT-->
-
-	?????
 </section>
 
 
@@ -656,9 +527,12 @@ var newsnet = {"nonce":"db390272a3","url":"https:\/\/newstestingbvi.com\/wp-admi
 	<div id="yt-player"></div>
 </div>
 
+<!--added jquery-ui script for widget tabs control-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
 <!--script moved to the end of body so that functions affecting DOM elements will work-->
 <script src="script/news-net-opta-widget-settings.js"></script>
-
 
 </body>
 </html>
