@@ -219,5 +219,26 @@
 }*/
 /*standings*/
 
+/*live*/
+.Opta .Opta_F_OF.Opta_F_OF_N .Opta-live .Opta-Outer span, 
+.Opta .Opta_F_OF.Opta_F_F_N .Opta-live .Opta-Outer span, 
+.Opta .Opta_F_F.Opta_F_OF_N .Opta-live .Opta-Outer span, 
+.Opta .Opta_F_F.Opta_F_F_N .Opta-live .Opta-Outer span {
+    color: #de2508;
+}
+
+.Opta-Live span.Opta-Live {
+    position: relative;
+    height: 22px;
+    line-height: 22px;
+    background-color: #de2508;
+    font-weight: bold;
+    padding: 0px 6px 2px 18px;
+    margin-left: 10px;
+    font-size: 12px;
+    min-width: 50px;
+}
+/*live*/
+
 
 
