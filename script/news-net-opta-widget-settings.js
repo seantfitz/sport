@@ -24,8 +24,11 @@ if(document.location.host == 'localhost:8000' && query.i){
 	window['doc_location'] = document.location.href.substring(0,document.location.href.lastIndexOf('/')+1)//for localhost
 }else{
 	window['sub_id'] = 'b7b73f836f5975bc4752b7b54aced1da'
-	window['doc_location'] = `${document.location.protocol}${document.location.hostname}${document.location.pathname}`//for live page(from "not index")
-	window['doc_location'] = `${document.location.protocol}${document.location.hostname}${document.location.pathname.substring(0,document.location.pathname.lastIndexOf('/')+1)}`//for live page
+	// window['doc_location'] = `${document.location.protocol}${document.location.hostname}${document.location.pathname}`//for live page(from "not index")
+	// window['doc_location'] = `${document.location.protocol}${document.location.hostname}${document.location.pathname.substring(0,document.location.pathname.lastIndexOf('/')+1)}`//for live page
+
+
+	window['doc_location'] = document.location.href.substring(0,document.location.href.lastIndexOf('/')+1)
 }
 // console.log(document.location)
 // console.log(`${document.location.protocol}${document.location.hostname}${document.location.pathname.substring(0,document.location.pathname.lastIndexOf('/')+1)}`)
