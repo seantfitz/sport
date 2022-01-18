@@ -193,12 +193,14 @@
 
 
 /*standings*/
-.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown, .Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp {
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown, 
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp {
     /*background-color: #117ea9;*/
     background-color: #1f1f1f;
     /*color: #fff;*/
 }
-.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown, .Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp:hover {
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown:hover, 
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp:hover {
     /*background-color: #117ea9;*/
     background-color: #1f1f1f;
     /*color: #fff;*/
@@ -207,14 +209,14 @@
 
 
 
-.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown .Opta-Sort-Control:before, 
+/*.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown .Opta-Sort-Control:before, 
 .Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp .Opta-Sort-Control:before {
     border-bottom-color: #94c1d4;
 }
 
 .Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp .Opta-Sort-Control:before {
     border-bottom-color: #de2508;
-}
+}*/
 /*standings*/
 
 
