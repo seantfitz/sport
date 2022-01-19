@@ -211,6 +211,7 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 				breakpoints="400" 
 				sport="football"
 				image_size="medium"
+				player_naming="full" 
 				>
 					<opta-widget 
 						sport="football" 
@@ -230,8 +231,9 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 						show_referee="true" 
 						show_subs="true" 
 						show_venue="true" 
-						show_shootouts="false" 
-						player_naming="last_name" 
+						show_shootouts="true"
+						show_tooltips="true"
+						player_naming="full" 
 						player_link="" 
 						show_logo="true" 
 						breakpoints="400"
