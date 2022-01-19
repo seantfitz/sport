@@ -51,7 +51,10 @@
 .Opta .Opta-Nav a:hover {
 	/*background-color: unset;*/
 	/*background-color: #404040;*/
-	color: #de2508;
+	/*color: #de2508;*/
+
+	background-color: #de2508;
+	color: #fff;
 }
 .Opta .Opta-Nav li.Opta-On a {
 	color: #fff;
@@ -208,15 +211,74 @@
 
 
 
+/*sort control*/
+/*secondary controls*/
+.Opta table thead th.Opta-Sort .Opta-Sort-Control:before,
+.Opta table thead th.Opta-Sort .Opta-Sort-Control:after {
+    position: absolute;
+    content: "";
+    top: calc(50% - 12px);
+    right: -18px;
+    border: 5px solid transparent;
+    border-bottom-color: gray;
+}
+.Opta table thead th.Opta-Sort .Opta-Sort-Control:after {
+    top: 50%;
+    border-bottom-color: transparent;
+    border-top-color: gray;
+}
+/*secondary controls*/
+/*.Opta table thead th.Opta-Sort .Opta-Sort-Control.Opta-IconYellow:before,
+.Opta table thead th.Opta-Sort .Opta-Sort-Control.Opta-IconYellow:after,
+.Opta table thead th.Opta-Sort .Opta-Sort-Control.Opta-IconRed:before,
+.Opta table thead th.Opta-Sort .Opta-Sort-Control.Opta-IconRed:after {
+    right: -4px;
+}*/
 
-/*.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown .Opta-Sort-Control:before, 
+/*"Pos" sort bg colour*/
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown,
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp {
+    /*background-color: #117ea9;*/
+    background-color: #1f1f1f;
+    /*background-color: #de2508;*/
+    color: #fff;
+}
+/*"Pos" sort bg colour*/
+
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown .Opta-Sort-Control:before,
 .Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp .Opta-Sort-Control:before {
-    border-bottom-color: #94c1d4;
+    /*border-bottom-color: #94c1d4;*/
+    border-bottom-color: #de2508;
+    border-bottom-color: #fff;
+    /*border-bottom-color: #1f1f1f;*/
+}
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown .Opta-Sort-Control:after,
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp .Opta-Sort-Control:after {
+    border-top-color: #fff;
+    border-top-color: #aaa;
 }
 
+/*"Pos" sort bg colour*/
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortDown:hover,
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp:hover {
+    /*background-color: #006590;*/
+    background-color: #2f2f2f;
+}
+/*"Pos" sort bg colour*/
+
 .Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp .Opta-Sort-Control:before {
-    border-bottom-color: #de2508;
-}*/
+    border-bottom-color: #fff;
+    border-bottom-color: #aaa;
+}
+.Opta table thead th.Opta-Sort.Opta-Sort-HeaderSortUp .Opta-Sort-Control:after {
+    /*border-top-color: #94c1d4;*/
+    border-top-color: #de2508;
+    border-top-color: #fff;
+    /*border-top-color: #1f1f1f;*/
+
+}
+/*sort control*/
+/*border-bottom-color: #de2508;*/
 /*standings*/
 
 /*live*/
@@ -242,3 +304,46 @@
 
 
 
+/*OPTA LOADER*/
+.Opta p.Opta-Load {
+    background: #fff url("../assets/images/loader.svg") no-repeat center 50px;
+    /*text-align: center;*/
+    /*padding: 20px 10px 40px 10px;*/
+    /*border: none;*/
+    /*margin: 10px 0;*/
+}
+/*.Opta-Nest .Opta p.Opta-Load {
+    border: none;
+    background-position: center 0px;
+    padding: 0 10px;
+    text-indent: -9999px;
+}
+.Opta p.Opta-Load {
+    color: #404040;
+}
+.Opta .Opta_BB_SB_G .Opta-Load {
+    width: 100%;
+}
+.Opta .Opta_F_LA .Opta-nestcontainer .Opta-Load,
+.Opta .Opta_F_LA .Opta-nestcontainer .Opta_W.Opta-Error {
+    display: none;
+}
+.Opta .Opta_F_LA .Opta-Overlay .Opta p.Opta-Load {
+    background: none;
+}
+.Opta-Nest.Opta-countdownoverlay p.Opta-Load {
+    display: none;
+}
+.Opta .Opta_U_DVI_N .Opta-Load,
+.Opta .Opta_U_DVI_C .Opta-Load {
+    width: 100%;
+    background-position: center 0;
+    padding: 20px 0 0;
+}
+.Opta .Opta_U_VI_N .Opta-Load,
+.Opta .Opta_U_VI_C .Opta-Load {
+    width: 100%;
+    background-position: center 0;
+    padding: 20px 0 0;
+}*/
+/*OPTA LOADER*/

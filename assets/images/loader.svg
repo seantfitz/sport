@@ -1,0 +1,55 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="128px" height="15px" viewBox="0 0 128 15">
+  <style>
+
+    @keyframes svg1  { 0% { opacity: .5; } 20% { opacity: 1; } 40% { opacity: .5; } }
+    @keyframes svg2  { 5% { opacity: .5; } 25% { opacity: 1; } 45% { opacity: .5; } }
+    @keyframes svg3  { 10% { opacity: .5; } 30% { opacity: 1; } 50% { opacity: .5; } }
+    @keyframes svg4  { 15% { opacity: .5; } 35% { opacity: 1; } 55% { opacity: .5; } }
+    @keyframes svg5  { 20% { opacity: .5; } 40% { opacity: 1; } 60% { opacity: .5; } }
+    @keyframes svg6  { 25% { opacity: .5; } 45% { opacity: 1; } 65% { opacity: .5; } }
+    @keyframes svg7  { 30% { opacity: .5; } 50% { opacity: 1; } 70% { opacity: .5; } }
+    @keyframes svg8  { 35% { opacity: .5; } 55% { opacity: 1; } 75% { opacity: .5; } }
+    @keyframes svg9  { 40% { opacity: .5; } 60% { opacity: 1; } 80% { opacity: .5; } }
+    @keyframes svg10  { 45% { opacity: .5; } 65% { opacity: 1; } 85% { opacity: .5; } }
+    @keyframes svg11  { 55% { opacity: .5; } 75% { opacity: 1; } 95% { opacity: .5; } }
+    @keyframes svg12  { 60% { opacity: .5; } 80% { opacity: 1; } 100% { opacity: .5; } }
+
+    #svg1  { animation-name: svg1; }
+    #svg2  { animation-name: svg2; }
+    #svg3  { animation-name: svg3; }
+    #svg4  { animation-name: svg4; }
+    #svg5  { animation-name: svg5; }
+    #svg6  { animation-name: svg6; }
+    #svg7  { animation-name: svg7; }
+    #svg8  { animation-name: svg8; }
+    #svg9  { animation-name: svg9; }
+    #svg10 { animation-name: svg10; }
+    #svg11 { animation-name: svg11; }
+    #svg12 { animation-name: svg12; }
+
+    rect {
+      fill: #de2508;
+    }
+
+    rect{
+      animation-duration: 1.2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      opacity: 0.5;
+    }
+  </style>
+
+  <rect id="svg1"  width="7" height="15" y="0" x="0" />
+  <rect id="svg2"  width="7" height="15" y="0" x="11" />
+  <rect id="svg3"  width="7" height="15" y="0" x="22" />
+  <rect id="svg4"  width="7" height="15" y="0" x="33" />
+  <rect id="svg5"  width="7" height="15" y="0" x="44" />
+  <rect id="svg6"  width="7" height="15" y="0" x="55" />
+  <rect id="svg7"  width="7" height="15" y="0" x="66" />
+  <rect id="svg8"  width="7" height="15" y="0" x="77" />
+  <rect id="svg9"  width="7" height="15" y="0" x="88" />
+  <rect id="svg10" width="7" height="15" y="0" x="99" />
+  <rect id="svg11" width="7" height="15" y="0" x="110" />
+  <rect id="svg12" width="7" height="15" y="0" x="121" />
+</svg>

@@ -114,7 +114,7 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 
-		// console.log(query['competition'])
+	if(query['competition'] == "8"){
 
 		fixturesTopLeft.innerHTML = (`
 			<opta-widget 
@@ -178,6 +178,68 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 				-->
 				</opta-widget>
 		`)
+	}else if(query['competition'] == "214"){
+		fixturesTopLeft.innerHTML = (`
+			<opta-widget 
+				widget="fixtures" 
+				competition="${query['competition']}"
+				season="${query['season']}"
+				template="normal" 
+				live="true" 
+				show_venue="true" 
+				match_status="all" 
+				grouping="date" 
+				show_grouping="true" 
+				navigation="tabs_scroll" 
+				default_nav="1" 
+				start_on_current="true" 
+				sub_grouping="date" 
+				show_subgrouping="false" 
+				order_by="date_ascending" 
+				show_crests="true" 
+				date_format="dddd D MMMM YYYY" 
+				time_format="HH:mm" 
+				month_date_format="MMMM" 
+				competition_naming="full" 
+				team_naming="full" 
+				team_link="" 
+				match_link="" 
+				pre_match="false" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="football"
+				image_size="medium"
+				>
+					<opta-widget 
+						sport="football" 
+						widget="match_summary" 
+						template="normal" 
+						live="" 
+						competition="" 
+						season="" 
+						match="" 
+						show_match_header="false" 
+						show_attendance="true" 
+						show_cards="true" 
+						show_crests="false" 
+						show_goals="true" 
+						show_goals_combined="false" 
+						show_penalties_missed="false" 
+						show_referee="true" 
+						show_subs="true" 
+						show_venue="true" 
+						show_shootouts="false" 
+						player_naming="last_name" 
+						player_link="" 
+						show_logo="true" 
+						breakpoints="400"
+						>
+					</opta-widget>
+				</opta-widget>
+		`)
+	}
 
 		standingsWidget.innerHTML=(`
 			<opta-widget
