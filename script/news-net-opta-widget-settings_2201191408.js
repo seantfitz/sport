@@ -25,10 +25,10 @@ if(document.location.host == 'localhost:8000' && query.i){
 }else{
 	window['sub_id'] = 'b7b73f836f5975bc4752b7b54aced1da'
 	// window['doc_location'] = `${document.location.protocol}${document.location.hostname}${document.location.pathname}`//for live page(from "not index")
-	window['doc_location'] = `${document.location.protocol}${document.location.hostname}${document.location.pathname.substring(0,document.location.pathname.lastIndexOf('/')+1)}`//for live page
+	// window['doc_location'] = `${document.location.protocol}${document.location.hostname}${document.location.pathname.substring(0,document.location.pathname.lastIndexOf('/')+1)}`//for live page
 
 
-	// window['doc_location'] = document.location.href.substring(0,document.location.href.lastIndexOf('/')+1)
+	window['doc_location'] = document.location.href.substring(0,document.location.href.lastIndexOf('/')+1)
 }
 // console.log(document.location)
 // console.log(`${document.location.protocol}${document.location.hostname}${document.location.pathname.substring(0,document.location.pathname.lastIndexOf('/')+1)}`)
@@ -43,7 +43,7 @@ $(function(){
 
 	newsnet_sport_nav_container.innerHTML = (`
 		<div class="sport_nav_title">
-			Scoreboard
+			Scoreboards
 		</div>
 		
 		<div class="newsnet_sport_nav">
@@ -436,10 +436,6 @@ if(document.location.href.indexOf('match.html') >= 0 || document.location.href.i
 	}
 }
 
-const clickTest = (e)=>{
-	console.log(e.target)
-}
-
 /*WIDGET SETTINGS*/
 //basic setup
 //must use "var" - "const" and "let" throw errors for some reason
@@ -469,15 +465,6 @@ var opta_settings = {
 
 		return link;
 	}
-
-	// link_callback: function(params){
-
-	// 	// Opta('#match-centre').html(params.match)
-		
-	// 	// console.log(params.match)
-	// 	// return `#match-centre?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`;
-	// 	return `#match-centre`;
-	// }
 };
 
 //edit behaviour of hyperlinks
@@ -495,10 +482,6 @@ Opta.events.subscribe('widget.drawn', function (widget) {
 		Opta(widget.widget.wid + ' .Opta-MatchLink').each(function (num, element) {
 					
 			let link = Opta(element)
-
-			// console.log(link)
-
-			link.bind('click',clickTest)
 
 			// link.attr({
 			// 	'target': '_blank',
