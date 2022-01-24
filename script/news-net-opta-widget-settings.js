@@ -178,70 +178,70 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 				-->
 				</opta-widget>
 		`)
-	}else if(query['competition'] == "214"){
-		fixturesTopLeft.innerHTML = (`
-			<opta-widget 
-				widget="fixtures" 
-				competition="${query['competition']}"
-				season="${query['season']}"
-				template="normal" 
-				live="true" 
-				show_venue="true" 
-				match_status="all" 
-				grouping="date" 
-				show_grouping="true" 
-				navigation="tabs_scroll" 
-				default_nav="1" 
-				start_on_current="true" 
-				sub_grouping="date" 
-				show_subgrouping="false" 
-				order_by="date_ascending" 
-				show_crests="true" 
-				date_format="dddd D MMMM YYYY" 
-				time_format="HH:mm" 
-				month_date_format="MMMM" 
-				competition_naming="full" 
-				team_naming="full" 
-				team_link="" 
-				match_link="" 
-				pre_match="false" 
-				show_live="true" 
-				show_logo="false" 
-				show_title="true" 
-				breakpoints="400" 
-				sport="football"
-				image_size="medium"
-				player_naming="full" 
-				>
-					<opta-widget 
-						sport="football" 
-						widget="match_summary" 
-						template="normal" 
-						live="" 
-						competition="" 
-						season="" 
-						match="" 
-						show_match_header="false" 
-						show_attendance="true" 
-						show_cards="true" 
-						show_crests="false" 
-						show_goals="true" 
-						show_goals_combined="false" 
-						show_penalties_missed="false" 
-						show_referee="true" 
-						show_subs="true" 
-						show_venue="true" 
-						show_shootouts="true"
-						show_tooltips="true"
-						player_naming="full" 
-						player_link="" 
-						show_logo="true" 
-						breakpoints="400"
-						>
-					</opta-widget>
-				</opta-widget>
-		`)
-	}
+	// }else if(query['competition'] == "214"){
+	// 	fixturesTopLeft.innerHTML = (`
+	// 		<opta-widget 
+	// 			widget="fixtures" 
+	// 			competition="${query['competition']}"
+	// 			season="${query['season']}"
+	// 			template="normal" 
+	// 			live="true" 
+	// 			show_venue="true" 
+	// 			match_status="all" 
+	// 			grouping="date" 
+	// 			show_grouping="true" 
+	// 			navigation="tabs_scroll" 
+	// 			default_nav="1" 
+	// 			start_on_current="true" 
+	// 			sub_grouping="date" 
+	// 			show_subgrouping="false" 
+	// 			order_by="date_ascending" 
+	// 			show_crests="true" 
+	// 			date_format="dddd D MMMM YYYY" 
+	// 			time_format="HH:mm" 
+	// 			month_date_format="MMMM" 
+	// 			competition_naming="full" 
+	// 			team_naming="full" 
+	// 			team_link="" 
+	// 			match_link="" 
+	// 			pre_match="false" 
+	// 			show_live="true" 
+	// 			show_logo="false" 
+	// 			show_title="true" 
+	// 			breakpoints="400" 
+	// 			sport="football"
+	// 			image_size="medium"
+	// 			player_naming="full" 
+	// 			>
+	// 				<opta-widget 
+	// 					sport="football" 
+	// 					widget="match_summary" 
+	// 					template="normal" 
+	// 					live="" 
+	// 					competition="" 
+	// 					season="" 
+	// 					match="" 
+	// 					show_match_header="false" 
+	// 					show_attendance="true" 
+	// 					show_cards="true" 
+	// 					show_crests="false" 
+	// 					show_goals="true" 
+	// 					show_goals_combined="false" 
+	// 					show_penalties_missed="false" 
+	// 					show_referee="true" 
+	// 					show_subs="true" 
+	// 					show_venue="true" 
+	// 					show_shootouts="true"
+	// 					show_tooltips="true"
+	// 					player_naming="full" 
+	// 					player_link="" 
+	// 					show_logo="true" 
+	// 					breakpoints="400"
+	// 					>
+	// 				</opta-widget>
+	// 			</opta-widget>
+	// 	`)
+	// }
 
 		standingsWidget.innerHTML=(`
 			<opta-widget
@@ -313,7 +313,7 @@ if(document.location.href.indexOf('match.html') >= 0 || document.location.href.i
 				show_venue="true"
 				show_shootouts="true"
 				show_tooltips="true"
-				show_images=""
+				show_images="true"
 				show_competition_name="true"
 				competition_naming="full"
 				team_naming="full"
@@ -449,26 +449,26 @@ var opta_settings = {
 	timezone: 'user',
 
 	//http://widget.cloud.opta.net/helper/v3/docs/#!/manual/widget-customisation-linking
-	link_callback: function(params){
+	// link_callback: function(params){
 
-		let link = window['doc_location']
+	// 	let link = window['doc_location']
 
-		// Competitions
-		switch(params.competition){
-			//football (soccer)
-			case 8: //premier-league
-			case 214: //a-league-mens
-			case 684: //a-league-womens
-			link += `${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
-			break;
-		}
+	// 	// Competitions
+	// 	switch(params.competition){
+	// 		//football (soccer)
+	// 		case 8: //premier-league
+	// 		case 214: //a-league-mens
+	// 		case 684: //a-league-womens
+	// 		link += `${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
+	// 		break;
+	// 	}
 
-		if(document.location.host == 'localhost:8000' && query.i){
-			link += `&i=${sub_id}`
-		}
+	// 	if(document.location.host == 'localhost:8000' && query.i){
+	// 		link += `&i=${sub_id}`
+	// 	}
 
-		return link;
-	}
+	// 	return link;
+	// }
 
 	// link_callback: function(params){
 
