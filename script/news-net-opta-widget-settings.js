@@ -1,5 +1,5 @@
 /*GENERAL PAGE SETUP*/
-//function to get query string parameters//*//
+//function to get query string parameters//
 const getQueryParams = (qs)=>{
 	qs = qs.split('+').join(' ');
 
@@ -452,6 +452,7 @@ var opta_settings = {
 	link_callback: function(params){
 
 		let link = window['doc_location']
+		link=''
 console.log(link)
 console.log(`${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`)
 		// Competitions
@@ -467,7 +468,7 @@ console.log(`${params['base_url']}.html?competition=${params['competition']}&sea
 		if(document.location.host == 'localhost:8000' && query.i){
 			link += `&i=${sub_id}`
 		}
-
+console.warn(link)
 		return link;
 	}
 
