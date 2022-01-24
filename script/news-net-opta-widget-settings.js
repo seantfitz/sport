@@ -1,5 +1,5 @@
 /*GENERAL PAGE SETUP*/
-//function to get query string parameters//
+//function to get query string parameters
 const getQueryParams = (qs)=>{
 	qs = qs.split('+').join(' ');
 
