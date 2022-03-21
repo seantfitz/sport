@@ -50,9 +50,31 @@ $(function(){
 			<div class="dropdown">
 				<button class="dropbtn">Football</button>
 				<div class="dropdown-content">
-					<a href="football.html?competition=8&season=2021&i=${sub_id}">EPL</a>
-					<a href="football.html?competition=214&season=2021&i=${sub_id}">A-League Men</a>
-					<a href="#">A-League Women</a>
+					<!--<a href="football.html?competition=8&season=2021&i=${sub_id}">EPL</a>-->
+					<!--<a href="football.html?competition=214&season=2021&i=${sub_id}">A-League Men</a>-->
+					<!--<a href="#">A-League Women</a>-->
+<a href="football.html?competition=3&season=2020&i=${sub_id}">UEFA European Championship Finals</a>
+<a href="football.html?competition=4&season=2022&i=${sub_id}">World Cup</a>
+<a href="football.html?competition=5&season=2021&i=${sub_id}">Champions League</a>
+<a href="football.html?competition=6&season=2021&i=${sub_id}">UEFA Europa League</a>
+<a href="football.html?competition=8&season=2021&i=${sub_id}">English Premier League</a>
+<a href="football.html?competition=21&season=2021&i=${sub_id}">Italian Serie A</a>
+<a href="football.html?competition=22&season=2021&i=${sub_id}">German Bundesliga</a>
+<a href="football.html?competition=23&season=2021&i=${sub_id}">Spanish La Liga</a>
+<a href="football.html?competition=24&season=2021&i=${sub_id}">French Ligue 1</a>
+<a href="football.html?competition=88&season=2022&i=${sub_id}">Internationals</a>
+<a href="football.html?competition=214&season=10001&i=${sub_id}">Australian A-League Men</a>
+<a href="football.html?competition=341&season=1000022&i=${sub_id}">Asian World Cup Qualifiers</a>
+<a href="football.html?competition=378&season=2021&i=${sub_id}">Olympic Football Tournament</a>
+<a href="football.html?competition=379&season=2018&i=${sub_id}">AFC Asian Cup</a>
+<a href="football.html?competition=408&season=2022&i=${sub_id}">Women's World Cup</a>
+<a href="football.html?competition=551&season=2022&i=${sub_id}">Internationals Women</a>
+<a href="football.html?competition=578&season=2021&i=${sub_id}">Olympic Women's Tournament</a>
+<a href="football.html?competition=731&season=2021&i=${sub_id}">AFC Women's Asian Cup</a>
+<a href="football.html?competition=734&season=2019&i=${sub_id}">Olympic Women's Tournament Qualifying Asia</a>
+<a href="football.html?competition=1009&season=2019&i=${sub_id}">FFA Cup of Nations</a>
+<a href="football.html?competition=1125&season=2021&i=${sub_id}">UEFA Europa Conference League</a>
+<a href="football.html?competition=1136&season=2020&i=${sub_id}">Olympics Intercontinental Play-offs Women</a>
 				</div>
 			</div>
 			<div class="dropdown">
@@ -105,9 +127,32 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 	switch(query['competition']){
 
 		//football (soccer)
-		case '8': //premier-league
-		case '214': //a-league-mens
-		case '684': //a-league-womens
+		// case '8': //premier-league
+		// case '214': //a-league-mens
+		// case '684': //a-league-womens
+
+		case '3'://	UEFA European Championship Finals	2020
+		case '4'://	World Cup	2022
+		case '5'://	Champions League	2021
+		case '6'://	UEFA Europa League	2021
+		case '8'://	English Premier League	2021
+		case '21'://	Italian Serie A	2021
+		case '22'://	German Bundesliga	2021
+		case '23'://	Spanish La Liga	2021
+		case '24'://	French Ligue 1	2021
+		case '88'://	Internationals	2022
+		case '214'://	Australian A-League Men	10001
+		case '341'://	Asian World Cup Qualifiers	1000022
+		case '378'://	Olympic Football Tournament	2021
+		case '379'://	AFC Asian Cup	2018
+		case '408'://	Women's World Cup	2022
+		case '551'://	Internationals Women	2022
+		case '578'://	Olympic Women's Tournament	2021
+		case '731'://	AFC Women's Asian Cup	2021
+		case '734'://	Olympic Women's Tournament Qualifying Asia	2019
+		case '1009'://	FFA Cup of Nations	2019
+		case '1125'://	UEFA Europa Conference League	2021
+		case '1136'://	Olympics Intercontinental Play-offs Women	2020
 
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
 
