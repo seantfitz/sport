@@ -347,3 +347,32 @@
     padding: 20px 0 0;
 }*/
 /*OPTA LOADER*/
+
+/*220322*/
+.Opta .Opta-Nav > ul.Opta-Overflowed {
+    cursor: pointer;
+}
+.Opta .Opta-Nav > ul.Opta-Overflowed:after {
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    right: 10px;
+    top: calc(50% - 8px);
+    background: url("../assets/images/sprites/controls.svg") -20px -118px / 210px 186px no-repeat transparent;
+}
+.Opta .Opta-Tabs .Opta-Nav > ul.Opta-Overflowed {
+    /*background-color: #117ea9;*/
+    background-color: #1f1f1f;
+}
+.Opta .Opta-Tabs .Opta-Nav > ul.Opta-Overflowed:hover {
+    /*background-color: #006590;*/
+    background-color: #de2508;
+}
+.Opta .Opta-Swipe .Opta-Nav > ul.Opta-Overflowed {
+    /*background-color: #117ea9;*/
+    background-color: #1f1f1f;
+}
+.Opta .Opta-Swipe .Opta-Nav > ul.Opta-Overflowed:hover {
+    /*background-color: #006590;*/
+    background-color: #de2508;
+}
