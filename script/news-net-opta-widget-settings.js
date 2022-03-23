@@ -120,7 +120,7 @@ $(function(){
 	`)
 })
 /*SET UP DROPDOWN NAV*/
-
+console.log('210323')
 /*FOOTBALL*/
 if(document.location.href.indexOf('football.html') >= 0){//check that this is the football page
 
@@ -172,7 +172,7 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 				match_status="all" 
 				grouping="date" 
 				show_grouping="true" 
-				navigation="tabs_more" 
+				navigation="tabs_scroll" 
 				default_nav="1" 
 				start_on_current="true" 
 				sub_grouping="date" 
@@ -184,8 +184,8 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 				month_date_format="MMMM" 
 				competition_naming="full" 
 				team_naming="full" 
-				team_link="" 
-				match_link="match" 
+				team_link="teams" 
+				match_link="" 
 				pre_match="false" 
 				show_live="true" 
 				show_logo="false" 
@@ -194,7 +194,7 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 				sport="football"
 				image_size="medium"
 				>
-					<!--<opta-widget 
+					<opta-widget 
 						sport="football" 
 						widget="match_summary" 
 						template="normal" 
@@ -218,7 +218,7 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 						show_logo="true" 
 						breakpoints="400"
 						>
-					</opta-widget>-->
+					</opta-widget>
 				</opta-widget>
 		`)
 
