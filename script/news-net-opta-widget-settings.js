@@ -432,8 +432,8 @@ var opta_settings = {
 
 		let link = window['doc_location']
 		link=''
-console.log(link)
-console.log(`${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`)
+		console.log(link)
+		console.log(`${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`)
 		// Competitions
 		switch(params.competition){
 			//football (soccer)
@@ -447,7 +447,7 @@ console.log(`${params['base_url']}.html?competition=${params['competition']}&sea
 		if(document.location.host == 'localhost:8000' && query.i){
 			link += `&i=${sub_id}`
 		}
-console.warn(link)
+		console.warn(link)
 		return link;
 	}
 
