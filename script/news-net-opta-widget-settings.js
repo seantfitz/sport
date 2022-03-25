@@ -328,12 +328,11 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 	}
 }
 /*FOOTBALL*/
-
+console.log('2203251653')
 /*BASKETBALL*/
 if(document.location.href.indexOf('basketball.html') >= 0){
 	switch(query['competition']){
-		case '3':
-		case '3':
+		case '5wdi9kmiurd2rjx2f7ew92wm6':
 
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
 		let matchSummary = document.getElementById('match-centre-top-left')
