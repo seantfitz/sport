@@ -357,6 +357,48 @@ if(document.location.href.indexOf('basketball.html') >= 0){
 }
 /*BASKETBALL*/
 
+/*MOTORSPORT*/
+
+if(document.location.href.indexOf('motorsport.html') >= 0){
+	switch(query['competition']){
+		case '1m5x4n07f2kqkiczebja5etiq'://F1
+
+		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let matchSummary = document.getElementById('match-centre-top-left')
+		let standingsWidget = document.getElementById('standings-widget')
+
+		fixturesTopLeft.innerHTML = (`
+			<opta-widget widget="scoreboard" 
+			competition="${query['competition']}" 
+			season="${query['season']}" 
+			template="normal" live="true" show_venue="true" grouping="date" show_grouping="true" show_date_picker="true" navigation="tabs_scroll" default_nav="1" start_on_current="true" order_by="date_ascending" away_team_first="false" show_crests="true" date_format="dddd D MMMM YYYY" time_format="HH:mm" month_date_format="MMMM" competition_naming="full" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="false" breakpoints="400" sport="basketball"></opta-widget>
+		`)
+
+		standingsWidget.innerHTML=(`
+			<opta-widget widget="standings" 
+			competition="${query['competition']}" 
+			season="${query['season']}" 
+			template="normal" navigation="tabs" default_nav="1" show_drivers="true" show_constructors="true" show_wins="true" team_naming="full" driver_naming="full" show_logo="false" limit="10" show_title="true" breakpoints="460" sport="motorsport"></opta-widget>
+		`)
+
+		break;
+	}
+}
+
+
+// <opta-widget widget="standings" competition="1m5x4n07f2kqkiczebja5etiq" season="3d2cd3uj88qgdlt4lyhr0cis4" template="normal" navigation="tabs" default_nav="1" show_drivers="true" show_constructors="true" show_wins="true" team_naming="full" driver_naming="full" show_logo="false" limit="10" show_title="true" breakpoints="460" sport="motorsport"></opta-widget>
+/*MOTORSPORT*/
+
+
+
+
+
+
+
+
+
+
+
 /*MATCH CENTRE STUFF*/
 if(document.location.href.indexOf('match.html') >= 0 || document.location.href.indexOf('test2.html') >= 0){//check that this is a match centre page
 
