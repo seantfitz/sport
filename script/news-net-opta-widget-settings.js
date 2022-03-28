@@ -332,7 +332,7 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 /*BASKETBALL*/
 if(document.location.href.indexOf('basketball.html') >= 0){
 	switch(query['competition']){
-		case '5wdi9kmiurd2rjx2f7ew92wm6':
+		case '5wdi9kmiurd2rjx2f7ew92wm6'://NBL
 
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
 		let matchSummary = document.getElementById('match-centre-top-left')
@@ -360,7 +360,7 @@ if(document.location.href.indexOf('basketball.html') >= 0){
 /*GOLF*/
 if(document.location.href.indexOf('golf.html') >= 0){
 	switch(query['competition']){
-		case '3c5msl8moic00eu49b06aumsp':
+		case '3c5msl8moic00eu49b06aumsp'://PGA Tour
 
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
 		let matchSummary = document.getElementById('match-centre-top-left')
@@ -426,13 +426,13 @@ if(document.location.href.indexOf('motorsport.html') >= 0){
 /*RUGBY UNION*/
 if(document.location.href.indexOf('rugbyunion.html') >= 0){
 	switch(query['competition']){
-		case '3':
-		case '205':
-		case '209':
-		case '210':
-		case '214':
-		case '221':
-		case '249':
+		case '3'://International
+		case '205'://Super Rugby Pacific
+		case '209'://Six Nations
+		case '210'://Rugby World Cup
+		case '214'://The Rugby Championship
+		case '221'://British & Irish Lions
+		case '249'://Women's Rugby World Cup
 
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
 		let matchSummary = document.getElementById('match-centre-top-left')
@@ -463,10 +463,10 @@ if(document.location.href.indexOf('rugbyunion.html') >= 0){
 /*RUGBY LEAGUE*/
 if(document.location.href.indexOf('rugbyleague.html') >= 0){
 	switch(query['competition']){
-		case '3':
-		case '6':
-		case '86':
-		case '87':
+		case '3'://National Rugby League
+		case '6'://State of Origin
+		case '86'://NRL Women's Premiership
+		case '87'://Women's State of Origin
 
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
 		let matchSummary = document.getElementById('match-centre-top-left')
@@ -493,8 +493,37 @@ if(document.location.href.indexOf('rugbyleague.html') >= 0){
 }
 /*RUGBY LEAGUE*/
 
+/*AFL*/
+if(document.location.href.indexOf('afl.html') >= 0){
+	switch(query['competition']){
+		case '11686'://AFL
+		case '11595'://AFLW
 
+		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let matchSummary = document.getElementById('match-centre-top-left')
+		let standingsWidget = document.getElementById('standings-widget')
 
+		fixturesTopLeft.innerHTML = (`
+			<opta-widget widget="fixtures" 
+			template="normal" 
+			competition="${query['competition']}" 
+			season="${query['season']}" 
+			show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_scroll" default_nav="1" show_date_picker="true" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" away_team_first="false" show_crests="true" date_format="ll" time_format="HH:mm" month_date_format="MMMM" pre_match="false" show_logo="false" show_title="true" breakpoints="400" 
+			sport="afl"
+			></opta-widget>
+		`)
+
+		standingsWidget.innerHTML=(`
+			<opta-widget widget="standings" 
+			competition="3" 
+			season="2022" template="normal" live="true" navigation="tabs" default_nav="1" show_key="true" show_crests="false" points_in_first_column="false" show_form="6" competition_naming="full" team_naming="full" date_format="dddd D MMMM YYYY" sorting="true" show_live="true" show_logo="false" show_title="true" breakpoints="400,700" 
+			sport="rugbyleague
+			"></opta-widget>`)
+
+		break;
+	}
+}
+/*AFL*/
 
 /*MATCH CENTRE STUFF*/
 if(document.location.href.indexOf('match.html') >= 0 || document.location.href.indexOf('test2.html') >= 0){//check that this is a match centre page
