@@ -460,10 +460,38 @@ if(document.location.href.indexOf('rugbyunion.html') >= 0){
 }
 /*RUGBY UNION*/
 
+/*RUGBY LEAGUE*/
+if(document.location.href.indexOf('rugbyleague.html') >= 0){
+	switch(query['competition']){
+		case '3':
+		case '6':
+		case '86':
+		case '87':
 
+		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let matchSummary = document.getElementById('match-centre-top-left')
+		let standingsWidget = document.getElementById('standings-widget')
 
+		fixturesTopLeft.innerHTML = (`
+			<opta-widget widget="fixtures" 
+			competition="${query['competition']}" 
+			season="${query['season']}" 
+			template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_more" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="true" date_format="dddd D MMMM YYYY" month_date_format="MMMM" competition_naming="full" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" 
+			sport="rugbyleague"
+			><opta-widget sport="rugbyleague" widget="match_summary" template="normal" live="" competition="" season="" match="" show_match_header="false" show_crests="false" show_cards="true" show_date="true" date_format="dddd D MMMM YYYY" show_competition_name="true" competition_naming="full" show_referee="true" show_venue="true" show_tooltips="false" show_tries="true" show_conversions="true" show_penalties="true" show_drop_goals="all" show_subs="true" show_cards="all" team_link="" player_link="" team_naming="" player_naming="last_name" show_live="false" show_logo="true" title="" show_title="true" breakpoints="400"></opta-widget></opta-widget>
+		`)
 
+		standingsWidget.innerHTML=(`
+			<opta-widget widget="standings" 
+			competition="3" 
+			season="2022" template="normal" live="true" navigation="tabs" default_nav="1" show_key="true" show_crests="false" points_in_first_column="false" show_form="6" competition_naming="full" team_naming="full" date_format="dddd D MMMM YYYY" sorting="true" show_live="true" show_logo="false" show_title="true" breakpoints="400,700" 
+			sport="rugbyleague
+			"></opta-widget>`)
 
+		break;
+	}
+}
+/*RUGBY LEAGUE*/
 
 
 
