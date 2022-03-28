@@ -357,6 +357,31 @@ if(document.location.href.indexOf('basketball.html') >= 0){
 }
 /*BASKETBALL*/
 
+/*GOLF*/
+if(document.location.href.indexOf('golf.html') >= 0){
+	switch(query['competition']){
+		case '3c5msl8moic00eu49b06aumsp':
+
+		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let matchSummary = document.getElementById('match-centre-top-left')
+		let standingsWidget = document.getElementById('standings-widget')
+
+		fixturesTopLeft.innerHTML = (`
+
+			<opta-widget widget="schedule" 
+			template="normal" 
+			competition="${query['competition']}" 
+			season="${query['season']}" 
+			order_by="date_ascending" show_date="true" date_format="D MMM" show_dates_combined="false" show_course_name="true" show_winner="true" show_logo="false" show_title="true" breakpoints="400" sport="golf"></opta-widget>
+		`)
+
+		standingsWidget.innerHTML=(``)
+
+		break;
+	}
+}
+/*GOLF*/
+
 /*MOTORSPORT*/
 
 if(document.location.href.indexOf('motorsport.html') >= 0){
