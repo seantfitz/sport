@@ -386,7 +386,9 @@ if(document.location.href.indexOf('golf.html') >= 0){
 
 if(document.location.href.indexOf('motorsport.html') >= 0){
 	switch(query['competition']){
-		case '1m5x4n07f2kqkiczebja5etiq'://F1
+		case '1m5x4n07f2kqkiczebja5etiq'://FIA F1 World Championship
+		case '2e554vbpw7g0ykhl0rziuabxl'://FIM MotoGP World Championship
+		case '2ecsbewwstw5jn9h7kpv2joix'://V8 Supercars
 
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
 		let matchSummary = document.getElementById('match-centre-top-left')
