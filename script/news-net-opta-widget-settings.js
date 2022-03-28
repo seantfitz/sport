@@ -96,7 +96,7 @@ $(function(){
 			<div class="dropdown">
 				<button class="dropbtn">Cricket</button>
 				<div class="dropdown-content">
-					<a href="cricket.html?competition=2722&season=na&i=${sub_id}">England v India Test Series 2021/2022</a>
+					<a href="cricket.html?competition=2722&season=na&i=${sub_id}">England&nbsp;v&nbsp;India&nbsp;Test&nbsp;Series&nbsp;2021/2022</a>
 					<a href="cricket.html?competition=2780&season=na&i=${sub_id}">IPL 2021</a>
 					<a href="cricket.html?competition=2781&season=na&i=${sub_id}">ICC World Test Championship Final 2021</a>
 					<a href="cricket.html?competition=2784&season=na&i=${sub_id}">West Indies v England Twenty20 Series 2022</a>
@@ -423,7 +423,42 @@ if(document.location.href.indexOf('motorsport.html') >= 0){
 // <opta-widget widget="standings" competition="1m5x4n07f2kqkiczebja5etiq" season="3d2cd3uj88qgdlt4lyhr0cis4" template="normal" navigation="tabs" default_nav="1" show_drivers="true" show_constructors="true" show_wins="true" team_naming="full" driver_naming="full" show_logo="false" limit="10" show_title="true" breakpoints="460" sport="motorsport"></opta-widget>
 /*MOTORSPORT*/
 
+/*RUGBY UNION*/
+if(document.location.href.indexOf('rugbyunion.html') >= 0){
+	switch(query['competition']){
+		case '3':
+		case '205':
+		case '209':
+		case '210':
+		case '214':
+		case '221':
+		case '249':
 
+		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let matchSummary = document.getElementById('match-centre-top-left')
+		let standingsWidget = document.getElementById('standings-widget')
+
+		fixturesTopLeft.innerHTML = (`
+			<opta-widget widget="fixtures" 
+			competition="${query['competition']}" 
+			season="${query['season']}" 
+			template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_more" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="true" date_format="dddd D MMMM YYYY" month_date_format="MMMM" competition_naming="full" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" 
+			sport="rugby"
+			><opta-widget sport="rugby" widget="match_summary" template="normal" live="" competition="" season="" match="" show_match_header="false" show_crests="false" show_cards="true" show_date="true" date_format="dddd D MMMM YYYY" show_competition_name="true" competition_naming="full" show_referee="true" show_venue="true" show_tooltips="false" show_tries="true" show_conversions="true" show_penalties="true" show_drop_goals="all" show_subs="true" show_cards="all" team_link="" player_link="" team_naming="" player_naming="last_name" show_live="false" show_logo="true" title="" show_title="true" breakpoints="400"></opta-widget></opta-widget>
+		`)
+
+		standingsWidget.innerHTML=(`
+			<opta-widget widget="standings" 
+			competition="3" 
+			season="2023" 
+			template="normal" live="true" navigation="tabs" default_nav="1" show_key="true" show_crests="false" points_in_first_column="false" show_form="6" competition_naming="full" team_naming="full" date_format="dddd D MMMM YYYY" sorting="true" show_live="true" show_logo="false" show_title="true" breakpoints="400,700" 
+			sport="rugby"
+			></opta-widget>`)
+
+		break;
+	}
+}
+/*RUGBY UNION*/
 
 
 
