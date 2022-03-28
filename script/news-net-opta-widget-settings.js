@@ -388,6 +388,7 @@ if(document.location.href.indexOf('golf.html') >= 0){
 
 /*CRICKET*/
 if(document.location.href.indexOf('cricket.html') >= 0){
+	console.log(query['competition'])
 	switch(query['competition']){
 		case 2722://England v India Test Series 2021/2022
 		case 2780://IPL 2021
@@ -446,7 +447,7 @@ if(document.location.href.indexOf('cricket.html') >= 0){
 		fixturesTopLeft.innerHTML = (`
 			<opta-widget widget="fixtures" 
 			fixtures_type="m" 
-			competition="2722" 
+			competition="${query['competition']}" 
 			season="0" 
 			template="normal" 
 			live="true" 
