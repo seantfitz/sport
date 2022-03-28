@@ -96,55 +96,55 @@ $(function(){
 			<div class="dropdown">
 				<button class="dropbtn">Cricket</button>
 				<div class="dropdown-content">
-					<a href="cricket.html?competition=2722&season=na&i=${sub_id}">England&nbsp;v&nbsp;India&nbsp;Test&nbsp;Series&nbsp;2021/2022</a>
-					<a href="cricket.html?competition=2780&season=na&i=${sub_id}">IPL 2021</a>
-					<a href="cricket.html?competition=2781&season=na&i=${sub_id}">ICC World Test Championship Final 2021</a>
-					<a href="cricket.html?competition=2784&season=na&i=${sub_id}">West Indies v England Twenty20 Series 2022</a>
-					<a href="cricket.html?competition=2785&season=na&i=${sub_id}">West Indies v England Test Series 2022</a>
-					<a href="cricket.html?competition=2813&season=na&i=${sub_id}">Australia v England Test Series 2021/2022</a>
-					<a href="cricket.html?competition=2816&season=na&i=${sub_id}">Australia v Sri Lanka Twenty20 Series 2022</a>
-					<a href="cricket.html?competition=2831&season=na&i=${sub_id}">Weber Women's Big Bash League 2021</a>
-					<a href="cricket.html?competition=2832&season=na&i=${sub_id}">KFC T20 Big Bash League 2021/2022</a>
-					<a href="cricket.html?competition=2852&season=na&i=${sub_id}">ICC Men's T20 World Cup 2021</a>
-					<a href="cricket.html?competition=2856&season=na&i=${sub_id}">England v New Zealand Test Series 2022</a>
-					<a href="cricket.html?competition=2857&season=na&i=${sub_id}">England v India Twenty20 Series 2022</a>
-					<a href="cricket.html?competition=2858&season=na&i=${sub_id}">England v India ODI Series 2022</a>
-					<a href="cricket.html?competition=2859&season=na&i=${sub_id}">England v South Africa ODI Series 2022</a>
-					<a href="cricket.html?competition=2860&season=na&i=${sub_id}">England v South Africa Twenty20 Series 2022</a>
-					<a href="cricket.html?competition=2861&season=na&i=${sub_id}">England v South Africa Test Series 2022</a>
-					<a href="cricket.html?competition=2863&season=na&i=${sub_id}">South Africa v India Test Series 2021/2022</a>
-					<a href="cricket.html?competition=2864&season=na&i=${sub_id}">South Africa v India ODI Series 2022</a>
-					<a href="cricket.html?competition=2868&season=na&i=${sub_id}">South Africa v Bangladesh ODI Series 2022</a>
-					<a href="cricket.html?competition=2869&season=na&i=${sub_id}">South Africa v Bangladesh Test Series 2022</a>
-					<a href="cricket.html?competition=2878&season=na&i=${sub_id}">India v West Indies ODI Series 2022</a>
-					<a href="cricket.html?competition=2879&season=na&i=${sub_id}">India v West Indies Twenty20 Series 2022</a>
-					<a href="cricket.html?competition=2880&season=na&i=${sub_id}">India v Sri Lanka Test Series 2022</a>
-					<a href="cricket.html?competition=2881&season=na&i=${sub_id}">India v Sri Lanka Twenty20 Series 2022</a>
-					<a href="cricket.html?competition=2882&season=na&i=${sub_id}">India v South Africa Twenty20 Series 2022</a>
-					<a href="cricket.html?competition=2886&season=na&i=${sub_id}">Netherlands v England ODI Series 2022</a>
-					<a href="cricket.html?competition=2903&season=na&i=${sub_id}">Pakistan v Australia Test Series 2022</a>
-					<a href="cricket.html?competition=2904&season=na&i=${sub_id}">Pakistan v Australia ODI Series 2022</a>
-					<a href="cricket.html?competition=2905&season=na&i=${sub_id}">Pakistan v Australia Only Twenty20 2022</a>
-					<a href="cricket.html?competition=2908&season=na&i=${sub_id}">New Zealand v Bangladesh Test Series 2022</a>
-					<a href="cricket.html?competition=2911&season=na&i=${sub_id}">New Zealand v South Africa Test Series 2022</a>
-					<a href="cricket.html?competition=2913&season=na&i=${sub_id}">New Zealand v Netherlands Only Twenty20 2022</a>
-					<a href="cricket.html?competition=2914&season=na&i=${sub_id}">New Zealand v Netherlands ODI Series 2022</a>
-					<a href="cricket.html?competition=2917&season=na&i=${sub_id}">West Indies v Ireland ODI Series 2022</a>
-					<a href="cricket.html?competition=2920&season=na&i=${sub_id}">Afghanistan v Netherlands ODI Series in Qatar 2022</a>
-					<a href="cricket.html?competition=2922&season=na&i=${sub_id}">Sri Lanka v Zimbabwe ODI Series 2022</a>
-					<a href="cricket.html?competition=2934&season=na&i=${sub_id}">New Zealand in England Tour Matches 2022</a>
-					<a href="cricket.html?competition=2938&season=na&i=${sub_id}">South Africa in England Tour Matches 2022</a>
-					<a href="cricket.html?competition=2939&season=na&i=${sub_id}">India in England Tour Matches 2022</a>
-					<a href="cricket.html?competition=2940&season=na&i=${sub_id}">ICC Men's T20 World Cup 2022</a>
-					<a href="cricket.html?competition=2945&season=na&i=${sub_id}">Bangladesh v Afghanistan ODI Series 2022</a>
-					<a href="cricket.html?competition=2946&season=na&i=${sub_id}">Bangladesh v Afghanistan Twenty20 Series 2022</a>
-					<a href="cricket.html?competition=2953&season=na&i=${sub_id}">Netherlands v West Indies ODI Series 2022</a>
-					<a href="cricket.html?competition=2954&season=na&i=${sub_id}">Ireland v India Twenty20 Series 2022</a>
-					<a href="cricket.html?competition=2955&season=na&i=${sub_id}">Ireland v New Zealand ODI Series 2022</a>
-					<a href="cricket.html?competition=2956&season=na&i=${sub_id}">Ireland v New Zealand Twenty20 Series 2022</a>
-					<a href="cricket.html?competition=2957&season=na&i=${sub_id}">Ireland v South Africa Twenty20 Series in England 2022</a>
-					<a href="cricket.html?competition=2960&season=na&i=${sub_id}">IPL 2022</a>
-					<a href="cricket.html?competition=2966&season=na&i=${sub_id}">Nepal v Papua New Guinea ODI Series 2022</a>
+					<a href="cricket.html?competition=2722&season=0&i=${sub_id}">England&nbsp;v&nbsp;India&nbsp;Test&nbsp;Series&nbsp;2021/2022</a>
+					<a href="cricket.html?competition=2780&season=0&i=${sub_id}">IPL 2021</a>
+					<a href="cricket.html?competition=2781&season=0&i=${sub_id}">ICC World Test Championship Final 2021</a>
+					<a href="cricket.html?competition=2784&season=0&i=${sub_id}">West Indies v England Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2785&season=0&i=${sub_id}">West Indies v England Test Series 2022</a>
+					<a href="cricket.html?competition=2813&season=0&i=${sub_id}">Australia v England Test Series 2021/2022</a>
+					<a href="cricket.html?competition=2816&season=0&i=${sub_id}">Australia v Sri Lanka Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2831&season=0&i=${sub_id}">Weber Women's Big Bash League 2021</a>
+					<a href="cricket.html?competition=2832&season=0&i=${sub_id}">KFC T20 Big Bash League 2021/2022</a>
+					<a href="cricket.html?competition=2852&season=0&i=${sub_id}">ICC Men's T20 World Cup 2021</a>
+					<a href="cricket.html?competition=2856&season=0&i=${sub_id}">England v New Zealand Test Series 2022</a>
+					<a href="cricket.html?competition=2857&season=0&i=${sub_id}">England v India Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2858&season=0&i=${sub_id}">England v India ODI Series 2022</a>
+					<a href="cricket.html?competition=2859&season=0&i=${sub_id}">England v South Africa ODI Series 2022</a>
+					<a href="cricket.html?competition=2860&season=0&i=${sub_id}">England v South Africa Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2861&season=0&i=${sub_id}">England v South Africa Test Series 2022</a>
+					<a href="cricket.html?competition=2863&season=0&i=${sub_id}">South Africa v India Test Series 2021/2022</a>
+					<a href="cricket.html?competition=2864&season=0&i=${sub_id}">South Africa v India ODI Series 2022</a>
+					<a href="cricket.html?competition=2868&season=0&i=${sub_id}">South Africa v Bangladesh ODI Series 2022</a>
+					<a href="cricket.html?competition=2869&season=0&i=${sub_id}">South Africa v Bangladesh Test Series 2022</a>
+					<a href="cricket.html?competition=2878&season=0&i=${sub_id}">India v West Indies ODI Series 2022</a>
+					<a href="cricket.html?competition=2879&season=0&i=${sub_id}">India v West Indies Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2880&season=0&i=${sub_id}">India v Sri Lanka Test Series 2022</a>
+					<a href="cricket.html?competition=2881&season=0&i=${sub_id}">India v Sri Lanka Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2882&season=0&i=${sub_id}">India v South Africa Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2886&season=0&i=${sub_id}">Netherlands v England ODI Series 2022</a>
+					<a href="cricket.html?competition=2903&season=0&i=${sub_id}">Pakistan v Australia Test Series 2022</a>
+					<a href="cricket.html?competition=2904&season=0&i=${sub_id}">Pakistan v Australia ODI Series 2022</a>
+					<a href="cricket.html?competition=2905&season=0&i=${sub_id}">Pakistan v Australia Only Twenty20 2022</a>
+					<a href="cricket.html?competition=2908&season=0&i=${sub_id}">New Zealand v Bangladesh Test Series 2022</a>
+					<a href="cricket.html?competition=2911&season=0&i=${sub_id}">New Zealand v South Africa Test Series 2022</a>
+					<a href="cricket.html?competition=2913&season=0&i=${sub_id}">New Zealand v Netherlands Only Twenty20 2022</a>
+					<a href="cricket.html?competition=2914&season=0&i=${sub_id}">New Zealand v Netherlands ODI Series 2022</a>
+					<a href="cricket.html?competition=2917&season=0&i=${sub_id}">West Indies v Ireland ODI Series 2022</a>
+					<a href="cricket.html?competition=2920&season=0&i=${sub_id}">Afghanistan v Netherlands ODI Series in Qatar 2022</a>
+					<a href="cricket.html?competition=2922&season=0&i=${sub_id}">Sri Lanka v Zimbabwe ODI Series 2022</a>
+					<a href="cricket.html?competition=2934&season=0&i=${sub_id}">New Zealand in England Tour Matches 2022</a>
+					<a href="cricket.html?competition=2938&season=0&i=${sub_id}">South Africa in England Tour Matches 2022</a>
+					<a href="cricket.html?competition=2939&season=0&i=${sub_id}">India in England Tour Matches 2022</a>
+					<a href="cricket.html?competition=2940&season=0&i=${sub_id}">ICC Men's T20 World Cup 2022</a>
+					<a href="cricket.html?competition=2945&season=0&i=${sub_id}">Bangladesh v Afghanistan ODI Series 2022</a>
+					<a href="cricket.html?competition=2946&season=0&i=${sub_id}">Bangladesh v Afghanistan Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2953&season=0&i=${sub_id}">Netherlands v West Indies ODI Series 2022</a>
+					<a href="cricket.html?competition=2954&season=0&i=${sub_id}">Ireland v India Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2955&season=0&i=${sub_id}">Ireland v New Zealand ODI Series 2022</a>
+					<a href="cricket.html?competition=2956&season=0&i=${sub_id}">Ireland v New Zealand Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2957&season=0&i=${sub_id}">Ireland v South Africa Twenty20 Series in England 2022</a>
+					<a href="cricket.html?competition=2960&season=0&i=${sub_id}">IPL 2022</a>
+					<a href="cricket.html?competition=2966&season=0&i=${sub_id}">Nepal v Papua New Guinea ODI Series 2022</a>
 				</div>
 			</div>
 			<div class="dropdown">
@@ -195,16 +195,13 @@ $(function(){
 	`)
 })
 /*SET UP DROPDOWN NAV*/
-console.log('210323')
+
+/*************************************************************************************************************************************************************/
+
 /*FOOTBALL*/
 if(document.location.href.indexOf('football.html') >= 0){//check that this is the football page
 
 	switch(query['competition']){
-
-		//football (soccer)
-		// case '8': //premier-league
-		// case '214': //a-league-mens
-		// case '684': //a-league-womens
 
 		case '3'://	UEFA European Championship Finals	2020
 		case '4'://	World Cup	2022
@@ -230,11 +227,8 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 		case '1136'://	Olympics Intercontinental Play-offs Women	2020
 
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
-
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
-
-	// if(query['competition'] == "8"){
 
 		fixturesTopLeft.innerHTML = (`
 			<opta-widget 
@@ -448,7 +442,7 @@ if(document.location.href.indexOf('cricket.html') >= 0){
 			<opta-widget widget="fixtures" 
 			fixtures_type="m" 
 			competition="${query['competition']}" 
-			season="0" 
+			season="${query['season']}" 
 			template="normal" 
 			live="true" 
 			show_venue="true" 
@@ -480,7 +474,6 @@ if(document.location.href.indexOf('cricket.html') >= 0){
 /*CRICKET*/
 
 /*MOTORSPORT*/
-
 if(document.location.href.indexOf('motorsport.html') >= 0){
 	switch(query['competition']){
 		case '1m5x4n07f2kqkiczebja5etiq'://FIA F1 World Championship
@@ -515,10 +508,16 @@ if(document.location.href.indexOf('motorsport.html') >= 0){
 		break;
 	}
 }
-
-
 // <opta-widget widget="standings" competition="1m5x4n07f2kqkiczebja5etiq" season="3d2cd3uj88qgdlt4lyhr0cis4" template="normal" navigation="tabs" default_nav="1" show_drivers="true" show_constructors="true" show_wins="true" team_naming="full" driver_naming="full" show_logo="false" limit="10" show_title="true" breakpoints="460" sport="motorsport"></opta-widget>
 /*MOTORSPORT*/
+
+/*US Sports*/
+
+/*US Sports*/
+
+/*Olympics*/
+
+/*Olympics*/
 
 /*RUGBY UNION*/
 if(document.location.href.indexOf('rugbyunion.html') >= 0){
@@ -624,6 +623,8 @@ if(document.location.href.indexOf('afl.html') >= 0){
 	}
 }
 /*AFL*/
+
+/*************************************************************************************************************************************************************/
 
 /*MATCH CENTRE STUFF*/
 if(document.location.href.indexOf('match.html') >= 0 || document.location.href.indexOf('test2.html') >= 0){//check that this is a match centre page
