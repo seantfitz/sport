@@ -157,7 +157,9 @@ $(function(){
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">US Sports</button>
-				<div class="dropdown-content"></div>
+				<div class="dropdown-content">
+					<a href="mlb.html?competition=n0amm59n1m59y0auuk93hexg&season=1jl9m4m9c863xko7es6a6ecr8&i=${sub_id}">USA - Major League Baseball</a>
+				</div>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">Olympics</button>
@@ -512,7 +514,14 @@ if(document.location.href.indexOf('motorsport.html') >= 0){
 /*MOTORSPORT*/
 
 /*US Sports*/
-
+if(document.location.href.indexOf('mlb.html') >= 0){//baseball
+	let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+	let matchSummary = document.getElementById('match-centre-top-left')
+	let standingsWidget = document.getElementById('standings-widget')
+	fixturesTopLeft.innerHTML=(`
+		<opta-widget widget="scoreboard" competition="n0amm59n1m59y0auuk93hexg" season="1jl9m4m9c863xko7es6a6ecr8" template="normal" live="true" show_venue="true" grouping="date" show_date_picker="true" navigation="tabs_scroll" default_nav="1" start_on_current="true" order_by="date_ascending" away_team_first="false" show_crests="false" show_date="true" date_format="dddd D MMMM YYYY" time_format="HH:mm" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="baseball"></opta-widget>
+	`)
+}
 /*US Sports*/
 
 /*Olympics*/
