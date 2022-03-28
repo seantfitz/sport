@@ -328,7 +328,7 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 	}
 }
 /*FOOTBALL*/
-console.log('2203251653')
+
 /*BASKETBALL*/
 if(document.location.href.indexOf('basketball.html') >= 0){
 	switch(query['competition']){
@@ -347,8 +347,8 @@ if(document.location.href.indexOf('basketball.html') >= 0){
 
 		standingsWidget.innerHTML=(`
 			<opta-widget widget="standings" 
-			competition="5wdi9kmiurd2rjx2f7ew92wm6" 
-			season="4sjxxlpzq4fgth238gnebn3tg" 
+			competition="${query['competition']}" 
+			season="${query['season']}" 
 			template="normal" navigation="tabs" default_nav="1" show_categories="all" show_rank="true" show_key="true" show_crests="true" sorting="true" team_naming="full" show_logo="false" show_title="true" breakpoints="460" sport="basketball"></opta-widget>
 		`)
 
