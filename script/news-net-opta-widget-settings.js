@@ -85,7 +85,231 @@ $(function(){
 			
 			<div class="dropdown">
 				<button class="dropbtn">Tennis</button>
-				<div class="dropdown-content"></div>
+				<div class="dropdown-content">
+					<a href="tennis.html?competition=7577&season=2022&i=${sub_id}">33rd Palermo Ladies Open - Womens Singles</a>
+					<a href="tennis.html?competition=7343&season=2022&i=${sub_id}">ABN Amro World Tennis Tournament - Mens Singles</a>
+					<a href="tennis.html?competition=7506&season=2022&i=${sub_id}">ATP Challenger 50 Oeiras II - Mens Singles</a>
+					<a href="tennis.html?competition=7315&season=2022&i=${sub_id}">ATP Cup - Mens National_teams</a>
+					<a href="tennis.html?competition=7267&season=2022&i=${sub_id}">Abierto Akron Zapopan - Womens Singles</a>
+					<a href="tennis.html?competition=7467&season=2022&i=${sub_id}">Abierto GNP Seguros - Mens Singles</a>
+					<a href="tennis.html?competition=7269&season=2022&i=${sub_id}">Abierto GNP Seguros 2022 - Womens Singles</a>
+					<a href="tennis.html?competition=7383&season=2022&i=${sub_id}">Abierto Mexicano Telcel presentado por HSBC - Mens Singles</a>
+					<a href="tennis.html?competition=7668&season=2022&i=${sub_id}">Abierto Tampico - Womens Singles</a>
+					<a href="tennis.html?competition=7556&season=2022&i=${sub_id}">Abierto de Tenis Mifel - Mens Singles</a>
+					<a href="tennis.html?competition=7357&season=2022&i=${sub_id}">Adelaide International 1 - Womens Singles</a>
+					<a href="tennis.html?competition=7335&season=2022&i=${sub_id}">Adelaide International 1 - Mens Singles</a>
+					<a href="tennis.html?competition=7313&season=2022&i=${sub_id}">Adelaide International 2 - Mens Singles</a>
+					<a href="tennis.html?competition=7369&season=2022&i=${sub_id}">Adelaide International 2 - Womens Singles</a>
+					<a href="tennis.html?competition=7538&season=2022&i=${sub_id}">Aguacalientes - Mens Singles</a>
+					<a href="tennis.html?competition=7666&season=2022&i=${sub_id}">AnyTech365 Andalucia Open - Womens Singles</a>
+					<a href="tennis.html?competition=7483&season=2022&i=${sub_id}">AnyTech365 Andalucia Open - Mens Singles</a>
+					<a href="tennis.html?competition=7345&season=2022&i=${sub_id}">Argentina Open - Mens Singles</a>
+					<a href="tennis.html?competition=7471&season=2022&i=${sub_id}">Arizona Tennis Classic - Mens Singles</a>
+					<a href="tennis.html?competition=7578&season=2022&i=${sub_id}">Astana Open - Mens Singles</a>
+					<a href="tennis.html?competition=7244&season=2022&i=${sub_id}">Australian Open - Mens Singles</a>
+					<a href="tennis.html?competition=7246&season=2022&i=${sub_id}">Australian Open - Womens Singles</a>
+					<a href="tennis.html?competition=7245&season=2022&i=${sub_id}">Australian Open - Mens Doubles</a>
+					<a href="tennis.html?competition=7247&season=2022&i=${sub_id}">Australian Open - Womens Doubles</a>
+					<a href="tennis.html?competition=7248&season=2022&i=${sub_id}">Australian Open - Mixed Doubles</a>
+					<a href="tennis.html?competition=7652&season=2022&i=${sub_id}">BBVA Open Internacional De Valencia - Womens Singles</a>
+					<a href="tennis.html?competition=7660&season=2022&i=${sub_id}">BCR Iasi Open - Womens Singles</a>
+					<a href="tennis.html?competition=7403&season=2022&i=${sub_id}">BMW Open by American Express - Mens Singles</a>
+					<a href="tennis.html?competition=7387&season=2022&i=${sub_id}">BNP Paribas Open - Mens Singles</a>
+					<a href="tennis.html?competition=7388&season=2022&i=${sub_id}">BNP Paribas Open - Mens Doubles</a>
+					<a href="tennis.html?competition=7273&season=2022&i=${sub_id}">BNP Paribas Open - Womens Singles</a>
+					<a href="tennis.html?competition=7585&season=2022&i=${sub_id}">BNP Paribas Poland Open - Womens Singles</a>
+					<a href="tennis.html?competition=7307&season=2022&i=${sub_id}">Bad Homburg Open presented by Engel & Volkers - Womens Singles</a>
+					<a href="tennis.html?competition=7399&season=2022&i=${sub_id}">Barcelona Open Banc Sabadell - Mens Singles</a>
+					<a href="tennis.html?competition=7510&season=2022&i=${sub_id}">Barletta - Mens Singles</a>
+					<a href="tennis.html?competition=7347&season=2022&i=${sub_id}">Bendigo International - Mens Singles</a>
+					<a href="tennis.html?competition=7375&season=2022&i=${sub_id}">Bengaluru Open 1 - Mens Singles</a>
+					<a href="tennis.html?competition=7443&season=2022&i=${sub_id}">Bengaluru Open 2 - Mens Singles</a>
+					<a href="tennis.html?competition=7303&season=2022&i=${sub_id}">Bett1 Open - Womens Singles</a>
+					<a href="tennis.html?competition=7629&season=2022&i=${sub_id}">Bordeaux - Mens Singles</a>
+					<a href="tennis.html?competition=7644&season=2022&i=${sub_id}">Budapest Open 125 - Womens Singles</a>
+					<a href="tennis.html?competition=7540&season=2022&i=${sub_id}">Buenos Aires 2 - Mens Singles</a>
+					<a href="tennis.html?competition=7672&season=2022&i=${sub_id}">Buenos Aires Open - Womens Singles</a>
+					<a href="tennis.html?competition=7485&season=2022&i=${sub_id}">Challenger Banca stato Città di Lugano - Mens Singles</a>
+					<a href="tennis.html?competition=7439&season=2022&i=${sub_id}">Challenger Cherbourg - La Manche - Mens Singles</a>
+					<a href="tennis.html?competition=7469&season=2022&i=${sub_id}">Challenger Santiago Chile - Mens Singles</a>
+					<a href="tennis.html?competition=7502&season=2022&i=${sub_id}">Challenger de Salinas I - Mens Singles</a>
+					<a href="tennis.html?competition=7473&season=2022&i=${sub_id}">Challenger del Biobio - Mens Singles</a>
+					<a href="tennis.html?competition=7603&season=2022&i=${sub_id}">Championnats Banque Nationale de Granby - Womens Singles</a>
+					<a href="tennis.html?competition=7583&season=2022&i=${sub_id}">Chengdu Open - Mens Singles</a>
+					<a href="tennis.html?competition=7385&season=2022&i=${sub_id}">Chile Dove Men+Care Open - Mens Singles</a>
+					<a href="tennis.html?competition=7598&season=2022&i=${sub_id}">China Open - Mens Singles</a>
+					<a href="tennis.html?competition=7421&season=2022&i=${sub_id}">Cinch Championships - Mens Singles</a>
+					<a href="tennis.html?competition=7361&season=2022&i=${sub_id}">Circuito Dove Men Care - Mens Singles</a>
+					<a href="tennis.html?competition=7500&season=2022&i=${sub_id}">Circuito Dove Men+Care Pereira - Mens Singles</a>
+					<a href="tennis.html?competition=7558&season=2022&i=${sub_id}">Citi Open - Mens Singles</a>
+					<a href="tennis.html?competition=7451&season=2022&i=${sub_id}">Citta' Di Forli' 1 - Mens Singles</a>
+					<a href="tennis.html?competition=7359&season=2022&i=${sub_id}">Citta' Di Forli' 2 - Mens Singles</a>
+					<a href="tennis.html?competition=7365&season=2022&i=${sub_id}">Citta' Di Forli' 3 - Mens Singles</a>
+					<a href="tennis.html?competition=7445&season=2022&i=${sub_id}">Citta' Di Forli' 4 - Mens Singles</a>
+					<a href="tennis.html?competition=7459&season=2022&i=${sub_id}">Citta' Di Forli' 5 - Mens Singles</a>
+					<a href="tennis.html?competition=7373&season=2022&i=${sub_id}">Cleveland Open - Mens Singles</a>
+					<a href="tennis.html?competition=7279&season=2022&i=${sub_id}">Copa Colsanitas presentado por Zurich - Womens Singles</a>
+					<a href="tennis.html?competition=7695&season=2022&i=${sub_id}">Coquimbo - Mens Singles</a>
+					<a href="tennis.html?competition=7337&season=2022&i=${sub_id}">Cordoba Open - Mens Singles</a>
+					<a href="tennis.html?competition=7277&season=2022&i=${sub_id}">Credit One Charleston Open - Womens Singles</a>
+					<a href="tennis.html?competition=7349&season=2022&i=${sub_id}">Dallas Open - Mens Singles</a>
+					<a href="tennis.html?competition=7353&season=2022&i=${sub_id}">Delray Beach Open - Mens Singles</a>
+					<a href="tennis.html?competition=7433&season=2022&i=${sub_id}">Dove Men+Care Challenger Bolivia - Mens Singles</a>
+					<a href="tennis.html?competition=7494&season=2022&i=${sub_id}">Dove Men+Care Challenger Bolivia 2 - Mens Singles</a>
+					<a href="tennis.html?competition=7363&season=2022&i=${sub_id}">Dove Men+Care Legion Sudamericana Concepcion - Mens Singles</a>
+					<a href="tennis.html?competition=7355&season=2022&i=${sub_id}">Dove Men+Care Legion Sudamericana Tigre - Mens Singles</a>
+					<a href="tennis.html?competition=7670&season=2022&i=${sub_id}">Dow Tennis Classic - Womens Singles</a>
+					<a href="tennis.html?competition=7389&season=2022&i=${sub_id}">Dubai Duty Free Tennis Championships - Mens Singles</a>
+					<a href="tennis.html?competition=7263&season=2022&i=${sub_id}">Dubai Duty Free Tennis Championships - Womens Singles</a>
+					<a href="tennis.html?competition=7546&season=2022&i=${sub_id}">EFG Swiss Open Gstaad - Mens Singles</a>
+					<a href="tennis.html?competition=7613&season=2022&i=${sub_id}">Erste Bank Open - Mens Singles</a>
+					<a href="tennis.html?competition=7607&season=2022&i=${sub_id}">European Open - Mens Singles</a>
+					<a href="tennis.html?competition=7520&season=2022&i=${sub_id}">Falkensteiner Punta Skala - Zadar Open - Mens Singles</a>
+					<a href="tennis.html?competition=7393&season=2022&i=${sub_id}">Fayez Sarofim & Co. U.S. Men's Clay Court Championship - Mens Singles</a>
+					<a href="tennis.html?competition=7481&season=2022&i=${sub_id}">FlowBank Challenger Biel/Bienne - Mens Singles</a>
+					<a href="tennis.html?competition=7687&season=2022&i=${sub_id}">Francavilla - Mens Singles</a>
+					<a href="tennis.html?competition=7295&season=2022&i=${sub_id}">French Open - Womens Singles</a>
+					<a href="tennis.html?competition=7296&season=2022&i=${sub_id}">French Open - Womens Doubles</a>
+					<a href="tennis.html?competition=7415&season=2022&i=${sub_id}">French Open - Mens Singles</a>
+					<a href="tennis.html?competition=7416&season=2022&i=${sub_id}">French Open - Mens Doubles</a>
+					<a href="tennis.html?competition=7432&season=2022&i=${sub_id}">French Open - Mixed Doubles</a>
+					<a href="tennis.html?competition=7550&season=2022&i=${sub_id}">Generali Open - Mens Singles</a>
+					<a href="tennis.html?competition=7411&season=2022&i=${sub_id}">Gonet Geneva Open - Mens Singles</a>
+					<a href="tennis.html?competition=7488&season=2022&i=${sub_id}">Gran Canaria Challenger 1 - Mens Singles</a>
+					<a href="tennis.html?competition=7658&season=2022&i=${sub_id}">Grand Est Open 88 - Womens Singles</a>
+					<a href="tennis.html?competition=7291&season=2022&i=${sub_id}">Grand Prix De Sar La Princesse Lalla Meryem - Womens Singles</a>
+					<a href="tennis.html?competition=7395&season=2022&i=${sub_id}">Grand Prix Hassan II - Mens Singles</a>
+					<a href="tennis.html?competition=7575&season=2022&i=${sub_id}">Hamburg European Open - Womens Singles</a>
+					<a href="tennis.html?competition=7548&season=2022&i=${sub_id}">Hamburg European Open - Mens Singles</a>
+					<a href="tennis.html?competition=7631&season=2022&i=${sub_id}">Heilbronn - Mens Singles</a>
+					<a href="tennis.html?competition=7573&season=2022&i=${sub_id}">Hungarian Grand Prix - Womens Singles</a>
+					<a href="tennis.html?competition=7542&season=2022&i=${sub_id}">Infosys Hall of Fame Open - Mens Singles</a>
+					<a href="tennis.html?competition=7289&season=2022&i=${sub_id}">Internationaux de Strasbourg - Womens Singles</a>
+					<a href="tennis.html?competition=7409&season=2022&i=${sub_id}">Internazionali BNL d'Italia - Mens Singles</a>
+					<a href="tennis.html?competition=7410&season=2022&i=${sub_id}">Internazionali BNL d'Italia - Mens Doubles</a>
+					<a href="tennis.html?competition=7287&season=2022&i=${sub_id}">Internazionali BNL d'Italia - Womens Singles</a>
+					<a href="tennis.html?competition=7618&season=2022&i=${sub_id}">Intesa Sanpaolo Next Gen ATP Finals - Mens Singles</a>
+					<a href="tennis.html?competition=7640&season=2022&i=${sub_id}">L 'Open 35 de Saint-Malo - Womens Singles</a>
+					<a href="tennis.html?competition=7569&season=2022&i=${sub_id}">Ladies Open Lausanne - Womens Singles</a>
+					<a href="tennis.html?competition=7639&season=2022&i=${sub_id}">Laver Cup - Mens National_teams</a>
+					<a href="tennis.html?competition=7417&season=2022&i=${sub_id}">Libema Open - Mens Singles</a>
+					<a href="tennis.html?competition=7297&season=2022&i=${sub_id}">Libema Open - Womens Singles</a>
+					<a href="tennis.html?competition=7648&season=2022&i=${sub_id}">Liqui Moly Open - Womens Singles</a>
+					<a href="tennis.html?competition=7699&season=2022&i=${sub_id}">Little Rock Open - Mens Singles</a>
+					<a href="tennis.html?competition=7581&season=2022&i=${sub_id}">Livesport Prague Open 2022 - Womens Singles</a>
+					<a href="tennis.html?competition=7513&season=2022&i=${sub_id}">Madrid - Mens Singles</a>
+					<a href="tennis.html?competition=7650&season=2022&i=${sub_id}">Makarska Open - Womens Singles</a>
+					<a href="tennis.html?competition=7425&season=2022&i=${sub_id}">Mallorca Championships - Mens Singles</a>
+					<a href="tennis.html?competition=7637&season=2022&i=${sub_id}">Mauthausen - Mens Singles</a>
+					<a href="tennis.html?competition=7441&season=2022&i=${sub_id}">Melbourne Summer Set - Mens Singles</a>
+					<a href="tennis.html?competition=7447&season=2022&i=${sub_id}">Melbourne Summer Set 1 - Womens Singles</a>
+					<a href="tennis.html?competition=7449&season=2022&i=${sub_id}">Melbourne Summer Set 2 - Womens Singles</a>
+					<a href="tennis.html?competition=7518&season=2022&i=${sub_id}">Mexico City - Mens Singles</a>
+					<a href="tennis.html?competition=7275&season=2022&i=${sub_id}">Miami Open presented by Itau - Womens Singles</a>
+					<a href="tennis.html?competition=7391&season=2022&i=${sub_id}">Miami Open presented by Itau - Mens Singles</a>
+					<a href="tennis.html?competition=7392&season=2022&i=${sub_id}">Miami Open presented by Itau - Mens Doubles</a>
+					<a href="tennis.html?competition=7405&season=2022&i=${sub_id}">Millennium Estoril Open - Mens Singles</a>
+					<a href="tennis.html?competition=7674&season=2022&i=${sub_id}">Montevideo Open - Womens Singles</a>
+					<a href="tennis.html?competition=7530&season=2022&i=${sub_id}">Morelos Challenger - Mens Singles</a>
+					<a href="tennis.html?competition=7571&season=2022&i=${sub_id}">Moselle Open - Mens Singles</a>
+					<a href="tennis.html?competition=7589&season=2022&i=${sub_id}">Mubadala Silicon Valley Classic - Womens Singles</a>
+					<a href="tennis.html?competition=7504&season=2022&i=${sub_id}">Murcia Open - Mens Singles</a>
+					<a href="tennis.html?competition=7407&season=2022&i=${sub_id}">Mutua Madrid Open - Mens Singles</a>
+					<a href="tennis.html?competition=7408&season=2022&i=${sub_id}">Mutua Madrid Open - Mens Doubles</a>
+					<a href="tennis.html?competition=7285&season=2022&i=${sub_id}">Mutua Madrid Open - Womens Singles</a>
+					<a href="tennis.html?competition=7593&season=2022&i=${sub_id}">National Bank Open presented by Rogers - Womens Singles</a>
+					<a href="tennis.html?competition=7560&season=2022&i=${sub_id}">National Bank Open presented by Rogers - Mens Singles</a>
+					<a href="tennis.html?competition=7561&season=2022&i=${sub_id}">National Bank Open presented by Rogers - Mens Doubles</a>
+					<a href="tennis.html?competition=7619&season=2022&i=${sub_id}">Nitto ATP Finals - Mens Singles</a>
+					<a href="tennis.html?competition=7620&season=2022&i=${sub_id}">Nitto ATP Finals - Mens Doubles</a>
+					<a href="tennis.html?competition=7656&season=2022&i=${sub_id}">Nordea Open - Womens Singles</a>
+					<a href="tennis.html?competition=7544&season=2022&i=${sub_id}">Nordea Open - Mens Singles</a>
+					<a href="tennis.html?competition=7664&season=2022&i=${sub_id}">Odlum Brown Vanopen - Womens Singles</a>
+					<a href="tennis.html?competition=7496&season=2022&i=${sub_id}">Oeiras Challenger 1 - Mens Singles</a>
+					<a href="tennis.html?competition=7377&season=2022&i=${sub_id}">Open 13 Provence - Mens Singles</a>
+					<a href="tennis.html?competition=7271&season=2022&i=${sub_id}">Open 6ème Sens Métropole de Lyon - Womens Singles</a>
+					<a href="tennis.html?competition=7676&season=2022&i=${sub_id}">Open Angers Arena Loire - Womens Singles</a>
+					<a href="tennis.html?competition=7678&season=2022&i=${sub_id}">Open BLS de Limoges - Womens Singles</a>
+					<a href="tennis.html?competition=7413&season=2022&i=${sub_id}">Open Parc Auvergne-Rhone-Alpes Lyon - Mens Singles</a>
+					<a href="tennis.html?competition=7625&season=2022&i=${sub_id}">Open Pays d'Aix CEPAC - Mens Singles</a>
+					<a href="tennis.html?competition=7370&season=2022&i=${sub_id}">Open Quimper Bretagne Occidentale - Mens Singles</a>
+					<a href="tennis.html?competition=7498&season=2022&i=${sub_id}">Open Saint-Brieuc Harmonie Mutuelle - Mens Singles</a>
+					<a href="tennis.html?competition=7339&season=2022&i=${sub_id}">Open Sud de France - Mens Singles</a>
+					<a href="tennis.html?competition=7534&season=2022&i=${sub_id}">Ostrava - Mens Singles</a>
+					<a href="tennis.html?competition=7552&season=2022&i=${sub_id}">Plava Laguna Croatia Open Umag - Mens Singles</a>
+					<a href="tennis.html?competition=7477&season=2022&i=${sub_id}">Play In Challenger - Mens Singles</a>
+					<a href="tennis.html?competition=7281&season=2022&i=${sub_id}">Porsche Tennis Grand Prix - Womens Singles</a>
+					<a href="tennis.html?competition=7627&season=2022&i=${sub_id}">Prague 2 - Mens Singles</a>
+					<a href="tennis.html?competition=7526&season=2022&i=${sub_id}">Prague I - Mens Singles</a>
+					<a href="tennis.html?competition=7680&season=2022&i=${sub_id}">Puerto Vallarta Open - Womens Singles</a>
+					<a href="tennis.html?competition=7379&season=2022&i=${sub_id}">Qatar ExxonMobil Open - Mens Singles</a>
+					<a href="tennis.html?competition=7265&season=2022&i=${sub_id}">Qatar Total Energies Open - Womens Singles</a>
+					<a href="tennis.html?competition=7605&season=2022&i=${sub_id}">Rakuten Japan Open Tennis Championships - Mens Singles</a>
+					<a href="tennis.html?competition=7492&season=2022&i=${sub_id}">Regione Abruzzo Aterno Gas & Power Cup - Mens Singles</a>
+					<a href="tennis.html?competition=7381&season=2022&i=${sub_id}">Rio Open presented by Claro - Mens Singles</a>
+					<a href="tennis.html?competition=7397&season=2022&i=${sub_id}">Rolex Monte-Carlo Masters - Mens Singles</a>
+					<a href="tennis.html?competition=7398&season=2022&i=${sub_id}">Rolex Monte-Carlo Masters - Mens Doubles</a>
+					<a href="tennis.html?competition=7318&season=2022&i=${sub_id}">Rolex Paris Masters - Mens Singles</a>
+					<a href="tennis.html?competition=7617&season=2022&i=${sub_id}">Rolex Paris Masters - Mens Doubles</a>
+					<a href="tennis.html?competition=7621&season=2022&i=${sub_id}">Rolex Shanghai Masters - Mens Singles</a>
+					<a href="tennis.html?competition=7622&season=2022&i=${sub_id}">Rolex Shanghai Masters - Mens Doubles</a>
+					<a href="tennis.html?competition=7536&season=2022&i=${sub_id}">Rome 1 - Mens Singles</a>
+					<a href="tennis.html?competition=7490&season=2022&i=${sub_id}">Roseto Degli Abruzzi 1 - Mens Singles</a>
+					<a href="tennis.html?competition=7301&season=2022&i=${sub_id}">Rothesay Classic Birmingham - Womens Singles</a>
+					<a href="tennis.html?competition=7427&season=2022&i=${sub_id}">Rothesay International Eastbourne - Mens Singles</a>
+					<a href="tennis.html?competition=7305&season=2022&i=${sub_id}">Rothesay International Eastbourne - Womens Singles</a>
+					<a href="tennis.html?competition=7299&season=2022&i=${sub_id}">Rothesay Open Nottingham - Womens Singles</a>
+					<a href="tennis.html?competition=7693&season=2022&i=${sub_id}">Salvador De Bahia - Mens Singles</a>
+					<a href="tennis.html?competition=7514&season=2022&i=${sub_id}">San Luis Potosi - Mens Singles</a>
+					<a href="tennis.html?competition=7508&season=2022&i=${sub_id}">Sanremo - Mens Singles</a>
+					<a href="tennis.html?competition=7516&season=2022&i=${sub_id}">Sarasota - Mens Singles</a>
+					<a href="tennis.html?competition=7532&season=2022&i=${sub_id}">Savannah Challenger - Mens Singles</a>
+					<a href="tennis.html?competition=7401&season=2022&i=${sub_id}">Serbia Open - Mens Singles</a>
+					<a href="tennis.html?competition=7633&season=2022&i=${sub_id}">Shymkent Challenger - Mens Singles</a>
+					<a href="tennis.html?competition=7683&season=2022&i=${sub_id}">Shymkent Challenger II - Mens Singles</a>
+					<a href="tennis.html?competition=7587&season=2022&i=${sub_id}">Sofia Open - Mens Singles</a>
+					<a href="tennis.html?competition=7623&season=2022&i=${sub_id}">Split - Mens Singles</a>
+					<a href="tennis.html?competition=7261&season=2022&i=${sub_id}">St. Petersburg Ladies Trophy - Womens Singles</a>
+					<a href="tennis.html?competition=7609&season=2022&i=${sub_id}">Stockholm Open - Mens Singles</a>
+					<a href="tennis.html?competition=7691&season=2022&i=${sub_id}">Surbiton - Mens Singles</a>
+					<a href="tennis.html?competition=7615&season=2022&i=${sub_id}">Swiss Indoors Basel - Mens Singles</a>
+					<a href="tennis.html?competition=7455&season=2022&i=${sub_id}">Sydney Tennis Classic - Mens Singles</a>
+					<a href="tennis.html?competition=7453&season=2022&i=${sub_id}">Sydney Tennis Classic - Womens Singles</a>
+					<a href="tennis.html?competition=7283&season=2022&i=${sub_id}">TEB BNP Paribas Tennis Championship Istanbul - Womens Singles</a>
+					<a href="tennis.html?competition=7524&season=2022&i=${sub_id}">Tallahassee Tennis Challenger - Mens Singles</a>
+					<a href="tennis.html?competition=7341&season=2022&i=${sub_id}">Tata Open Maharashtra - Mens Singles</a>
+					<a href="tennis.html?competition=7367&season=2022&i=${sub_id}">Tennis Ohio Championships - Mens Singles</a>
+					<a href="tennis.html?competition=7597&season=2022&i=${sub_id}">Tennis in the Land - Womens Singles</a>
+					<a href="tennis.html?competition=7457&season=2022&i=${sub_id}">Terega Open - Mens Singles</a>
+					<a href="tennis.html?competition=7423&season=2022&i=${sub_id}">Terra Wortmann Open - Mens Singles</a>
+					<a href="tennis.html?competition=7662&season=2022&i=${sub_id}">Thoreau Tennis Open 125 - Womens Singles</a>
+					<a href="tennis.html?competition=7351&season=2022&i=${sub_id}">Traralgon International - Mens Singles</a>
+					<a href="tennis.html?competition=7697&season=2022&i=${sub_id}">Troisdorf - Mens Singles</a>
+					<a href="tennis.html?competition=7646&season=2022&i=${sub_id}">Trophee Lagardere - Womens Singles</a>
+					<a href="tennis.html?competition=7554&season=2022&i=${sub_id}">Truist Atlanta Open presented by Fiserv - Mens Singles</a>
+					<a href="tennis.html?competition=7685&season=2022&i=${sub_id}">Tunis Open - Mens Singles</a>
+					<a href="tennis.html?competition=7522&season=2022&i=${sub_id}">Turin - Mens Singles</a>
+					<a href="tennis.html?competition=7566&season=2022&i=${sub_id}">US Open - Mens Singles</a>
+					<a href="tennis.html?competition=7567&season=2022&i=${sub_id}">US Open - Mens Doubles</a>
+					<a href="tennis.html?competition=7568&season=2022&i=${sub_id}">US Open - Mixed Doubles</a>
+					<a href="tennis.html?competition=7601&season=2022&i=${sub_id}">US Open - Womens Singles</a>
+					<a href="tennis.html?competition=7602&season=2022&i=${sub_id}">US Open - Womens Doubles</a>
+					<a href="tennis.html?competition=7654&season=2022&i=${sub_id}">Veneto Open Internazionali Confindustria Venezia E Rovigo - Womens Singles</a>
+					<a href="tennis.html?competition=7689&season=2022&i=${sub_id}">Vicenza Challenger - Mens Singles</a>
+					<a href="tennis.html?competition=7419&season=2022&i=${sub_id}">Weissenhof - Mens Singles</a>
+					<a href="tennis.html?competition=7595&season=2022&i=${sub_id}">Western & Southern Open - Womens Singles</a>
+					<a href="tennis.html?competition=7562&season=2022&i=${sub_id}">Western & Southern Open - Mens Singles</a>
+					<a href="tennis.html?competition=7563&season=2022&i=${sub_id}">Western & Southern Open - Mens Doubles</a>
+					<a href="tennis.html?competition=7309&season=2022&i=${sub_id}">Wimbledon - Womens Singles</a>
+					<a href="tennis.html?competition=7310&season=2022&i=${sub_id}">Wimbledon - Womens Doubles</a>
+					<a href="tennis.html?competition=7429&season=2022&i=${sub_id}">Wimbledon - Mens Singles</a>
+					<a href="tennis.html?competition=7430&season=2022&i=${sub_id}">Wimbledon - Mens Doubles</a>
+					<a href="tennis.html?competition=7431&season=2022&i=${sub_id}">Wimbledon - Mixed Doubles</a>
+					<a href="tennis.html?competition=7564&season=2022&i=${sub_id}">Winston-Salem Open - Mens Singles</a>
+					<a href="tennis.html?competition=7635&season=2022&i=${sub_id}">Zagreb Open - Mens Singles</a>
+					<a href="tennis.html?competition=7642&season=2022&i=${sub_id}">Zavarovalnica Sava Portoroz - Womens Singles</a>
+					<a href="tennis.html?competition=7591&season=2022&i=${sub_id}">Zhuhai Championships - Mens Singles</a>
+				</div>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">Golf</button>
