@@ -578,7 +578,7 @@ if(document.location.href.indexOf('basketball.html') >= 0){
 /*BASKETBALL*/
 
 /*TENNIS*/
-if(document.location.href.indexOf(tennis.html) >= 0){
+if(document.location.href.indexOf('tennis.html') >= 0){
 	switch(query['competition']){
 
 		case '7577'://33rd Palermo Ladies Open - Womens Singles/*WTA 250*/
