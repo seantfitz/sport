@@ -808,23 +808,23 @@ if(document.location.href.indexOf('tennis.html') >= 0){
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
-
+console.log(query['competition'])
 		fixturesTopLeft.innerHTML = (`
 			<opta-widget widget="live_scores" 
-			competition="7244" 
-			season="2022" 
+			competition="${query['competition']}"
+			season="${query['season']}"
 			template="normal" live="true" match_status="all" grouping="round" show_grouping="true" limit="0" navigation="tabs_scroll" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="true" order_by="date_ascending" show_nationality="true" date_format="dddd D MMMM YYYY" competition_naming="full" player_naming="full" show_live="true" show_logo="false" show_title="true" breakpoints="400" 
 			sport="tennis"
 			></opta-widget>
 		`)
 
-		standingsWidget.innerHTML=(``)
+		// standingsWidget.innerHTML=(``)
 
 		break;
 	}
 }
 /*TENNIS*/
-
+console.log('1628')
 /*GOLF*/
 if(document.location.href.indexOf('golf.html') >= 0){
 	switch(query['competition']){
@@ -852,63 +852,95 @@ if(document.location.href.indexOf('golf.html') >= 0){
 
 /*CRICKET*/
 if(document.location.href.indexOf('cricket.html') >= 0){
-	console.log(query['competition'])
+
 	switch(query['competition']){
-		case 2722://England v India Test Series 2021/2022
-		case 2780://IPL 2021
-		case 2781://ICC World Test Championship Final 2021
-		case 2784://West Indies v England Twenty20 Series 2022
-		case 2785://West Indies v England Test Series 2022
-		case 2813://Australia v England Test Series 2021/2022
-		case 2816://Australia v Sri Lanka Twenty20 Series 2022
-		case 2831://Weber Women's Big Bash League 2021
-		case 2832://KFC T20 Big Bash League 2021/2022
-		case 2852://ICC Men's T20 World Cup 2021
-		case 2856://England v New Zealand Test Series 2022
-		case 2857://England v India Twenty20 Series 2022
-		case 2858://England v India ODI Series 2022
-		case 2859://England v South Africa ODI Series 2022
-		case 2860://England v South Africa Twenty20 Series 2022
-		case 2861://England v South Africa Test Series 2022
-		case 2863://South Africa v India Test Series 2021/2022
-		case 2864://South Africa v India ODI Series 2022
-		case 2868://South Africa v Bangladesh ODI Series 2022
-		case 2869://South Africa v Bangladesh Test Series 2022
-		case 2878://India v West Indies ODI Series 2022
-		case 2879://India v West Indies Twenty20 Series 2022
-		case 2880://India v Sri Lanka Test Series 2022
-		case 2881://India v Sri Lanka Twenty20 Series 2022
-		case 2882://India v South Africa Twenty20 Series 2022
-		case 2886://Netherlands v England ODI Series 2022
-		case 2903://Pakistan v Australia Test Series 2022
-		case 2904://Pakistan v Australia ODI Series 2022
-		case 2905://Pakistan v Australia Only Twenty20 2022
-		case 2908://New Zealand v Bangladesh Test Series 2022
-		case 2911://New Zealand v South Africa Test Series 2022
-		case 2913://New Zealand v Netherlands Only Twenty20 2022
-		case 2914://New Zealand v Netherlands ODI Series 2022
-		case 2917://West Indies v Ireland ODI Series 2022
-		case 2920://Afghanistan v Netherlands ODI Series in Qatar 2022
-		case 2922://Sri Lanka v Zimbabwe ODI Series 2022
-		case 2934://New Zealand in England Tour Matches 2022
-		case 2938://South Africa in England Tour Matches 2022
-		case 2939://India in England Tour Matches 2022
-		case 2940://ICC Men's T20 World Cup 2022
-		case 2945://Bangladesh v Afghanistan ODI Series 2022
-		case 2946://Bangladesh v Afghanistan Twenty20 Series 2022
-		case 2953://Netherlands v West Indies ODI Series 2022
-		case 2954://Ireland v India Twenty20 Series 2022
-		case 2955://Ireland v New Zealand ODI Series 2022
-		case 2956://Ireland v New Zealand Twenty20 Series 2022
-		case 2957://Ireland v South Africa Twenty20 Series in England 2022
-		case 2960://IPL 2022
-		case 2966://Nepal v Papua New Guinea ODI Series 2022
+		case '2722'://England v India Test Series 2021/2022
+		case '2780'://IPL 2021
+		case '2781'://ICC World Test Championship Final 2021
+		case '2784'://West Indies v England Twenty20 Series 2022
+		case '2785'://West Indies v England Test Series 2022
+		case '2813'://Australia v England Test Series 2021/2022
+		case '2816'://Australia v Sri Lanka Twenty20 Series 2022
+		case '2831'://Weber Women's Big Bash League 2021
+		case '2832'://KFC T20 Big Bash League 2021/2022
+		case '2852'://ICC Men's T20 World Cup 2021
+		case '2856'://England v New Zealand Test Series 2022
+		case '2857'://England v India Twenty20 Series 2022
+		case '2858'://England v India ODI Series 2022
+		case '2859'://England v South Africa ODI Series 2022
+		case '2860'://England v South Africa Twenty20 Series 2022
+		case '2861'://England v South Africa Test Series 2022
+		case '2863'://South Africa v India Test Series 2021/2022
+		case '2864'://South Africa v India ODI Series 2022
+		case '2868'://South Africa v Bangladesh ODI Series 2022
+		case '2869'://South Africa v Bangladesh Test Series 2022
+		case '2878'://India v West Indies ODI Series 2022
+		case '2879'://India v West Indies Twenty20 Series 2022
+		case '2880'://India v Sri Lanka Test Series 2022
+		case '2881'://India v Sri Lanka Twenty20 Series 2022
+		case '2882'://India v South Africa Twenty20 Series 2022
+		case '2886'://Netherlands v England ODI Series 2022
+		case '2903'://Pakistan v Australia Test Series 2022
+		case '2904'://Pakistan v Australia ODI Series 2022
+		case '2905'://Pakistan v Australia Only Twenty20 2022
+		case '2908'://New Zealand v Bangladesh Test Series 2022
+		case '2911'://New Zealand v South Africa Test Series 2022
+		case '2913'://New Zealand v Netherlands Only Twenty20 2022
+		case '2914'://New Zealand v Netherlands ODI Series 2022
+		case '2917'://West Indies v Ireland ODI Series 2022
+		case '2920'://Afghanistan v Netherlands ODI Series in Qatar 2022
+		case '2922'://Sri Lanka v Zimbabwe ODI Series 2022
+		case '2934'://New Zealand in England Tour Matches 2022
+		case '2938'://South Africa in England Tour Matches 2022
+		case '2939'://India in England Tour Matches 2022
+		case '2940'://ICC Men's T20 World Cup 2022
+		case '2945'://Bangladesh v Afghanistan ODI Series 2022
+		case '2946'://Bangladesh v Afghanistan Twenty20 Series 2022
+		case '2953'://Netherlands v West Indies ODI Series 2022
+		case '2954'://Ireland v India Twenty20 Series 2022
+		case '2955'://Ireland v New Zealand ODI Series 2022
+		case '2956'://Ireland v New Zealand Twenty20 Series 2022
+		case '2957'://Ireland v South Africa Twenty20 Series in England 2022
+		case '2960'://IPL 2022
+		case '2966'://Nepal v Papua New Guinea ODI Series 2022
 
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 
-		fixturesTopLeft.innerHTML = (`<opta-widget widget="fixtures" fixtures_type="m" competition="2722" season="0" template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_more" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="false" show_competition_name="true" date_format="dddd D MMMM YYYY" month_date_format="MMMM" competition_naming="full" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="cricket"></opta-widget>`)
+		fixturesTopLeft.innerHTML = (`
+			<opta-widget widget="fixtures" 
+			fixtures_type="m" 
+			competition="${query['competition']}" 
+			season="${query['season']}" 
+			template="normal" 
+			live="true" 
+			show_venue="true" 
+			match_status="all" 
+			grouping="date" 
+			show_grouping="true" 
+			navigation="tabs_more" 
+			default_nav="1" 
+			start_on_current="true"
+			sub_grouping="date" 
+			show_subgrouping="false" 
+			order_by="date_ascending" 
+			show_crests="true" 
+			show_competition_name="true" 
+			date_format="dddd D MMMM YYYY" 
+			month_date_format="MMMM" 
+			competition_naming="full" 
+			team_naming="full" 
+			pre_match="false" 
+			show_live="true" 
+			show_logo="false" 
+			show_title="true" 
+			breakpoints="400" 
+			sport="cricket"
+			></opta-widget>
+		`)
+
+		// fixturesTopLeft.innerHTML = (`<opta-widget widget="fixtures" fixtures_type="m" competition="2722" season="0" template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_more" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="false" show_competition_name="true" date_format="dddd D MMMM YYYY" month_date_format="MMMM" competition_naming="full" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="cricket"></opta-widget>`)
 	}
 }
 /*CRICKET*/
@@ -1035,7 +1067,7 @@ if(document.location.href.indexOf('rugbyleague.html') >= 0){
 	}
 }
 /*RUGBY LEAGUE*/
-console.warn('1531')
+
 /*AFL*/
 if(document.location.href.indexOf('afl.html') >= 0){
 	switch(query['competition']){
@@ -1256,9 +1288,9 @@ var opta_settings = {
 		// Competitions
 		switch(params.competition){
 			//football (soccer)
-			case 8: //premier-league
-			case 214: //a-league-mens
-			case 684: //a-league-womens
+			case '8': //premier-league
+			case '214': //a-league-mens
+			case '684': //a-league-womens
 			link += `${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
 			break;
 		}
