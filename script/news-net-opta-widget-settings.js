@@ -382,7 +382,7 @@ $(function(){
 			<div class="dropdown">
 				<button class="dropbtn">US Sports</button>
 				<div class="dropdown-content">
-					<a href="mlb.html?competition=n0amm59n1m59y0auuk93hexg&season=1jl9m4m9c863xko7es6a6ecr8&i=${sub_id}">USA - Major League Baseball</a>
+					<!--<a href="mlb.html?competition=n0amm59n1m59y0auuk93hexg&season=1jl9m4m9c863xko7es6a6ecr8&i=${sub_id}">USA - Major League Baseball</a>-->
 				</div>
 			</div>
 			<div class="dropdown">
