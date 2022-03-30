@@ -824,7 +824,7 @@ console.log(query['competition'])
 	}
 }
 /*TENNIS*/
-console.log('1628')
+console.log('1637')
 /*GOLF*/
 if(document.location.href.indexOf('golf.html') >= 0){
 	switch(query['competition']){
@@ -909,35 +909,10 @@ if(document.location.href.indexOf('cricket.html') >= 0){
 		let standingsWidget = document.getElementById('standings-widget')
 
 		fixturesTopLeft.innerHTML = (`
-			<opta-widget widget="fixtures" 
-			fixtures_type="m" 
+			<opta-widget widget="fixtures" fixtures_type="m" 
 			competition="${query['competition']}" 
 			season="${query['season']}" 
-			template="normal" 
-			live="true" 
-			show_venue="true" 
-			match_status="all" 
-			grouping="date" 
-			show_grouping="true" 
-			navigation="tabs_more" 
-			default_nav="1" 
-			start_on_current="true"
-			sub_grouping="date" 
-			show_subgrouping="false" 
-			order_by="date_ascending" 
-			show_crests="true" 
-			show_competition_name="true" 
-			date_format="dddd D MMMM YYYY" 
-			month_date_format="MMMM" 
-			competition_naming="full" 
-			team_naming="full" 
-			pre_match="false" 
-			show_live="true" 
-			show_logo="false" 
-			show_title="true" 
-			breakpoints="400" 
-			sport="cricket"
-			></opta-widget>
+			template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="none" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="true" show_competition_name="true" date_format="dddd D MMMM YYYY" month_date_format="MMMM" competition_naming="full" team_naming="full" team_link="teams" match_link="match" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="cricket"></opta-widget>
 		`)
 
 		// fixturesTopLeft.innerHTML = (`<opta-widget widget="fixtures" fixtures_type="m" competition="2722" season="0" template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_more" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="false" show_competition_name="true" date_format="dddd D MMMM YYYY" month_date_format="MMMM" competition_naming="full" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="cricket"></opta-widget>`)
