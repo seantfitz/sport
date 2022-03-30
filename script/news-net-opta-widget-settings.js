@@ -1065,7 +1065,7 @@ if(document.location.href.indexOf('rugbyleague.html') >= 0){
 	}
 }
 /*RUGBY LEAGUE*/
-console.warn('1523')
+console.warn('1531')
 /*AFL*/
 if(document.location.href.indexOf('afl.html') >= 0){
 	switch(query['competition']){
