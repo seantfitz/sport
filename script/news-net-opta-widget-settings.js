@@ -1077,8 +1077,8 @@ if(document.location.href.indexOf('afl.html') >= 0){
 			time_format="HH:mm" 
 			month_date_format="MMMM"
 			
-			team_link="afl-teams" 
-			match_link="afl-match-summary" 
+			team_link="afl-teams.html" 
+			match_link="afl-match-summary.html" 
 			
 			pre_match="10" 
 			
@@ -1136,8 +1136,8 @@ if(document.location.href.indexOf('afl-match-summary.html') >= 0){
 		team_naming="full" 
 		player_naming="full" 
 
-		team_link="afl-teams" 
-		player_link="afl-players" 
+		team_link="afl-teams.html" 
+		player_link="afl-players.html" 
 
 		show_title="true" 
 		show_logo="false" 
