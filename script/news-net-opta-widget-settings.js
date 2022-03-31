@@ -19,8 +19,9 @@ let query = getQueryParams(document.location.search)
 //define DOM elements
 let fixturesWidget = document.getElementById('fixtures-widget')
 let standingsWidget = document.getElementById('standings-widget')
-let matchSummary = document.getElementById('match-widget')
+let matchWidget = document.getElementById('match-widget')
 let rostersWidget = document.getElementById('rosters-widget')
+let squadsWidget = document.getElementById('squads-widget')
 
 //functions
 /*SET UP DROPDOWN NAV*/
@@ -456,8 +457,8 @@ document.onready = ()=>{
 			//team_link="afl-teams.html" 
 		};
 
-		if(!!matchSummary){
-			matchSummary.innerHTML = (`
+		if(!!matchWidget){
+			matchWidget.innerHTML = (`
 				<opta-widget 
 				widget="match_summary" 
 				template="normal" 
@@ -552,7 +553,7 @@ document.onready = ()=>{
 				sport="basketball"
 				></opta-widget>
 			`);
-			// matchSummary.innerHTML = (``);
+			// matchWidget.innerHTML = (``);
 		};
 
 		if(!!standingsWidget){
@@ -628,8 +629,8 @@ document.onready = ()=>{
 			fixturesWidget.innerHTML = (``);
 		};
 
-		if(!!matchSummary){
-			matchSummary.innerHTML = (``);
+		if(!!matchWidget){
+			matchWidget.innerHTML = (``);
 		};
 
 		if(!!standingsWidget){
@@ -646,8 +647,8 @@ document.onready = ()=>{
 			fixturesWidget.innerHTML = (``);
 		};
 
-		if(!!matchSummary){
-			matchSummary.innerHTML = (``);
+		if(!!matchWidget){
+			matchWidget.innerHTML = (``);
 		};
 
 		if(!!standingsWidget){
@@ -664,8 +665,8 @@ document.onready = ()=>{
 			fixturesWidget.innerHTML = (``);
 		};
 
-		if(!!matchSummary){
-			matchSummary.innerHTML = (``);
+		if(!!matchWidget){
+			matchWidget.innerHTML = (``);
 		};
 
 		if(!!standingsWidget){
@@ -757,8 +758,8 @@ document.onready = ()=>{
 				// player_link="rugbyleague-players.html" 
 			};
 
-			if(!!matchSummary){
-				matchSummary.innerHTML = (``);
+			if(!!matchWidget){
+				matchWidget.innerHTML = (``);
 			};
 
 			if(!!standingsWidget){
@@ -798,7 +799,13 @@ document.onready = ()=>{
 		/*Rugby League*/
 
 		/*Rugby Union*/
-		case '3':
+		case '3'://International
+		case '205'://Super Rugby Pacific
+		case '209'://Six Nations
+		case '210'://Rugby World Cup
+		case '214'://The Rugby Championship
+		case '221'://British & Irish Lions
+		case '249'://Women's Rugby World Cup
 
 		if(document.location.href.indexOf('rugbyunion') >= 0){
 			console.log('rugbyunion')
@@ -829,9 +836,9 @@ document.onready = ()=>{
 					competition_naming="full" 
 					team_naming="full" 
 
-					team_link="" 
-					match_link="" 
-					pre_match="10" 
+					team_link="rugbyunion-squads.html" 
+					match_link="rugbyunion-match.html" 
+					pre_match="10080" 
 
 					show_live="true" 
 					show_logo="false" 
@@ -862,7 +869,7 @@ document.onready = ()=>{
 						show_subs="true" 
 						show_cards="all" 
 
-						team_link="" 
+						team_link="rugbyunion-squads.html" 
 						player_link="" 
 
 						team_naming="" 
@@ -874,18 +881,126 @@ document.onready = ()=>{
 						breakpoints="400"></opta-widget>
 					</opta-widget>
 				`);
-				//team_link="rugbyunion-teams.html" 
+				//team_link="rugbyunion-squads.html" 
 				//match_link="rugbyunion-match.html" 
 				//player_link="rugbyunion-players.html" 
 			};
 
-			if(!!matchSummary){
-				matchSummary.innerHTML = (``);
+			if(!!matchWidget){
+				matchWidget.innerHTML = (`
+					<opta-widget 
+					widget="match_preview" 
+					
+					competition="${query['competition']}" 
+					season="${query['season']}" 
+					match="${query['match']}" 
+					
+					template="normal" 
+					navigation="dropdown" 
+					default_nav="1" 
+					show_match_header="true" 
+					show_crests="true" 
+					show_competition_name="true" 
+					show_venue="true" 
+					show_date="true" 
+					date_format="dddd D MMMM YYYY" 
+					time_format="HH:mm" 
+					show_form="6" 
+					show_previous_meetings="6" 
+					show_tooltips="false" 
+					competition_naming="full" 
+					team_naming="full" 
+					team_link="rugbyunion-squads.html" 
+					show_logo="false" 
+					show_title="true" 
+					breakpoints="400, 700" sport="rugby"
+					></opta-widget>
+				`);
 			};
 
 			if(!!standingsWidget){
-				standingsWidget.innerHTML = (``);
+				standingsWidget.innerHTML = (`
+					<opta-widget 
+					widget="standings" 
+					
+					competition="${query['competition']}" 
+					season="${query['season']}" 
+					
+					template="normal" 
+					live="true" 
+					navigation="tabs" 
+					default_nav="1" 
+					show_key="true" 
+					show_crests="true" 
+					points_in_first_column="false" 
+					show_form="6" 
+					competition_naming="full" 
+					team_naming="full" 
+					
+					team_link="rugbyunion-squads.html" 
+					
+					date_format="dddd D MMMM YYYY" 
+					sorting="true" 
+					show_live="true" 
+					show_logo="false" 
+					show_title="true" 
+					breakpoints="400,700" 
+					sport="rugby"
+					></opta-widget>
+				`);
 			};
+
+			if(!!squadsWidget){
+				squadsWidget.innerHTML = (`
+					<opta-widget 
+					widget="squad" 
+					competition="205" 
+					season="2022" 
+					team="150" 
+					template="normal" 
+					column_count="1" 
+					show_position="true" 
+					show_images="true" 
+					show_wingers="true" 
+					show_full_backs="true" 
+					show_centres="true" 
+					show_fly_halves="true" 
+					show_scrum_halves="true" 
+					show_number_eights="true" 
+					show_flankers="true" 
+					show_locks="true" 
+					show_hookers="true" 
+					show_props="true" 
+					order_by="name" 
+					group_by_position="true" 
+					team_naming="full" 
+					player_naming="full" 
+					show_logo="false" 
+					show_title="true" 
+					breakpoints="400" 
+					sport="rugby">
+						<opta-widget 
+						sport="rugby" 
+						widget="player_profile" 
+						template="normal" 
+						competition="" 
+						season="" team="" 
+						player="" 
+						show_images="true" 
+						show_country="true" 
+						show_flags="true" 
+						show_date_of_birth="true" 
+						show_position="true" 
+						show_height="true" 
+						show_weight="true" 
+						show_place_of_birth="true" 
+						date_format="D MMMM YYYY" 
+						height_units="m" 
+						weight_units="kg" 
+						breakpoints="400"></opta-widget>
+					</opta-widget>
+				`)
+			}
 			break;
 		};
 		/*Rugby Union*/
@@ -893,7 +1008,7 @@ document.onready = ()=>{
 		/*Football*/
 		case '':
 		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML = (``);
+		matchWidget.innerHTML = (``);
 		standingsWidget.innerHTML = (``);
 		break;
 		/*Football*/
@@ -901,7 +1016,7 @@ document.onready = ()=>{
 		/*Tennis*/
 		case '':
 		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML = (``);
+		matchWidget.innerHTML = (``);
 		standingsWidget.innerHTML = (``);
 		break;
 		/*Tennis*/
