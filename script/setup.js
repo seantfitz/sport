@@ -275,9 +275,3 @@ document.onready = ()=>{
 		/*Tennis*/
 	}
 }
-
-var opta_settings = {
-	subscription_id: sub_id,
-	language: 'en_GB',
-	timezone: 'user',
-};
