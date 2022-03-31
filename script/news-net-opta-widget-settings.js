@@ -23,6 +23,8 @@ let matchWidget = document.getElementById('match-widget')
 let rostersWidget = document.getElementById('rosters-widget')
 let squadsWidget = document.getElementById('squads-widget')
 let startingFormationsWidget = document.getElementById('starting-formations-widget')
+let liveScoresWidget = document.getElementById('live-scores-widget')
+let scheduleWidget = document.getElementById('schedule-widget')
 
 //functions
 /*SET UP DROPDOWN NAV*/
@@ -1246,10 +1248,295 @@ document.onready = ()=>{
 		/*Football*/
 
 		/*Tennis*/
-		case '':
-		fixturesWidget.innerHTML = (``);
-		matchWidget.innerHTML = (``);
-		standingsWidget.innerHTML = (``);
+		case '7577'://33rd Palermo Ladies Open - Womens Singles/*WTA 250*/
+		case '7343'://ABN Amro World Tennis Tournament - Mens Singles/*ATP500*/
+		case '7506'://ATP Challenger 50 Oeiras II - Mens Singles/*ATP Challenger Tour*/
+		case '7315'://ATP Cup - Mens National_teams/*Team Tournament*/
+		case '7267'://Abierto Akron Zapopan - Womens Singles/*WTA 250*/
+		case '7467'://Abierto GNP Seguros - Mens Singles/*ATP Challenger Tour*/
+		case '7269'://Abierto GNP Seguros 2022 - Womens Singles/*WTA 250*/
+		case '7383'://Abierto Mexicano Telcel presentado por HSBC - Mens Singles/*ATP500*/
+		case '7668'://Abierto Tampico - Womens Singles/*WTA 125K Series*/
+		case '7556'://Abierto de Tenis Mifel - Mens Singles/*ATP250*/
+		case '7357'://Adelaide International 1 - Womens Singles/*WTA 500*/
+		case '7335'://Adelaide International 1 - Mens Singles/*ATP250*/
+		case '7313'://Adelaide International 2 - Mens Singles/*ATP250*/
+		case '7369'://Adelaide International 2 - Womens Singles/*WTA 250*/
+		case '7538'://Aguacalientes - Mens Singles/*ATP Challenger Tour*/
+		case '7666'://AnyTech365 Andalucia Open - Womens Singles/*WTA 125K Series*/
+		case '7483'://AnyTech365 Andalucia Open - Mens Singles/*ATP Challenger Tour*/
+		case '7345'://Argentina Open - Mens Singles/*ATP250*/
+		case '7471'://Arizona Tennis Classic - Mens Singles/*ATP Challenger Tour*/
+		case '7578'://Astana Open - Mens Singles/*ATP250*/
+		case '7244'://Australian Open - Mens Singles/*Grand Slam*/
+		case '7246'://Australian Open - Womens Singles/*Grand Slam*/
+		case '7245'://Australian Open - Mens Doubles/*Grand Slam*/
+		case '7247'://Australian Open - Womens Doubles/*Grand Slam*/
+		case '7248'://Australian Open - Mixed Doubles/*Grand Slam*/
+		case '7652'://BBVA Open Internacional De Valencia - Womens Singles/*WTA 125K Series*/
+		case '7660'://BCR Iasi Open - Womens Singles/*WTA 125K Series*/
+		case '7403'://BMW Open by American Express - Mens Singles/*ATP250*/
+		case '7387'://BNP Paribas Open - Mens Singles/*Masters*/
+		case '7388'://BNP Paribas Open - Mens Doubles/*Masters*/
+		case '7273'://BNP Paribas Open - Womens Singles/*WTA 1000*/
+		case '7585'://BNP Paribas Poland Open - Womens Singles/*WTA 250*/
+		case '7307'://Bad Homburg Open presented by Engel & Volkers - Womens Singles/*WTA 250*/
+		case '7399'://Barcelona Open Banc Sabadell - Mens Singles/*ATP500*/
+		case '7510'://Barletta - Mens Singles/*ATP Challenger Tour*/
+		case '7347'://Bendigo International - Mens Singles/*ATP Challenger Tour*/
+		case '7375'://Bengaluru Open 1 - Mens Singles/*ATP Challenger Tour*/
+		case '7443'://Bengaluru Open 2 - Mens Singles/*ATP Challenger Tour*/
+		case '7303'://Bett1 Open - Womens Singles/*WTA 500*/
+		case '7629'://Bordeaux - Mens Singles/*ATP Challenger Tour*/
+		case '7644'://Budapest Open 125 - Womens Singles/*WTA 125K Series*/
+		case '7540'://Buenos Aires 2 - Mens Singles/*ATP Challenger Tour*/
+		case '7672'://Buenos Aires Open - Womens Singles/*WTA 125K Series*/
+		case '7485'://Challenger Banca stato Città di Lugano - Mens Singles/*ATP Challenger Tour*/
+		case '7439'://Challenger Cherbourg - La Manche - Mens Singles/*ATP Challenger Tour*/
+		case '7469'://Challenger Santiago Chile - Mens Singles/*ATP Challenger Tour*/
+		case '7502'://Challenger de Salinas I - Mens Singles/*ATP Challenger Tour*/
+		case '7473'://Challenger del Biobio - Mens Singles/*ATP Challenger Tour*/
+		case '7603'://Championnats Banque Nationale de Granby - Womens Singles/*WTA 250*/
+		case '7583'://Chengdu Open - Mens Singles/*ATP250*/
+		case '7385'://Chile Dove Men+Care Open - Mens Singles/*ATP250*/
+		case '7598'://China Open - Mens Singles/*ATP500*/
+		case '7421'://Cinch Championships - Mens Singles/*ATP500*/
+		case '7361'://Circuito Dove Men Care - Mens Singles/*ATP Challenger Tour*/
+		case '7500'://Circuito Dove Men+Care Pereira - Mens Singles/*ATP Challenger Tour*/
+		case '7558'://Citi Open - Mens Singles/*ATP500*/
+		case '7451'://Citta' Di Forli' 1 - Mens Singles/*ATP Challenger Tour*/
+		case '7359'://Citta' Di Forli' 2 - Mens Singles/*ATP Challenger Tour*/
+		case '7365'://Citta' Di Forli' 3 - Mens Singles/*ATP Challenger Tour*/
+		case '7445'://Citta' Di Forli' 4 - Mens Singles/*ATP Challenger Tour*/
+		case '7459'://Citta' Di Forli' 5 - Mens Singles/*ATP Challenger Tour*/
+		case '7373'://Cleveland Open - Mens Singles/*ATP Challenger Tour*/
+		case '7279'://Copa Colsanitas presentado por Zurich - Womens Singles/*WTA 250*/
+		case '7695'://Coquimbo - Mens Singles/*ATP Challenger Tour*/
+		case '7337'://Cordoba Open - Mens Singles/*ATP250*/
+		case '7277'://Credit One Charleston Open - Womens Singles/*WTA 500*/
+		case '7349'://Dallas Open - Mens Singles/*ATP250*/
+		case '7353'://Delray Beach Open - Mens Singles/*ATP250*/
+		case '7433'://Dove Men+Care Challenger Bolivia - Mens Singles/*ATP Challenger Tour*/
+		case '7494'://Dove Men+Care Challenger Bolivia 2 - Mens Singles/*ATP Challenger Tour*/
+		case '7363'://Dove Men+Care Legion Sudamericana Concepcion - Mens Singles/*ATP Challenger Tour*/
+		case '7355'://Dove Men+Care Legion Sudamericana Tigre - Mens Singles/*ATP Challenger Tour*/
+		case '7670'://Dow Tennis Classic - Womens Singles/*WTA 125K Series*/
+		case '7389'://Dubai Duty Free Tennis Championships - Mens Singles/*ATP500*/
+		case '7263'://Dubai Duty Free Tennis Championships - Womens Singles/*WTA 500*/
+		case '7546'://EFG Swiss Open Gstaad - Mens Singles/*ATP250*/
+		case '7613'://Erste Bank Open - Mens Singles/*ATP500*/
+		case '7607'://European Open - Mens Singles/*ATP250*/
+		case '7520'://Falkensteiner Punta Skala - Zadar Open - Mens Singles/*ATP Challenger Tour*/
+		case '7393'://Fayez Sarofim & Co. U.S. Men's Clay Court Championship - Mens Singles/*ATP250*/
+		case '7481'://FlowBank Challenger Biel/Bienne - Mens Singles/*ATP Challenger Tour*/
+		case '7687'://Francavilla - Mens Singles/*ATP Challenger Tour*/
+		case '7295'://French Open - Womens Singles/*Grand Slam*/
+		case '7296'://French Open - Womens Doubles/*Grand Slam*/
+		case '7415'://French Open - Mens Singles/*Grand Slam*/
+		case '7416'://French Open - Mens Doubles/*Grand Slam*/
+		case '7432'://French Open - Mixed Doubles/*Grand Slam*/
+		case '7550'://Generali Open - Mens Singles/*ATP250*/
+		case '7411'://Gonet Geneva Open - Mens Singles/*ATP250*/
+		case '7488'://Gran Canaria Challenger 1 - Mens Singles/*ATP Challenger Tour*/
+		case '7658'://Grand Est Open 88 - Womens Singles/*WTA 125K Series*/
+		case '7291'://Grand Prix De Sar La Princesse Lalla Meryem - Womens Singles/*WTA 250*/
+		case '7395'://Grand Prix Hassan II - Mens Singles/*ATP250*/
+		case '7575'://Hamburg European Open - Womens Singles/*WTA 250*/
+		case '7548'://Hamburg European Open - Mens Singles/*ATP500*/
+		case '7631'://Heilbronn - Mens Singles/*ATP Challenger Tour*/
+		case '7573'://Hungarian Grand Prix - Womens Singles/*WTA 250*/
+		case '7542'://Infosys Hall of Fame Open - Mens Singles/*ATP250*/
+		case '7289'://Internationaux de Strasbourg - Womens Singles/*WTA 250*/
+		case '7409'://Internazionali BNL d'Italia - Mens Singles/*Masters*/
+		case '7410'://Internazionali BNL d'Italia - Mens Doubles/*Masters*/
+		case '7287'://Internazionali BNL d'Italia - Womens Singles/*WTA 1000*/
+		case '7618'://Intesa Sanpaolo Next Gen ATP Finals - Mens Singles/*Normal*/
+		case '7640'://L 'Open 35 de Saint-Malo - Womens Singles/*WTA 125K Series*/
+		case '7569'://Ladies Open Lausanne - Womens Singles/*WTA 250*/
+		case '7639'://Laver Cup - Mens National_teams/*Team Tournament*/
+		case '7417'://Libema Open - Mens Singles/*ATP250*/
+		case '7297'://Libema Open - Womens Singles/*WTA 250*/
+		case '7648'://Liqui Moly Open - Womens Singles/*WTA 125K Series*/
+		case '7699'://Little Rock Open - Mens Singles/*ATP Challenger Tour*/
+		case '7581'://Livesport Prague Open 2022 - Womens Singles/*WTA 250*/
+		case '7513'://Madrid - Mens Singles/*ATP Challenger Tour*/
+		case '7650'://Makarska Open - Womens Singles/*WTA 125K Series*/
+		case '7425'://Mallorca Championships - Mens Singles/*ATP250*/
+		case '7637'://Mauthausen - Mens Singles/*ATP Challenger Tour*/
+		case '7441'://Melbourne Summer Set - Mens Singles/*ATP250*/
+		case '7447'://Melbourne Summer Set 1 - Womens Singles/*WTA 250*/
+		case '7449'://Melbourne Summer Set 2 - Womens Singles/*WTA 250*/
+		case '7518'://Mexico City - Mens Singles/*ATP Challenger Tour*/
+		case '7275'://Miami Open presented by Itau - Womens Singles/*WTA 1000*/
+		case '7391'://Miami Open presented by Itau - Mens Singles/*Masters*/
+		case '7392'://Miami Open presented by Itau - Mens Doubles/*Masters*/
+		case '7405'://Millennium Estoril Open - Mens Singles/*ATP250*/
+		case '7674'://Montevideo Open - Womens Singles/*WTA 125K Series*/
+		case '7530'://Morelos Challenger - Mens Singles/*ATP Challenger Tour*/
+		case '7571'://Moselle Open - Mens Singles/*ATP250*/
+		case '7589'://Mubadala Silicon Valley Classic - Womens Singles/*WTA 500*/
+		case '7504'://Murcia Open - Mens Singles/*ATP Challenger Tour*/
+		case '7407'://Mutua Madrid Open - Mens Singles/*Masters*/
+		case '7408'://Mutua Madrid Open - Mens Doubles/*Masters*/
+		case '7285'://Mutua Madrid Open - Womens Singles/*WTA 1000*/
+		case '7593'://National Bank Open presented by Rogers - Womens Singles/*WTA 1000*/
+		case '7560'://National Bank Open presented by Rogers - Mens Singles/*Masters*/
+		case '7561'://National Bank Open presented by Rogers - Mens Doubles/*Masters*/
+		case '7619'://Nitto ATP Finals - Mens Singles/*World Championship*/
+		case '7620'://Nitto ATP Finals - Mens Doubles/*World Championship*/
+		case '7656'://Nordea Open - Womens Singles/*WTA 125K Series*/
+		case '7544'://Nordea Open - Mens Singles/*ATP250*/
+		case '7664'://Odlum Brown Vanopen - Womens Singles/*WTA 125K Series*/
+		case '7496'://Oeiras Challenger 1 - Mens Singles/*ATP Challenger Tour*/
+		case '7377'://Open 13 Provence - Mens Singles/*ATP250*/
+		case '7271'://Open 6ème Sens Métropole de Lyon - Womens Singles/*WTA 250*/
+		case '7676'://Open Angers Arena Loire - Womens Singles/*WTA 125K Series*/
+		case '7678'://Open BLS de Limoges - Womens Singles/*WTA 125K Series*/
+		case '7413'://Open Parc Auvergne-Rhone-Alpes Lyon - Mens Singles/*ATP250*/
+		case '7625'://Open Pays d'Aix CEPAC - Mens Singles/*ATP Challenger Tour*/
+		case '7370'://Open Quimper Bretagne Occidentale - Mens Singles/*ATP Challenger Tour*/
+		case '7498'://Open Saint-Brieuc Harmonie Mutuelle - Mens Singles/*ATP Challenger Tour*/
+		case '7339'://Open Sud de France - Mens Singles/*ATP250*/
+		case '7534'://Ostrava - Mens Singles/*ATP Challenger Tour*/
+		case '7552'://Plava Laguna Croatia Open Umag - Mens Singles/*ATP250*/
+		case '7477'://Play In Challenger - Mens Singles/*ATP Challenger Tour*/
+		case '7281'://Porsche Tennis Grand Prix - Womens Singles/*WTA 500*/
+		case '7627'://Prague 2 - Mens Singles/*ATP Challenger Tour*/
+		case '7526'://Prague I - Mens Singles/*ATP Challenger Tour*/
+		case '7680'://Puerto Vallarta Open - Womens Singles/*WTA 125K Series*/
+		case '7379'://Qatar ExxonMobil Open - Mens Singles/*ATP250*/
+		case '7265'://Qatar Total Energies Open - Womens Singles/*WTA 1000*/
+		case '7605'://Rakuten Japan Open Tennis Championships - Mens Singles/*ATP500*/
+		case '7492'://Regione Abruzzo Aterno Gas & Power Cup - Mens Singles/*ATP Challenger Tour*/
+		case '7381'://Rio Open presented by Claro - Mens Singles/*ATP500*/
+		case '7397'://Rolex Monte-Carlo Masters - Mens Singles/*Masters*/
+		case '7398'://Rolex Monte-Carlo Masters - Mens Doubles/*Masters*/
+		case '7318'://Rolex Paris Masters - Mens Singles/*Masters*/
+		case '7617'://Rolex Paris Masters - Mens Doubles/*Masters*/
+		case '7621'://Rolex Shanghai Masters - Mens Singles/*Masters*/
+		case '7622'://Rolex Shanghai Masters - Mens Doubles/*Masters*/
+		case '7536'://Rome 1 - Mens Singles/*ATP Challenger Tour*/
+		case '7490'://Roseto Degli Abruzzi 1 - Mens Singles/*ATP Challenger Tour*/
+		case '7301'://Rothesay Classic Birmingham - Womens Singles/*WTA 250*/
+		case '7427'://Rothesay International Eastbourne - Mens Singles/*ATP250*/
+		case '7305'://Rothesay International Eastbourne - Womens Singles/*WTA 500*/
+		case '7299'://Rothesay Open Nottingham - Womens Singles/*WTA 250*/
+		case '7693'://Salvador De Bahia - Mens Singles/*ATP Challenger Tour*/
+		case '7514'://San Luis Potosi - Mens Singles/*ATP Challenger Tour*/
+		case '7508'://Sanremo - Mens Singles/*ATP Challenger Tour*/
+		case '7516'://Sarasota - Mens Singles/*ATP Challenger Tour*/
+		case '7532'://Savannah Challenger - Mens Singles/*ATP Challenger Tour*/
+		case '7401'://Serbia Open - Mens Singles/*ATP250*/
+		case '7633'://Shymkent Challenger - Mens Singles/*ATP Challenger Tour*/
+		case '7683'://Shymkent Challenger II - Mens Singles/*ATP Challenger Tour*/
+		case '7587'://Sofia Open - Mens Singles/*ATP250*/
+		case '7623'://Split - Mens Singles/*ATP Challenger Tour*/
+		case '7261'://St. Petersburg Ladies Trophy - Womens Singles/*WTA 500*/
+		case '7609'://Stockholm Open - Mens Singles/*ATP250*/
+		case '7691'://Surbiton - Mens Singles/*ATP Challenger Tour*/
+		case '7615'://Swiss Indoors Basel - Mens Singles/*ATP500*/
+		case '7455'://Sydney Tennis Classic - Mens Singles/*ATP250*/
+		case '7453'://Sydney Tennis Classic - Womens Singles/*WTA 500*/
+		case '7283'://TEB BNP Paribas Tennis Championship Istanbul - Womens Singles/*WTA 250*/
+		case '7524'://Tallahassee Tennis Challenger - Mens Singles/*ATP Challenger Tour*/
+		case '7341'://Tata Open Maharashtra - Mens Singles/*ATP250*/
+		case '7367'://Tennis Ohio Championships - Mens Singles/*ATP Challenger Tour*/
+		case '7597'://Tennis in the Land - Womens Singles/*WTA 250*/
+		case '7457'://Terega Open - Mens Singles/*ATP Challenger Tour*/
+		case '7423'://Terra Wortmann Open - Mens Singles/*ATP500*/
+		case '7662'://Thoreau Tennis Open 125 - Womens Singles/*WTA 125K Series*/
+		case '7351'://Traralgon International - Mens Singles/*ATP Challenger Tour*/
+		case '7697'://Troisdorf - Mens Singles/*ATP Challenger Tour*/
+		case '7646'://Trophee Lagardere - Womens Singles/*WTA 125K Series*/
+		case '7554'://Truist Atlanta Open presented by Fiserv - Mens Singles/*ATP250*/
+		case '7685'://Tunis Open - Mens Singles/*ATP Challenger Tour*/
+		case '7522'://Turin - Mens Singles/*ATP Challenger Tour*/
+		case '7566'://US Open - Mens Singles/*Grand Slam*/
+		case '7567'://US Open - Mens Doubles/*Grand Slam*/
+		case '7568'://US Open - Mixed Doubles/*Grand Slam*/
+		case '7601'://US Open - Womens Singles/*Grand Slam*/
+		case '7602'://US Open - Womens Doubles/*Grand Slam*/
+		case '7654'://Veneto Open Internazionali Confindustria Venezia E Rovigo - Womens Singles/*WTA 125K Series*/
+		case '7689'://Vicenza Challenger - Mens Singles/*ATP Challenger Tour*/
+		case '7419'://Weissenhof - Mens Singles/*ATP250*/
+		case '7595'://Western & Southern Open - Womens Singles/*WTA 1000*/
+		case '7562'://Western & Southern Open - Mens Singles/*Masters*/
+		case '7563'://Western & Southern Open - Mens Doubles/*Masters*/
+		case '7309'://Wimbledon - Womens Singles/*Grand Slam*/
+		case '7310'://Wimbledon - Womens Doubles/*Grand Slam*/
+		case '7429'://Wimbledon - Mens Singles/*Grand Slam*/
+		case '7430'://Wimbledon - Mens Doubles/*Grand Slam*/
+		case '7431'://Wimbledon - Mixed Doubles/*Grand Slam*/
+		case '7564'://Winston-Salem Open - Mens Singles/*ATP250*/
+		case '7635'://Zagreb Open - Mens Singles/*ATP Challenger Tour*/
+		case '7642'://Zavarovalnica Sava Portoroz - Womens Singles/*WTA 125K Series*/
+		case '7591'://Zhuhai Championships - Mens Singles/*ATP250*/
+
+		if(!!liveScoresWidget){
+			liveScoresWidget.innerHTML = (`
+				<opta-widget 
+				widget="live_scores" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
+				template="normal" 
+				live="true" 
+				match_status="all" 
+				grouping="round" 
+				show_grouping="true" 
+				limit="0" 
+				navigation="tabs_scroll" 
+				default_nav="1" 
+				start_on_current="true" 
+				sub_grouping="date" 
+				show_subgrouping="true" 
+				order_by="date_ascending" 
+				show_nationality="true" 
+				date_format="dddd D MMMM YYYY" 
+				competition_naming="full" 
+				player_naming="full" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="tennis"
+				></opta-widget>
+			`)
+		};
+		if(!!scheduleWidget){
+			scheduleWidget.innerHTML = (`
+				<opta-widget 
+				widget="schedule" 
+				template="normal" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
+				grouping="month" 
+				how_grouping="true" 
+				sub_grouping="date" 
+				show_subgrouping="true" 
+				type="all" 
+				navigation="dropdown" 
+				default_nav="1" 
+				start_on_current="true" 
+				order_by="date_ascending" 
+				show_date="true" 
+				date_format="D MMM" 
+				month_date_format="MMMM" 
+				show_surface="true" 
+				show_country="true" 
+				how_internationals="true" 
+				pre_match="false" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="tennis"
+				></opta-widget>
+			`)
+		};
+		
 		break;
 		/*Tennis*/
 	}
