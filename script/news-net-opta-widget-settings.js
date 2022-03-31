@@ -1160,7 +1160,7 @@ document.onready = ()=>{
 				show_competition_name="true" 
 				show_crests="true" 
 				show_pitch_crests="true" 
-				show_images="true" 
+				show_images="false" 
 				show_subs="true" 
 				side="both" 
 				player_naming="full" 
