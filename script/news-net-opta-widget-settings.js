@@ -543,7 +543,7 @@ document.onready = ()=>{
 			sport="basketball"
 			></opta-widget>
 		`);
-		// matchSummary.innerHTML=(``);
+		// matchSummary.innerHTML = (``);
 		standingsWidget.innerHTML = (`
 			<opta-widget 
 			widget="standings" 
@@ -608,24 +608,24 @@ document.onready = ()=>{
 		/*Cricket*/
 		case '':
 		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML=(``);
-		standingsWidget.innerHTML=(``);
+		matchSummary.innerHTML = (``);
+		standingsWidget.innerHTML = (``);
 		break;
 		/*Cricket*/
 
 		/*Golf*/
 		case '':
 		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML=(``);
-		standingsWidget.innerHTML=(``);
+		matchSummary.innerHTML = (``);
+		standingsWidget.innerHTML = (``);
 		break;
 		/*Golf*/
 
 		/*Motorsport*/
 		case '':
 		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML=(``);
-		standingsWidget.innerHTML=(``);
+		matchSummary.innerHTML = (``);
+		standingsWidget.innerHTML = (``);
 		break;
 		/*Motorsport*/
 
@@ -707,8 +707,8 @@ document.onready = ()=>{
 		`);
 		// team_link="rugbyleague-teams.html" 
 		// player_link="rugbyleague-players.html" 
-		matchSummary.innerHTML=(``);
-		standingsWidget.innerHTML=(`
+		matchSummary.innerHTML = (``);
+		standingsWidget.innerHTML = (`
 			<opta-widget 
 			widget="standings" 
 			
@@ -745,25 +745,97 @@ document.onready = ()=>{
 		/*Rugby Union*/
 		case '3':
 		alert('union')
-		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML=(``);
-		standingsWidget.innerHTML=(``);
+		fixturesWidget.innerHTML = (`
+			<opta-widget 
+			widget="fixtures" 
+			
+			competition="${query['competition']}" 
+			season="${query['season']}" 
+			
+			template="normal" 
+			live="true" 
+			show_venue="true" 
+			match_status="all" 
+			grouping="date" 
+			show_grouping="true" 
+			navigation="tabs_more" 
+			default_nav="1" 
+			start_on_current="true" 
+			sub_grouping="date" 
+			show_subgrouping="false" 
+			order_by="date_ascending" 
+			show_crests="true" 
+			date_format="dddd D MMMM YYYY" 
+			month_date_format="MMMM" 
+			competition_naming="full" 
+			team_naming="full" 
+
+			team_link="" 
+			match_link="" 
+			pre_match="10" 
+
+			show_live="true" 
+			show_logo="false" 
+			show_title="true" 
+			breakpoints="400" 
+			sport="rugby">
+				<opta-widget sport="rugby" 
+				widget="match_summary" 
+				template="normal" 
+				live="true" 
+				competition="" 
+				season="" 
+				match="" 
+				show_match_header="false" 
+				show_crests="true" 
+				show_cards="true" 
+				show_date="true" 
+				date_format="dddd D MMMM YYYY" 
+				show_competition_name="true" 
+				competition_naming="full" 
+				show_referee="true" 
+				show_venue="true" 
+				show_tooltips="true" 
+				show_tries="true" 
+				show_conversions="true" 
+				show_penalties="true" 
+				show_drop_goals="all" 
+				show_subs="true" 
+				show_cards="all" 
+
+				team_link="" 
+				player_link="" 
+
+				team_naming="" 
+				player_naming="last_name" 
+				show_live="true" 
+				show_logo="false" 
+				title="" 
+				show_title="true" 
+				breakpoints="400"></opta-widget>
+			</opta-widget>
+		`);
+		//team_link="rugbyunion-teams.html" 
+		//match_link="rugbyunion-match.html" 
+		//player_link="rugbyunion-players.html" 
+		matchSummary.innerHTML = (``);
+		standingsWidget.innerHTML = (``);
 		break;
 		/*Rugby Union*/
 
 		/*Football*/
 		case '':
 		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML=(``);
-		standingsWidget.innerHTML=(``);
+		matchSummary.innerHTML = (``);
+		standingsWidget.innerHTML = (``);
 		break;
 		/*Football*/
 
 		/*Tennis*/
 		case '':
 		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML=(``);
-		standingsWidget.innerHTML=(``);
+		matchSummary.innerHTML = (``);
+		standingsWidget.innerHTML = (``);
 		break;
 		/*Tennis*/
 	}
