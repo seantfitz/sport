@@ -843,7 +843,7 @@ document.onready = ()=>{
 
 					team_link="rugbyunion-squads.html" 
 					match_link="rugbyunion-match.html" 
-					pre_match="10080" 
+					pre_match="1440" 
 
 					show_live="true" 
 					show_logo="false" 
@@ -889,6 +889,7 @@ document.onready = ()=>{
 						breakpoints="400"></opta-widget>
 					</opta-widget>
 				`);
+				//pre_match="10080" 
 				//team_link="rugbyunion-squads.html" 
 				//match_link="rugbyunion-match.html" 
 				//player_link="rugbyunion-players.html" 
@@ -904,10 +905,10 @@ document.onready = ()=>{
 					match="${query['match']}" 
 					
 					template="normal" 
-					navigation="dropdown" 
+					navigation="tabs" 
 					default_nav="1" 
 					show_match_header="true" 
-					show_crests="true" 
+					show_crests="false" 
 					show_competition_name="true" 
 					show_venue="true" 
 					show_date="true" 
@@ -924,6 +925,7 @@ document.onready = ()=>{
 					breakpoints="400, 700" sport="rugby"
 					></opta-widget>
 				`);
+				//navigation="dropdown" 
 			};
 
 			if(!!standingsWidget){
