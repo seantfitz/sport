@@ -685,7 +685,7 @@ document.onready = ()=>{
 		case '87'://Women's State of Origin
 		
 		if(document.location.href.indexOf('rugbyleague') >= 0){
-			console.log('rugbyleague')
+
 			if(!!fixturesWidget){
 				fixturesWidget.innerHTML = (`
 					<opta-widget 
@@ -813,7 +813,6 @@ document.onready = ()=>{
 		case '249'://Women's Rugby World Cup
 
 		if(document.location.href.indexOf('rugbyunion') >= 0){
-			console.log('rugbyunion')
 
 			if(!!fixturesWidget){
 				fixturesWidget.innerHTML = (`
@@ -1089,7 +1088,7 @@ document.onready = ()=>{
 		/*Tennis*/
 	}
 }
-// console.log(sub_id)
+
 var opta_settings = {
 	subscription_id: 'b7b73f836f5975bc4752b7b54aced1da',
 	language: 'en_GB',
