@@ -417,215 +417,261 @@ document.onready = ()=>{
 		case '11686'://AFL
 		case '11595'://AFLW
 
-		fixturesWidget.innerHTML = (`
-			<opta-widget widget="fixtures" 
-			template="normal" 
-			competition="${query['competition']}" 
-			season="${query['season']}" 
-			show_venue="true" 
-			match_status="all" 
-			grouping="date" 
-			show_grouping="true" 
-			navigation="tabs_scroll" 
-			default_nav="1" 
-			show_date_picker="true" 
-			start_on_current="true" 
-			sub_grouping="date" 
-			show_subgrouping="false" 
-			order_by="date_ascending" 
-			away_team_first="false" 
-			show_crests="true" 
-			date_format="ll" 
-			time_format="HH:mm" 
-			month_date_format="MMMM"
+		if(!!fixturesWidget){
+			fixturesWidget.innerHTML = (`
+				<opta-widget widget="fixtures" 
+				template="normal" 
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				show_venue="true" 
+				match_status="all" 
+				grouping="date" 
+				show_grouping="true" 
+				navigation="tabs_scroll" 
+				default_nav="1" 
+				show_date_picker="true" 
+				start_on_current="true" 
+				sub_grouping="date" 
+				show_subgrouping="false" 
+				order_by="date_ascending" 
+				away_team_first="false" 
+				show_crests="true" 
+				date_format="ll" 
+				time_format="HH:mm" 
+				month_date_format="MMMM"
 
-			team_link="" 
-			match_link="afl-match-summary.html" 
-			pre_match="10" 
-				
-			show_logo="false" 
-			show_title="true" 
-			breakpoints="400" 
-			sport="afl" 
+				team_link="" 
+				match_link="afl-match-summary.html" 
+				pre_match="10" 
+					
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="afl" 
 
-			image_size="medium"
+				image_size="medium"
 
-			></opta-widget>
-		`);
-		//team_link="afl-teams.html" 
+				></opta-widget>
+			`)
+			//team_link="afl-teams.html" 
+		};
 
-		matchSummary.innerHTML = (`
-			<opta-widget 
-			widget="match_summary" 
-			template="normal" 
-			competition="${query['competition']}" 
-			season="${query['season']}" 
-			match="${query['match']}" 
-			live="true" 
-			show_match_header="true" 
-			show_score="true" 
-			show_quarters="true" 
-			show_scorers="true" 
-			show_crests="true" 
-			show_date="true" 
-			date_format="dddd D MMMM YYYY" 
-			show_competition_name="true" 
-			show_venue="true" 
-			competition_naming="full" 
-			team_naming="full" 
-			player_naming="full" 
+		if(!!matchSummary){
+			matchSummary.innerHTML = (`
+				<opta-widget 
+				widget="match_summary" 
+				template="normal" 
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				match="${query['match']}" 
+				live="true" 
+				show_match_header="true" 
+				show_score="true" 
+				show_quarters="true" 
+				show_scorers="true" 
+				show_crests="true" 
+				show_date="true" 
+				date_format="dddd D MMMM YYYY" 
+				show_competition_name="true" 
+				show_venue="true" 
+				competition_naming="full" 
+				team_naming="full" 
+				player_naming="full" 
 
-			team_link="" 
-			player_link="" 
+				team_link="" 
+				player_link="" 
 
-			show_title="true" 
-			show_logo="false" 
-			show_live="true" 
-			breakpoints="400, 700" 
-			sport="afl"
-			></opta-widget>
-		`);
-		// team_link="afl-teams.html" 
-		// player_link="afl-players.html" 
+				show_title="true" 
+				show_logo="false" 
+				show_live="true" 
+				breakpoints="400, 700" 
+				sport="afl"
+				></opta-widget>
+			`)
+			// team_link="afl-teams.html" 
+			// player_link="afl-players.html" 
+		};
 
-		standingsWidget.innerHTML = (`
-			<opta-widget 
-			widget="standings" 
-			template="normal" 
-			competition="${query['competition']}" 
-			season="${query['season']}" 
-			show_rank="true" 
-			show_key="true" 
-			sorting="true" 
-			show_logo="false" 
-			show_title="true" 
-			breakpoints="460" 
-			sport="afl"
-			></opta-widget>
-		`);
+		if(!!standingsWidget){
+			standingsWidget.innerHTML = (`
+				<opta-widget 
+				widget="standings" 
+				template="normal" 
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				show_rank="true" 
+				show_key="true" 
+				sorting="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="460" 
+				sport="afl"
+				></opta-widget>
+			`)
+		};
+
 		break;
 		/*AFL*/
 
 		/*Basketball (NBL)*/
 		case '5wdi9kmiurd2rjx2f7ew92wm6'://NBL
-		fixturesWidget.innerHTML = (`
-			<opta-widget 
-			widget="scoreboard" 
-			
-			competition="${query['competition']}" 
-			season="${query['season']}" 
-			
-			template="normal" 
-			live="true" 
-			show_venue="true" 
-			grouping="date" 
-			show_grouping="true" 
-			show_date_picker="true" 
-			navigation="tabs_scroll" 
-			default_nav="1" 
-			start_on_current="true" 
-			order_by="date_ascending" 
-			away_team_first="false" 
-			show_crests="true" 
-			date_format="dddd D MMMM YYYY" 
-			time_format="HH:mm" 
-			month_date_format="MMMM" 
-			competition_naming="full" 
-			team_naming="full" 
-			team_link="basketball-rosters.html" 
-			
-			pre_match="10" 
-			
-			show_live="true" 
-			show_logo="false" 
-			show_title="true" 
-			breakpoints="400" 
-			sport="basketball"
-			></opta-widget>
-		`);
-		// matchSummary.innerHTML = (``);
-		standingsWidget.innerHTML = (`
-			<opta-widget 
-			widget="standings" 
-			
-			competition="${query['competition']}" 
-			season="${query['season']}" 
-			
-			template="normal" 
-			navigation="tabs" 
-			default_nav="1" 
-			show_categories="all" 
-			show_rank="true" 
-			show_key="true" 
-			show_crests="true" 
-			sorting="true" 
-			team_naming="full" 
-			team_link="basketball-rosters.html" 
-			show_logo="false" 
-			show_title="true" 
-			breakpoints="460" 
-			sport="basketball"></opta-widget>
-		`);
 
-		rostersWidget.innerHTML = (`
-			<opta-widget 
-			widget="rosters" 
+		if(!!fixturesWidget){
+			fixturesWidget.innerHTML = (`
+				<opta-widget 
+				widget="scoreboard" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
+				template="normal" 
+				live="true" 
+				show_venue="true" 
+				grouping="date" 
+				show_grouping="true" 
+				show_date_picker="true" 
+				navigation="tabs_scroll" 
+				default_nav="1" 
+				start_on_current="true" 
+				order_by="date_ascending" 
+				away_team_first="false" 
+				show_crests="true" 
+				date_format="dddd D MMMM YYYY" 
+				time_format="HH:mm" 
+				month_date_format="MMMM" 
+				competition_naming="full" 
+				team_naming="full" 
+				team_link="basketball-rosters.html" 
+				
+				pre_match="10" 
+				
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="basketball"
+				></opta-widget>
+			`);
+			// matchSummary.innerHTML = (``);
+		};
 
-			competition="${query['competition']}" 
-			season="${query['season']}" 
-			team="${query['team']}" 
+		if(!!standingsWidget){
+			standingsWidget.innerHTML = (`
+				<opta-widget 
+				widget="standings" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
+				template="normal" 
+				navigation="tabs" 
+				default_nav="1" 
+				show_categories="all" 
+				show_rank="true" 
+				show_key="true" 
+				show_crests="true" 
+				sorting="true" 
+				team_naming="full" 
+				team_link="basketball-rosters.html" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="460" 
+				sport="basketball"></opta-widget>
+			`);
+		};
 
-			template="normal" 
-			column_count="1" 
-			show_position="true" 
-			show_images="false" 
-			show_country="true" 
-			show_flags="true" 
-			show_key="true" 
-			show_forwards="true" 
-			show_guards="true" 
-			show_centres="true" 
-			show_jersey_number="true" 
-			show_height="true" 
-			show_weight="true" 
-			height_units="m" 
-			weight_units="kg" 
-			show_college="true" 
-			show_birthplace="true" 
-			order_by="jersey" 
-			group_by_position="true" 
-			team_naming="full" 
-			player_naming="full" 
-			show_logo="false" 
-			show_title="true" 
-			breakpoints="400" 
-			sport="basketball"
-			></opta-widget>
-		`)
+		if(!!rostersWidget){
+			rostersWidget.innerHTML = (`
+				<opta-widget 
+				widget="rosters" 
+
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				team="${query['team']}" 
+
+				template="normal" 
+				column_count="1" 
+				show_position="true" 
+				show_images="false" 
+				show_country="true" 
+				show_flags="true" 
+				show_key="true" 
+				show_forwards="true" 
+				show_guards="true" 
+				show_centres="true" 
+				show_jersey_number="true" 
+				show_height="true" 
+				show_weight="true" 
+				height_units="m" 
+				weight_units="kg" 
+				show_college="true" 
+				show_birthplace="true" 
+				order_by="jersey" 
+				group_by_position="true" 
+				team_naming="full" 
+				player_naming="full" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="basketball"
+				></opta-widget>
+			`)
+		};
+
 		break;
 		/*Basketball (NBL)*/
 		
 		/*Cricket*/
 		case '':
-		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML = (``);
-		standingsWidget.innerHTML = (``);
+		
+		if(!!fixturesWidget){
+			fixturesWidget.innerHTML = (``);
+		};
+
+		if(!!matchSummary){
+			matchSummary.innerHTML = (``);
+		};
+
+		if(!!standingsWidget){
+			standingsWidget.innerHTML = (``);
+		};
+
 		break;
 		/*Cricket*/
 
 		/*Golf*/
 		case '':
-		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML = (``);
-		standingsWidget.innerHTML = (``);
+		
+		if(!!fixturesWidget){
+			fixturesWidget.innerHTML = (``);
+		};
+
+		if(!!matchSummary){
+			matchSummary.innerHTML = (``);
+		};
+
+		if(!!standingsWidget){
+			standingsWidget.innerHTML = (``);
+		};
+
 		break;
 		/*Golf*/
 
 		/*Motorsport*/
+		
 		case '':
-		fixturesWidget.innerHTML = (``);
-		matchSummary.innerHTML = (``);
-		standingsWidget.innerHTML = (``);
+		if(!!fixturesWidget){
+			fixturesWidget.innerHTML = (``);
+		};
+
+		if(!!matchSummary){
+			matchSummary.innerHTML = (``);
+		};
+
+		if(!!standingsWidget){
+			standingsWidget.innerHTML = (``);
+		};
+
 		break;
 		/*Motorsport*/
 
@@ -634,193 +680,214 @@ document.onready = ()=>{
 		case '6'://State of Origin
 		case '86'://NRL Women's Premiership
 		case '87'://Women's State of Origin
-	if(document.location.href.indexOf('rugbyleague') >= 0){
-		console.log('rugbyleague')
-		fixturesWidget.innerHTML = (`
-			<opta-widget 
-			widget="fixtures" 
-			
-			competition="${query['competition']}" 
-			season="${query['season']}" 
-			
-			template="normal" 
-			live="true" 
-			show_venue="true" 
-			match_status="all" 
-			grouping="date" 
-			show_grouping="true" 
-			navigation="tabs_more" 
-			default_nav="1" 
-			start_on_current="true" 
-			sub_grouping="date" 
-			show_subgrouping="false" 
-			order_by="date_ascending" 
-			show_crests="true" 
-			date_format="dddd D MMMM YYYY" 
-			month_date_format="MMMM" 
-			competition_naming="full" 
-			team_naming="full" 
-			
-			team_link="" 
-			
-			pre_match="false" 
-			show_live="true" 
-			show_logo="false" 
-			show_title="true" 
-			breakpoints="400" 
-			sport="rugbyleague">
-				<opta-widget sport="rugbyleague" 
-				widget="match_summary" 
-				template="normal" 
-				live="true" 
-				competition="" 
-				season="" 
-				match="" 
-				show_match_header="true" 
-				show_crests="true" 
-				show_cards="true" 
-				show_date="true" 
-				date_format="dddd D MMMM YYYY" 
-				show_competition_name="true" 
-				competition_naming="full" 
-				show_referee="true" 
-				show_venue="true" 
-				show_tooltips="true" 
-				show_tries="true" 
-				show_conversions="true" 
-				show_penalties="true" 
-				show_drop_goals="all" 
-				show_subs="true" 
-				show_cards="all" 
-				team_link="" 
-				
-				player_link="" 
-				
-				team_naming="" 
-				player_naming="last_name" 
-				show_live="true" 
-				show_logo="false" 
-				title="" 
-				show_title="true" 
-				breakpoints="400"></opta-widget>
-			</opta-widget>
-		`);
-		// team_link="rugbyleague-teams.html" 
-		// player_link="rugbyleague-players.html" 
-		matchSummary.innerHTML = (``);
-		standingsWidget.innerHTML = (`
-			<opta-widget 
-			widget="standings" 
-			
-			competition="${query['competition']}" 
-			season="${query['season']}" 
-			
-			template="normal" 
-			live="true" 
-			navigation="tabs" 
-			default_nav="1" 
-			show_key="true" 
-			show_crests="true" 
-			points_in_first_column="false" 
-			show_form="6" 
-			competition_naming="full" 
-			team_naming="full" 
-			
-			team_link="" 
+		
+		if(document.location.href.indexOf('rugbyleague') >= 0){
+			console.log('rugbyleague')
+			if(!!fixturesWidget){
+				fixturesWidget.innerHTML = (`
+					<opta-widget 
+					widget="fixtures" 
+					
+					competition="${query['competition']}" 
+					season="${query['season']}" 
+					
+					template="normal" 
+					live="true" 
+					show_venue="true" 
+					match_status="all" 
+					grouping="date" 
+					show_grouping="true" 
+					navigation="tabs_more" 
+					default_nav="1" 
+					start_on_current="true" 
+					sub_grouping="date" 
+					show_subgrouping="false" 
+					order_by="date_ascending" 
+					show_crests="true" 
+					date_format="dddd D MMMM YYYY" 
+					month_date_format="MMMM" 
+					competition_naming="full" 
+					team_naming="full" 
+					
+					team_link="" 
+					
+					pre_match="false" 
+					show_live="true" 
+					show_logo="false" 
+					show_title="true" 
+					breakpoints="400" 
+					sport="rugbyleague">
+						<opta-widget sport="rugbyleague" 
+						widget="match_summary" 
+						template="normal" 
+						live="true" 
+						competition="" 
+						season="" 
+						match="" 
+						show_match_header="true" 
+						show_crests="true" 
+						show_cards="true" 
+						show_date="true" 
+						date_format="dddd D MMMM YYYY" 
+						show_competition_name="true" 
+						competition_naming="full" 
+						show_referee="true" 
+						show_venue="true" 
+						show_tooltips="true" 
+						show_tries="true" 
+						show_conversions="true" 
+						show_penalties="true" 
+						show_drop_goals="all" 
+						show_subs="true" 
+						show_cards="all" 
+						team_link="" 
+						
+						player_link="" 
+						
+						team_naming="" 
+						player_naming="last_name" 
+						show_live="true" 
+						show_logo="false" 
+						title="" 
+						show_title="true" 
+						breakpoints="400"></opta-widget>
+					</opta-widget>
+				`);
+				// team_link="rugbyleague-teams.html" 
+				// player_link="rugbyleague-players.html" 
+			};
 
-			date_format="dddd D MMMM YYYY" 
-			sorting="true" 
-			show_live="true" 
-			show_logo="false" 
-			show_title="true" 
-			breakpoints="400,700" 
-			sport="rugbyleague"
-			></opta-widget>
-		`);
-		// team_link="rugbyleague-teams.html" 
-		break;
-	}
+			if(!!matchSummary){
+				matchSummary.innerHTML = (``);
+			};
+
+			if(!!standingsWidget){
+				standingsWidget.innerHTML = (`
+					<opta-widget 
+					widget="standings" 
+					
+					competition="${query['competition']}" 
+					season="${query['season']}" 
+					
+					template="normal" 
+					live="true" 
+					navigation="tabs" 
+					default_nav="1" 
+					show_key="true" 
+					show_crests="true" 
+					points_in_first_column="false" 
+					show_form="6" 
+					competition_naming="full" 
+					team_naming="full" 
+					
+					team_link="" 
+
+					date_format="dddd D MMMM YYYY" 
+					sorting="true" 
+					show_live="true" 
+					show_logo="false" 
+					show_title="true" 
+					breakpoints="400,700" 
+					sport="rugbyleague"
+					></opta-widget>
+				`);
+				// team_link="rugbyleague-teams.html" 
+			};
+			break;
+		}
 		/*Rugby League*/
 
 		/*Rugby Union*/
 		case '3':
-		alert('union')
-		fixturesWidget.innerHTML = (`
-			<opta-widget 
-			widget="fixtures" 
-			
-			competition="${query['competition']}" 
-			season="${query['season']}" 
-			
-			template="normal" 
-			live="true" 
-			show_venue="true" 
-			match_status="all" 
-			grouping="date" 
-			show_grouping="true" 
-			navigation="tabs_more" 
-			default_nav="1" 
-			start_on_current="true" 
-			sub_grouping="date" 
-			show_subgrouping="false" 
-			order_by="date_ascending" 
-			show_crests="true" 
-			date_format="dddd D MMMM YYYY" 
-			month_date_format="MMMM" 
-			competition_naming="full" 
-			team_naming="full" 
 
-			team_link="" 
-			match_link="" 
-			pre_match="10" 
+		if(document.location.href.indexOf('rugbyunion') >= 0){
+			console.log('rugbyunion')
 
-			show_live="true" 
-			show_logo="false" 
-			show_title="true" 
-			breakpoints="400" 
-			sport="rugby">
-				<opta-widget sport="rugby" 
-				widget="match_summary" 
-				template="normal" 
-				live="true" 
-				competition="" 
-				season="" 
-				match="" 
-				show_match_header="false" 
-				show_crests="true" 
-				show_cards="true" 
-				show_date="true" 
-				date_format="dddd D MMMM YYYY" 
-				show_competition_name="true" 
-				competition_naming="full" 
-				show_referee="true" 
-				show_venue="true" 
-				show_tooltips="true" 
-				show_tries="true" 
-				show_conversions="true" 
-				show_penalties="true" 
-				show_drop_goals="all" 
-				show_subs="true" 
-				show_cards="all" 
+			if(!!fixturesWidget){
+				fixturesWidget.innerHTML = (`
+					<opta-widget 
+					widget="fixtures" 
+					
+					competition="${query['competition']}" 
+					season="${query['season']}" 
+					
+					template="normal" 
+					live="true" 
+					show_venue="true" 
+					match_status="all" 
+					grouping="date" 
+					show_grouping="true" 
+					navigation="tabs_more" 
+					default_nav="1" 
+					start_on_current="true" 
+					sub_grouping="date" 
+					show_subgrouping="false" 
+					order_by="date_ascending" 
+					show_crests="true" 
+					date_format="dddd D MMMM YYYY" 
+					month_date_format="MMMM" 
+					competition_naming="full" 
+					team_naming="full" 
 
-				team_link="" 
-				player_link="" 
+					team_link="" 
+					match_link="" 
+					pre_match="10" 
 
-				team_naming="" 
-				player_naming="last_name" 
-				show_live="true" 
-				show_logo="false" 
-				title="" 
-				show_title="true" 
-				breakpoints="400"></opta-widget>
-			</opta-widget>
-		`);
-		//team_link="rugbyunion-teams.html" 
-		//match_link="rugbyunion-match.html" 
-		//player_link="rugbyunion-players.html" 
-		matchSummary.innerHTML = (``);
-		standingsWidget.innerHTML = (``);
-		break;
+					show_live="true" 
+					show_logo="false" 
+					show_title="true" 
+					breakpoints="400" 
+					sport="rugby">
+						<opta-widget sport="rugby" 
+						widget="match_summary" 
+						template="normal" 
+						live="true" 
+						competition="" 
+						season="" 
+						match="" 
+						show_match_header="false" 
+						show_crests="true" 
+						show_cards="true" 
+						show_date="true" 
+						date_format="dddd D MMMM YYYY" 
+						show_competition_name="true" 
+						competition_naming="full" 
+						show_referee="true" 
+						show_venue="true" 
+						show_tooltips="true" 
+						show_tries="true" 
+						show_conversions="true" 
+						show_penalties="true" 
+						show_drop_goals="all" 
+						show_subs="true" 
+						show_cards="all" 
+
+						team_link="" 
+						player_link="" 
+
+						team_naming="" 
+						player_naming="last_name" 
+						show_live="true" 
+						show_logo="false" 
+						title="" 
+						show_title="true" 
+						breakpoints="400"></opta-widget>
+					</opta-widget>
+				`);
+				//team_link="rugbyunion-teams.html" 
+				//match_link="rugbyunion-match.html" 
+				//player_link="rugbyunion-players.html" 
+			};
+
+			if(!!matchSummary){
+				matchSummary.innerHTML = (``);
+			};
+
+			if(!!standingsWidget){
+				standingsWidget.innerHTML = (``);
+			};
+			break;
+		};
 		/*Rugby Union*/
 
 		/*Football*/
