@@ -717,6 +717,9 @@ document.onready = ()=>{
 					show_logo="false" 
 					show_title="true" 
 					breakpoints="400" 
+
+					image_size="large" 
+
 					sport="rugbyleague">
 						<opta-widget sport="rugbyleague" 
 						widget="match_summary" 
@@ -844,6 +847,9 @@ document.onready = ()=>{
 					show_logo="false" 
 					show_title="true" 
 					breakpoints="400" 
+
+					image_size="large" 
+
 					sport="rugby">
 						<opta-widget sport="rugby" 
 						widget="match_summary" 
@@ -960,7 +966,7 @@ document.onready = ()=>{
 					template="normal" 
 					column_count="1" 
 					show_position="true" 
-					show_images="true" 
+					show_images="false" 
 					show_wingers="true" 
 					show_full_backs="true" 
 					show_centres="true" 
@@ -1006,10 +1012,65 @@ document.onready = ()=>{
 		/*Rugby Union*/
 
 		/*Football*/
-		case '':
-		fixturesWidget.innerHTML = (``);
-		matchWidget.innerHTML = (``);
-		standingsWidget.innerHTML = (``);
+		
+		case '3'://	UEFA European Championship Finals	2020
+		case '4'://	World Cup	2022
+		case '5'://	Champions League	2021
+		case '6'://	UEFA Europa League	2021
+		case '8'://	English Premier League	2021
+		case '21'://	Italian Serie A	2021
+		case '22'://	German Bundesliga	2021
+		case '23'://	Spanish La Liga	2021
+		case '24'://	French Ligue 1	2021
+		case '88'://	Internationals	2022
+		case '214'://	Australian A-League Men	10001
+		case '341'://	Asian World Cup Qualifiers	1000022
+		case '378'://	Olympic Football Tournament	2021
+		case '379'://	AFC Asian Cup	2018
+		case '408'://	Women's World Cup	2022
+		case '551'://	Internationals Women	2022
+		case '578'://	Olympic Women's Tournament	2021
+		case '731'://	AFC Women's Asian Cup	2021
+		case '734'://	Olympic Women's Tournament Qualifying Asia	2019
+		case '1009'://	FFA Cup of Nations	2019
+		case '1125'://	UEFA Europa Conference League	2021
+		case '1136'://	Olympics Intercontinental Play-offs Women	2020
+
+		if(!!fixturesWidget){
+			fixturesWidget.innerHTML = (``);
+		};
+		if(!!matchWidget){
+			matchWidget.innerHTML = (``);
+		};
+		if(!!standingsWidget){
+			standingsWidget.innerHTML = (`
+				<opta-widget
+					widget="standings"
+					competition="${query['competition']}"
+					season="${query['season']}"
+					template="normal"
+					live="false"
+					default_nav="1"
+					side="combined"
+					data_detail="default"
+					show_key="false"
+					show_crests="true"
+					points_in_first_column="false"
+					lose_before_draw="false"
+					show_form="6"
+					competition_naming="full"
+					team_naming="full"
+					date_format="dddd D MMMM YYYY"
+					sorting="true"
+					show_live="true"
+					show_relegation_average="false"
+					show_logo="false"
+					show_title="true"
+					breakpoints="400,700"
+					sport="football"
+				></opta-widget>
+			`);
+		};
 		break;
 		/*Football*/
 
