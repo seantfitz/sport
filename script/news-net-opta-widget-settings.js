@@ -635,6 +635,7 @@ document.onready = ()=>{
 		case '86'://NRL Women's Premiership
 		case '87'://Women's State of Origin
 	if(document.location.href.indexOf('rugbyleague') >= 0){
+		console.log('rugbyleague')
 		fixturesWidget.innerHTML = (`
 			<opta-widget 
 			widget="fixtures" 
@@ -710,8 +711,10 @@ document.onready = ()=>{
 		standingsWidget.innerHTML=(`
 			<opta-widget 
 			widget="standings" 
-			competition="3" 
-			season="2022" 
+			
+			competition="${query['competition']}" 
+			season="${query['season']}" 
+			
 			template="normal" 
 			live="true" 
 			navigation="tabs" 
@@ -722,7 +725,9 @@ document.onready = ()=>{
 			show_form="6" 
 			competition_naming="full" 
 			team_naming="full" 
+			
 			team_link="" 
+
 			date_format="dddd D MMMM YYYY" 
 			sorting="true" 
 			show_live="true" 
