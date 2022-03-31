@@ -452,11 +452,11 @@ if(document.location.href.indexOf('football.html') >= 0){//check that this is th
 		case '1125'://	UEFA Europa Conference League	2021
 		case '1136'://	Olympics Intercontinental Play-offs Women	2020
 
-		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let fixturesWidget = document.getElementsById('fixtures-widget')
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 
-		fixturesTopLeft.innerHTML = (`
+		fixturesWidget.innerHTML = (`
 			<opta-widget 
 				widget="fixtures" 
 				competition="${query['competition']}"
@@ -554,11 +554,11 @@ if(document.location.href.indexOf('basketball.html') >= 0){
 	switch(query['competition']){
 		case '5wdi9kmiurd2rjx2f7ew92wm6'://NBL
 
-		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let fixturesWidget = document.getElementsById('fixtures-widget')
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 
-		fixturesTopLeft.innerHTML = (`
+		fixturesWidget.innerHTML = (`
 			<opta-widget widget="scoreboard" 
 			competition="${query['competition']}" 
 			season="${query['season']}" 
@@ -805,11 +805,11 @@ if(document.location.href.indexOf('tennis.html') >= 0){
 		case '7642'://Zavarovalnica Sava Portoroz - Womens Singles/*WTA 125K Series*/
 		case '7591'://Zhuhai Championships - Mens Singles/*ATP250*/
 
-		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let fixturesWidget = document.getElementsById('fixtures-widget')
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 		console.log(query['competition'])
-		fixturesTopLeft.innerHTML = (`
+		fixturesWidget.innerHTML = (`
 			* * * * *
 			<opta-widget widget="live_scores" 
 			competition="${query['competition']}" 
@@ -832,11 +832,11 @@ if(document.location.href.indexOf('golf.html') >= 0){
 	switch(query['competition']){
 		case '3c5msl8moic00eu49b06aumsp'://PGA Tour
 
-		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let fixturesWidget = document.getElementsById('fixtures-widget')
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 
-		fixturesTopLeft.innerHTML = (`
+		fixturesWidget.innerHTML = (`
 
 			<opta-widget widget="schedule" 
 			template="normal" 
@@ -906,18 +906,18 @@ if(document.location.href.indexOf('cricket.html') >= 0){
 		case '2960'://IPL 2022
 		case '2966'://Nepal v Papua New Guinea ODI Series 2022
 
-		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let fixturesWidget = document.getElementsById('fixtures-widget')
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 
-		fixturesTopLeft.innerHTML = (`
+		fixturesWidget.innerHTML = (`
 			<opta-widget widget="fixtures" fixtures_type="m" 
 			competition="${query['competition']}" 
 			season="${query['season']}" 
 			template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="none" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="true" show_competition_name="true" date_format="dddd D MMMM YYYY" month_date_format="MMMM" competition_naming="full" team_naming="full" team_link="teams" match_link="match" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="cricket"></opta-widget>
 		`)
 
-		// fixturesTopLeft.innerHTML = (`<opta-widget widget="fixtures" fixtures_type="m" competition="2722" season="0" template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_more" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="false" show_competition_name="true" date_format="dddd D MMMM YYYY" month_date_format="MMMM" competition_naming="full" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="cricket"></opta-widget>`)
+		// fixturesWidget.innerHTML = (`<opta-widget widget="fixtures" fixtures_type="m" competition="2722" season="0" template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_more" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="false" show_competition_name="true" date_format="dddd D MMMM YYYY" month_date_format="MMMM" competition_naming="full" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="cricket"></opta-widget>`)
 	}
 }
 /*CRICKET*/
@@ -929,18 +929,18 @@ if(document.location.href.indexOf('motorsport.html') >= 0){
 		case '2e554vbpw7g0ykhl0rziuabxl'://FIM MotoGP World Championship
 		case '2ecsbewwstw5jn9h7kpv2joix'://V8 Supercars
 
-		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let fixturesWidget = document.getElementsById('fixtures-widget')
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 
-		// fixturesTopLeft.innerHTML = (`
+		// fixturesWidget.innerHTML = (`
 		// 	<opta-widget widget="scoreboard" 
 		// 	competition="${query['competition']}" 
 		// 	season="${query['season']}" 
 		// 	template="normal" live="true" show_venue="true" grouping="date" show_grouping="true" show_date_picker="true" navigation="tabs_scroll" default_nav="1" start_on_current="true" order_by="date_ascending" away_team_first="false" show_crests="true" date_format="dddd D MMMM YYYY" time_format="HH:mm" month_date_format="MMMM" competition_naming="full" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="false" breakpoints="400" sport="basketball"></opta-widget>
 		// `)
 
-		fixturesTopLeft.innerHTML=(`
+		fixturesWidget.innerHTML=(`
 			<opta-widget widget="standings" 
 			competition="${query['competition']}" 
 			season="${query['season']}" 
@@ -962,10 +962,10 @@ if(document.location.href.indexOf('motorsport.html') >= 0){
 
 /*US Sports*/
 if(document.location.href.indexOf('mlb.html') >= 0){//baseball
-	let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+	let fixturesWidget = document.getElementsById('fixtures-widget')
 	let matchSummary = document.getElementById('match-centre-top-left')
 	let standingsWidget = document.getElementById('standings-widget')
-	fixturesTopLeft.innerHTML=(`
+	fixturesWidget.innerHTML=(`
 		<opta-widget widget="scoreboard" competition="n0amm59n1m59y0auuk93hexg" season="1jl9m4m9c863xko7es6a6ecr8" template="normal" live="true" show_venue="true" grouping="date" show_date_picker="true" navigation="tabs_scroll" default_nav="1" start_on_current="true" order_by="date_ascending" away_team_first="false" show_crests="false" show_date="true" date_format="dddd D MMMM YYYY" time_format="HH:mm" team_naming="full" pre_match="false" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="baseball"></opta-widget>
 	`)
 }
@@ -986,11 +986,11 @@ if(document.location.href.indexOf('rugbyunion.html') >= 0){
 		case '221'://British & Irish Lions
 		case '249'://Women's Rugby World Cup
 
-		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let fixturesWidget = document.getElementsById('fixtures-widget')
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 
-		fixturesTopLeft.innerHTML = (`
+		fixturesWidget.innerHTML = (`
 			<opta-widget widget="fixtures" 
 			competition="${query['competition']}" 
 			season="${query['season']}" 
@@ -1020,11 +1020,11 @@ if(document.location.href.indexOf('rugbyleague.html') >= 0){
 		case '86'://NRL Women's Premiership
 		case '87'://Women's State of Origin
 
-		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let fixturesWidget = document.getElementsById('fixtures-widget')
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 
-		fixturesTopLeft.innerHTML = (`
+		fixturesWidget.innerHTML = (`
 			<opta-widget widget="fixtures" 
 			competition="${query['competition']}" 
 			season="${query['season']}" 
@@ -1051,11 +1051,11 @@ if(document.location.href.indexOf('afl.html') >= 0){
 		case '11686'://AFL
 		case '11595'://AFLW
 
-		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
+		let fixturesWidget = document.getElementsById('fixtures-widget')
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
 
-		fixturesTopLeft.innerHTML = (`
+		fixturesWidget.innerHTML = (`
 			<opta-widget widget="fixtures" 
 			template="normal" 
 			competition="${query['competition']}" 
@@ -1114,6 +1114,7 @@ if(document.location.href.indexOf('afl.html') >= 0){
 if(document.location.href.indexOf('afl-match-summary.html') >= 0){
 	let matchSummary = document.getElementById('match-centre-top-left')
 	let standingsWidget = document.getElementById('standings-widget')
+	let fixturesWidget = document.getElementById('fixtures-widget')
 
 	matchSummary.innerHTML=(`
 		<opta-widget 
@@ -1136,9 +1137,6 @@ if(document.location.href.indexOf('afl-match-summary.html') >= 0){
 		team_naming="full" 
 		player_naming="full" 
 
-		team_link="afl-teams.html" 
-		player_link="afl-players.html" 
-
 		show_title="true" 
 		show_logo="false" 
 		show_live="true" 
@@ -1146,6 +1144,9 @@ if(document.location.href.indexOf('afl-match-summary.html') >= 0){
 		sport="afl"
 		></opta-widget>
 	`)
+	//team & pplayer links in gap above
+	// team_link="afl-teams.html" 
+	// player_link="afl-players.html" 
 
 	standingsWidget.innerHTML=(`
 		<opta-widget 
@@ -1162,6 +1163,44 @@ if(document.location.href.indexOf('afl-match-summary.html') >= 0){
 		sport="afl"
 		></opta-widget>
 	`)
+
+	fixturesWidget.innerHTML = (`
+		<opta-widget widget="fixtures" 
+		template="normal" 
+		competition="${query['competition']}" 
+		season="${query['season']}" 
+		show_venue="true" 
+		match_status="all" 
+		grouping="date" 
+		show_grouping="true" 
+		navigation="tabs_scroll" 
+		default_nav="1" 
+		show_date_picker="true" 
+		start_on_current="true" 
+		sub_grouping="date" 
+		show_subgrouping="false" 
+		order_by="date_ascending" 
+		away_team_first="false" 
+		show_crests="true" 
+		date_format="ll" 
+		time_format="HH:mm" 
+		month_date_format="MMMM"
+
+		match_link="afl-match-summary.html" 
+			
+		pre_match="10" 
+			
+		show_logo="false" 
+		show_title="true" 
+		breakpoints="400" 
+		sport="afl" 
+
+		image_size="medium"
+
+		></opta-widget>
+	`)
+	//team link above match link
+	//team_link="afl-teams.html" 
 }
 /*AFL*/
 
