@@ -963,9 +963,11 @@ document.onready = ()=>{
 				squadsWidget.innerHTML = (`
 					<opta-widget 
 					widget="squad" 
-					competition="205" 
-					season="2022" 
-					team="150" 
+					
+					competition="${query['competition']}" 
+					season="${query['season']}" 
+					team="${query['team']}" 
+					
 					template="normal" 
 					column_count="1" 
 					show_position="true" 
@@ -1041,18 +1043,114 @@ document.onready = ()=>{
 
 		if(!!fixturesWidget){
 			fixturesWidget.innerHTML = (`
-				<opta-widget widget="fixtures" competition="8" season="2021" template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_more" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="true" date_format="dddd D MMMM YYYY" time_format="HH:mm" month_date_format="MMMM" competition_naming="full" team_naming="full" team_link="football-teams.html" match_link="football-match.html" pre_match="10080" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="football" image_size="medium"><opta-widget sport="football" widget="match_summary" template="normal" live="" competition="" season="" match="" show_match_header="true" show_attendance="true" show_cards="true" show_crests="true" show_goals="true" show_goals_combined="false" show_penalties_missed="false" show_referee="true" show_subs="true" show_venue="true" show_shootouts="false" player_naming="last_name" player_link="" show_tooltips="true" show_logo="true" breakpoints="400"></opta-widget></opta-widget>
+				<opta-widget 
+				widget="fixtures" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
+				template="normal" 
+				live="true" 
+				show_venue="true" 
+				match_status="all" 
+				grouping="date" 
+				show_grouping="true" 
+				navigation="tabs_more" 
+				default_nav="1" 
+				start_on_current="true" 
+				sub_grouping="date" 
+				show_subgrouping="false" 
+				order_by="date_ascending" 
+				show_crests="true" 
+				date_format="dddd D MMMM YYYY" 
+				time_format="HH:mm" 
+				month_date_format="MMMM" 
+				competition_naming="full" 
+				team_naming="full" 
+				team_link="football-squads.html" 
+				match_link="football-match.html" 
+				pre_match="1440" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="football" 
+				image_size="medium">
+					<opta-widget 
+					sport="football" 
+					widget="match_summary" 
+					template="normal" 
+					live="true" 
+					competition="" 
+					season="" 
+					match="" 
+					show_match_header="true" 
+					show_attendance="true" 
+					show_cards="all" 
+					show_crests="true" 
+					show_goals="true" 
+					show_goals_combined="false" 
+					show_penalties_missed="false" 
+					show_referee="true" 
+					show_subs="true" 
+					show_venue="true" 
+					show_shootouts="false" 
+					player_naming="last_name" 
+					player_link="" 
+					show_tooltips="true" 
+					show_logo="false" 
+					breakpoints="400">
+					</opta-widget>
+				</opta-widget>
+			`);
+			//pre_match="10080" 
+		};
+		
+		if(!!matchWidget){
+			matchWidget.innerHTML = (`
+				<opta-widget 
+				widget="match_preview" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				match="${query['match']}" 
+				
+				template="normal" 
+				navigation="tabs_more" 
+				default_nav="2" 
+				show_match_header="true" 
+				show_crests="true" 
+				show_competition_name="true" 
+				show_venue="true" 
+				show_date="true" 
+				date_format="dddd D MMMM YYYY" 
+				time_format="HH:mm" 
+				show_form="6" 
+				show_fixtures="6" 
+				show_previous_meetings="6" 
+				show_top_scorers="6" 
+				show_tied_scorers="true" 
+				show_images="false" 
+				competition_naming="full" 
+				team_naming="full" 
+				player_naming="full" 
+				team_link="football-squads.html" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="460, 700" 
+				sport="football"
+				></opta-widget>
 			`);
 		};
-		if(!!matchWidget){
-			matchWidget.innerHTML = (``);
-		};
+		
 		if(!!standingsWidget){
 			standingsWidget.innerHTML = (`
 				<opta-widget
 					widget="standings"
+					
 					competition="${query['competition']}"
 					season="${query['season']}"
+					
 					template="normal"
 					live="false"
 					default_nav="1"
@@ -1076,6 +1174,44 @@ document.onready = ()=>{
 				></opta-widget>
 			`);
 		};
+
+		if(!!squadsWidget){
+			squadsWidget.innerHTML = (`
+				<opta-widget 
+				widget="squad" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				team="${query['team']}" 
+				
+				template="headshots" 
+				show_position="true" 
+				show_images="true" 
+				show_country="true" 
+				show_flags="true" 
+				squad_numbers_only="false" 
+				show_goalkeepers="true" 
+				show_defenders="true" 
+				show_midfielders="true" 
+				show_forwards="true" 
+				show_managers="true" 
+				show_transferred_players="false" 
+				height_units="m" 
+				weight_units="kg" 
+				order_by="jersey" 
+				group_by_position="true" 
+				player_names_on_reverse="true" 
+				show_reversed="false" 
+				team_naming="full" 
+				player_naming="full" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="football"
+				></opta-widget>
+			`)
+		}
+
 		break;
 		/*Football*/
 
