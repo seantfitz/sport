@@ -842,7 +842,7 @@ document.onready = ()=>{
 					team_naming="full" 
 
 					team_link="rugbyunion-squads.html" 
-					match_link="rugbyunion-match.html" 
+					match_link="" 
 					pre_match="1440" 
 
 					show_live="true" 
