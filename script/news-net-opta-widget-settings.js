@@ -550,7 +550,9 @@ document.onready = ()=>{
 				show_logo="false" 
 				show_title="true" 
 				breakpoints="400" 
-				sport="basketball"
+				sport="basketball" 
+
+				image_size="medium"
 				></opta-widget>
 			`);
 			// matchWidget.innerHTML = (``);
@@ -718,7 +720,7 @@ document.onready = ()=>{
 					show_title="true" 
 					breakpoints="400" 
 
-					image_size="large" 
+					image_size="medium" 
 
 					sport="rugbyleague">
 						<opta-widget sport="rugbyleague" 
@@ -848,7 +850,7 @@ document.onready = ()=>{
 					show_title="true" 
 					breakpoints="400" 
 
-					image_size="large" 
+					image_size="medium" 
 
 					sport="rugby">
 						<opta-widget sport="rugby" 
@@ -858,7 +860,7 @@ document.onready = ()=>{
 						competition="" 
 						season="" 
 						match="" 
-						show_match_header="false" 
+						show_match_header="true" 
 						show_crests="true" 
 						show_cards="true" 
 						show_date="true" 
@@ -1037,7 +1039,9 @@ document.onready = ()=>{
 		case '1136'://	Olympics Intercontinental Play-offs Women	2020
 
 		if(!!fixturesWidget){
-			fixturesWidget.innerHTML = (``);
+			fixturesWidget.innerHTML = (`
+				<opta-widget widget="fixtures" competition="8" season="2021" template="normal" live="true" show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_more" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" show_crests="true" date_format="dddd D MMMM YYYY" time_format="HH:mm" month_date_format="MMMM" competition_naming="full" team_naming="full" team_link="football-teams.html" match_link="football-match.html" pre_match="10080" show_live="true" show_logo="false" show_title="true" breakpoints="400" sport="football" image_size="medium"><opta-widget sport="football" widget="match_summary" template="normal" live="" competition="" season="" match="" show_match_header="true" show_attendance="true" show_cards="true" show_crests="true" show_goals="true" show_goals_combined="false" show_penalties_missed="false" show_referee="true" show_subs="true" show_venue="true" show_shootouts="false" player_naming="last_name" player_link="" show_tooltips="true" show_logo="true" breakpoints="400"></opta-widget></opta-widget>
+			`);
 		};
 		if(!!matchWidget){
 			matchWidget.innerHTML = (``);
