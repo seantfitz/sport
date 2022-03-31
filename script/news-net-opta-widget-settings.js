@@ -22,6 +22,7 @@ let standingsWidget = document.getElementById('standings-widget')
 let matchWidget = document.getElementById('match-widget')
 let rostersWidget = document.getElementById('rosters-widget')
 let squadsWidget = document.getElementById('squads-widget')
+let startingFormationsWidget = document.getElementById('starting-formations-widget')
 
 //functions
 /*SET UP DROPDOWN NAV*/
@@ -1141,6 +1142,35 @@ document.onready = ()=>{
 				sport="football"
 				></opta-widget>
 			`);
+		};
+
+		if(!!startingFormationsWidget){
+			startingFormationsWidget.innerHTML = (`
+				<opta-widget 
+				widget="starting_formations" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				match="${query['match']}" 
+				
+				template="normal" 
+				orientation="horizontal" 
+				show_match_header="true" 
+				show_team_sheets="false" 
+				show_competition_name="true" 
+				show_crests="true" 
+				show_pitch_crests="true" 
+				show_images="true" 
+				show_subs="true" 
+				side="both" 
+				player_naming="full" 
+				team_naming="full" 
+				show_logo="true" 
+				show_title="false" 
+				breakpoints="400, 700" 
+				sport="football"
+				></opta-widget>
+			`)
 		};
 		
 		if(!!standingsWidget){
