@@ -808,14 +808,16 @@ if(document.location.href.indexOf('tennis.html') >= 0){
 		let fixturesTopLeft = document.getElementsByClassName('fixtures-top-left')[0]
 		let matchSummary = document.getElementById('match-centre-top-left')
 		let standingsWidget = document.getElementById('standings-widget')
-console.log(query['competition'])
+		console.log(query['competition'])
 		fixturesTopLeft.innerHTML = (`
+			* * * * *
 			<opta-widget widget="live_scores" 
-			competition="${query['competition']}"
-			season="${query['season']}"
+			competition="${query['competition']}" 
+			season="${query['season']}" 
 			template="normal" live="true" match_status="all" grouping="round" show_grouping="true" limit="0" navigation="tabs_scroll" default_nav="1" start_on_current="true" sub_grouping="date" show_subgrouping="true" order_by="date_ascending" show_nationality="true" date_format="dddd D MMMM YYYY" competition_naming="full" player_naming="full" show_live="true" show_logo="false" show_title="true" breakpoints="400" 
 			sport="tennis"
 			></opta-widget>
+			* * * * *
 		`)
 
 		// standingsWidget.innerHTML=(``)
@@ -824,7 +826,7 @@ console.log(query['competition'])
 	}
 }
 /*TENNIS*/
-console.log('1637')
+console.log('1650')
 /*GOLF*/
 if(document.location.href.indexOf('golf.html') >= 0){
 	switch(query['competition']){
@@ -1058,17 +1060,50 @@ if(document.location.href.indexOf('afl.html') >= 0){
 			template="normal" 
 			competition="${query['competition']}" 
 			season="${query['season']}" 
-			show_venue="true" match_status="all" grouping="date" show_grouping="true" navigation="tabs_scroll" default_nav="1" show_date_picker="true" start_on_current="true" sub_grouping="date" show_subgrouping="false" order_by="date_ascending" away_team_first="false" show_crests="true" date_format="ll" time_format="HH:mm" month_date_format="MMMM" pre_match="false" show_logo="false" show_title="true" breakpoints="400" 
-			sport="afl"
+			show_venue="true" 
+			match_status="all" 
+			grouping="date" 
+			show_grouping="true" 
+			navigation="tabs_scroll" 
+			default_nav="1" 
+			show_date_picker="true" 
+			start_on_current="true" 
+			sub_grouping="date" 
+			show_subgrouping="false" 
+			order_by="date_ascending" 
+			away_team_first="false" 
+			show_crests="true" 
+			date_format="ll" 
+			time_format="HH:mm" 
+			month_date_format="MMMM"
+			
+			team_link="afl-teams" 
+			match_link="afl-match-summary" 
+			
+			pre_match="10" 
+			
+			show_logo="false" 
+			show_title="true" 
+			breakpoints="400" 
+			sport="afl" 
+
+			image_size="medium"
+
 			></opta-widget>
 		`)
 
 		standingsWidget.innerHTML=(`
-			<opta-widget widget="standings" 
+			<opta-widget 
+			widget="standings" 
 			template="normal" 
 			competition="${query['competition']}" 
 			season="${query['season']}" 
-			show_rank="true" show_key="true" sorting="true" show_logo="false" show_title="true" breakpoints="460" 
+			show_rank="true" 
+			show_key="true" 
+			sorting="true" 
+			show_logo="false" 
+			show_title="true" 
+			breakpoints="460" 
 			sport="afl"
 			></opta-widget>
 		`)
@@ -1076,11 +1111,65 @@ if(document.location.href.indexOf('afl.html') >= 0){
 		break;
 	}
 }
+if(document.location.href.indexOf('afl-match-summary.html') >= 0){
+	let matchSummary = document.getElementById('match-centre-top-left')
+	let standingsWidget = document.getElementById('standings-widget')
+
+	matchSummary.innerHTML=(`
+		<opta-widget 
+		widget="match_summary" 
+		template="normal" 
+		competition="${query['competition']}" 
+		season="${query['season']}" 
+		match="${query['match']}" 
+		live="true" 
+		show_match_header="true" 
+		show_score="true" 
+		show_quarters="true" 
+		show_scorers="true" 
+		show_crests="true" 
+		show_date="true" 
+		date_format="dddd D MMMM YYYY" 
+		show_competition_name="true" 
+		show_venue="true" 
+		competition_naming="full" 
+		team_naming="full" 
+		player_naming="full" 
+
+		team_link="afl-teams" 
+		player_link="afl-players" 
+
+		show_title="true" 
+		show_logo="false" 
+		show_live="true" 
+		breakpoints="400, 700" 
+		sport="afl"
+		></opta-widget>
+	`)
+
+	standingsWidget.innerHTML=(`
+		<opta-widget 
+		widget="standings" 
+		template="normal" 
+		competition="${query['competition']}" 
+		season="${query['season']}" 
+		show_rank="true" 
+		show_key="true" 
+		sorting="true" 
+		show_logo="false" 
+		show_title="true" 
+		breakpoints="460" 
+		sport="afl"
+		></opta-widget>
+	`)
+}
 /*AFL*/
 
 /*************************************************************************************************************************************************************/
 
 /*MATCH CENTRE STUFF*/
+
+
 if(document.location.href.indexOf('match.html') >= 0 || document.location.href.indexOf('test2.html') >= 0){//check that this is a match centre page
 
 	switch(query['competition']){
