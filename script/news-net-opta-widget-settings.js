@@ -439,8 +439,8 @@ document.onready = ()=>{
 			time_format="HH:mm" 
 			month_date_format="MMMM"
 
+			team_link="" 
 			match_link="afl-match-summary.html" 
-				
 			pre_match="10" 
 				
 			show_logo="false" 
@@ -452,7 +452,6 @@ document.onready = ()=>{
 
 			></opta-widget>
 		`);
-		//team link above match link
 		//team_link="afl-teams.html" 
 
 		matchSummary.innerHTML = (`
@@ -476,6 +475,9 @@ document.onready = ()=>{
 			team_naming="full" 
 			player_naming="full" 
 
+			team_link="" 
+			player_link="" 
+
 			show_title="true" 
 			show_logo="false" 
 			show_live="true" 
@@ -483,7 +485,6 @@ document.onready = ()=>{
 			sport="afl"
 			></opta-widget>
 		`);
-		//team & pplayer links in gap above
 		// team_link="afl-teams.html" 
 		// player_link="afl-players.html" 
 
@@ -633,6 +634,7 @@ document.onready = ()=>{
 		case '6'://State of Origin
 		case '86'://NRL Women's Premiership
 		case '87'://Women's State of Origin
+	if(document.location.href.indexOf('rugbyleague') >= 0){
 		fixturesWidget.innerHTML = (`
 			<opta-widget 
 			widget="fixtures" 
@@ -732,6 +734,7 @@ document.onready = ()=>{
 		`);
 		// team_link="rugbyleague-teams.html" 
 		break;
+	}
 		/*Rugby League*/
 
 		/*Rugby Union*/
