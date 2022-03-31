@@ -1343,28 +1343,29 @@ var opta_settings = {
 	timezone: 'user',
 
 	//http://widget.cloud.opta.net/helper/v3/docs/#!/manual/widget-customisation-linking
-	link_callback: function(params){
+	
+	// link_callback: function(params){
 
-		let link = window['doc_location']
-		link=''
-		console.log(link)
-		console.log(`${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`)
-		// Competitions
-		switch(params.competition){
-			//football (soccer)
-			case '8': //premier-league
-			case '214': //a-league-mens
-			case '684': //a-league-womens
-			link += `${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
-			break;
-		}
+	// 	let link = window['doc_location']
+	// 	link=''
+	// 	console.log(link)
+	// 	console.log(`${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`)
+	// 	// Competitions
+	// 	switch(params.competition){
+	// 		//football (soccer)
+	// 		case '8': //premier-league
+	// 		case '214': //a-league-mens
+	// 		case '684': //a-league-womens
+	// 		link += `${params['base_url']}.html?competition=${params['competition']}&season=${params['season']}&match=${params['match']}`
+	// 		break;
+	// 	}
 
-		if(document.location.host == 'localhost:8000' && query.i){
-			link += `&i=${sub_id}`
-		}
-		console.warn(link)
-		return link;
-	}
+	// 	if(document.location.host == 'localhost:8000' && query.i){
+	// 		link += `&i=${sub_id}`
+	// 	}
+	// 	console.warn(link)
+	// 	return link;
+	// }
 
 	// link_callback: function(params){
 
