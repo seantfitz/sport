@@ -1123,6 +1123,7 @@ document.onready = ()=>{
 		case '408'://	Women's World Cup	2022
 		case '551'://	Internationals Women	2022
 		case '578'://	Olympic Women's Tournament	2021
+		case '684'://	Australian A-League Women	2021
 		case '731'://	AFC Women's Asian Cup	2021
 		case '734'://	Olympic Women's Tournament Qualifying Asia	2019
 		case '1009'://	FFA Cup of Nations	2019
