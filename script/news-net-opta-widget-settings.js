@@ -25,6 +25,8 @@ let squadsWidget = document.getElementById('squads-widget')
 let startingFormationsWidget = document.getElementById('starting-formations-widget')
 let liveScoresWidget = document.getElementById('live-scores-widget')
 let scheduleWidget = document.getElementById('schedule-widget')
+let calendarWidget = document.getElementById('calendar-widget')
+let raceWidget = document.getElementById('race-widget')
 
 //functions
 /*SET UP DROPDOWN NAV*/
@@ -539,7 +541,7 @@ document.onready = ()=>{
 				start_on_current="true" 
 				order_by="date_ascending" 
 				away_team_first="false" 
-				show_crests="true" 
+				show_crests="false" 
 				date_format="dddd D MMMM YYYY" 
 				time_format="HH:mm" 
 				month_date_format="MMMM" 
@@ -575,7 +577,7 @@ document.onready = ()=>{
 				show_categories="all" 
 				show_rank="true" 
 				show_key="true" 
-				show_crests="true" 
+				show_crests="false" 
 				sorting="true" 
 				team_naming="full" 
 				team_link="basketball-rosters.html" 
@@ -664,18 +666,92 @@ document.onready = ()=>{
 		/*Golf*/
 
 		/*Motorsport*/
-		
-		case '':
-		if(!!fixturesWidget){
-			fixturesWidget.innerHTML = (``);
+		case '1m5x4n07f2kqkiczebja5etiq'://FIA F1 World Championship
+		case '2e554vbpw7g0ykhl0rziuabxl'://FIM MotoGP World Championship
+		case '2ecsbewwstw5jn9h7kpv2joix'://V8 Supercars
+	
+		if(!!calendarWidget){
+			calendarWidget.innerHTML = (`
+				<opta-widget 
+				widget="calendar" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
+				template="normal" 
+				show_details="true" 
+				order_by="date_ascending" 
+				date_format="dddd D MMMM YYYY" 
+				competition_naming="full" 
+				team_naming="full" 
+				player_naming="full" 
+				race_link="motorsport-race.html" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="motorsport"
+				></opta-widget>
+			`);
 		};
 
-		if(!!matchWidget){
-			matchWidget.innerHTML = (``);
+		if(!!raceWidget){
+			raceWidget.innerHTML = (`
+				<opta-widget 
+				widget="live_race" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				race="${query['race']}" 
+				
+				template="normal" 
+				live="true" 
+				show_live="true" 
+				show_flags="true" 
+				show_race_header="true" 
+				show_laps="true" 
+				show_competition_name="true" 
+				competition_naming="full" 
+				show_race_name="true" 
+				race_naming="full" 
+				navigation="tabs" 
+				default_nav="3" 
+				show_date="true" 
+				date_format="dddd D MMMM YYYY HH:mm" 
+				show_practices="true" 
+				show_qualifying="true" 
+				team_naming="full" 
+				player_naming="full" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400, 700" 
+				sport="motorsport"
+				></opta-widget>
+			`);
+			//navigation="dropdown" 
 		};
 
 		if(!!standingsWidget){
-			standingsWidget.innerHTML = (``);
+			standingsWidget.innerHTML = (`
+				<opta-widget 
+				widget="standings" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
+				template="normal" 
+				navigation="tabs" 
+				default_nav="1" 
+				show_drivers="true" 
+				show_constructors="true" 
+				show_wins="true" 
+				team_naming="full" 
+				driver_naming="full" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="460" 
+				sport="motorsport"
+				></opta-widget>
+			`);
 		};
 
 		break;
