@@ -667,9 +667,12 @@ document.onready = ()=>{
 
 		/*Motorsport*/
 		case '1m5x4n07f2kqkiczebja5etiq'://FIA F1 World Championship
+		let defaultNav = '3'
 		case '2e554vbpw7g0ykhl0rziuabxl'://FIM MotoGP World Championship
+		let defaultNav = '2'
 		case '2ecsbewwstw5jn9h7kpv2joix'://V8 Supercars
-	
+		let defaultNav = '2'
+
 		if(!!calendarWidget){
 			calendarWidget.innerHTML = (`
 				<opta-widget 
@@ -714,7 +717,9 @@ document.onready = ()=>{
 				show_race_name="true" 
 				race_naming="full" 
 				navigation="tabs" 
-				default_nav="3" 
+				
+				default_nav="${defaultNav}" 
+				
 				show_date="true" 
 				date_format="dddd D MMMM YYYY HH:mm" 
 				show_practices="true" 
