@@ -211,12 +211,3 @@
 }*/
 /*red underline on SCOREBOARD DROPDOWN nav - reference https://codepen.io/anon/pen/emNjGo*/
 
-/*motorsport flags*/
-#race-widget .banner__img img,
-#race-widget  .article-text img,
-#race-widget  .right-banner-wr .left img,
-#race-widget  .video-wr img{
-	width: auto;
-	height: 100%;
-}
-/*motorsport flags*/
