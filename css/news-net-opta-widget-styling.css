@@ -390,7 +390,7 @@
 	height: 100%!important;
 }*/
 
-#race-widget .Opta-Image-Flags{
+#race-widget .Opta-Image-Flags img{
 	max-width:unset;
 	width:unset;
 	height:unset;
