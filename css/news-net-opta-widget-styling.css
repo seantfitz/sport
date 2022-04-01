@@ -379,10 +379,18 @@
 
 
 /*motorsport flags*/
-#race-widget .banner__img img,
+/*#race-widget .banner__img img,
 #race-widget .article-text img,
 #race-widget .right-banner-wr .left img,
 #race-widget .video-wr img{
+	max-width:unset;
+	width:unset;
+	height:unset;
+	width: auto!important;
+	height: 100%!important;
+}*/
+
+#race-widget .Opta-Image-Flags{
 	max-width:unset;
 	width:unset;
 	height:unset;
