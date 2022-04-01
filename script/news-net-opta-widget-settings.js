@@ -667,10 +667,8 @@ document.onready = ()=>{
 
 		/*Motorsport*/
 		case '1m5x4n07f2kqkiczebja5etiq'://FIA F1 World Championship
-		let defaultNav = '3';
 		case '2e554vbpw7g0ykhl0rziuabxl'://FIM MotoGP World Championship
 		case '2ecsbewwstw5jn9h7kpv2joix'://V8 Supercars
-		defaultNav = '2';
 
 		if(!!calendarWidget){
 			calendarWidget.innerHTML = (`
@@ -697,6 +695,13 @@ document.onready = ()=>{
 		};
 
 		if(!!raceWidget){
+
+			let defaultNav = '3';
+
+			if(query['competition'] != '1m5x4n07f2kqkiczebja5etiq'){
+				defaultNav = '2';
+			}
+
 			raceWidget.innerHTML = (`
 				<opta-widget 
 				widget="live_race" 
