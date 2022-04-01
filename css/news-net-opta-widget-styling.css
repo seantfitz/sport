@@ -398,3 +398,9 @@
 	height: 100%!important;
 }
 /*motorsport flags*/
+
+/*motorsport*/
+.Opta_M_LR_N table.Opta-Striped tbody tr.Opta-highlight:first-child td{
+	background-color: #de2508;
+}
+/*motorsport*/
