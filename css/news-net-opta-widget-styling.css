@@ -380,10 +380,13 @@
 
 /*motorsport flags*/
 #race-widget .banner__img img,
-#race-widget  .article-text img,
-#race-widget  .right-banner-wr .left img,
-#race-widget  .video-wr img{
-	width: auto;
-	height: 100%;
+#race-widget .article-text img,
+#race-widget .right-banner-wr .left img,
+#race-widget .video-wr img{
+	max-width:unset;
+	width:unset;
+	height:unset;
+	width: auto!important;
+	height: 100%!important;
 }
 /*motorsport flags*/
