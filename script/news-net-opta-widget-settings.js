@@ -667,11 +667,10 @@ document.onready = ()=>{
 
 		/*Motorsport*/
 		case '1m5x4n07f2kqkiczebja5etiq'://FIA F1 World Championship
-		let defaultNav = '3'
+		let defaultNav = '3';
 		case '2e554vbpw7g0ykhl0rziuabxl'://FIM MotoGP World Championship
-		let defaultNav = '2'
 		case '2ecsbewwstw5jn9h7kpv2joix'://V8 Supercars
-		let defaultNav = '2'
+		defaultNav = '2';
 
 		if(!!calendarWidget){
 			calendarWidget.innerHTML = (`
