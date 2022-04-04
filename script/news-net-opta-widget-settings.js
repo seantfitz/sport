@@ -1620,11 +1620,13 @@ document.onready = ()=>{
 				season="${query['season']}" 
 				
 				grouping="month" 
-				how_grouping="true" 
+				show_grouping="true" 
 				sub_grouping="date" 
 				show_subgrouping="true" 
 				type="all" 
+				
 				navigation="dropdown" 
+				
 				default_nav="1" 
 				start_on_current="true" 
 				order_by="date_ascending" 
