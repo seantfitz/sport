@@ -114,6 +114,9 @@
 	color: #fff;
 	padding: 6px;
 	margin-top: -6px;
+
+	/*height: 41px;*/
+	border-radius: 5px;
 }
 
 .newsnet_sport_nav{
@@ -145,7 +148,8 @@
 	display: none;
 	position: absolute;
 	/*background-color: #f1f1f1;*/
-	background-color: #e6e6e6;
+	/*background-color: #e6e6e6;*/
+	background-color: #f3f3f3;
 	/*min-width: 160px;*/
 	white-space: nowrap;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -153,6 +157,8 @@
 
 	max-height: 50vh;
 	overflow-y: auto;
+
+	border-radius: 5px;
 }
 
 /* Links inside the dropdown */
@@ -161,6 +167,9 @@
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
+
+	border-bottom: solid 1px #e6e6e6;
+	border-radius: 5px;
 }
 
 /* Change color of dropdown links on hover */
