@@ -138,7 +138,8 @@
 }*/
 /*found inside .Opta-Cf*/
 .Opta .Opta-Dropdown > .Opta-Nav h3 {
-	background-color: #0d5f78;
+	/*background-color: #0d5f78;*/
+	background-color: #de2508;
 	color: #fff;
 }
 .Opta .Opta_W .Opta-Tooltip h3 {/*match summary tooltip header*/
@@ -352,14 +353,14 @@
 .Opta .Opta-Nav > ul.Opta-Overflowed {
     cursor: pointer;
 }
-.Opta .Opta-Nav > ul.Opta-Overflowed:after {
+/*.Opta .Opta-Nav > ul.Opta-Overflowed:after {
     position: absolute;
     width: 20px;
     height: 16px;
     right: 10px;
     top: calc(50% - 8px);
     background: url("../assets/images/sprites/controls.svg") -20px -118px / 210px 186px no-repeat transparent;
-}
+}*/
 .Opta .Opta-Tabs .Opta-Nav > ul.Opta-Overflowed {
     /*background-color: #117ea9;*/
     background-color: #1f1f1f;
@@ -404,3 +405,16 @@
 	background-color: #de2508;
 }
 /*motorsport*/
+
+
+
+
+
+.Opta a{
+	color: #de2508;
+}
+
+
+.Opta-Cf span{
+	cursor: default;
+}

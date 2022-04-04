@@ -784,11 +784,17 @@ document.onready = ()=>{
 					
 					template="normal" 
 					live="true" 
+
+					days_before="" 
+					days_ahead="" 
+
 					show_venue="true" 
 					match_status="all" 
 					grouping="date" 
 					show_grouping="true" 
-					navigation="tabs_more" 
+					
+					navigation="tabs_scroll" 
+					
 					default_nav="1" 
 					start_on_current="true" 
 					sub_grouping="date" 
@@ -847,6 +853,7 @@ document.onready = ()=>{
 						breakpoints="400"></opta-widget>
 					</opta-widget>
 				`);
+				// navigation="tabs_scroll" 
 				// team_link="rugbyleague-teams.html" 
 				// player_link="rugbyleague-players.html" 
 			};
@@ -912,15 +919,24 @@ document.onready = ()=>{
 					
 					template="normal" 
 					live="true" 
+
+					days_before="" 
+					days_ahead="" 
+
 					show_venue="true" 
 					match_status="all" 
+					
 					grouping="date" 
 					show_grouping="true" 
-					navigation="tabs_more" 
+					
+					navigation="dropdown" 
+				
 					default_nav="1" 
 					start_on_current="true" 
+					
 					sub_grouping="date" 
 					show_subgrouping="false" 
+					
 					order_by="date_ascending" 
 					show_crests="true" 
 					date_format="dddd D MMMM YYYY" 
@@ -1144,7 +1160,9 @@ document.onready = ()=>{
 				match_status="all" 
 				grouping="date" 
 				show_grouping="true" 
-				navigation="tabs_more" 
+				
+				navigation="tabs_scroll" 
+				
 				default_nav="1" 
 				start_on_current="true" 
 				sub_grouping="date" 
@@ -1589,6 +1607,8 @@ document.onready = ()=>{
 				sport="tennis"
 				></opta-widget>
 			`)
+		}else{
+
 		};
 		if(!!scheduleWidget){
 			scheduleWidget.innerHTML = (`
@@ -1596,7 +1616,7 @@ document.onready = ()=>{
 				widget="schedule" 
 				template="normal" 
 				
-				competition="${query['competition']}" 
+				competition="0" 
 				season="${query['season']}" 
 				
 				grouping="month" 
@@ -1622,12 +1642,11 @@ document.onready = ()=>{
 				></opta-widget>
 			`)
 		};
-		
+		//competition="${query['competition']}" 
 		break;
 		/*Tennis*/
 	}
 }
-
 var opta_settings = {
 	subscription_id: 'b7b73f836f5975bc4752b7b54aced1da',
 	language: 'en_GB',
