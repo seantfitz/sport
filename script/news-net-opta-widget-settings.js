@@ -1631,7 +1631,7 @@ document.onready = ()=>{
 				start_on_current="true" 
 				order_by="date_ascending" 
 				show_date="true" 
-				date_format="D MMM" 
+				date_format="DD/MM/YYYY" 
 				month_date_format="MMMM" 
 				show_surface="true" 
 				show_country="true" 
