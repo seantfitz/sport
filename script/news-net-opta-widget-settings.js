@@ -630,10 +630,55 @@ document.onready = ()=>{
 		/*Basketball (NBL)*/
 		
 		/*Cricket*/
-		case '':
+		case '2722':
 		
 		if(!!fixturesWidget){
-			fixturesWidget.innerHTML = (``);
+
+			/*temporary*/
+			query['fixtures_type'] = 'cpl';console.log(query['fixtures_type'])
+			/*temporary*/
+
+			fixturesWidget.innerHTML = (`
+				<opta-widget widget="fixtures" 
+				
+				fixtures_type="${query['fixtures_type']}" 
+				
+				competition="all" 
+				season="0" 
+				
+				template="normal" 
+				live="true" 
+				show_venue="true" 
+				match_status="all" 
+				grouping="month" 
+				show_grouping="true" 
+				
+				navigation="dropdown" 
+				
+				default_nav="1" 
+				start_on_current="true" 
+				sub_grouping="date" 
+				show_subgrouping="true" 
+				order_by="date_ascending" 
+				show_crests="true" 
+				show_competition_name="true" 
+				date_format="dddd D MMMM YYYY" 
+				month_date_format="MMMM" 
+				competition_naming="full" 
+				team_naming="full" 
+				match_link="cricket-match.html" 
+				pre_match="false" 
+				show_live="true" 
+				show_logo="false" 
+				
+				title="Fixtures" 
+				
+				show_title="true" 
+				breakpoints="400" 
+				sport="cricket"
+				></opta-widget>
+			`);
+			//title="${title}" 
 		};
 
 		if(!!matchWidget){
