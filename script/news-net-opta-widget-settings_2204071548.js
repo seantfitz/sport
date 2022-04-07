@@ -313,18 +313,55 @@ $(function(){
 			<div class="dropdown">
 				<button class="dropbtn">Cricket</button>
 				<div class="dropdown-content">
-					<a href="cricket.html?competition=all&season=0&fixtures_type=m">Men's Internatiionals</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=e">English Domestic</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=a">Australian Domestic</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=n">New Zealand Domestic</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=i">IPL</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=c">Champions League T20</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=w">Women's Internationals</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=sad">South African Domestic</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=und">Under Senior Age Group</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=ew">English Women</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=cpl">Carribean Premier League</a>
-					<a href="cricket.html?competition=all&season=0&fixtures_type=o">Other Competitions</a>
+					<a href="cricket.html?competition=2722&season=0">England&nbsp;v&nbsp;India&nbsp;Test&nbsp;Series&nbsp;2021/2022</a>
+					<a href="cricket.html?competition=2780&season=0">IPL 2021</a>
+					<a href="cricket.html?competition=2781&season=0">ICC World Test Championship Final 2021</a>
+					<a href="cricket.html?competition=2784&season=0">West Indies v England Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2785&season=0">West Indies v England Test Series 2022</a>
+					<a href="cricket.html?competition=2813&season=0">Australia v England Test Series 2021/2022</a>
+					<a href="cricket.html?competition=2816&season=0">Australia v Sri Lanka Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2831&season=0">Weber Women's Big Bash League 2021</a>
+					<a href="cricket.html?competition=2832&season=0">KFC T20 Big Bash League 2021/2022</a>
+					<a href="cricket.html?competition=2852&season=0">ICC Men's T20 World Cup 2021</a>
+					<a href="cricket.html?competition=2856&season=0">England v New Zealand Test Series 2022</a>
+					<a href="cricket.html?competition=2857&season=0">England v India Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2858&season=0">England v India ODI Series 2022</a>
+					<a href="cricket.html?competition=2859&season=0">England v South Africa ODI Series 2022</a>
+					<a href="cricket.html?competition=2860&season=0">England v South Africa Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2861&season=0">England v South Africa Test Series 2022</a>
+					<a href="cricket.html?competition=2863&season=0">South Africa v India Test Series 2021/2022</a>
+					<a href="cricket.html?competition=2864&season=0">South Africa v India ODI Series 2022</a>
+					<a href="cricket.html?competition=2868&season=0">South Africa v Bangladesh ODI Series 2022</a>
+					<a href="cricket.html?competition=2869&season=0">South Africa v Bangladesh Test Series 2022</a>
+					<a href="cricket.html?competition=2878&season=0">India v West Indies ODI Series 2022</a>
+					<a href="cricket.html?competition=2879&season=0">India v West Indies Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2880&season=0">India v Sri Lanka Test Series 2022</a>
+					<a href="cricket.html?competition=2881&season=0">India v Sri Lanka Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2882&season=0">India v South Africa Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2886&season=0">Netherlands v England ODI Series 2022</a>
+					<a href="cricket.html?competition=2903&season=0">Pakistan v Australia Test Series 2022</a>
+					<a href="cricket.html?competition=2904&season=0">Pakistan v Australia ODI Series 2022</a>
+					<a href="cricket.html?competition=2905&season=0">Pakistan v Australia Only Twenty20 2022</a>
+					<a href="cricket.html?competition=2908&season=0">New Zealand v Bangladesh Test Series 2022</a>
+					<a href="cricket.html?competition=2911&season=0">New Zealand v South Africa Test Series 2022</a>
+					<a href="cricket.html?competition=2913&season=0">New Zealand v Netherlands Only Twenty20 2022</a>
+					<a href="cricket.html?competition=2914&season=0">New Zealand v Netherlands ODI Series 2022</a>
+					<a href="cricket.html?competition=2917&season=0">West Indies v Ireland ODI Series 2022</a>
+					<a href="cricket.html?competition=2920&season=0">Afghanistan v Netherlands ODI Series in Qatar 2022</a>
+					<a href="cricket.html?competition=2922&season=0">Sri Lanka v Zimbabwe ODI Series 2022</a>
+					<a href="cricket.html?competition=2934&season=0">New Zealand in England Tour Matches 2022</a>
+					<a href="cricket.html?competition=2938&season=0">South Africa in England Tour Matches 2022</a>
+					<a href="cricket.html?competition=2939&season=0">India in England Tour Matches 2022</a>
+					<a href="cricket.html?competition=2940&season=0">ICC Men's T20 World Cup 2022</a>
+					<a href="cricket.html?competition=2945&season=0">Bangladesh v Afghanistan ODI Series 2022</a>
+					<a href="cricket.html?competition=2946&season=0">Bangladesh v Afghanistan Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2953&season=0">Netherlands v West Indies ODI Series 2022</a>
+					<a href="cricket.html?competition=2954&season=0">Ireland v India Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2955&season=0">Ireland v New Zealand ODI Series 2022</a>
+					<a href="cricket.html?competition=2956&season=0">Ireland v New Zealand Twenty20 Series 2022</a>
+					<a href="cricket.html?competition=2957&season=0">Ireland v South Africa Twenty20 Series in England 2022</a>
+					<a href="cricket.html?competition=2960&season=0">IPL 2022</a>
+					<a href="cricket.html?competition=2966&season=0">Nepal v Papua New Guinea ODI Series 2022</a>
 				</div>
 			</div>
 			<div class="dropdown">
@@ -593,9 +630,13 @@ document.onready = ()=>{
 		/*Basketball (NBL)*/
 		
 		/*Cricket*/
-		case 'all':
+		case '2722':
 		
 		if(!!fixturesWidget){
+
+			/*temporary*/
+			query['fixtures_type'] = 'cpl';console.log(query['fixtures_type'])
+			/*temporary*/
 
 			fixturesWidget.innerHTML = (`
 				<opta-widget widget="fixtures" 
