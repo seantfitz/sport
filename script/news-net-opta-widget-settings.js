@@ -680,7 +680,25 @@ document.onready = ()=>{
 		};
 
 		if(!!matchWidget){
-			matchWidget.innerHTML = (``);
+			matchWidget.innerHTML = (`
+				<opta-widget 
+				widget="team_match_play" 
+				template="normal" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				match="${query['tournament']}" 
+				
+				show_crests="false" 
+				show_team_scores="true" 
+				show_match_scores="true" 
+				player_naming="full" 
+				show_logo="true" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="golf"
+				></opta-widget>
+			`);
 		};
 
 		if(!!leaderboardWidget){
