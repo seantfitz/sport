@@ -27,6 +27,7 @@ let liveScoresWidget = document.getElementById('live-scores-widget')
 let scheduleWidget = document.getElementById('schedule-widget')
 let calendarWidget = document.getElementById('calendar-widget')
 let raceWidget = document.getElementById('race-widget')
+let leaderboard = document.getElementById('leaderboard-widget')
 
 //functions
 /*SET UP DROPDOWN NAV*/
@@ -652,18 +653,65 @@ document.onready = ()=>{
 		/*Cricket*/
 
 		/*Golf*/
-		case '':
+		case '3c5msl8moic00eu49b06aumsp':
 		
-		if(!!fixturesWidget){
-			fixturesWidget.innerHTML = (``);
+		if(!!scheduleWidget){
+			scheduleWidget.innerHTML = (`
+				<opta-widget 
+				widget="schedule" 
+				template="normal" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
+				order_by="date_ascending" 
+				show_date="true" 
+				date_format="D MMM" 
+				show_dates_combined="false" 
+				show_course_name="true" 
+				show_winner="true" 
+				tournament_link="golf-tournament.html" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="golf"
+				></opta-widget>
+			`);
 		};
 
 		if(!!matchWidget){
 			matchWidget.innerHTML = (``);
 		};
 
-		if(!!standingsWidget){
-			standingsWidget.innerHTML = (``);
+		if(!!leaderboardWidget){
+			leaderboardWidget.innerHTML = (`
+				<opta-widget 
+				widget="leaderboard" 
+				template="normal" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				match="${query['match']}" 
+				
+				live="true" 
+				show_date="true" 
+				date_format="D MMM" 
+				show_dates_combined="false" 
+				show_competition_name="false" 
+				show_season_name="true" 
+				show_course_name="true" 
+				show_position="true" 
+				show_rounds="true" 
+				show_nationality="true" 
+				player_highlighting="false" 
+				player_naming="full" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="golf"
+				></opta-widget>
+			`);
 		};
 
 		break;
