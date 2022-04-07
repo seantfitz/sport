@@ -27,7 +27,7 @@ let liveScoresWidget = document.getElementById('live-scores-widget')
 let scheduleWidget = document.getElementById('schedule-widget')
 let calendarWidget = document.getElementById('calendar-widget')
 let raceWidget = document.getElementById('race-widget')
-let leaderboard = document.getElementById('leaderboard-widget')
+let leaderboardWidget = document.getElementById('leaderboard-widget')
 
 //functions
 /*SET UP DROPDOWN NAV*/
