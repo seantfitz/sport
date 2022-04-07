@@ -691,7 +691,7 @@ document.onready = ()=>{
 				
 				competition="${query['competition']}" 
 				season="${query['season']}" 
-				match="${query['match']}" 
+				match="${query['tournament']}" 
 				
 				live="true" 
 				show_date="true" 
