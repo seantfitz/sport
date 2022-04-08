@@ -595,6 +595,7 @@ document.onready = ()=>{
 		
 		/*Cricket*/
 		case 'all':
+		case '2764':
 		
 		if(!!fixturesWidget){
 
@@ -603,7 +604,7 @@ document.onready = ()=>{
 				
 				fixtures_type="${query['fixtures_type']}" 
 				
-				competition="all" 
+				competition="${query['competition']}" 
 				season="0" 
 				
 				template="normal" 
