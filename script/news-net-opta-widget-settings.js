@@ -596,6 +596,7 @@ document.onready = ()=>{
 		/*Cricket*/
 		case 'all':
 		case '2764':
+		case '2971':
 		
 		if(!!fixturesWidget){
 
