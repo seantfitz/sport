@@ -28,6 +28,7 @@ let scheduleWidget = document.getElementById('schedule-widget')
 let calendarWidget = document.getElementById('calendar-widget')
 let raceWidget = document.getElementById('race-widget')
 let leaderboardWidget = document.getElementById('leaderboard-widget')
+let scorecardWidget = document.getElementById('scorecard-widget')
 
 //functions
 /*SET UP DROPDOWN NAV*/
@@ -597,6 +598,7 @@ document.onready = ()=>{
 		case 'all':
 		case '2764':
 		case '2971':
+		case '2832'://KFC big bash 21/22//
 		
 		if(!!fixturesWidget){
 
@@ -604,9 +606,9 @@ document.onready = ()=>{
 				<opta-widget widget="fixtures" 
 				
 				fixtures_type="${query['fixtures_type']}" 
-				
+
 				competition="${query['competition']}" 
-				season="0" 
+				season="${query['season']}" 
 				
 				template="normal" 
 				live="true" 
@@ -637,18 +639,92 @@ document.onready = ()=>{
 				
 				show_title="true" 
 				breakpoints="400" 
-				sport="cricket"
+				sport="cricket" 
 				></opta-widget>
 			`);
 			//title="${title}" 
 		};
 
-		if(!!matchWidget){
-			matchWidget.innerHTML = (``);
+		if(!!scorecardWidget){
+			scorecardWidget.innerHTML = (`
+				<opta-widget 
+				widget="score_card" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				match="${query['match']}" 
+				
+				template="normal" 
+				live="true" 
+				show_match_header="true" 
+				show_crests="true" 
+				show_competition_name="true" 
+				show_match_description="true" 
+				show_date="true" 
+				date_format="dddd D MMMM YYYY HH:mm" 
+				show_venue="true" 
+				show_officials="all" 
+				show_toss="true" 
+				show_innings_breakdown="true" 
+				show_current_batting="true" 
+				show_best_batting="1" 
+				show_best_bowling="1" 
+				show_state_of_play="true" 
+				navigation="tabs" 
+				default_nav="1" 
+				show_batting="true" 
+				show_mins_batted="true" 
+				show_fours="false" 
+				show_sixes="false" 
+				show_strike_rate="false" 
+				show_bowling="true" 
+				show_economy="false" 
+				show_dot_balls="false" 
+				show_bowling_extras="false" 
+				show_fow="true" 
+				show_partnerships="true" 
+				show_unfinished_partnerships="true" 
+				team_naming="full" 
+				player_naming="last_name" 
+				team_link="cricket-teams.html" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400, 700" 
+				sport="cricket"
+				></opta-widget>
+			`);
 		};
 
 		if(!!standingsWidget){
-			standingsWidget.innerHTML = (``);
+
+			if(!query['season']){
+				query['season'] = '0'
+			}
+
+			standingsWidget.innerHTML = (`
+				<opta-widget widget="standings" 
+				template="normal" 
+				live="true" 
+				
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
+				navigation="none" 
+				default_nav="1" 
+				show_key="true" 
+				show_crests="true" 
+				points_in_first_column="true" 
+				competition_naming="full" 
+				team_naming="full" 
+				team_link="cricket-teams.html" 
+				sorting="true" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400, 700" 
+				sport="cricket"
+				></opta-widget>
+			`);
 		};
 
 		break;
