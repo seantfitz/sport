@@ -1074,7 +1074,7 @@ document.onready = ()=>{
 					show_venue="true" 
 					match_status="all" 
 					
-					grouping="date" 
+					grouping="month" 
 					show_grouping="true" 
 					
 					navigation="dropdown" 
@@ -1083,7 +1083,7 @@ document.onready = ()=>{
 					start_on_current="true" 
 					
 					sub_grouping="date" 
-					show_subgrouping="false" 
+					show_subgrouping="true" 
 					
 					order_by="date_ascending" 
 					show_crests="true" 
@@ -1094,7 +1094,7 @@ document.onready = ()=>{
 
 					team_link="rugbyunion-squads.html" 
 					match_link="" 
-					pre_match="1440" 
+					pre_match="false" 
 
 					show_live="true" 
 					show_logo="false" 
@@ -1146,38 +1146,38 @@ document.onready = ()=>{
 				//player_link="rugbyunion-players.html" 
 			};
 
-			if(!!matchWidget){
-				matchWidget.innerHTML = (`
-					<opta-widget 
-					widget="match_preview" 
+			// if(!!matchWidget){
+			// 	matchWidget.innerHTML = (`
+			// 		<opta-widget 
+			// 		widget="match_preview" 
 					
-					competition="${query['competition']}" 
-					season="${query['season']}" 
-					match="${query['match']}" 
+			// 		competition="${query['competition']}" 
+			// 		season="${query['season']}" 
+			// 		match="${query['match']}" 
 					
-					template="normal" 
-					navigation="tabs" 
-					default_nav="1" 
-					show_match_header="true" 
-					show_crests="false" 
-					show_competition_name="true" 
-					show_venue="true" 
-					show_date="true" 
-					date_format="dddd D MMMM YYYY" 
-					time_format="HH:mm" 
-					show_form="6" 
-					show_previous_meetings="6" 
-					show_tooltips="false" 
-					competition_naming="full" 
-					team_naming="full" 
-					team_link="rugbyunion-squads.html" 
-					show_logo="false" 
-					show_title="true" 
-					breakpoints="400, 700" sport="rugby"
-					></opta-widget>
-				`);
-				//navigation="dropdown" 
-			};
+			// 		template="normal" 
+			// 		navigation="tabs" 
+			// 		default_nav="1" 
+			// 		show_match_header="true" 
+			// 		show_crests="false" 
+			// 		show_competition_name="true" 
+			// 		show_venue="true" 
+			// 		show_date="true" 
+			// 		date_format="dddd D MMMM YYYY" 
+			// 		time_format="HH:mm" 
+			// 		show_form="6" 
+			// 		show_previous_meetings="6" 
+			// 		show_tooltips="false" 
+			// 		competition_naming="full" 
+			// 		team_naming="full" 
+			// 		team_link="rugbyunion-squads.html" 
+			// 		show_logo="false" 
+			// 		show_title="true" 
+			// 		breakpoints="400, 700" sport="rugby"
+			// 		></opta-widget>
+			// 	`);
+			// 	//navigation="dropdown" 
+			// };
 
 			if(!!standingsWidget){
 				standingsWidget.innerHTML = (`
@@ -1306,15 +1306,15 @@ document.onready = ()=>{
 				live="true" 
 				show_venue="true" 
 				match_status="all" 
-				grouping="date" 
+				grouping="month" 
 				show_grouping="true" 
 				
-				navigation="tabs_scroll" 
+				navigation="tabs" 
 				
 				default_nav="1" 
 				start_on_current="true" 
 				sub_grouping="date" 
-				show_subgrouping="false" 
+				show_subgrouping="true" 
 				order_by="date_ascending" 
 				show_crests="true" 
 				date_format="dddd D MMMM YYYY" 
