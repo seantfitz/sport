@@ -821,12 +821,6 @@ document.onready = ()=>{
 		case '2e554vbpw7g0ykhl0rziuabxl'://FIM MotoGP World Championship
 		case '2ecsbewwstw5jn9h7kpv2joix'://V8 Supercars
 
-		let title;
-
-		if(query['competition'] == '1m5x4n07f2kqkiczebja5etiq'){title = 'FIA F1 World Championship'}
-		if(query['competition'] == '2e554vbpw7g0ykhl0rziuabxl'){title = 'FIM MotoGP World Championship'}
-		if(query['competition'] == '2ecsbewwstw5jn9h7kpv2joix'){title = 'V8 Supercars'}
-
 		if(!!calendarWidget){
 			calendarWidget.innerHTML = (`
 				<opta-widget 
@@ -844,7 +838,6 @@ document.onready = ()=>{
 				player_naming="full" 
 				race_link="motorsport-race.html" 
 				show_logo="false" 
-				title="${title} Calendar" 
 				show_title="true" 
 				breakpoints="400" 
 				sport="motorsport"
@@ -1733,9 +1726,8 @@ document.onready = ()=>{
 		case '7635'://Zagreb Open - Mens Singles/*ATP Challenger Tour*/
 		case '7642'://Zavarovalnica Sava Portoroz - Womens Singles/*WTA 125K Series*/
 		case '7591'://Zhuhai Championships - Mens Singles/*ATP250*/
-console.log(query['competition'])
+
 		if(!!liveScoresWidget){
-			console.log('aaa')
 			liveScoresWidget.innerHTML = (`
 				<opta-widget 
 				widget="live_scores" 
@@ -1794,8 +1786,7 @@ console.log(query['competition'])
 				month_date_format="MMMM" 
 				show_surface="true" 
 				show_country="true" 
-				show_internationals="true" 
-
+				how_internationals="true" 
 				pre_match="false" 
 				show_logo="false" 
 				show_title="true" 
@@ -1805,7 +1796,6 @@ console.log(query['competition'])
 			`)
 		};
 		//competition="${query['competition']}" 
-		//match_link="tennis-match.html"
 		break;
 		/*Tennis*/
 	}
