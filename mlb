@@ -7,13 +7,6 @@
 
 	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-baseball-scoreboard.min.css">
 	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-baseball-scoreboard-mini.min.css">
-	
-	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-baseball-league-schedule.min.css">
-	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-baseball-standings.min.css">
-	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-baseball-standings-mini.min.css">
-	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-baseball-team-three-games.min.css">
-	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-baseball-team-schedule.min.css">
-
 </head>
 <body>
 
@@ -54,28 +47,18 @@
 
 
 
-<!-- <script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.standalone.min.js"></script> -->
-<!-- <script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard-mini.standalone.min.js"></script> -->
-<!-- <script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.standalone.min.js"></script> -->
-<!-- <script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.standalone.min.js"></script> -->
+<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.standalone.min.js"></script>
+<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard-mini.standalone.min.js"></script>
 <!-- <script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.standalone.min.js"></script> -->
 <!-- <script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.standalone.min.js"></script> -->
+<!-- <script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.standalone.min.js"></script> -->
+<!-- <script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.standalone.min.js"></script> -->
 
 
 
 
 
-<script type="text/javascript" src="https://widgets-assets.stats.com/shs-widgets/js/core.min.js"></script>
-<!--Omit "standalone" keyword-->
-<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.min.js"></script>
-<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard-mini.min.js"></script>
-
-
-<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-league-schedule.min.js"></script>
-<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-standings.min.js"></script>
-<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-standings-mini.min.js"></script>
-<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-team-three-games.min.js"></script>
-<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-team-schedule.min.js"></script>
+<!-- <script type="text/javascript" src="https://widgets-assets.stats.com/shs-widgets/js/core.min.js"></script> -->
 
 
 

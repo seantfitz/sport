@@ -75,7 +75,6 @@ $(function(){
 				<button class="dropbtn">Basketball</button>
 				<div class="dropdown-content">
 					<a href="basketball.html?competition=5wdi9kmiurd2rjx2f7ew92wm6&season=4sjxxlpzq4fgth238gnebn3tg">NBL</a>
-					<a href="nba.html">NBA</a>
 				</div>
 			</div>
 			
@@ -341,15 +340,13 @@ $(function(){
 			<div class="dropdown">
 				<button class="dropbtn">US Sports</button>
 				<div class="dropdown-content">
-					<a href="nfl.html">USA - NFL</a>
-					<a href="nba.html">USA - NBA</a>
-					<a href="mlb.html">USA - Major League Baseball</a>
+					<!--<a href="mlb.html?competition=n0amm59n1m59y0auuk93hexg&season=1jl9m4m9c863xko7es6a6ecr8">USA - Major League Baseball</a>-->
 				</div>
 			</div>
-			<!--<div class="dropdown">
+			<div class="dropdown">
 				<button class="dropbtn">Olympics</button>
 				<div class="dropdown-content"></div>
-			</div>-->
+			</div>
 			<div class="dropdown">
 				<button class="dropbtn">Rugby Union</button>
 				<div class="dropdown-content">
@@ -709,7 +706,7 @@ document.onready = ()=>{
 				template="normal" 
 				live="true" 
 				
-				competition="all" 
+				competition="${query['competition']}" 
 				season="${query['season']}" 
 				
 				navigation="none" 
