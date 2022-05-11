@@ -1,0 +1,65 @@
+A series of pages need to be created and placed in the same directory. news.net/sport/results/ or something similar.
+
+The pages needed are;
+	index.html
+	football.html
+	football-match.html
+	football-squads.html
+	basketball.html
+	basketball-rosters.html
+	tennis.html/////
+	golf.html
+	golf-tournament.html//////
+	cricket.html
+	cricket-match.html//////////
+	motorsport.html
+	motorsport-race.html
+	nfl.html
+	nba.html
+	mlb.html
+	rugbyunion.html
+	rugbyunion-squads.html
+	rugbyleague.html
+	afl.html
+	afl-match-summary.html
+
+These are the names I have assigned in the javascript file I have written to control the widgets.
+
+The way that the Opta widgets work is by taking arguments that are passed by query string parameters on the url of their host page.
+CSS and javascript files are required to be linked in their host pages, these files are;
+	
+	<link rel="stylesheet" href="https://secure.widget.cloud.opta.net/v3/css/v3.all.opta-widgets.css"> - standard Opta
+	<link rel="stylesheet" href="css/news-net-opta-widget-styling.css"> - to apply News.Net styling
+
+	<script src="https://secure.widget.cloud.opta.net/v3/v3.opta-widgets.js"></script> - standard Opta
+	<script src="script/news-net-opta-widget-settings.js"></script> - to control the loading of widgets into the DOM, this needs to be placed just before the closing body tag.
+
+The widgets for the US sports NFL, NBA and MLB work a little differently and require different javascript and CSS to be linked in their host pages.
+Script tags should be just before the closing body tag.
+
+	For NFL
+	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-football-scoreboard.min.css">
+	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-football-league-schedule.min.css">
+	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-football-standings.min.css">
+	<script type="text/javascript" src="https://widgets-assets.stats.com/shs-widgets/js/core.min.js"></script>
+	<script type="text/javascript" src="https://widgets-assets.stats.com/js/football-scoreboard.min.js"></script>
+	<script type="text/javascript" src="https://widgets-assets.stats.com/js/football-league-schedule.min.js"></script>
+	<script type="text/javascript" src="https://widgets-assets.stats.com/js/football-standings.min.js"></script>
+
+	For NBA
+	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-basketball-scoreboard.min.css">
+	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-basketball-league-schedule.min.css">
+	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-basketball-standings.min.css">
+	<script type="text/javascript" src="https://widgets-assets.stats.com/shs-widgets/js/core.min.js"></script>
+	<script type="text/javascript" src="https://widgets-assets.stats.com/js/basketball-scoreboard.min.js"></script>
+	<script type="text/javascript" src="https://widgets-assets.stats.com/js/basketball-league-schedule.min.js"></script>
+	<script type="text/javascript" src="https://widgets-assets.stats.com/js/basketball-standings.min.js"></script>
+
+	For MLB (Major League Baseball)
+	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-baseball-scoreboard.min.css">
+	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-baseball-league-schedule.min.css">
+	<link rel="stylesheet" type="text/css" href="//widgets-assets.stats.com/css/widgets-baseball-standings.min.css">
+	<script type="text/javascript" src="https://widgets-assets.stats.com/shs-widgets/js/core.min.js"></script>
+	<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.min.js"></script>
+	<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-league-schedule.min.js"></script>
+	<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-standings.min.js"></script>
