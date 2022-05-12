@@ -599,65 +599,9 @@ document.onready = ()=>{
 		
 		/*Cricket*/
 		case 'all':
-		// case '2764':
-		// case '2971':
-		// case '2832'://KFC big bash 21/22//
-		case '2780':
-		case '2781':
-		case '2784':
-		case '2785':
-		case '2813':
-		case '2816':
-		case '2831':
-		case '2832':
-		case '2852':
-		case '2856':
-		case '2857':
-		case '2858':
-		case '2859':
-		case '2860':
-		case '2861':
-		case '2863':
-		case '2864':
-		case '2868':
-		case '2869':
-		case '2878':
-		case '2879':
-		case '2880':
-		case '2881':
-		case '2882':
-		case '2886':
-		case '2903':
-		case '2904':
-		case '2905':
-		case '2908':
-		case '2911':
-		case '2913':
-		case '2914':
-		case '2917':
-		case '2920':
-		case '2922':
-		case '2934':
-		case '2938':
-		case '2939':
-		case '2940':
-		case '2945':
-		case '2946':
-		case '2953':
-		case '2954':
-		case '2955':
-		case '2956':
-		case '2957':
-		case '2960':
-		case '2966':
-		case '2969':
-		case '2970':
+		case '2764':
 		case '2971':
-		case '2972':
-		case '2975':
-		case '2976':
-		case '2978':
-		case '2986':
+		case '2832'://KFC big bash 21/22//
 		
 		if(!!fixturesWidget){
 
@@ -680,7 +624,7 @@ document.onready = ()=>{
 				
 				default_nav="1" 
 				start_on_current="true" 
-				sub_grouping="competition" 
+				sub_grouping="date" 
 				show_subgrouping="true" 
 				order_by="date_ascending" 
 				show_crests="true" 
@@ -1789,9 +1733,9 @@ document.onready = ()=>{
 		case '7635'://Zagreb Open - Mens Singles/*ATP Challenger Tour*/
 		case '7642'://Zavarovalnica Sava Portoroz - Womens Singles/*WTA 125K Series*/
 		case '7591'://Zhuhai Championships - Mens Singles/*ATP250*/
-// console.log(query['competition'])
+console.log(query['competition'])
 		if(!!liveScoresWidget){
-			// console.log('aaa')
+			console.log('aaa')
 			liveScoresWidget.innerHTML = (`
 				<opta-widget 
 				widget="live_scores" 

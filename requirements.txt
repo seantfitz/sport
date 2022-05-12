@@ -1,17 +1,34 @@
-A series of pages need to be created and placed in the same directory. news.net/sport/results/ or something similar.
+The implementation of the "Scoreboard" navigation bar for sports results, and the creation of the subsequent pages has been made a priority before launch on Monday.
+
+You can see the mockups I made at;
+
+https://seantfitz.github.io/sport/home.html - to show the placement of the nav on the home page.
+https://seantfitz.github.io/sport/ - to show the placement of the nav on the Sport section page.
+
+This version is just for demonstration purposes and indicates the intended paths and query string parameters that each menu item should link to.
+I imagine that you'd implement this via a different method than what I have used here (jQuery UI). I'm not sure how this would translate to mobile.
+The required hrefs are currently generated in the news-net-opta-widget-settings.js file. File can be found at https://github.com/seantfitz/sport/blob/main/script/news-net-opta-widget-settings.js
+The options in here will need to be changed over time to account for seasons etc.
+
+The mockup nav is functional, so you can use it to reach the demos for each of the sports.
+Some of the Opta widgets have links to subsequent pages such as match summaries, squads etc.
+
+I have all of them working correctly except for tennis and cricket. I'll contact Stats Perform and hopefully get the issues resolved ASAP.
+At worst, we may have to omit tennis and / or cricket for the time being.
+
+A series of pages need to be created and placed in the same directory as the main sport page. news.net/section/sport/
 
 The pages needed are;
-	index.html
 	football.html
 	football-match.html
 	football-squads.html
 	basketball.html
 	basketball-rosters.html
-	tennis.html/////
+	tennis.html
 	golf.html
-	golf-tournament.html//////
+	golf-tournament.html
 	cricket.html
-	cricket-match.html//////////
+	cricket-match.html
 	motorsport.html
 	motorsport-race.html
 	nfl.html
@@ -24,6 +41,9 @@ The pages needed are;
 	afl-match-summary.html
 
 These are the names I have assigned in the javascript file I have written to control the widgets.
+
+I've shared a spreadsheet with you which outlines the pages for each sport, the query string params required and which widgets are present on each page.
+Tennis and cricket may need some edits at my end, so maybe tackle those last.
 
 The way that the Opta widgets work is by taking arguments that are passed by query string parameters on the url of their host page.
 CSS and javascript files are required to be linked in their host pages, these files are;
@@ -63,3 +83,11 @@ Script tags should be just before the closing body tag.
 	<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.min.js"></script>
 	<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-league-schedule.min.js"></script>
 	<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-standings.min.js"></script>
+
+You can see the mockups I have made at https://seantfitz.github.io/sport/
+You can get the files from https://github.com/seantfitz/sport
+
+I also made a custom loader which can be found at https://github.com/seantfitz/sport/tree/main/assets/images
+The path relative to the custom CSS for the loader is ../assets/images/loader.svg
+
+Hopefully this is all clear and makes sense. Please let me know if you have any questions.
