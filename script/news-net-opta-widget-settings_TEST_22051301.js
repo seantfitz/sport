@@ -661,79 +661,47 @@ document.onready = ()=>{
 		
 		if(!!fixturesWidget){
 
-			// fixturesWidget.innerHTML = (`
-			// 	<opta-widget widget="fixtures" 
-				
-			// 	fixtures_type="${query['fixtures_type']}" 
-
-			// 	competition="${query['competition']}" 
-			// 	season="${query['season']}" 
-				
-			// 	template="normal" 
-			// 	live="true" 
-			// 	show_venue="true" 
-			// 	match_status="all" 
-			// 	grouping="month" 
-			// 	show_grouping="true" 
-				
-			// 	navigation="dropdown" 
-				
-			// 	default_nav="1" 
-			// 	start_on_current="true" 
-			// 	sub_grouping="competition" 
-			// 	show_subgrouping="true" 
-			// 	order_by="date_ascending" 
-			// 	show_crests="true" 
-			// 	show_competition_name="true" 
-			// 	date_format="dddd D MMMM YYYY" 
-			// 	month_date_format="MMMM" 
-			// 	competition_naming="full" 
-			// 	team_naming="full" 
-			// 	match_link="cricket-match.html" 
-			// 	pre_match="false" 
-			// 	show_live="true" 
-			// 	show_logo="false" 
-				
-			// 	title="Fixtures" 
-				
-			// 	show_title="true" 
-			// 	breakpoints="400" 
-			// 	sport="cricket" 
-			// 	></opta-widget>
-			// `);
-			//title="${title}" 
-
 			fixturesWidget.innerHTML = (`
 				<opta-widget widget="fixtures" 
-				fixtures_type="e" 
-				competition="all" 
-				season="0" 
+				
+				fixtures_type="${query['fixtures_type']}" 
+
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
 				template="normal" 
-				live="false" 
+				live="true" 
 				show_venue="true" 
 				match_status="all" 
-				grouping="date" 
+				grouping="month" 
 				show_grouping="true" 
-				navigation="none" 
+				
+				navigation="dropdown" 
+				
 				default_nav="1" 
 				start_on_current="true" 
-				sub_grouping="date" 
-				show_subgrouping="false" 
+				sub_grouping="competition" 
+				show_subgrouping="true" 
 				order_by="date_ascending" 
-				show_crests="false" 
+				show_crests="true" 
 				show_competition_name="true" 
 				date_format="dddd D MMMM YYYY" 
 				month_date_format="MMMM" 
 				competition_naming="full" 
 				team_naming="full" 
+				match_link="cricket-match.html" 
 				pre_match="false" 
-				show_live="false" 
-				show_logo="true" 
+				show_live="true" 
+				show_logo="false" 
+				
+				title="Fixtures" 
+				
 				show_title="true" 
 				breakpoints="400" 
-				sport="cricket"
+				sport="cricket" 
 				></opta-widget>
-			`)
+			`);
+			//title="${title}" 
 		};
 
 		if(!!scorecardWidget){
@@ -1821,6 +1789,19 @@ document.onready = ()=>{
 		case '7635'://Zagreb Open - Mens Singles/*ATP Challenger Tour*/
 		case '7642'://Zavarovalnica Sava Portoroz - Womens Singles/*WTA 125K Series*/
 		case '7591'://Zhuhai Championships - Mens Singles/*ATP250*/
+
+		let trn = ['7577','7343','7506','7315','7267','7467','7269','7383','7668','7556','7357','7335','7313','7369','7538','7666','7483','7345','7471','7578','7244','7246','7245','7247','7248','7652','7660','7403','7387','7388','7273','7585','7307','7399','7510','7347','7375','7443','7303','7629','7644','7540','7672','7485','7439','7469','7502','7473','7603','7583','7385','7598','7421','7361','7500','7558','7451','7359','7365','7445','7459','7373','7279','7695','7337','7277','7349','7353','7433','7494','7363','7355','7670','7389','7263','7546','7613','7607','7520','7393','7481','7687','7295','7296','7415','7416','7432','7550','7411','7488','7658','7291','7395','7575','7548','7631','7573','7542','7289','7409','7410','7287','7618','7640','7569','7639','7417','7297','7648','7699','7581','7513','7650','7425','7637','7441','7447','7449','7518','7275','7391','7392','7405','7674','7530','7571','7589','7504','7407','7408','7285','7593','7560','7561','7619','7620','7656','7544','7664','7496','7377','7271','7676','7678','7413','7625','7370','7498','7339','7534','7552','7477','7281','7627','7526','7680','7379','7265','7605','7492','7381','7397','7398','7318','7617','7621','7622','7536','7490','7301','7427','7305','7299','7693','7514','7508','7516','7532','7401','7633','7683','7587','7623','7261','7609','7691','7615','7455','7453','7283','7524','7341','7367','7597','7457','7423','7662','7351','7697','7646','7554','7685','7522','7566','7567','7568','7601','7602','7654','7689','7419','7595','7562','7563','7309','7310','7429','7430','7431','7564','7635','7642','7591']
+// console.log(query['competition'])
+		
+		for(let i in trn){
+			console.log(trn[i])
+			if(trn[i] == query['competition']){
+				
+				console.log(trn[Number(i) + 1])
+				$('#next').attr('href',`tennis.html?competition=${trn[Number(i) + 1]}&season=2022`).html(`${trn[Number(i) + 1]} : ${Number(i) + 1}`)
+				break;
+			}
+		}
 
 		if(!!liveScoresWidget){
 			// console.log('aaa')
