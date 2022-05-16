@@ -786,7 +786,7 @@ document.onready = ()=>{
 				grouping="month" 
 				show_grouping="true" 
 				
-				navigation="dropdown" 
+				navigation="tabs_more" 
 				
 				default_nav="1" 
 				start_on_current="true" 
@@ -886,7 +886,7 @@ document.onready = ()=>{
 				points_in_first_column="true" 
 				competition_naming="full" 
 				team_naming="full" 
-				team_link="cricket-teams.html" 
+				
 				sorting="true" 
 				show_live="true" 
 				show_logo="false" 
@@ -895,6 +895,7 @@ document.onready = ()=>{
 				sport="cricket"
 				></opta-widget>
 			`);
+			//team_link="cricket-teams.html" 
 		};
 
 		break;
