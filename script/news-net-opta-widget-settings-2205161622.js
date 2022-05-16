@@ -332,8 +332,19 @@ $(function(){
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn">Cricket</button>
-				<div class="dropdown-content" id="cricketDropdownMenu">
-
+				<div class="dropdown-content">
+					<a href="cricket.html?competition=all&season=0&fixtures_type=m">Men's Internatiionals</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=e">English Domestic</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=a">Australian Domestic</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=n">New Zealand Domestic</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=i">IPL</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=c">Champions League T20</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=w">Women's Internationals</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=sad">South African Domestic</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=und">Under Senior Age Group</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=ew">English Women</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=cpl">Carribean Premier League</a>
+					<a href="cricket.html?competition=all&season=0&fixtures_type=o">Other Competitions</a>
 				</div>
 			</div>
 			<div class="dropdown">
@@ -387,7 +398,6 @@ $(function(){
 		</div>
 	`)
 	
-	/*CURATE TENNIS MENU*/
 	/*filter out tournaments that have not started yet or finished 7 or more days ago*/
 	let fromDate = [142291200,164142400,164774400,164819200,164954800,165136320,165633600,165965600,166449600,652572800,1640908800,1640995200,1641081600,1641168000,1641600000,1641686400,1642291200,1642896000,1643328000,1643414400,1643500800,1644019200,1644105600,1644624000,1644710400,1645142400,1645228800,1645315200,1645747200,1645833600,1645920000,1646524800,1646611200,1646697600,1647129600,1647216000,1647734400,1647820800,1648339200,1648425600,1648857600,1648944000,1649462400,1649548800,1650067200,1650153600,1650672000,1650758400,1650931200,1651276800,1651363200,1651795200,1651881600,1651968000,1652054400,1652140800,1652313600,1652400000,1652572800,1653004800,1653609600,1653696000,1654214400,1654819200,1655337600,1655424000,1655769600,1656028800,1656633600,1657238400,1657756800,1657843200,1658448000,1659052800,1659571200,1659657600,1660176000,1660262400,1660780800,1661126400,1662681600,1663286400,1663804800,1663891200,1664496000,1665014400,1665705600,1666310400,1666915200,1667520000,1667779200,1668124800,1668211200,1669939200,1670544000]
 	let toDate = [1643500800,1644278400,1644710400,1645142400,1645833600,1647129600,1648857600,1650153600,1651276800,1652572800,1654387200,1654992000,1655596800,1655769600,1656374400,1659225600,1659830400,1662854400,1663459200,1665878400,1666483200,1672444800]
@@ -406,92 +416,6 @@ $(function(){
 		}
 	}
 	/*filter out tournaments that have not started yet or finished 7 or more days ago*/
-	/*CURATE TENNIS MENU*/
-
-
-	/*CURATE CRICKET MENU*/
-	let cricketArray = [
-		["2781","ICC World Test Championship Final 2021",["Friday 18 June 2021"]],
-		["2722","England v India Test Series _2021/2022",["Wednesday 4 August 2021","Thursday 12 August 2021","Wednesday 25 August 2021","Thursday 2 September 2021","Friday 1 July 2022"]],
-		["2780","IPL 2021",["Monday 20 September 2021","Tuesday 21 September 2021","Wednesday 22 September 2021","Thursday 23 September 2021","Friday 24 September 2021","Saturday 25 September 2021","Sunday 26 September 2021","Monday 27 September 2021","Tuesday 28 September 2021","Wednesday 29 September 2021","Thursday 30 September 2021","Friday 1 October 2021","Saturday 2 October 2021","Sunday 3 October 2021","Monday 4 October 2021","Tuesday 5 October 2021","Wednesday 6 October 2021","Thursday 7 October 2021","Friday 8 October 2021","Saturday 9 October 2021","Monday 11 October 2021","Tuesday 12 October 2021","Thursday 14 October 2021","Saturday 16 October 2021"]],
-		["2831","Weber Women's Big Bash League 2021",["Thursday 14 October 2021","Saturday 16 October 2021","Sunday 17 October 2021","Tuesday 19 October 2021","Wednesday 20 October 2021","Saturday 23 October 2021","Sunday 24 October 2021","Tuesday 26 October 2021","Wednesday 27 October 2021","Saturday 30 October 2021","Sunday 31 October 2021","Wednesday 3 November 2021","Saturday 6 November 2021","Sunday 7 November 2021","Tuesday 9 November 2021","Wednesday 10 November 2021","Thursday 11 November 2021","Saturday 13 November 2021","Sunday 14 November 2021","Wednesday 17 November 2021","Friday 19 November 2021","Saturday 20 November 2021","Sunday 21 November 2021","Wednesday 24 November 2021","Thursday 25 November 2021","Saturday 27 November 2021"]],
-		["2852","ICC Men's T20 World Cup 2021",["Sunday 17 October 2021","Monday 18 October 2021","Tuesday 19 October 2021","Wednesday 20 October 2021","Thursday 21 October 2021","Friday 22 October 2021","Saturday 23 October 2021","Sunday 24 October 2021","Monday 25 October 2021","Tuesday 26 October 2021","Wednesday 27 October 2021","Thursday 28 October 2021","Friday 29 October 2021","Saturday 30 October 2021","Sunday 31 October 2021","Monday 1 November 2021","Tuesday 2 November 2021","Wednesday 3 November 2021","Thursday 4 November 2021","Friday 5 November 2021","Saturday 6 November 2021","Sunday 7 November 2021","Monday 8 November 2021","Tuesday 9 November 2021","Thursday 11 November 2021","Friday 12 November 2021","Monday 15 November 2021"]],
-		["2832","KFC T20 Big Bash League _2021/2022",["Sunday 5 December 2021","Monday 6 December 2021","Tuesday 7 December 2021","Wednesday 8 December 2021","Thursday 9 December 2021","Friday 10 December 2021","Saturday 11 December 2021","Sunday 12 December 2021","Monday 13 December 2021","Tuesday 14 December 2021","Wednesday 15 December 2021","Sunday 19 December 2021","Monday 20 December 2021","Tuesday 21 December 2021","Wednesday 22 December 2021","Thursday 23 December 2021","Friday 24 December 2021","Sunday 26 December 2021","Monday 27 December 2021","Tuesday 28 December 2021","Wednesday 29 December 2021","Friday 31 December 2021","Saturday 1 January 2022","Sunday 2 January 2022","Monday 3 January 2022","Tuesday 4 January 2022","Wednesday 5 January 2022","Thursday 6 January 2022","Saturday 8 January 2022","Sunday 9 January 2022","Monday 10 January 2022","Tuesday 11 January 2022","Wednesday 12 January 2022","Thursday 13 January 2022","Friday 14 January 2022","Saturday 15 January 2022","Sunday 16 January 2022","Monday 17 January 2022","Tuesday 18 January 2022","Wednesday 19 January 2022","Friday 21 January 2022","Saturday 22 January 2022","Sunday 23 January 2022","Wednesday 26 January 2022","Friday 28 January 2022"]],
-		["2813","Australia v England Test Series _2021/2022",["Wednesday 8 December 2021","Thursday 16 December 2021","Sunday 26 December 2021","Wednesday 5 January 2022","Friday 14 January 2022"]],
-		["2863","South Africa v India Test Series _2021/2022",["Sunday 26 December 2021","Monday 3 January 2022","Tuesday 11 January 2022"]],
-		["2908","New Zealand v Bangladesh Test Series 2022",["Saturday 1 January 2022","Sunday 9 January 2022"]],
-		["2917","West Indies v Ireland ODI Series 2022",["Sunday 9 January 2022","Friday 14 January 2022","Monday 17 January 2022"]],
-		["2922","Sri Lanka v Zimbabwe ODI Series 2022",["Sunday 16 January 2022","Tuesday 18 January 2022","Friday 21 January 2022"]],
-		["2864","South Africa v India ODI Series 2022",["Wednesday 19 January 2022","Friday 21 January 2022","Sunday 23 January 2022"]],
-		["2920","Afghanistan v Netherlands ODI Series in Qatar 2022",["Friday 21 January 2022","Sunday 23 January 2022","Tuesday 25 January 2022"]],
-		["2784","West Indies v England Twenty20 Series 2022",["Sunday 23 January 2022","Monday 24 January 2022","Thursday 27 January 2022","Sunday 30 January 2022","Monday 31 January 2022"]],
-		["2878","India v West Indies ODI Series 2022",["Sunday 6 February 2022","Wednesday 9 February 2022","Friday 11 February 2022"]],
-		["2816","Australia v Sri Lanka Twenty20 Series 2022",["Friday 11 February 2022","Sunday 13 February 2022","Tuesday 15 February 2022","Friday 18 February 2022","Sunday 20 February 2022"]],
-		["2879","India v West Indies Twenty20 Series 2022",["Thursday 17 February 2022","Saturday 19 February 2022","Monday 21 February 2022"]],
-		["2911","New Zealand v South Africa Test Series 2022",["Thursday 17 February 2022","Friday 25 February 2022"]],
-		["2945","Bangladesh v Afghanistan ODI Series 2022",["Wednesday 23 February 2022","Friday 25 February 2022","Monday 28 February 2022"]],
-		["2881","India v Sri Lanka Twenty20 Series 2022",["Friday 25 February 2022","Sunday 27 February 2022","Monday 28 February 2022"]],
-		["2946","Bangladesh v Afghanistan Twenty20 Series 2022",["Thursday 3 March 2022","Saturday 5 March 2022"]],
-		["2880","India v Sri Lanka Test Series 2022",["Friday 4 March 2022","Saturday 12 March 2022"]],
-		["2903","Pakistan v Australia Test Series 2022",["Friday 4 March 2022","Saturday 12 March 2022","Monday 21 March 2022"]],
-		["2785","West Indies v England Test Series 2022",["Wednesday 9 March 2022","Thursday 17 March 2022","Friday 25 March 2022"]],
-		["2868","South Africa v Bangladesh ODI Series 2022",["Friday 18 March 2022","Sunday 20 March 2022","Wednesday 23 March 2022"]],
-		["2913","New Zealand v Netherlands Only Twenty20 2022",["Friday 25 March 2022"]],
-		["2966","Nepal v Papua New Guinea ODI Series 2022",["Friday 25 March 2022","Saturday 26 March 2022"]],
-		["2960","IPL 2022",["Sunday 27 March 2022","Monday 28 March 2022","Tuesday 29 March 2022","Wednesday 30 March 2022","Thursday 31 March 2022","Friday 1 April 2022","Saturday 2 April 2022","Sunday 3 April 2022","Monday 4 April 2022","Tuesday 5 April 2022","Wednesday 6 April 2022","Thursday 7 April 2022","Friday 8 April 2022","Saturday 9 April 2022","Sunday 10 April 2022","Monday 11 April 2022","Tuesday 12 April 2022","Wednesday 13 April 2022","Thursday 14 April 2022","Friday 15 April 2022","Saturday 16 April 2022","Sunday 17 April 2022","Monday 18 April 2022","Tuesday 19 April 2022","Wednesday 20 April 2022","Thursday 21 April 2022","Friday 22 April 2022","Saturday 23 April 2022","Sunday 24 April 2022","Monday 25 April 2022","Tuesday 26 April 2022","Wednesday 27 April 2022","Thursday 28 April 2022","Friday 29 April 2022","Saturday 30 April 2022","Sunday 1 May 2022","Monday 2 May 2022","Tuesday 3 May 2022","Wednesday 4 May 2022","Thursday 5 May 2022","Friday 6 May 2022","Saturday 7 May 2022","Sunday 8 May 2022","Monday 9 May 2022","Tuesday 10 May 2022","Wednesday 11 May 2022","Thursday 12 May 2022","Friday 13 May 2022","Saturday 14 May 2022","Sunday 15 May 2022","Monday 16 May 2022","Tuesday 17 May 2022","Wednesday 18 May 2022","Thursday 19 May 2022","Friday 20 May 2022","Saturday 21 May 2022","Sunday 22 May 2022","Monday 23 May 2022","Wednesday 25 May 2022","Thursday 26 May 2022","Saturday 28 May 2022","Monday 30 May 2022"]],
-		["2904","Pakistan v Australia ODI Series 2022",["Tuesday 29 March 2022","Thursday 31 March 2022","Saturday 2 April 2022"]],
-		["2914","New Zealand v Netherlands ODI Series 2022",["Tuesday 29 March 2022","Saturday 2 April 2022","Monday 4 April 2022"]],
-		["2869","South Africa v Bangladesh Test Series 2022",["Thursday 31 March 2022","Friday 8 April 2022"]],
-		["2905","Pakistan v Australia Only Twenty20 2022",["Wednesday 6 April 2022"]],
-		["2978","Bangladesh v Sri Lanka Test Series 2022",["Sunday 15 May 2022","Monday 23 May 2022"]],
-		["2934","New Zealand in England Tour Matches 2022",["Friday 20 May 2022","Thursday 26 May 2022"]],
-		["2953","Netherlands v West Indies ODI Series 2022",["Tuesday 31 May 2022","Thursday 2 June 2022","Saturday 4 June 2022"]],
-		["2856","England v New Zealand Test Series 2022",["Thursday 2 June 2022","Friday 10 June 2022","Thursday 23 June 2022"]],
-		["2970","Sri Lanka v Australia Twenty20 Series 2022",["Tuesday 7 June 2022","Wednesday 8 June 2022","Saturday 11 June 2022"]],
-		["2882","India v South Africa Twenty20 Series 2022",["Thursday 9 June 2022","Sunday 12 June 2022","Tuesday 14 June 2022","Friday 17 June 2022","Sunday 19 June 2022"]],
-		["2971","Sri Lanka v Australia ODI Series 2022",["Tuesday 14 June 2022","Thursday 16 June 2022","Sunday 19 June 2022","Tuesday 21 June 2022","Friday 24 June 2022"]],
-		["2886","Netherlands v England ODI Series 2022",["Friday 17 June 2022","Sunday 19 June 2022","Wednesday 22 June 2022"]],
-		["2939","India in England Tour Matches 2022",["Thursday 23 June 2022","Saturday 2 July 2022","Monday 4 July 2022"]],
-		["2954","Ireland v India Twenty20 Series 2022",["Monday 27 June 2022","Wednesday 29 June 2022"]],
-		["2972","Sri Lanka v Australia Test Series 2022",["Wednesday 29 June 2022","Friday 8 July 2022"]],
-		["2857","England v India Twenty20 Series 2022",["Friday 8 July 2022","Saturday 9 July 2022","Sunday 10 July 2022"]],
-		["2955","Ireland v New Zealand ODI Series 2022",["Sunday 10 July 2022","Tuesday 12 July 2022","Friday 15 July 2022"]],
-		["2858","England v India ODI Series 2022",["Tuesday 12 July 2022","Thursday 14 July 2022","Sunday 17 July 2022"]],
-		["2938","South Africa in England Tour Matches 2022",["Tuesday 12 July 2022","Thursday 14 July 2022","Tuesday 9 August 2022"]],
-		["2859","England v South Africa ODI Series 2022",["Tuesday 19 July 2022","Friday 22 July 2022","Sunday 24 July 2022"]],
-		["2956","Ireland v New Zealand Twenty20 Series 2022",["Tuesday 19 July 2022","Thursday 21 July 2022","Saturday 23 July 2022"]],
-		["2860","England v South Africa Twenty20 Series 2022",["Thursday 28 July 2022","Friday 29 July 2022","Sunday 31 July 2022"]],
-		["2975","Scotland v New Zealand Twenty20 Series 2022",["Thursday 28 July 2022","Saturday 30 July 2022"]],
-		["2976","Scotland v New Zealand Only ODI 2022",["Sunday 31 July 2022"]],
-		["2957","Ireland v South Africa Twenty20 Series in England 2022",["Thursday 4 August 2022","Saturday 6 August 2022"]],
-		["2969","Ireland v Afghanistan Twenty20 Series 2022",["Wednesday 10 August 2022","Friday 12 August 2022","Saturday 13 August 2022","Tuesday 16 August 2022","Thursday 18 August 2022"]],
-		["2986","Netherlands v Pakistan ODI Series 2022",["Tuesday 16 August 2022","Thursday 18 August 2022","Sunday 21 August 2022"]],
-		["2861","England v South Africa Test Series 2022",["Wednesday 17 August 2022","Thursday 25 August 2022","Thursday 8 September 2022"]],
-		["2940","ICC Men's T20 World Cup 2022",["Sunday 16 October 2022","Monday 17 October 2022","Tuesday 18 October 2022","Wednesday 19 October 2022","Thursday 20 October 2022","Friday 21 October 2022","Saturday 22 October 2022","Sunday 23 October 2022","Monday 24 October 2022","Tuesday 25 October 2022","Wednesday 26 October 2022","Thursday 27 October 2022","Friday 28 October 2022","Saturday 29 October 2022","Sunday 30 October 2022","Monday 31 October 2022","Tuesday 1 November 2022","Wednesday 2 November 2022","Thursday 3 November 2022","Friday 4 November 2022","Saturday 5 November 2022","Sunday 6 November 2022","Wednesday 9 November 2022","Thursday 10 November 2022","Sunday 13 November 2022"]]
-	]
-
-	now = new Date().getTime()
-	let cricketDates = {}
-
-	for(let i of cricketArray){
-
-		let d = i[2]
-
-		for(let j of d){
-
-			let before = new Date(j).getTime() - 2419200000;//four weeks before now
-			let after = new Date(j).getTime() + 2419200000;//four weeks after now
-
-			if(now >= before && now <= after){
-				cricketDates[i[0]] = i[1]
-			}
-		}
-	}
-
-	for(let i of Object.keys(cricketDates)){
-		$('#cricketDropdownMenu').append(`<a href="cricket.html?competition=${i}&season=0">${cricketDates[i]}</a>`)
-	}
-	/*CURATE CRICKET MENU*/
 })
 /*SET UP DROPDOWN NAV*/
 
@@ -775,10 +699,12 @@ document.onready = ()=>{
 //fixtures_type="${query['fixtures_type']}" 
 			fixturesWidget.innerHTML = (`
 				<opta-widget widget="fixtures" 
+				
+				
 
 				competition="${query['competition']}" 
 				season="${query['season']}" 
-
+				
 				template="normal" 
 				live="true" 
 				show_venue="true" 
@@ -790,7 +716,7 @@ document.onready = ()=>{
 				
 				default_nav="1" 
 				start_on_current="true" 
-				sub_grouping="date" 
+				sub_grouping="competition" 
 				show_subgrouping="true" 
 				order_by="date_ascending" 
 				show_crests="true" 
@@ -804,7 +730,7 @@ document.onready = ()=>{
 				show_live="true" 
 				show_logo="false" 
 				
-
+				title="Fixtures" 
 				
 				show_title="true" 
 				breakpoints="400" 
@@ -812,6 +738,38 @@ document.onready = ()=>{
 				></opta-widget>
 			`);
 			//title="${title}" 
+
+			// fixturesWidget.innerHTML = (`
+			// 	<opta-widget widget="fixtures" 
+			// 	fixtures_type="e" 
+			// 	competition="all" 
+			// 	season="0" 
+			// 	template="normal" 
+			// 	live="false" 
+			// 	show_venue="true" 
+			// 	match_status="all" 
+			// 	grouping="date" 
+			// 	show_grouping="true" 
+			// 	navigation="none" 
+			// 	default_nav="1" 
+			// 	start_on_current="true" 
+			// 	sub_grouping="date" 
+			// 	show_subgrouping="false" 
+			// 	order_by="date_ascending" 
+			// 	show_crests="false" 
+			// 	show_competition_name="true" 
+			// 	date_format="dddd D MMMM YYYY" 
+			// 	month_date_format="MMMM" 
+			// 	competition_naming="full" 
+			// 	team_naming="full" 
+			// 	pre_match="false" 
+			// 	show_live="false" 
+			// 	show_logo="true" 
+			// 	show_title="true" 
+			// 	breakpoints="400" 
+			// 	sport="cricket"
+			// 	></opta-widget>
+			// `)
 		};
 
 		if(!!scorecardWidget){
@@ -855,14 +813,13 @@ document.onready = ()=>{
 				show_unfinished_partnerships="true" 
 				team_naming="full" 
 				player_naming="last_name" 
-				
+				team_link="cricket-teams.html" 
 				show_logo="false" 
 				show_title="true" 
 				breakpoints="400, 700" 
 				sport="cricket"
 				></opta-widget>
 			`);
-			//team_link="cricket-teams.html" 
 		};
 
 		if(!!standingsWidget){
@@ -876,7 +833,7 @@ document.onready = ()=>{
 				template="normal" 
 				live="true" 
 				
-				competition="${query['competition']}" 
+				competition="all" 
 				season="${query['season']}" 
 				
 				navigation="none" 
