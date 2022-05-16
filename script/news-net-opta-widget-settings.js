@@ -697,79 +697,79 @@ document.onready = ()=>{
 		
 		if(!!fixturesWidget){
 
-			// fixturesWidget.innerHTML = (`
-			// 	<opta-widget widget="fixtures" 
-				
-			// 	fixtures_type="${query['fixtures_type']}" 
-
-			// 	competition="${query['competition']}" 
-			// 	season="${query['season']}" 
-				
-			// 	template="normal" 
-			// 	live="true" 
-			// 	show_venue="true" 
-			// 	match_status="all" 
-			// 	grouping="month" 
-			// 	show_grouping="true" 
-				
-			// 	navigation="dropdown" 
-				
-			// 	default_nav="1" 
-			// 	start_on_current="true" 
-			// 	sub_grouping="competition" 
-			// 	show_subgrouping="true" 
-			// 	order_by="date_ascending" 
-			// 	show_crests="true" 
-			// 	show_competition_name="true" 
-			// 	date_format="dddd D MMMM YYYY" 
-			// 	month_date_format="MMMM" 
-			// 	competition_naming="full" 
-			// 	team_naming="full" 
-			// 	match_link="cricket-match.html" 
-			// 	pre_match="false" 
-			// 	show_live="true" 
-			// 	show_logo="false" 
-				
-			// 	title="Fixtures" 
-				
-			// 	show_title="true" 
-			// 	breakpoints="400" 
-			// 	sport="cricket" 
-			// 	></opta-widget>
-			// `);
-			//title="${title}" 
-
 			fixturesWidget.innerHTML = (`
 				<opta-widget widget="fixtures" 
-				fixtures_type="e" 
-				competition="all" 
-				season="0" 
+				
+				fixtures_type="${query['fixtures_type']}" 
+
+				competition="${query['competition']}" 
+				season="${query['season']}" 
+				
 				template="normal" 
-				live="false" 
+				live="true" 
 				show_venue="true" 
 				match_status="all" 
-				grouping="date" 
+				grouping="month" 
 				show_grouping="true" 
-				navigation="none" 
+				
+				navigation="dropdown" 
+				
 				default_nav="1" 
 				start_on_current="true" 
-				sub_grouping="date" 
-				show_subgrouping="false" 
+				sub_grouping="competition" 
+				show_subgrouping="true" 
 				order_by="date_ascending" 
-				show_crests="false" 
+				show_crests="true" 
 				show_competition_name="true" 
 				date_format="dddd D MMMM YYYY" 
 				month_date_format="MMMM" 
 				competition_naming="full" 
 				team_naming="full" 
+				match_link="cricket-match.html" 
 				pre_match="false" 
-				show_live="false" 
-				show_logo="true" 
+				show_live="true" 
+				show_logo="false" 
+				
+				title="Fixtures" 
+				
 				show_title="true" 
 				breakpoints="400" 
-				sport="cricket"
+				sport="cricket" 
 				></opta-widget>
-			`)
+			`);
+			//title="${title}" 
+
+			// fixturesWidget.innerHTML = (`
+			// 	<opta-widget widget="fixtures" 
+			// 	fixtures_type="e" 
+			// 	competition="all" 
+			// 	season="0" 
+			// 	template="normal" 
+			// 	live="false" 
+			// 	show_venue="true" 
+			// 	match_status="all" 
+			// 	grouping="date" 
+			// 	show_grouping="true" 
+			// 	navigation="none" 
+			// 	default_nav="1" 
+			// 	start_on_current="true" 
+			// 	sub_grouping="date" 
+			// 	show_subgrouping="false" 
+			// 	order_by="date_ascending" 
+			// 	show_crests="false" 
+			// 	show_competition_name="true" 
+			// 	date_format="dddd D MMMM YYYY" 
+			// 	month_date_format="MMMM" 
+			// 	competition_naming="full" 
+			// 	team_naming="full" 
+			// 	pre_match="false" 
+			// 	show_live="false" 
+			// 	show_logo="true" 
+			// 	show_title="true" 
+			// 	breakpoints="400" 
+			// 	sport="cricket"
+			// 	></opta-widget>
+			// `)
 		};
 
 		if(!!scorecardWidget){
