@@ -45,21 +45,29 @@ $(function(){
 			<div class="dropdown">
 				<button class="dropbtn">Football</button>
 				<div class="dropdown-content">
-					<a href="football.html?competition=8&season=2021">English Premier League</a>
+					<a href="football.html?competition=379&season=2018">AFC Asian Cup</a>
+					<a href="football.html?competition=731&season=2021">AFC Women's Asian Cup</a> 
+					<a href="football.html?competition=341&season=1000022">Asian World Cup Qualifiers</a>
+					<a href="football.html?competition=214&season=2021">Australian A-League Men</a>
+					<a href="football.html?competition=684&season=2021">Australian A-League Women</a>
 					<a href="football.html?competition=5&season=2021">Champions League</a>
-					<a href="football.html?competition=6&season=2021">UEFA Europa League</a>
-
-					<a href="football.html?competition=4&season=2022">World Cup</a>
-					<a href="football.html?competition=408&season=2022">Women's World Cup</a>
-
-					<a href="football.html?competition=23&season=2021">Spanish La Liga</a>
-					<a href="football.html?competition=21&season=2021">Italian Serie A</a>
-					<a href="football.html?competition=22&season=2021">German Bundesliga</a>
+					<a href="football.html?competition=8&season=2021">English Premier League</a>
+					<a href="football.html?competition=1009&season=2019">FFA Cup of Nations</a>
 					<a href="football.html?competition=24&season=2021">French Ligue 1</a>
-					<a href="football.html?competition=1125&season=2021">UEFA Europa Conference League</a>
-
-					<a href="football.html?competition=88&season=2022">Internationals</a>
+					<a href="football.html?competition=22&season=2021">German Bundesliga</a>
 					<a href="football.html?competition=551&season=2022">Internationals Women</a>
+					<a href="football.html?competition=88&season=2022">Internationals</a>
+					<a href="football.html?competition=21&season=2021">Italian Serie A</a>
+					<a href="football.html?competition=378&season=2021">Olympic Football Tournament</a>
+					<a href="football.html?competition=734&season=2019">Olympic Women's Tournament Qualifying Asia</a>
+					<a href="football.html?competition=578&season=2021">Olympic Women's Tournament</a>
+					<a href="football.html?competition=1136&season=2020">Olympics Intercontinental Play-offs Women</a>
+					<a href="football.html?competition=23&season=2021">Spanish La Liga</a>
+					<a href="football.html?competition=1125&season=2021">UEFA Europa Conference League</a>
+					<a href="football.html?competition=6&season=2021">UEFA Europa League</a>
+					<a href="football.html?competition=3&season=2020">UEFA European Championship Finals</a>
+					<a href="football.html?competition=408&season=2022">Women's World Cup</a>
+					<a href="football.html?competition=4&season=2022">World Cup</a>
 				</div>
 			</div>
 			
