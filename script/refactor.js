@@ -1361,7 +1361,7 @@ const loadWidget = (obj)=>{
 
 	/*football*/
 	if(obj['sport'] == 'football'){
-		console.log('Hello!')
+
 		if(obj['widget'] == 'fixtures'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
@@ -1684,27 +1684,27 @@ const loadWidget = (obj)=>{
 
 Opta.events.subscribe('widget.drawn', (widget)=> {
 
+	// Opta('.Opta a').on('click',(e)=>{
+	// 	e.preventDefault();
+	// 	loadWidget(getQueryParams(e.target.href))
+		
+	// 	console.log(getQueryParams(e.target.href))
+	// 	let sport = getQueryParams(e.target.href)['sport'];
+	// 	Opta(`select[name="${sport}"]`).prop('value','null');
+	// })
+
+	Opta('a.Opta-TeamLink.Opta-Ext').on('click',(e)=>{
+		e.preventDefault();
+		loadWidget(getQueryParams(e.target.href))
+		
+		console.log(getQueryParams(e.target.href))
+		let sport = getQueryParams(e.target.href)['sport'];
+		Opta(`select[name="${sport}"]`).prop('value','null');
+	})
+
 	if(widget.widget.attr.sport === 'football') {
 		Opta('.Opta-MatchLink').html('Match preview')
 	}
-
-	Opta('.Opta a').on('click',(e)=>{
-		e.preventDefault();
-		loadWidget(getQueryParams(e.target.href))
-		
-		console.log(getQueryParams(e.target.href))
-		let sport = getQueryParams(e.target.href)['sport'];
-		Opta(`select[name="${sport}"]`).prop('value','null');
-	})
-
-	Opta('.Opta-TeamLink').on('click',(e)=>{
-		e.preventDefault();
-		loadWidget(getQueryParams(e.target.href))
-		
-		console.log(getQueryParams(e.target.href))
-		let sport = getQueryParams(e.target.href)['sport'];
-		Opta(`select[name="${sport}"]`).prop('value','null');
-	})
 });
 
 //settings for Opta widget initialisation - link_callback customises the behaviour of in-widget hyperlinks e.g. match-page, squads etc.
