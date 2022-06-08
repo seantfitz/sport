@@ -1684,22 +1684,19 @@ const loadWidget = (obj)=>{
 
 Opta.events.subscribe('widget.drawn', (widget)=> {
 
-	// Opta('.Opta a').on('click',(e)=>{
-	// 	e.preventDefault();
-	// 	loadWidget(getQueryParams(e.target.href))
-		
-	// 	console.log(getQueryParams(e.target.href))
-	// 	let sport = getQueryParams(e.target.href)['sport'];
-	// 	Opta(`select[name="${sport}"]`).prop('value','null');
-	// })
+	Opta('.Opta a, a.Opta-TeamLink.Opta-Ext').on('click',(e)=>{
 
-	Opta('a.Opta-TeamLink.Opta-Ext').on('click',(e)=>{
-		e.preventDefault();
-		loadWidget(getQueryParams(e.target.href))
+		if(widget.widget.attr.sport === 'basketball') {
+			alert(e.target.href)
+		}
 		
 		console.log(getQueryParams(e.target.href))
+		
+		e.preventDefault();
+		
 		let sport = getQueryParams(e.target.href)['sport'];
 		Opta(`select[name="${sport}"]`).prop('value','null');
+		loadWidget(getQueryParams(e.target.href))
 	})
 
 	if(widget.widget.attr.sport === 'football') {
