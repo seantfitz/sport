@@ -9,15 +9,12 @@ const getQueryParams = (qs)=>{
 
 	while (tokens = re.exec(qs)) {
 		params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
-		// params[decodeURIComponent(tokens[1].replace(window.location.href + '?', ''))] = `${decodeURIComponent(tokens[2])}`;
 	}
 	return params;
 };
 
 //query string parameters as a variable
 let query = getQueryParams(document.location.search)
-
-console.log(query)
 
 //define DOM elements
 let fixturesWidget = document.getElementById('fixtures-widget')
@@ -767,7 +764,7 @@ document.onready = ()=>{
 		case '2986':
 		
 		if(!!fixturesWidget){
-			//fixtures_type="${query['fixtures_type']}" 
+//fixtures_type="${query['fixtures_type']}" 
 			fixturesWidget.innerHTML = (`
 				<opta-widget widget="fixtures" 
 
@@ -1496,7 +1493,7 @@ document.onready = ()=>{
 				competition_naming="full" 
 				team_naming="full" 
 				team_link="football-squads.html" 
-				match_link="?sport=football&widget=match" 
+				match_link="football-match.html" 
 				pre_match="1440" 
 				show_live="true" 
 				show_logo="false" 
@@ -1976,8 +1973,6 @@ document.onready = ()=>{
 				show_country="true" 
 				show_internationals="true" 
 
-				match_link="match" 
-
 				pre_match="false" 
 				show_logo="false" 
 				show_title="true" 
@@ -1992,45 +1987,8 @@ document.onready = ()=>{
 		/*Tennis*/
 	}
 }
-
-
-
 var opta_settings = {
 	subscription_id: 'b7b73f836f5975bc4752b7b54aced1da',
 	language: 'en_GB',
 	timezone: 'user',
-	link_callback: (e)=>{
-		
-		let link = e.base_url;
-
-		if(!!e.sport){
-			link += `&sport=${e.sport}`;
-		};
-		if(!!e.widget){
-			link += `&widget=${e.widget}`;
-		};
-		if(!!e.competition){
-			link += `&competition=${e.competition}`;
-		};
-		if(!!e.season){
-			link += `&season=${e.season}`;
-		};
-		if(!!e.match){
-			link += `&match=${e.match}`;
-		};
-		if(!!e.team){
-			link += `&team=${e.team}`;
-		};
-		if(!!e.tournament){
-			link += `&tournament=${e.tournament}`;
-		};
-		if(!!e.race){
-			link += `&race=${e.race}`;
-		};
-		if(!!e.title){
-			link += `&title=${e.title}`;
-		};
-
-		return link;		
-	}
 };

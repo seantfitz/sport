@@ -1,0 +1,73 @@
+.newsnet_sport_nav_container{
+	height: 36px;
+	display: flex;
+	align-items: center;
+	margin-right: auto;
+	margin-bottom: 30px;
+	margin-left: auto;
+	max-width: 1200px;
+}
+
+.sport_nav_title{
+	font-size: 16px;
+	font-weight: bold;
+	background-color: #de2508;
+	color: #fff;
+	padding: 6px;
+	margin-top: unset;
+}
+
+/**********************************/
+
+.dropdown{
+	position: relative;
+	border-left: 1px solid #1f1f1f;
+	padding: 0 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	height: 16px;
+	overflow: hidden;
+}
+.dropdown:nth-child(2){
+	border: unset;
+}
+.dropdown button{
+	background-color: unset;
+	border: unset;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+	cursor: pointer;
+}
+.dropdown:hover button{
+	color: #de2508;
+}
+
+/**************************/
+
+select{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	height: 300%;
+	width: -moz-available;
+
+	background-color: unset;
+	color: transparent;
+	border: unset;
+	outline: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+
+	cursor: pointer;
+}
+
+select:focus{
+	color: #000;
+	/*firefox - also needs to blur on change event*/
+}
+
+/**************************/
+
