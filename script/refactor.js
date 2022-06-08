@@ -1696,6 +1696,15 @@ Opta.events.subscribe('widget.drawn', (widget)=> {
 		let sport = getQueryParams(e.target.href)['sport'];
 		Opta(`select[name="${sport}"]`).prop('value','null');
 	})
+
+	Opta('.Opta-TeamLink').on('click',(e)=>{
+		e.preventDefault();
+		loadWidget(getQueryParams(e.target.href))
+		
+		console.log(getQueryParams(e.target.href))
+		let sport = getQueryParams(e.target.href)['sport'];
+		Opta(`select[name="${sport}"]`).prop('value','null');
+	})
 });
 
 //settings for Opta widget initialisation - link_callback customises the behaviour of in-widget hyperlinks e.g. match-page, squads etc.
