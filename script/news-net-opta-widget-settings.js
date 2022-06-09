@@ -1,4 +1,3 @@
-/*GENERAL PAGE SETUP*/
 //function to get query string parameters
 const getQueryParams = (qs)=>{
 	qs = qs.split('+').join(' ');
@@ -8,401 +7,177 @@ const getQueryParams = (qs)=>{
 	re = /[?&]?([^=]+)=([^&]*)/g;
 
 	while (tokens = re.exec(qs)) {
-		params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
-		// params[decodeURIComponent(tokens[1].replace(window.location.href + '?', ''))] = `${decodeURIComponent(tokens[2])}`;
+		params[decodeURIComponent(tokens[1].replace(window.location.href + '?', ''))] = `${decodeURIComponent(tokens[2])}`;
 	}
 	return params;
 };
 
-//query string parameters as a variable
-let query = getQueryParams(document.location.search)
+//function to construct navigation menu - this will need to be edited to accommodate menu curation
+const constructNav = ()=>{
 
-console.log(query)
+	let newsnet_sport_nav_container = document.getElementsByClassName('newsnet_sport_nav_container')[0];
 
-//define DOM elements
-let fixturesWidget = document.getElementById('fixtures-widget')
-let standingsWidget = document.getElementById('standings-widget')
-let matchWidget = document.getElementById('match-widget')
-let rostersWidget = document.getElementById('rosters-widget')
-let squadsWidget = document.getElementById('squads-widget')
-let startingFormationsWidget = document.getElementById('starting-formations-widget')
-let liveScoresWidget = document.getElementById('live-scores-widget')
-let scheduleWidget = document.getElementById('schedule-widget')
-let calendarWidget = document.getElementById('calendar-widget')
-let raceWidget = document.getElementById('race-widget')
-let leaderboardWidget = document.getElementById('leaderboard-widget')
-let scorecardWidget = document.getElementById('scorecard-widget')
+	if (!newsnet_sport_nav_container) {
+		return;
+	}
 
-//functions
-/*SET UP DROPDOWN NAV*/
-$(function(){
-
-	let newsnet_sport_nav_container = document.getElementsByClassName('newsnet_sport_nav_container')[0]
-
-	newsnet_sport_nav_container.innerHTML = (`
+	newsnet_sport_nav_container.innerHTML = `
 		<div class="sport_nav_title">
 			Scoreboard
 		</div>
-		
-		<div class="newsnet_sport_nav">
-			<div class="dropdown">
-				<button class="dropbtn">Football</button>
-				<div class="dropdown-content">
-					<a href="football.html?competition=8&season=2021">English Premier League</a>
-					<a href="football.html?competition=5&season=2021">Champions League</a>
-					<a href="football.html?competition=6&season=2021">UEFA Europa League</a>
 
-					<a href="football.html?competition=4&season=2022">World Cup</a>
-					<a href="football.html?competition=408&season=2022">Women's World Cup</a>
-
-					<a href="football.html?competition=23&season=2021">Spanish La Liga</a>
-					<a href="football.html?competition=21&season=2021">Italian Serie A</a>
-					<a href="football.html?competition=22&season=2021">German Bundesliga</a>
-					<a href="football.html?competition=24&season=2021">French Ligue 1</a>
-					<a href="football.html?competition=1125&season=2021">UEFA Europa Conference League</a>
-
-					<a href="football.html?competition=88&season=2022">Internationals</a>
-					<a href="football.html?competition=551&season=2022">Internationals Women</a>
-				</div>
-			</div>
-			
-			<div class="dropdown">
-				<button class="dropbtn">Basketball</button>
-				<div class="dropdown-content">
-					<a href="basketball.html?competition=5wdi9kmiurd2rjx2f7ew92wm6&season=4sjxxlpzq4fgth238gnebn3tg">NBL</a>
-					<a href="nba.html">NBA</a>
-				</div>
-			</div>
-			
-			<div class="dropdown">
-				<button class="dropbtn">Tennis</button>
-				<div class="dropdown-content">
-					<a class="from_1640908800 to_1643500800" href="tennis.html?competition=7315&season=2022">ATP Cup - Mens National_teams</a>
-					<a class="from_1640995200 to_1643500800" href="tennis.html?competition=7347&season=2022">Bendigo International - Mens Singles</a>
-					<a class="from_1641081600 to_1643500800" href="tennis.html?competition=7335&season=2022">Adelaide International 1 - Mens Singles</a>
-					<a class="from_1641081600 to_1643500800" href="tennis.html?competition=7357&season=2022">Adelaide International 1 - Womens Singles</a>
-					<a class="from_1641081600 to_1643500800" href="tennis.html?competition=7451&season=2022">Citta' Di Forli' 1 - Mens Singles</a>
-					<a class="from_1641081600 to_1643500800" href="tennis.html?competition=7355&season=2022">Dove Men+Care Legion Sudamericana Tigre - Mens Singles</a>
-					<a class="from_1641081600 to_1643500800" href="tennis.html?competition=7351&season=2022">Traralgon International - Mens Singles</a>
-					<a class="from_1641168000 to_1643500800" href="tennis.html?competition=7441&season=2022">Melbourne Summer Set - Mens Singles</a>
-					<a class="from_1641168000 to_1643500800" href="tennis.html?competition=7447&season=2022">Melbourne Summer Set 1 - Womens Singles</a>
-					<a class="from_1641168000 to_1643500800" href="tennis.html?competition=7449&season=2022">Melbourne Summer Set 2 - Womens Singles</a>
-					<a class="from_1641600000 to_1643500800" href="tennis.html?competition=7313&season=2022">Adelaide International 2 - Mens Singles</a>
-					<a class="from_1641600000 to_1643500800" href="tennis.html?competition=7369&season=2022">Adelaide International 2 - Womens Singles</a>
-					<a class="from_1641686400 to_1644278400" href="tennis.html?competition=7245&season=2022">Australian Open - Mens Doubles</a>
-					<a class="from_1641686400 to_1644278400" href="tennis.html?competition=7244&season=2022">Australian Open - Mens Singles</a>
-					<a class="from_1641686400 to_1644278400" href="tennis.html?competition=7248&season=2022">Australian Open - Mixed Doubles</a>
-					<a class="from_1641686400 to_1644278400" href="tennis.html?competition=7247&season=2022">Australian Open - Womens Doubles</a>
-					<a class="from_1641686400 to_1644278400" href="tennis.html?competition=7246&season=2022">Australian Open - Womens Singles</a>
-					<a class="from_1641686400 to_1644710400" href="tennis.html?competition=7361&season=2022">Circuito Dove Men Care - Mens Singles</a>
-					<a class="from_1641686400 to_1644710400" href="tennis.html?competition=7359&season=2022">Citta' Di Forli' 2 - Mens Singles</a>
-					<a class="from_1641686400 to_1644710400" href="tennis.html?competition=7455&season=2022">Sydney Tennis Classic - Mens Singles</a>
-					<a class="from_1641686400 to_1644710400" href="tennis.html?competition=7453&season=2022">Sydney Tennis Classic - Womens Singles</a>
-					<a class="from_1642291200 to_1644710400" href="tennis.html?competition=7365&season=2022">Citta' Di Forli' 3 - Mens Singles</a>
-					<a class="from_1642291200 to_1644710400" href="tennis.html?competition=7363&season=2022">Dove Men+Care Legion Sudamericana Concepcion - Mens Singles</a>
-					<a class="from_1642896000 to_1644710400" href="tennis.html?competition=7433&season=2022">Dove Men+Care Challenger Bolivia - Mens Singles</a>
-					<a class="from_1642896000 to_1644710400" href="tennis.html?competition=7370&season=2022">Open Quimper Bretagne Occidentale - Mens Singles</a>
-					<a class="from_1642896000 to_1644710400" href="tennis.html?competition=7367&season=2022">Tennis Ohio Championships - Mens Singles</a>
-					<a class="from_1643328000 to_1644710400" href="tennis.html?competition=7339&season=2022">Open Sud de France - Mens Singles</a>
-					<a class="from_1643414400 to_1644710400" href="tennis.html?competition=7337&season=2022">Cordoba Open - Mens Singles</a>
-					<a class="from_1643500800 to_1644710400" href="tennis.html?competition=7373&season=2022">Cleveland Open - Mens Singles</a>
-					<a class="from_1643500800 to_1644710400" href="tennis.html?competition=7341&season=2022">Tata Open Maharashtra - Mens Singles</a>
-					<a class="from_1644019200 to_1645142400" href="tennis.html?competition=7343&season=2022">ABN Amro World Tennis Tournament - Mens Singles</a>
-					<a class="from_1644019200 to_1645142400" href="tennis.html?competition=7345&season=2022">Argentina Open - Mens Singles</a>
-					<a class="from_1644019200 to_1645833600" href="tennis.html?competition=7261&season=2022">St. Petersburg Ladies Trophy - Womens Singles</a>
-					<a class="from_1644105600 to_1645833600" href="tennis.html?competition=7375&season=2022">Bengaluru Open 1 - Mens Singles</a>
-					<a class="from_1644105600 to_1645833600" href="tennis.html?competition=7439&season=2022">Challenger Cherbourg - La Manche - Mens Singles</a>
-					<a class="from_1644105600 to_1645833600" href="tennis.html?competition=7349&season=2022">Dallas Open - Mens Singles</a>
-					<a class="from_1644624000 to_1645833600" href="tennis.html?competition=7353&season=2022">Delray Beach Open - Mens Singles</a>
-					<a class="from_1644624000 to_1645833600" href="tennis.html?competition=7263&season=2022">Dubai Duty Free Tennis Championships - Womens Singles</a>
-					<a class="from_1644624000 to_1645833600" href="tennis.html?competition=7379&season=2022">Qatar ExxonMobil Open - Mens Singles</a>
-					<a class="from_1644624000 to_1645833600" href="tennis.html?competition=7381&season=2022">Rio Open presented by Claro - Mens Singles</a>
-					<a class="from_1644710400 to_1645833600" href="tennis.html?competition=7443&season=2022">Bengaluru Open 2 - Mens Singles</a>
-					<a class="from_1644710400 to_1645833600" href="tennis.html?competition=7445&season=2022">Citta' Di Forli' 4 - Mens Singles</a>
-					<a class="from_1644710400 to_1645833600" href="tennis.html?competition=7377&season=2022">Open 13 Provence - Mens Singles</a>
-					<a class="from_1645142400 to_1647129600" href="tennis.html?competition=7383&season=2022">Abierto Mexicano Telcel presentado por HSBC - Mens Singles</a>
-					<a class="from_1645142400 to_1647129600" href="tennis.html?competition=7265&season=2022">Qatar Total Energies Open - Womens Singles</a>
-					<a class="from_1645228800 to_1647129600" href="tennis.html?competition=7267&season=2022">Abierto Akron Zapopan - Womens Singles</a>
-					<a class="from_1645228800 to_1647129600" href="tennis.html?competition=7385&season=2022">Chile Dove Men+Care Open - Mens Singles</a>
-					<a class="from_1645228800 to_1647129600" href="tennis.html?competition=7389&season=2022">Dubai Duty Free Tennis Championships - Mens Singles</a>
-					<a class="from_1645315200 to_1647129600" href="tennis.html?competition=7459&season=2022">Citta' Di Forli' 5 - Mens Singles</a>
-					<a class="from_1645315200 to_1647129600" href="tennis.html?competition=7457&season=2022">Terega Open - Mens Singles</a>
-					<a class="from_1645747200 to_1647129600" href="tennis.html?competition=7522&season=2022">Turin - Mens Singles</a>
-					<a class="from_1645833600 to_1647129600" href="tennis.html?competition=7269&season=2022">Abierto GNP Seguros 2022 - Womens Singles</a>
-					<a class="from_1645833600 to_1647129600" href="tennis.html?competition=7271&season=2022">Open 6ème Sens Métropole de Lyon - Womens Singles</a>
-					<a class="from_1645920000 to_1647129600" href="tennis.html?competition=7488&season=2022">Gran Canaria Challenger 1 - Mens Singles</a>
-					<a class="from_1646524800 to_1648857600" href="tennis.html?competition=7467&season=2022">Abierto GNP Seguros - Mens Singles</a>
-					<a class="from_1646524800 to_1648857600" href="tennis.html?competition=7469&season=2022">Challenger Santiago Chile - Mens Singles</a>
-					<a class="from_1646524800 to_1648857600" href="tennis.html?competition=7490&season=2022">Roseto Degli Abruzzi 1 - Mens Singles</a>
-					<a class="from_1646611200 to_1648857600" href="tennis.html?competition=7387&season=2022">BNP Paribas Open - Mens Singles</a>
-					<a class="from_1646611200 to_1648857600" href="tennis.html?competition=7273&season=2022">BNP Paribas Open - Womens Singles</a>
-					<a class="from_1646697600 to_1648857600" href="tennis.html?competition=7388&season=2022">BNP Paribas Open - Mens Doubles</a>
-					<a class="from_1647129600 to_1648857600" href="tennis.html?competition=7473&season=2022">Challenger del Biobio - Mens Singles</a>
-					<a class="from_1647129600 to_1648857600" href="tennis.html?competition=7492&season=2022">Regione Abruzzo Aterno Gas & Power Cup - Mens Singles</a>
-					<a class="from_1647216000 to_1648857600" href="tennis.html?competition=7471&season=2022">Arizona Tennis Classic - Mens Singles</a>
-					<a class="from_1647734400 to_1648857600" href="tennis.html?competition=7494&season=2022">Dove Men+Care Challenger Bolivia 2 - Mens Singles</a>
-					<a class="from_1647734400 to_1648857600" href="tennis.html?competition=7520&season=2022">Falkensteiner Punta Skala - Zadar Open - Mens Singles</a>
-					<a class="from_1647734400 to_1648857600" href="tennis.html?competition=7481&season=2022">FlowBank Challenger Biel/Bienne - Mens Singles</a>
-					<a class="from_1647734400 to_1648857600" href="tennis.html?competition=7477&season=2022">Play In Challenger - Mens Singles</a>
-					<a class="from_1647820800 to_1650153600" href="tennis.html?competition=7392&season=2022">Miami Open presented by Itau - Mens Doubles</a>
-					<a class="from_1647820800 to_1650153600" href="tennis.html?competition=7391&season=2022">Miami Open presented by Itau - Mens Singles</a>
-					<a class="from_1647820800 to_1650153600" href="tennis.html?competition=7275&season=2022">Miami Open presented by Itau - Womens Singles</a>
-					<a class="from_1648339200 to_1650153600" href="tennis.html?competition=7483&season=2022">AnyTech365 Andalucia Open - Mens Singles</a>
-					<a class="from_1648339200 to_1650153600" href="tennis.html?competition=7485&season=2022">Challenger Banca stato Città di Lugano - Mens Singles</a>
-					<a class="from_1648339200 to_1650153600" href="tennis.html?competition=7500&season=2022">Circuito Dove Men+Care Pereira - Mens Singles</a>
-					<a class="from_1648339200 to_1650153600" href="tennis.html?competition=7496&season=2022">Oeiras Challenger 1 - Mens Singles</a>
-					<a class="from_1648339200 to_1650153600" href="tennis.html?competition=7498&season=2022">Open Saint-Brieuc Harmonie Mutuelle - Mens Singles</a>
-					<a class="from_1648425600 to_1650153600" href="tennis.html?competition=7666&season=2022">AnyTech365 Andalucia Open - Womens Singles</a>
-					<a class="from_1648857600 to_1650153600" href="tennis.html?competition=7279&season=2022">Copa Colsanitas presentado por Zurich - Womens Singles</a>
-					<a class="from_1648857600 to_1650153600" href="tennis.html?competition=7277&season=2022">Credit One Charleston Open - Womens Singles</a>
-					<a class="from_1648857600 to_1650153600" href="tennis.html?competition=7393&season=2022">Fayez Sarofim & Co. U.S. Men's Clay Court Championship - Mens Singles</a>
-					<a class="from_1648944000 to_1650153600" href="tennis.html?competition=7502&season=2022">Challenger de Salinas Copa Banco Guayaquil - Mens Singles</a>
-					<a class="from_1648944000 to_1650153600" href="tennis.html?competition=7504&season=2022">Costa Cálida Región de Murcia - Mens Singles</a>
-					<a class="from_1648944000 to_1650153600" href="tennis.html?competition=7395&season=2022">Grand Prix Hassan II - Mens Singles</a>
-					<a class="from_1648944000 to_1650153600" href="tennis.html?competition=7518&season=2022">Mexico City Open - Mens Singles</a>
-					<a class="from_1648944000 to_1650153600" href="tennis.html?competition=7506&season=2022">Oeiras 2 - Mens Singles</a>
-					<a class="from_1648944000 to_1650153600" href="tennis.html?competition=7508&season=2022">Sanremo Challenger - Mens Singles</a>
-					<a class="from_1649462400 to_1651276800" href="tennis.html?competition=7398&season=2022">Rolex Monte-Carlo Masters - Mens Doubles</a>
-					<a class="from_1649462400 to_1651276800" href="tennis.html?competition=7397&season=2022">Rolex Monte-Carlo Masters - Mens Singles</a>
-					<a class="from_1649548800 to_1651276800" href="tennis.html?competition=7516&season=2022">Elizabeth Moore Sarasota Open - Mens Singles</a>
-					<a class="from_1649548800 to_1651276800" href="tennis.html?competition=7510&season=2022">Open Citta Della Disfida - Mens Singles</a>
-					<a class="from_1649548800 to_1651276800" href="tennis.html?competition=7513&season=2022">Open Comunidad de Madrid - Mens Singles</a>
-					<a class="from_1649548800 to_1651276800" href="tennis.html?competition=7514&season=2022">San Luis Open BMW - Mens Singles</a>
-					<a class="from_1650067200 to_1651276800" href="tennis.html?competition=7399&season=2022">Barcelona Open Banc Sabadell - Mens Singles</a>
-					<a class="from_1650067200 to_1651276800" href="tennis.html?competition=7281&season=2022">Porsche Tennis Grand Prix - Womens Singles</a>
-					<a class="from_1650153600 to_1651276800" href="tennis.html?competition=7538&season=2022">San Marcos Open Aguascalientes - Mens Singles</a>
-					<a class="from_1650153600 to_1651276800" href="tennis.html?competition=7401&season=2022">Serbia Open - Mens Singles</a>
-					<a class="from_1650153600 to_1651276800" href="tennis.html?competition=7623&season=2022">Split Open - Mens Singles</a>
-					<a class="from_1650153600 to_1651276800" href="tennis.html?competition=7524&season=2022">Tallahassee Tennis Challenger - Mens Singles</a>
-					<a class="from_1650153600 to_1651276800" href="tennis.html?competition=7283&season=2022">TEB BNP Paribas Tennis Championship Istanbul - Womens Singles</a>
-					<a class="from_1650153600 to_1651276800" href="tennis.html?competition=7526&season=2022">TK Sparta Prague Open - Mens Singles</a>
-					<a class="from_1650672000 to_1651276800" href="tennis.html?competition=7403&season=2022">BMW Open by American Express - Mens Singles</a>
-					<a class="from_1650672000 to_1651276800" href="tennis.html?competition=7405&season=2022">Millennium Estoril Open - Mens Singles</a>
-					<a class="from_1650758400 to_1651276800" href="tennis.html?competition=7540&season=2022">Dove Men+Care Challenger Buenos Aires 2 - Mens Singles</a>
-					<a class="from_1650758400 to_1651276800" href="tennis.html?competition=7530&season=2022">Morelos Open - Mens Singles</a>
-					<a class="from_1650758400 to_1651276800" href="tennis.html?competition=7534&season=2022">Ostra Group Open by Moneta - Mens Singles</a>
-					<a class="from_1650758400 to_1651276800" href="tennis.html?competition=7536&season=2022">Rome Garden Open - Mens Singles</a>
-					<a class="from_1650758400 to_1651276800" href="tennis.html?competition=7532&season=2022">Savannah Challenger presented by St. Joseph's/Candler - Mens Singles</a>
-					<a class="from_1650931200 to_1652572800" href="tennis.html?competition=7407&season=2022">Mutua Madrid Open - Mens Singles</a>
-					<a class="from_1650931200 to_1652572800" href="tennis.html?competition=7285&season=2022">Mutua Madrid Open - Womens Singles</a>
-					<a class="from_1651276800 to_1652572800" href="tennis.html?competition=7408&season=2022">Mutua Madrid Open - Mens Doubles</a>
-					<a class="from_1651363200 to_1654387200" href="tennis.html?competition=7637&season=2022">Danube Upper Austria Open - Mens Singles</a>
-					<a class="from_1651363200 to_1654387200" href="tennis.html?competition=7693&season=2022">Dove Men+Care Salvador De Bahia - Mens Singles</a>
-					<a class="from_1651363200 to_1654387200" href="tennis.html?competition=7627&season=2022">I.CLTK Prague Open - Mens Singles</a>
-					<a class="from_1651363200 to_1654387200" href="tennis.html?competition=7640&season=2022">L 'Open 35 de Saint Malo - Womens Singles</a>
-					<a class="from_1651363200 to_1654387200" href="tennis.html?competition=7625&season=2022">Open Pays d'Aix CEPAC - Mens Singles</a>
-					<a class="from_1651795200 to_1654387200" href="tennis.html?competition=7695&season=2022">Dove Men+Care Coquimbo - Mens Singles</a>
-					<a class="from_1651881600 to_1654387200" href="tennis.html?competition=7410&season=2022">Internazionali BNL d'Italia - Mens Doubles</a>
-					<a class="from_1651881600 to_1654387200" href="tennis.html?competition=7409&season=2022">Internazionali BNL d'Italia - Mens Singles</a>
-					<a class="from_1651881600 to_1654387200" href="tennis.html?competition=7287&season=2022">Internazionali BNL d'Italia - Womens Singles</a>
-					<a class="from_1651968000 to_1654387200" href="tennis.html?competition=7629&season=2022">BNP Paribas Primrose - Mens Singles</a>
-					<a class="from_1651968000 to_1654387200" href="tennis.html?competition=7631&season=2022">Neckarcup Heilbronn - Mens Singles</a>
-					<a class="from_1651968000 to_1654387200" href="tennis.html?competition=7633&season=2022">Shymkent 1 - Mens Singles</a>
-					<a class="from_1651968000 to_1654387200" href="tennis.html?competition=7635&season=2022">Zagreb Open - Mens Singles</a>
-					<a class="from_1652054400 to_1654387200" href="tennis.html?competition=7646&season=2022">Trophee Lagardere - Womens Singles</a>
-					<a class="from_1652140800 to_1654387200" href="tennis.html?competition=7648&season=2022">Liqui Moly Open - Womens Singles</a>
-					<a class="from_1652313600 to_1654387200" href="tennis.html?competition=7411&season=2022">Gonet Geneva Open - Mens Singles</a>
-					<a class="from_1652313600 to_1654387200" href="tennis.html?competition=7291&season=2022">Grand Prix Sar La Princesse Lalla Meryem - Womens Singles</a>
-					<a class="from_1652313600 to_1654387200" href="tennis.html?competition=7289&season=2022">Internationaux de Strasbourg - Womens Singles</a>
-					<a class="from_1652313600 to_1654387200" href="tennis.html?competition=7413&season=2022">Open Parc Auvergne-Rhone-Alpes Lyon - Mens Singles</a>
-					<a class="from_1652400000 to_1654387200" href="tennis.html?competition=7687&season=2022">Challenger Francavilla al Mare - Mens Singles</a>
-					<a class="from_1652400000 to_1654387200" href="tennis.html?competition=7683&season=2022">Shymkent Challenger II - Mens Singles</a>
-					<a class="from_1652400000 to_1654387200" href="tennis.html?competition=7685&season=2022">Tunis Open - Mens Singles</a>
-					<a class="from_1652572800 to_1654992000" href="tennis.html?competition=7416&season=2022">French Open - Mens Doubles</a>
-					<a class="from_1652572800 to_1654992000" href="tennis.html?competition=7415&season=2022">French Open - Mens Singles</a>
-					<a class="from_1652572800 to_1654992000" href="tennis.html?competition=7432&season=2022">French Open - Mixed Doubles</a>
-					<a class="from_1652572800 to_1654992000" href="tennis.html?competition=7296&season=2022">French Open - Womens Doubles</a>
-					<a class="from_1652572800 to_1654992000" href="tennis.html?competition=7295&season=2022">French Open - Womens Singles</a>
-					<a class="from_1653004800 to_1654992000" href="tennis.html?competition=7689&season=2022">Internazionali di Tennis - Citta di Vicenza - Mens Singles</a>
-					<a class="from_1653004800 to_1654992000" href="tennis.html?competition=7697&season=2022">Saturn Oil Open - Mens Singles</a>
-					<a class="from_1653609600 to_1654992000" href="tennis.html?competition=7699&season=2022">Baptist Health Little Rock Open - Mens Singles</a>
-					<a class="from_1653609600 to_1654992000" href="tennis.html?competition=7727&season=2022">Forli 6 - Mens Singles</a>
-					<a class="from_1653609600 to_1654992000" href="tennis.html?competition=7719&season=2022">Poznan Open - Mens Singles</a>
-					<a class="from_1653609600 to_1654992000" href="tennis.html?competition=7691&season=2022">Surbiton Trophy - Mens Singles</a>
-					<a class="from_1653609600 to_1654992000" href="tennis.html?competition=7717&season=2022">Unicredit Czech Open - Mens Singles</a>
-					<a class="from_1653696000 to_1654992000" href="tennis.html?competition=7650&season=2022">Makarska Open - Womens Singles</a>
-					<a class="from_1654214400 to_1655596800" href="tennis.html?competition=7652&season=2022">BBVA Open Internacional De Valencia - Womens Singles</a>
-					<a class="from_1654214400 to_1655596800" href="tennis.html?competition=7703&season=2022">Internazionali di Tennis - Città di Perugia - Mens Singles</a>
-					<a class="from_1654214400 to_1655596800" href="tennis.html?competition=7707&season=2022">Kooperativa Bratislava Open - Mens Singles</a>
-					<a class="from_1654214400 to_1655596800" href="tennis.html?competition=7417&season=2022">Libema Open - Mens Singles</a>
-					<a class="from_1654214400 to_1655596800" href="tennis.html?competition=7297&season=2022">Libema Open - Womens Singles</a>
-					<a class="from_1654214400 to_1655596800" href="tennis.html?competition=7705&season=2022">Open Sopra Steria de Lyon - Mens Singles</a>
-					<a class="from_1654214400 to_1655596800" href="tennis.html?competition=7709&season=2022">Orlando Open - Mens Singles</a>
-					<a class="from_1654214400 to_1655769600" href="tennis.html?competition=7701&season=2022">Rothesay Open Nottingham - Mens Singles</a>
-					<a class="from_1654214400 to_1655769600" href="tennis.html?competition=7299&season=2022">Rothesay Open Nottingham - Womens Singles</a>
-					<a class="from_1654214400 to_1655769600" href="tennis.html?competition=7419&season=2022">Weissenhof - Mens Singles</a>
-					<a class="from_1654819200 to_1655769600" href="tennis.html?competition=7303&season=2022">Bett1 Open - Womens Singles</a>
-					<a class="from_1654819200 to_1655769600" href="tennis.html?competition=7713&season=2022">Blois Challenger - Mens Singles</a>
-					<a class="from_1654819200 to_1655769600" href="tennis.html?competition=7421&season=2022">Cinch Championships - Mens Singles</a>
-					<a class="from_1654819200 to_1655769600" href="tennis.html?competition=7721&season=2022">Corrientes Challenger - Mens Singles</a>
-					<a class="from_1654819200 to_1655769600" href="tennis.html?competition=7711&season=2022">Ilkley Challenger - Mens Singles</a>
-					<a class="from_1654819200 to_1655769600" href="tennis.html?competition=7301&season=2022">Rothesay Classic Birmingham - Womens Singles</a>
-					<a class="from_1654819200 to_1655769600" href="tennis.html?competition=7423&season=2022">Terra Wortmann Open - Mens Singles</a>
-					<a class="from_1654819200 to_1655769600" href="tennis.html?competition=7654&season=2022">Veneto Open Internazionali Confindustria Venezia E Rovigo - Womens Singles</a>
-					<a class="from_1655337600 to_1655769600" href="tennis.html?competition=7307&season=2022">Bad Homburg Open presented by Engel & Volkers - Womens Singles</a>
-					<a class="from_1655337600 to_1655769600" href="tennis.html?competition=7425&season=2022">Mallorca Championships - Mens Singles</a>
-					<a class="from_1655337600 to_1655769600" href="tennis.html?competition=7305&season=2022">Rothesay International Eastbourne - Womens Singles</a>
-					<a class="from_1655424000 to_1655769600" href="tennis.html?competition=7715&season=2022">Milan - Mens Singles</a>
-					<a class="from_1655424000 to_1655769600" href="tennis.html?competition=7723&season=2022">Oeiras 3 - Mens Singles</a>
-					<a class="from_1655424000 to_1655769600" href="tennis.html?competition=7427&season=2022">Rothesay International Eastbourne - Mens Singles</a>
-					<a class="from_1655424000 to_1655769600" href="tennis.html?competition=7729&season=2022">Villa Allende - Mens Singles</a>
-					<a class="from_1655769600 to_1656374400" href="tennis.html?competition=7430&season=2022">Wimbledon - Mens Doubles</a>
-					<a class="from_1655769600 to_1656374400" href="tennis.html?competition=7429&season=2022">Wimbledon - Mens Singles</a>
-					<a class="from_1655769600 to_1656374400" href="tennis.html?competition=7431&season=2022">Wimbledon - Mixed Doubles</a>
-					<a class="from_1655769600 to_1656374400" href="tennis.html?competition=7310&season=2022">Wimbledon - Womens Doubles</a>
-					<a class="from_1655769600 to_1656374400" href="tennis.html?competition=7309&season=2022">Wimbledon - Womens Singles</a>
-					<a class="from_1656028800 to_1659225600" href="tennis.html?competition=7725&season=2022">Luedenscheid - Mens Singles</a>
-					<a class="from_1656028800 to_1659225600" href="tennis.html?competition=7731&season=2022">Malaga Open - Mens Singles</a>
-					<a class="from_1656028800 to_1659225600" href="tennis.html?competition=7733&season=2022">Troyes - Mens Singles</a>
-					<a class="from_1656633600 to_1659225600" href="tennis.html?competition=7658&season=2022">Grand Est Open 88 - Womens Singles</a>
-					<a class="from_1656633600 to_1659225600" href="tennis.html?competition=7656&season=2022">Nordea Open - Womens Singles</a>
-					<a class="from_1657238400 to_1659225600" href="tennis.html?competition=7573&season=2022">Hungarian Grand Prix - Womens Singles</a>
-					<a class="from_1657238400 to_1659225600" href="tennis.html?competition=7542&season=2022">Infosys Hall of Fame Open - Mens Singles</a>
-					<a class="from_1657238400 to_1659225600" href="tennis.html?competition=7569&season=2022">Ladies Open Lausanne - Womens Singles</a>
-					<a class="from_1657238400 to_1659225600" href="tennis.html?competition=7544&season=2022">Nordea Open - Mens Singles</a>
-					<a class="from_1657756800 to_1659225600" href="tennis.html?competition=7575&season=2022">Hamburg European Open - Womens Singles</a>
-					<a class="from_1657843200 to_1659225600" href="tennis.html?competition=7577&season=2022">33rd Palermo Ladies Open - Womens Singles</a>
-					<a class="from_1657843200 to_1659225600" href="tennis.html?competition=7546&season=2022">EFG Swiss Open Gstaad - Mens Singles</a>
-					<a class="from_1657843200 to_1659225600" href="tennis.html?competition=7548&season=2022">Hamburg European Open - Mens Singles</a>
-					<a class="from_1658448000 to_1659830400" href="tennis.html?competition=7585&season=2022">BNP Paribas Poland Open - Womens Singles</a>
-					<a class="from_1658448000 to_1659830400" href="tennis.html?competition=7550&season=2022">Generali Open - Mens Singles</a>
-					<a class="from_1658448000 to_1659830400" href="tennis.html?competition=7581&season=2022">Livesport Prague Open 2022 - Womens Singles</a>
-					<a class="from_1658448000 to_1659830400" href="tennis.html?competition=7552&season=2022">Plava Laguna Croatia Open Umag - Mens Singles</a>
-					<a class="from_1658448000 to_1662854400" href="tennis.html?competition=7554&season=2022">Truist Atlanta Open presented by Fiserv - Mens Singles</a>
-					<a class="from_1659052800 to_1662854400" href="tennis.html?competition=7556&season=2022">Abierto de Tenis Mifel - Mens Singles</a>
-					<a class="from_1659052800 to_1662854400" href="tennis.html?competition=7660&season=2022">BCR Iasi Open - Womens Singles</a>
-					<a class="from_1659052800 to_1662854400" href="tennis.html?competition=7558&season=2022">Citi Open - Mens Singles</a>
-					<a class="from_1659052800 to_1662854400" href="tennis.html?competition=7589&season=2022">Mubadala Silicon Valley Classic - Womens Singles</a>
-					<a class="from_1659571200 to_1662854400" href="tennis.html?competition=7561&season=2022">National Bank Open presented by Rogers - Mens Doubles</a>
-					<a class="from_1659657600 to_1662854400" href="tennis.html?competition=7560&season=2022">National Bank Open presented by Rogers - Mens Singles</a>
-					<a class="from_1659657600 to_1662854400" href="tennis.html?competition=7593&season=2022">National Bank Open presented by Rogers - Womens Singles</a>
-					<a class="from_1659657600 to_1662854400" href="tennis.html?competition=7662&season=2022">Thoreau Tennis Open 125 - Womens Singles</a>
-					<a class="from_1660176000 to_1662854400" href="tennis.html?competition=7664&season=2022">Odlum Brown Vanopen - Womens Singles</a>
-					<a class="from_1660176000 to_1662854400" href="tennis.html?competition=7563&season=2022">Western & Southern Open - Mens Doubles</a>
-					<a class="from_1660262400 to_1662854400" href="tennis.html?competition=7562&season=2022">Western & Southern Open - Mens Singles</a>
-					<a class="from_1660262400 to_1662854400" href="tennis.html?competition=7595&season=2022">Western & Southern Open - Womens Singles</a>
-					<a class="from_1660780800 to_1662854400" href="tennis.html?competition=7603&season=2022">Championnats Banque Nationale de Granby - Womens Singles</a>
-					<a class="from_1660780800 to_1662854400" href="tennis.html?competition=7597&season=2022">Tennis in the Land - Womens Singles</a>
-					<a class="from_1660780800 to_1662854400" href="tennis.html?competition=7564&season=2022">Winston-Salem Open - Mens Singles</a>
-					<a class="from_1661126400 to_1663459200" href="tennis.html?competition=7567&season=2022">US Open - Mens Doubles</a>
-					<a class="from_1661126400 to_1663459200" href="tennis.html?competition=7566&season=2022">US Open - Mens Singles</a>
-					<a class="from_1661126400 to_1663459200" href="tennis.html?competition=7568&season=2022">US Open - Mixed Doubles</a>
-					<a class="from_1661126400 to_1663459200" href="tennis.html?competition=7602&season=2022">US Open - Womens Doubles</a>
-					<a class="from_1661126400 to_1663459200" href="tennis.html?competition=7601&season=2022">US Open - Womens Singles</a>
-					<a class="from_1662681600 to_1665878400" href="tennis.html?competition=7642&season=2022">Zavarovalnica Sava Portoroz - Womens Singles</a>
-					<a class="from_1663286400 to_1665878400" href="tennis.html?competition=7578&season=2022">Astana Open - Mens Singles</a>
-					<a class="from_1663286400 to_1665878400" href="tennis.html?competition=7644&season=2022">Budapest Open 125 - Womens Singles</a>
-					<a class="from_1663286400 to_1665878400" href="tennis.html?competition=7571&season=2022">Moselle Open - Mens Singles</a>
-					<a class="from_1663804800 to_1665878400" href="tennis.html?competition=7639&season=2022">Laver Cup - Mens National_teams</a>
-					<a class="from_1663891200 to_1665878400" href="tennis.html?competition=7583&season=2022">Chengdu Open - Mens Singles</a>
-					<a class="from_1663891200 to_1665878400" href="tennis.html?competition=7587&season=2022">Sofia Open - Mens Singles</a>
-					<a class="from_1663891200 to_1665878400" href="tennis.html?competition=7591&season=2022">Zhuhai Championships - Mens Singles</a>
-					<a class="from_1664496000 to_1665878400" href="tennis.html?competition=7598&season=2022">China Open - Mens Singles</a>
-					<a class="from_1664496000 to_1665878400" href="tennis.html?competition=7605&season=2022">Rakuten Japan Open Tennis Championships - Mens Singles</a>
-					<a class="from_1665014400 to_1666483200" href="tennis.html?competition=7622&season=2022">Rolex Shanghai Masters - Mens Doubles</a>
-					<a class="from_1665014400 to_1666483200" href="tennis.html?competition=7621&season=2022">Rolex Shanghai Masters - Mens Singles</a>
-					<a class="from_1665705600 to_1672444800" href="tennis.html?competition=7607&season=2022">European Open - Mens Singles</a>
-					<a class="from_1665705600 to_1672444800" href="tennis.html?competition=7609&season=2022">Stockholm Open - Mens Singles</a>
-					<a class="from_1666310400 to_1672444800" href="tennis.html?competition=7668&season=2022">Abierto Tampico - Womens Singles</a>
-					<a class="from_1666310400 to_1672444800" href="tennis.html?competition=7613&season=2022">Erste Bank Open - Mens Singles</a>
-					<a class="from_1666310400 to_1672444800" href="tennis.html?competition=7615&season=2022">Swiss Indoors Basel - Mens Singles</a>
-					<a class="from_1666915200 to_1672444800" href="tennis.html?competition=7670&season=2022">Dow Tennis Classic - Womens Singles</a>
-					<a class="from_1666915200 to_1672444800" href="tennis.html?competition=7680&season=2022">Puerto Vallarta Open - Womens Singles</a>
-					<a class="from_1666915200 to_1672444800" href="tennis.html?competition=7617&season=2022">Rolex Paris Masters - Mens Doubles</a>
-					<a class="from_1666915200 to_1672444800" href="tennis.html?competition=7318&season=2022">Rolex Paris Masters - Mens Singles</a>
-					<a class="from_1667520000 to_1672444800" href="tennis.html?competition=7672&season=2022">Buenos Aires Open - Womens Singles</a>
-					<a class="from_1667779200 to_1672444800" href="tennis.html?competition=7618&season=2022">Intesa Sanpaolo Next Gen ATP Finals - Mens Singles</a>
-					<a class="from_1668124800 to_1672444800" href="tennis.html?competition=7674&season=2022">Montevideo Open - Womens Singles</a>
-					<a class="from_1668211200 to_1672444800" href="tennis.html?competition=7620&season=2022">Nitto ATP Finals - Mens Doubles</a>
-					<a class="from_1668211200 to_1672444800" href="tennis.html?competition=7619&season=2022">Nitto ATP Finals - Mens Singles</a>
-					<a class="from_1669939200 to_1672444800" href="tennis.html?competition=7676&season=2022">Open Angers Arena Loire - Womens Singles</a>
-					<a class="from_1670544000 to_1672444800" href="tennis.html?competition=7678&season=2022">Open BLS de Limoges - Womens Singles</a>
-				</div>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn">Golf</button>
-				<div class="dropdown-content">
-					<a href="golf.html?competition=3c5msl8moic00eu49b06aumsp&season=405fzvlo157c392mbz8odw9p0">PGA Tour</a>
-				</div>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn">Cricket</button>
-				<div class="dropdown-content" id="cricketDropdownMenu">
-
-				</div>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn">Motorsport</button>
-				<div class="dropdown-content">
-					<a href="motorsport.html?competition=1m5x4n07f2kqkiczebja5etiq&season=3d2cd3uj88qgdlt4lyhr0cis4">Formula 1</a>
-					<a href="motorsport.html?competition=2e554vbpw7g0ykhl0rziuabxl&season=3j534o30hn9scfadkb0v9hkb8">MotoGP</a>
-					<a href="motorsport.html?competition=2ecsbewwstw5jn9h7kpv2joix&season=e9p0ngu4n2do5agfk6wt23f9w">V8 Supercars</a>
-				</div>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn">US Sports</button>
-				<div class="dropdown-content">
-					<a href="nfl.html">USA - NFL</a>
-					<a href="nba.html">USA - NBA</a>
-					<a href="mlb.html">USA - Major League Baseball</a>
-				</div>
-			</div>
-			<!--<div class="dropdown">
-				<button class="dropbtn">Olympics</button>
-				<div class="dropdown-content"></div>
-			</div>-->
-			<div class="dropdown">
-				<button class="dropbtn">Rugby Union</button>
-				<div class="dropdown-content">
-					<a href="rugbyunion.html?competition=3&season=2023">International</a>
-					<a href="rugbyunion.html?competition=205&season=2022">Super Rugby Pacific</a>
-					<a href="rugbyunion.html?competition=209&season=2022">Six Nations</a>
-					<a href="rugbyunion.html?competition=210&season=2024">Rugby World Cup</a>
-					<a href="rugbyunion.html?competition=214&season=2022">The Rugby Championship</a>
-					<a href="rugbyunion.html?competition=221&season=2021">British & Irish Lions</a>
-					<a href="rugbyunion.html?competition=249&season=2022">Women's Rugby World Cup</a>
-				</div>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn">Rugby League</button>
-				<div class="dropdown-content">
-					<a href="rugbyleague.html?competition=3&season=2022">National Rugby League</a>
-					<a href="rugbyleague.html?competition=6&season=2021">State of Origin</a>
-					<a href="rugbyleague.html?competition=86&season=2021">NRL Women's Premiership</a>
-					<a href="rugbyleague.html?competition=87&season=2021">Women's State of Origin</a>
-				</div>
-			</div>
-			<div class="dropdown">
-				<button class="dropbtn">AFL</button>
-				<div class="dropdown-content">
-					<a href="afl.html?competition=11686&season=2022">AFL</a>
-					<a href="afl.html?competition=11595&season=2022">AFLW</a>
-				</div>
-			</div>
+		<div class="dropdown">
+			<button name="football">Football</button>
+			<select name="football" size="0">
+				<option value="null" disabled selected>Select Competition</option>
+				<option value="fixtures|football|8|2021">English Premier League</option>
+				<option value="fixtures|football|5|2021">Champions League</option>
+				<option value="fixtures|football|6|2021">UEFA Europa League</option>
+				<option value="fixtures|football|4|2022">World Cup</option>
+				<option value="fixtures|football|408|2022">Women's World Cup</option>
+				<option value="fixtures|football|23|2021">Spanish La Liga</option>
+				<option value="fixtures|football|21|2021">Italian Serie A</option>
+				<option value="fixtures|football|22|2021">German Bundesliga</option>
+				<option value="fixtures|football|24|2021">French Ligue 1</option>
+				<option value="fixtures|football|1125|2021">UEFA Europa Conference League</option>
+				<option value="fixtures|football|88|2022">Internationals</option>
+				<option value="fixtures|football|551|2022">Internationals Women</option>
+			</select>
 		</div>
-	`)
-	
-	/*CURATE TENNIS MENU*/
-	/*filter out tournaments that have not started yet or finished 7 or more days ago*/
-	let fromDate = [142291200,164142400,164774400,164819200,164954800,165136320,165633600,165965600,166449600,652572800,1640908800,1640995200,1641081600,1641168000,1641600000,1641686400,1642291200,1642896000,1643328000,1643414400,1643500800,1644019200,1644105600,1644624000,1644710400,1645142400,1645228800,1645315200,1645747200,1645833600,1645920000,1646524800,1646611200,1646697600,1647129600,1647216000,1647734400,1647820800,1648339200,1648425600,1648857600,1648944000,1649462400,1649548800,1650067200,1650153600,1650672000,1650758400,1650931200,1651276800,1651363200,1651795200,1651881600,1651968000,1652054400,1652140800,1652313600,1652400000,1652572800,1653004800,1653609600,1653696000,1654214400,1654819200,1655337600,1655424000,1655769600,1656028800,1656633600,1657238400,1657756800,1657843200,1658448000,1659052800,1659571200,1659657600,1660176000,1660262400,1660780800,1661126400,1662681600,1663286400,1663804800,1663891200,1664496000,1665014400,1665705600,1666310400,1666915200,1667520000,1667779200,1668124800,1668211200,1669939200,1670544000]
-	let toDate = [1643500800,1644278400,1644710400,1645142400,1645833600,1647129600,1648857600,1650153600,1651276800,1652572800,1654387200,1654992000,1655596800,1655769600,1656374400,1659225600,1659830400,1662854400,1663459200,1665878400,1666483200,1672444800]
-	let now = Math.floor(new Date().getTime() / 1000)//round down to 10 digits
+		<!--
+		<div class="dropdown"><button class="sport_button" name="nfl">NFL</button></div>
+		<div class="dropdown"><button class="sport_button" name="nba">NBA</button></div>
+		<div class="dropdown"><button class="sport_button" name="mlb">Baseball</button></div>
+		-->
+		<div class="dropdown">
+			<button name="golf">PGA Tour</button>
+			<select name="golf" size="0">
+				<option value="null" disabled selected>Select Tournament</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|18yplyv63nvempg754v3n7ro">Fortinet Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4w92lfpwekuw4540bcn7e02dw">Sanderson Farms Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|c7zprf6boimr76qyg7o5f9o9g">Shriners Children's Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|cqp7zwj2e8p57tzzor78pjaqc">CJ Cup 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3p8r0uf7hnuzogcx3yfj1n85w">Zozo Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|2xn6tvp73zj7mi74iwcvtp6hg">Bermuda Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9yvf32hknprfayygf74v0cis4">World Wide Technology Championship at Mayakoba 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3fj3ql60p10jr6it2xtgncmxg">Houston Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|diki72qkk78m9bk20i3sefxn8">The RSM Classic 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|55md7quoblp1d05o5s7ibfaj8">Hero World Challenge 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1are53lbn6a3yp9k8m8gb52c4">Sentry Tournament of Champions 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1t6fz5nnv6trhcvu5efiikcgk">Sony Open in Hawaii 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|6z9hwz0wihtcz75a0wlposl5g">The American Express 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|clfuxmmehe2g2j2ld9wkfzi8k">Farmers Insurance Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|2pgnfiojm9o23rb1j4y8o7ml0">AT&T Pebble Beach Pro-Am 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|7d86vgb3joqox4q3ztov7kqhg">Waste Management Phoenix Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|f36l5by9jzdyrabdifq5yp0r8">The Genesis Invitational 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|46du9wjcwnvohuonz8xvktvro">The Honda Classic 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4eo03r63w2ykotbu6hod314wk">Arnold Palmer Invitational 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|ep8g33afkpoa84b33da26rvh0">Puerto Rico Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|8ah1du618msplo7p5b1naxmhg">The Players Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|eysv5tdrpt0xnugzg8c0b766s">Valspar Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3tqp680ctuk1s8x5k9gn05bmc">WGC-Dell Technologies Match Play 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|15hb1vel355hhodiw43f2nhg4">Corales Puntacana Resort and Club Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4oczsvupjte5u83djscpczris">Valero Texas Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|8o7k7pbhrhdpv224fl89sosgk">Masters Tournament 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|955jibmkjd5tgbdxo4fmcij9w">RBC Heritage 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|e7qpx9px6yg3lfpi59o7edo9g">Zurich Classic of New Orleans 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|ew5tl4zk2xsp01xpgnjy9adxw">Mexico Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9wrdi1o1paqgq080xo0exbb4k">Wells Fargo Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|crd8burydrctmv517xt8dzoyc">AT&T Byron Nelson 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|dbcc0412nrwd7lnyrg5a56wb8">PGA Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1i1h8r7d59xjl4z0d37lp0kr8">Charles Schwab Challenge 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4m7a502dp035tsapx8iyaoowk">The Memorial Tournament 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9j80xw60xr2etrramc4co82dw">RBC Canadian Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|dijjsnn1fr964fgzg46n99u6s">U.S. Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1mfegwhd4ews9in2uqw5lxiqc">Travelers Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|6b6del617ytlmhxljhsxs8glw">John Deere Classic 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|6xmro8ccq7xw8pmz5ccmk8x78">Genesis Scottish Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9nefpl4p8n551epci1b7is4yc">Barbasol Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3k6d0a2ty05upi8pjuxmc0sus">Barracuda Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|7qw75iise1342nmpu9mldak9g">The Open Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|322i6wv14woi9pmsibpnwoq38">3M Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|cp4ij4htuazb7tyzydephdyqc">Rocket Mortgage Classic 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|l9z0trpgbfuddhlqts5ffn6c">Wyndham Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|2g740je2hc3f9k5liu9mg6ec4">FedEx St. Jude Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|879rrcxp93of3e20987zcu0ic">BMW Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|bn7hb6s6zqaowc77bndzyr9ck">TOUR Championship 2022</option>
+			</select>
+		</div>
 
-	for(let i of fromDate){
+		<div class="dropdown">
+			<button name="tennis">Tennis</button>
+			<select name="tennis" size="0">
+				<option value="null" disabled selected>Select Tournament</option>
+			</select>
+		</div>
 
-		if(now < i){
-			$(`.from_${i}`).remove()
-		}
-	}
+		<div class="dropdown">
+			<button name="basketball">Basketball</button>
+			<select name="basketball" size="0">
+				<option value="null" disabled selected>Select Competition</option>
+				
+				<!--<option value="undefined|nba">NBA</option>-->
+				<option value="scoreboard|basketball|5wdi9kmiurd2rjx2f7ew92wm6|4sjxxlpzq4fgth238gnebn3tg">NBL</option>
+			</select>
+		</div>
 
-	for(let i of toDate){
-		if(now >= i){
-			$(`.to_${i}`).remove()
-		}
-	}
-	/*filter out tournaments that have not started yet or finished 7 or more days ago*/
-	/*CURATE TENNIS MENU*/
+		<div class="dropdown">
+			<button name="motorsport">Motorsport</button>
+			<select name="motorsport" size="0">
+				<option value="null" disabled selected>Select Competition</option>
+				
+				<option value="calendar|motorsport|1m5x4n07f2kqkiczebja5etiq|3d2cd3uj88qgdlt4lyhr0cis4">Formula 1</option>
+				<option value="calendar|motorsport|2e554vbpw7g0ykhl0rziuabxl|3j534o30hn9scfadkb0v9hkb8">MotoGP</option>
+				<option value="calendar|motorsport|2ecsbewwstw5jn9h7kpv2joix|e9p0ngu4n2do5agfk6wt23f9w">V8 Supercars</option>
+			</select>
+		</div>
 
+		<div class="dropdown">
+			<button name="cricket">Cricket</button>
+			<select name="cricket" size="0" id="selectCricket">
+				<option value="null" disabled selected>Select Competition</option>
+			</select>
+		</div>
+
+		<div class="dropdown">
+			<button name="rugby">Rugby Union</button>
+			<select name="rugby" size="0">
+				<option value="null" disabled selected>Select Competition</option>
+
+				<option value="fixtures|rugby|3|2023">International</option>
+				<option value="fixtures|rugby|205|2022">Super Rugby Pacific</option>
+				<option value="fixtures|rugby|209|2022">Six Nations</option>
+				<option value="fixtures|rugby|210|2024">Rugby World Cup</option>
+				<option value="fixtures|rugby|214|2022">The Rugby Championship</option>
+				<option value="fixtures|rugby|221|2021">British & Irish Lions</option>
+				<option value="fixtures|rugby|249|2022">Women's Rugby World Cup</option>
+			</select>
+		</div>
+
+		<div class="dropdown">
+			<button name="rugbyleague">Rugby League</button>
+			<select name="rugbyleague" size="0">
+				<option value="null" disabled selected>Select Competition</option>
+
+				<option value="fixtures|rugbyleague|3|2022">National Rugby League</option>
+				<option value="fixtures|rugbyleague|86|2022">NRL Women's Premiership</option>
+				<option value="fixtures|rugbyleague|6|2022">State of Origin</option>
+				<option value="fixtures|rugbyleague|87|2022">Women's State of Origin</option>
+			</select>
+		</div>
+
+		<div class="dropdown">
+			<button name="afl">AFL</button>
+			<select name="afl" size="0">
+				<option value="null" disabled selected>Select Competition</option>
+
+				<option value="fixtures|afl|11686|2022">AFL</option>
+				<option value="fixtures|afl|11595|2022">AFLW</option>
+			</select>
+		</div>
+	`
+
+	var now = new Date().getTime()
 
 	/*CURATE CRICKET MENU*/
 	let cricketArray = [
@@ -415,58 +190,42 @@ $(function(){
 		["2813","Australia v England Test Series _2021/2022",["Wednesday 8 December 2021","Thursday 16 December 2021","Sunday 26 December 2021","Wednesday 5 January 2022","Friday 14 January 2022"]],
 		["2863","South Africa v India Test Series _2021/2022",["Sunday 26 December 2021","Monday 3 January 2022","Tuesday 11 January 2022"]],
 		["2908","New Zealand v Bangladesh Test Series 2022",["Saturday 1 January 2022","Sunday 9 January 2022"]],
-		// ["2917","West Indies v Ireland ODI Series 2022",["Sunday 9 January 2022","Friday 14 January 2022","Monday 17 January 2022"]],
 		["2922","Sri Lanka v Zimbabwe ODI Series 2022",["Sunday 16 January 2022","Tuesday 18 January 2022","Friday 21 January 2022"]],
 		["2864","South Africa v India ODI Series 2022",["Wednesday 19 January 2022","Friday 21 January 2022","Sunday 23 January 2022"]],
-		// ["2920","Afghanistan v Netherlands ODI Series in Qatar 2022",["Friday 21 January 2022","Sunday 23 January 2022","Tuesday 25 January 2022"]],
 		["2784","West Indies v England Twenty20 Series 2022",["Sunday 23 January 2022","Monday 24 January 2022","Thursday 27 January 2022","Sunday 30 January 2022","Monday 31 January 2022"]],
 		["2878","India v West Indies ODI Series 2022",["Sunday 6 February 2022","Wednesday 9 February 2022","Friday 11 February 2022"]],
 		["2816","Australia v Sri Lanka Twenty20 Series 2022",["Friday 11 February 2022","Sunday 13 February 2022","Tuesday 15 February 2022","Friday 18 February 2022","Sunday 20 February 2022"]],
 		["2879","India v West Indies Twenty20 Series 2022",["Thursday 17 February 2022","Saturday 19 February 2022","Monday 21 February 2022"]],
 		["2911","New Zealand v South Africa Test Series 2022",["Thursday 17 February 2022","Friday 25 February 2022"]],
-		// ["2945","Bangladesh v Afghanistan ODI Series 2022",["Wednesday 23 February 2022","Friday 25 February 2022","Monday 28 February 2022"]],
 		["2881","India v Sri Lanka Twenty20 Series 2022",["Friday 25 February 2022","Sunday 27 February 2022","Monday 28 February 2022"]],
-		// ["2946","Bangladesh v Afghanistan Twenty20 Series 2022",["Thursday 3 March 2022","Saturday 5 March 2022"]],
 		["2880","India v Sri Lanka Test Series 2022",["Friday 4 March 2022","Saturday 12 March 2022"]],
 		["2903","Pakistan v Australia Test Series 2022",["Friday 4 March 2022","Saturday 12 March 2022","Monday 21 March 2022"]],
 		["2785","West Indies v England Test Series 2022",["Wednesday 9 March 2022","Thursday 17 March 2022","Friday 25 March 2022"]],
 		["2868","South Africa v Bangladesh ODI Series 2022",["Friday 18 March 2022","Sunday 20 March 2022","Wednesday 23 March 2022"]],
-		// ["2913","New Zealand v Netherlands Only Twenty20 2022",["Friday 25 March 2022"]],
 		["2966","Nepal v Papua New Guinea ODI Series 2022",["Friday 25 March 2022","Saturday 26 March 2022"]],
 		["2960","IPL 2022",["Sunday 27 March 2022","Monday 28 March 2022","Tuesday 29 March 2022","Wednesday 30 March 2022","Thursday 31 March 2022","Friday 1 April 2022","Saturday 2 April 2022","Sunday 3 April 2022","Monday 4 April 2022","Tuesday 5 April 2022","Wednesday 6 April 2022","Thursday 7 April 2022","Friday 8 April 2022","Saturday 9 April 2022","Sunday 10 April 2022","Monday 11 April 2022","Tuesday 12 April 2022","Wednesday 13 April 2022","Thursday 14 April 2022","Friday 15 April 2022","Saturday 16 April 2022","Sunday 17 April 2022","Monday 18 April 2022","Tuesday 19 April 2022","Wednesday 20 April 2022","Thursday 21 April 2022","Friday 22 April 2022","Saturday 23 April 2022","Sunday 24 April 2022","Monday 25 April 2022","Tuesday 26 April 2022","Wednesday 27 April 2022","Thursday 28 April 2022","Friday 29 April 2022","Saturday 30 April 2022","Sunday 1 May 2022","Monday 2 May 2022","Tuesday 3 May 2022","Wednesday 4 May 2022","Thursday 5 May 2022","Friday 6 May 2022","Saturday 7 May 2022","Sunday 8 May 2022","Monday 9 May 2022","Tuesday 10 May 2022","Wednesday 11 May 2022","Thursday 12 May 2022","Friday 13 May 2022","Saturday 14 May 2022","Sunday 15 May 2022","Monday 16 May 2022","Tuesday 17 May 2022","Wednesday 18 May 2022","Thursday 19 May 2022","Friday 20 May 2022","Saturday 21 May 2022","Sunday 22 May 2022","Monday 23 May 2022","Wednesday 25 May 2022","Thursday 26 May 2022","Saturday 28 May 2022","Monday 30 May 2022"]],
 		["2904","Pakistan v Australia ODI Series 2022",["Tuesday 29 March 2022","Thursday 31 March 2022","Saturday 2 April 2022"]],
-		// ["2914","New Zealand v Netherlands ODI Series 2022",["Tuesday 29 March 2022","Saturday 2 April 2022","Monday 4 April 2022"]],
 		["2869","South Africa v Bangladesh Test Series 2022",["Thursday 31 March 2022","Friday 8 April 2022"]],
 		["2905","Pakistan v Australia Only Twenty20 2022",["Wednesday 6 April 2022"]],
 		["2978","Bangladesh v Sri Lanka Test Series 2022",["Sunday 15 May 2022","Monday 23 May 2022"]],
 		["2934","New Zealand in England Tour Matches 2022",["Friday 20 May 2022","Thursday 26 May 2022"]],
-		// ["2953","Netherlands v West Indies ODI Series 2022",["Tuesday 31 May 2022","Thursday 2 June 2022","Saturday 4 June 2022"]],
 		["2856","England v New Zealand Test Series 2022",["Thursday 2 June 2022","Friday 10 June 2022","Thursday 23 June 2022"]],
 		["2970","Sri Lanka v Australia Twenty20 Series 2022",["Tuesday 7 June 2022","Wednesday 8 June 2022","Saturday 11 June 2022"]],
 		["2882","India v South Africa Twenty20 Series 2022",["Thursday 9 June 2022","Sunday 12 June 2022","Tuesday 14 June 2022","Friday 17 June 2022","Sunday 19 June 2022"]],
 		["2971","Sri Lanka v Australia ODI Series 2022",["Tuesday 14 June 2022","Thursday 16 June 2022","Sunday 19 June 2022","Tuesday 21 June 2022","Friday 24 June 2022"]],
-		// ["2886","Netherlands v England ODI Series 2022",["Friday 17 June 2022","Sunday 19 June 2022","Wednesday 22 June 2022"]],
 		["2939","India in England Tour Matches 2022",["Thursday 23 June 2022","Saturday 2 July 2022","Monday 4 July 2022"]],
-		// ["2954","Ireland v India Twenty20 Series 2022",["Monday 27 June 2022","Wednesday 29 June 2022"]],
 		["2972","Sri Lanka v Australia Test Series 2022",["Wednesday 29 June 2022","Friday 8 July 2022"]],
 		["2857","England v India Twenty20 Series 2022",["Friday 8 July 2022","Saturday 9 July 2022","Sunday 10 July 2022"]],
-		// ["2955","Ireland v New Zealand ODI Series 2022",["Sunday 10 July 2022","Tuesday 12 July 2022","Friday 15 July 2022"]],
 		["2858","England v India ODI Series 2022",["Tuesday 12 July 2022","Thursday 14 July 2022","Sunday 17 July 2022"]],
 		["2938","South Africa in England Tour Matches 2022",["Tuesday 12 July 2022","Thursday 14 July 2022","Tuesday 9 August 2022"]],
 		["2859","England v South Africa ODI Series 2022",["Tuesday 19 July 2022","Friday 22 July 2022","Sunday 24 July 2022"]],
-		// ["2956","Ireland v New Zealand Twenty20 Series 2022",["Tuesday 19 July 2022","Thursday 21 July 2022","Saturday 23 July 2022"]],
 		["2860","England v South Africa Twenty20 Series 2022",["Thursday 28 July 2022","Friday 29 July 2022","Sunday 31 July 2022"]],
 		["2975","Scotland v New Zealand Twenty20 Series 2022",["Thursday 28 July 2022","Saturday 30 July 2022"]],
 		["2976","Scotland v New Zealand Only ODI 2022",["Sunday 31 July 2022"]],
-		// ["2957","Ireland v South Africa Twenty20 Series in England 2022",["Thursday 4 August 2022","Saturday 6 August 2022"]],
-		// ["2969","Ireland v Afghanistan Twenty20 Series 2022",["Wednesday 10 August 2022","Friday 12 August 2022","Saturday 13 August 2022","Tuesday 16 August 2022","Thursday 18 August 2022"]],
-		// ["2986","Netherlands v Pakistan ODI Series 2022",["Tuesday 16 August 2022","Thursday 18 August 2022","Sunday 21 August 2022"]],
 		["2861","England v South Africa Test Series 2022",["Wednesday 17 August 2022","Thursday 25 August 2022","Thursday 8 September 2022"]],
 		["2940","ICC Men's T20 World Cup 2022",["Sunday 16 October 2022","Monday 17 October 2022","Tuesday 18 October 2022","Wednesday 19 October 2022","Thursday 20 October 2022","Friday 21 October 2022","Saturday 22 October 2022","Sunday 23 October 2022","Monday 24 October 2022","Tuesday 25 October 2022","Wednesday 26 October 2022","Thursday 27 October 2022","Friday 28 October 2022","Saturday 29 October 2022","Sunday 30 October 2022","Monday 31 October 2022","Tuesday 1 November 2022","Wednesday 2 November 2022","Thursday 3 November 2022","Friday 4 November 2022","Saturday 5 November 2022","Sunday 6 November 2022","Wednesday 9 November 2022","Thursday 10 November 2022","Sunday 13 November 2022"]]
 	]
-
-	now = new Date().getTime()
-	let cricketDates = {}
+	let cricketDates = {};
 
 	for(let i of cricketArray){
 
@@ -484,26 +243,313 @@ $(function(){
 	}
 
 	for(let i of Object.keys(cricketDates)){
-		$('#cricketDropdownMenu').append(`<a href="cricket.html?competition=${i}&season=0">${cricketDates[i]}</a>`)
+		Opta('select[name="cricket"]').append(`<option value="fixtures|cricket|${i}|0">${cricketDates[i].replace(/_/g,'')}</option>`)
 	}
 	/*CURATE CRICKET MENU*/
-})
-/*SET UP DROPDOWN NAV*/
 
-document.onready = ()=>{
+	/*CURATE TENNIS MENU*/
+	var now10 = Math.floor(now/1000)
+	let tennisArray = [
+		["7315","ATP Cup - Mens National_teams",[1640908800,1641686400]],
+		["7347","Bendigo International - Mens Singles",[1640995200,1641686400]],
+		["7335","Adelaide International 1 - Mens Singles",[1641081600,1641686400]],
+		["7357","Adelaide International 1 - Womens Singles",[1641081600,1641686400]],
+		["7451","Citta' Di Forli' 1 - Mens Singles",[1641081600,1641686400]],
+		["7355","Dove Men+Care Legion Sudamericana Tigre - Mens Singles",[1641081600,1641686400]],
+		["7351","Traralgon International - Mens Singles",[1641081600,1641686400]],
+		["7441","Melbourne Summer Set - Mens Singles",[1641168000,1641686400]],
+		["7447","Melbourne Summer Set 1 - Womens Singles",[1641168000,1641686400]],
+		["7449","Melbourne Summer Set 2 - Womens Singles",[1641168000,1641686400]],
+		["7313","Adelaide International 2 - Mens Singles",[1641600000,1642204800]],
+		["7369","Adelaide International 2 - Womens Singles",[1641600000,1642204800]],
+		["7245","Australian Open - Mens Doubles",[1641686400,1643500800]],
+		["7244","Australian Open - Mens Singles",[1641686400,1643500800]],
+		["7248","Australian Open - Mixed Doubles",[1641686400,1643500800]],
+		["7247","Australian Open - Womens Doubles",[1641686400,1643500800]],
+		["7246","Australian Open - Womens Singles",[1641686400,1643500800]],
+		["7361","Circuito Dove Men Care - Mens Singles",[1641686400,1642291200]],
+		["7359","Citta' Di Forli' 2 - Mens Singles",[1641686400,1642291200]],
+		["7455","Sydney Tennis Classic - Mens Singles",[1641686400,1642204800]],
+		["7453","Sydney Tennis Classic - Womens Singles",[1641686400,1642204800]],
+		["7365","Citta' Di Forli' 3 - Mens Singles",[1642291200,1642896000]],
+		["7363","Dove Men+Care Legion Sudamericana Concepcion - Mens Singles",[1642291200,1642896000]],
+		["7433","Dove Men+Care Challenger Bolivia - Mens Singles",[1642896000,1643414400]],
+		["7370","Open Quimper Bretagne Occidentale - Mens Singles",[1642896000,1643500800]],
+		["7367","Tennis Ohio Championships - Mens Singles",[1642896000,1643500800]],
+		["7339","Open Sud de France - Mens Singles",[1643328000,1644105600]],
+		["7337","Cordoba Open - Mens Singles",[1643414400,1644105600]],
+		["7373","Cleveland Open - Mens Singles",[1643500800,1644105600]],
+		["7341","Tata Open Maharashtra - Mens Singles",[1643500800,1644105600]],
+		["7343","ABN Amro World Tennis Tournament - Mens Singles",[1644019200,1644710400]],
+		["7345","Argentina Open - Mens Singles",[1644019200,1644710400]],
+		["7261","St. Petersburg Ladies Trophy - Womens Singles",[1644019200,1644710400]],
+		["7375","Bengaluru Open 1 - Mens Singles",[1644105600,1644710400]],
+		["7439","Challenger Cherbourg - La Manche - Mens Singles",[1644105600,1644710400]],
+		["7349","Dallas Open - Mens Singles",[1644105600,1644710400]],
+		["7353","Delray Beach Open - Mens Singles",[1644624000,1645315200]],
+		["7263","Dubai Duty Free Tennis Championships - Womens Singles",[1644624000,1645228800]],
+		["7379","Qatar ExxonMobil Open - Mens Singles",[1644624000,1645228800]],
+		["7381","Rio Open presented by Claro - Mens Singles",[1644624000,1645315200]],
+		["7443","Bengaluru Open 2 - Mens Singles",[1644710400,1645315200]],
+		["7445","Citta' Di Forli' 4 - Mens Singles",[1644710400,1645315200]],
+		["7377","Open 13 Provence - Mens Singles",[1644710400,1645315200]],
+		["7383","Abierto Mexicano Telcel presentado por HSBC - Mens Singles",[1645142400,1645833600]],
+		["7265","Qatar Total Energies Open - Womens Singles",[1645142400,1645833600]],
+		["7267","Abierto Akron Zapopan - Womens Singles",[1645228800,1646006400]],
+		["7385","Chile Dove Men+Care Open - Mens Singles",[1645228800,1645920000]],
+		["7389","Dubai Duty Free Tennis Championships - Mens Singles",[1645228800,1645833600]],
+		["7459","Citta' Di Forli' 5 - Mens Singles",[1645315200,1645920000]],
+		["7457","Terega Open - Mens Singles",[1645315200,1645920000]],
+		["7522","Turin - Mens Singles",[1645747200,1646524800]],
+		["7269","Abierto GNP Seguros 2022 - Womens Singles",[1645833600,1646524800]],
+		["7271","Open 6ème Sens Métropole de Lyon - Womens Singles",[1645833600,1646524800]],
+		["7488","Gran Canaria Challenger 1 - Mens Singles",[1645920000,1646524800]],
+		["7467","Abierto GNP Seguros - Mens Singles",[1646524800,1647043200]],
+		["7469","Challenger Santiago Chile - Mens Singles",[1646524800,1647129600]],
+		["7490","Roseto Degli Abruzzi 1 - Mens Singles",[1646524800,1647129600]],
+		["7387","BNP Paribas Open - Mens Singles",[1646611200,1647734400]],
+		["7273","BNP Paribas Open - Womens Singles",[1646611200,1647734400]],
+		["7388","BNP Paribas Open - Mens Doubles",[1646697600,1647734400]],
+		["7473","Challenger del Biobio - Mens Singles",[1647129600,1647734400]],
+		["7492","Regione Abruzzo Aterno Gas & Power Cup - Mens Singles",[1647129600,1647734400]],
+		["7471","Arizona Tennis Classic - Mens Singles",[1647216000,1647734400]],
+		["7494","Dove Men+Care Challenger Bolivia 2 - Mens Singles",[1647734400,1648339200]],
+		["7520","Falkensteiner Punta Skala - Zadar Open - Mens Singles",[1647734400,1648339200]],
+		["7481","FlowBank Challenger Biel/Bienne - Mens Singles",[1647734400,1648339200]],
+		["7477","Play In Challenger - Mens Singles",[1647734400,1648339200]],
+		["7392","Miami Open presented by Itau - Mens Doubles",[1647820800,1648944000]],
+		["7391","Miami Open presented by Itau - Mens Singles",[1647820800,1648857600]],
+		["7275","Miami Open presented by Itau - Womens Singles",[1647820800,1648857600]],
+		["7483","AnyTech365 Andalucia Open - Mens Singles",[1648339200,1648944000]],
+		["7485","Challenger Banca stato Città di Lugano - Mens Singles",[1648339200,1648944000]],
+		["7500","Circuito Dove Men+Care Pereira - Mens Singles",[1648339200,1648944000]],
+		["7496","Oeiras Challenger 1 - Mens Singles",[1648339200,1648944000]],
+		["7498","Open Saint-Brieuc Harmonie Mutuelle - Mens Singles",[1648339200,1648944000]],
+		["7666","AnyTech365 Andalucia Open - Womens Singles",[1648425600,1648944000]],
+		["7279","Copa Colsanitas presentado por Zurich - Womens Singles",[1648857600,1649548800]],
+		["7277","Credit One Charleston Open - Womens Singles",[1648857600,1649548800]],
+		["7393","Fayez Sarofim & Co. U.S. Men's Clay Court Championship - Mens Singles",[1648857600,1649548800]],
+		["7502","Challenger de Salinas Copa Banco Guayaquil - Mens Singles",[1648944000,1649462400]],
+		["7504","Costa Cálida Región de Murcia - Mens Singles",[1648944000,1649548800]],
+		["7395","Grand Prix Hassan II - Mens Singles",[1648944000,1649548800]],
+		["7518","Mexico City Open - Mens Singles",[1648944000,1649462400]],
+		["7506","Oeiras 2 - Mens Singles",[1648944000,1649548800]],
+		["7508","Sanremo Challenger - Mens Singles",[1648944000,1649462400]],
+		["7398","Rolex Monte-Carlo Masters - Mens Doubles",[1649462400,1650153600]],
+		["7397","Rolex Monte-Carlo Masters - Mens Singles",[1649462400,1650153600]],
+		["7516","Elizabeth Moore Sarasota Open - Mens Singles",[1649548800,1650153600]],
+		["7510","Open Citta Della Disfida - Mens Singles",[1649548800,1650153600]],
+		["7513","Open Comunidad de Madrid - Mens Singles",[1649548800,1650153600]],
+		["7514","San Luis Open BMW - Mens Singles",[1649548800,1650153600]],
+		["7399","Barcelona Open Banc Sabadell - Mens Singles",[1650067200,1650758400]],
+		["7281","Porsche Tennis Grand Prix - Womens Singles",[1650067200,1650758400]],
+		["7538","San Marcos Open Aguascalientes - Mens Singles",[1650153600,1650758400]],
+		["7401","Serbia Open - Mens Singles",[1650153600,1650758400]],
+		["7623","Split Open - Mens Singles",[1650153600,1650758400]],
+		["7524","Tallahassee Tennis Challenger - Mens Singles",[1650153600,1650758400]],
+		["7283","TEB BNP Paribas Tennis Championship Istanbul - Womens Singles",[1650153600,1650758400]],
+		["7526","TK Sparta Prague Open - Mens Singles",[1650153600,1650758400]],
+		["7403","BMW Open by American Express - Mens Singles",[1650672000,1651363200]],
+		["7405","Millennium Estoril Open - Mens Singles",[1650672000,1651363200]],
+		["7540","Dove Men+Care Challenger Buenos Aires 2 - Mens Singles",[1650758400,1651363200]],
+		["7530","Morelos Open - Mens Singles",[1650758400,1651363200]],
+		["7534","Ostra Group Open by Moneta - Mens Singles",[1650758400,1651363200]],
+		["7536","Rome Garden Open - Mens Singles",[1650758400,1651363200]],
+		["7532","Savannah Challenger presented by St. Joseph's/Candler - Mens Singles",[1650758400,1651363200]],
+		["7407","Mutua Madrid Open - Mens Singles",[1650931200,1651881600]],
+		["7285","Mutua Madrid Open - Womens Singles",[1650931200,1651881600]],
+		["7408","Mutua Madrid Open - Mens Doubles",[1651276800,1651968000]],
+		["7637","Danube Upper Austria Open - Mens Singles",[1651363200,1651968000]],
+		["7693","Dove Men+Care Salvador De Bahia - Mens Singles",[1651363200,1651968000]],
+		["7627","I.CLTK Prague Open - Mens Singles",[1651363200,1651968000]],
+		["7640","L 'Open 35 de Saint Malo - Womens Singles",[1651363200,1651968000]],
+		["7625","Open Pays d'Aix CEPAC - Mens Singles",[1651363200,1651968000]],
+		["7695","Dove Men+Care Coquimbo - Mens Singles",[1651795200,1652572800]],
+		["7410","Internazionali BNL d'Italia - Mens Doubles",[1651881600,1652572800]],
+		["7409","Internazionali BNL d'Italia - Mens Singles",[1651881600,1652572800]],
+		["7287","Internazionali BNL d'Italia - Womens Singles",[1651881600,1652572800]],
+		["7629","BNP Paribas Primrose - Mens Singles",[1651968000,1652572800]],
+		["7631","Neckarcup Heilbronn - Mens Singles",[1651968000,1652572800]],
+		["7633","Shymkent 1 - Mens Singles",[1651968000,1652572800]],
+		["7635","Zagreb Open - Mens Singles",[1651968000,1652572800]],
+		["7646","Trophee Lagardere - Womens Singles",[1652054400,1652572800]],
+		["7648","Liqui Moly Open - Womens Singles",[1652140800,1652572800]],
+		["7411","Gonet Geneva Open - Mens Singles",[1652313600,1653091200]],
+		["7291","Grand Prix Sar La Princesse Lalla Meryem - Womens Singles",[1652313600,1653091200]],
+		["7289","Internationaux de Strasbourg - Womens Singles",[1652313600,1653091200]],
+		["7413","Open Parc Auvergne-Rhone-Alpes Lyon - Mens Singles",[1652313600,1653091200]],
+		["7687","Challenger Francavilla al Mare - Mens Singles",[1652400000,1653177600]],
+		["7683","Shymkent Challenger II - Mens Singles",[1652400000,1653177600]],
+		["7685","Tunis Open - Mens Singles",[1652400000,1653177600]],
+		["7416","French Open - Mens Doubles",[1652572800,1654387200]],
+		["7415","French Open - Mens Singles",[1652572800,1654387200]],
+		["7432","French Open - Mixed Doubles",[1652572800,1654387200]],
+		["7296","French Open - Womens Doubles",[1652572800,1654387200]],
+		["7295","French Open - Womens Singles",[1652572800,1654387200]],
+		["7689","Internazionali di Tennis - Citta di Vicenza - Mens Singles",[1653004800,1653782400]],
+		["7697","Saturn Oil Open - Mens Singles",[1653004800,1653782400]],
+		["7699","Baptist Health Little Rock Open - Mens Singles",[1653609600,1654387200]],
+		["7727","Forli 6 - Mens Singles",[1653609600,1654387200]],
+		["7719","Poznan Open - Mens Singles",[1653609600,1654387200]],
+		["7691","Surbiton Trophy - Mens Singles",[1653609600,1654387200]],
+		["7717","Unicredit Czech Open - Mens Singles",[1653609600,1654387200]],
+		["7650","Makarska Open - Womens Singles",[1653696000,1654387200]],
+		["7652","BBVA Open Internacional De Valencia - Womens Singles",[1654214400,1654992000]],
+		["7703","Internazionali di Tennis - Città di Perugia - Mens Singles",[1654214400,1654992000]],
+		["7707","Kooperativa Bratislava Open - Mens Singles",[1654214400,1654992000]],
+		["7417","Libema Open - Mens Singles",[1654214400,1654992000]],
+		["7297","Libema Open - Womens Singles",[1654214400,1654992000]],
+		["7705","Open Sopra Steria de Lyon - Mens Singles",[1654214400,1654992000]],
+		["7709","Orlando Open - Mens Singles",[1654214400,1654992000]],
+		["7701","Rothesay Open Nottingham - Mens Singles",[1654214400,1654992000]],
+		["7299","Rothesay Open Nottingham - Womens Singles",[1654214400,1654992000]],
+		["7419","Weissenhof - Mens Singles",[1654214400,1654992000]],
+		["7303","Bett1 Open - Womens Singles",[1654819200,1655596800]],
+		["7713","Blois Challenger - Mens Singles",[1654819200,1655596800]],
+		["7421","Cinch Championships - Mens Singles",[1654819200,1655596800]],
+		["7721","Corrientes Challenger - Mens Singles",[1654819200,1655596800]],
+		["7711","Ilkley Challenger - Mens Singles",[1654819200,1655596800]],
+		["7301","Rothesay Classic Birmingham - Womens Singles",[1654819200,1655596800]],
+		["7423","Terra Wortmann Open - Mens Singles",[1654819200,1655596800]],
+		["7654","Veneto Open Internazionali Confindustria Venezia E Rovigo - Womens Singles",[1654819200,1655596800]],
+		["7307","Bad Homburg Open presented by Engel & Volkers - Womens Singles",[1655337600,1656115200]],
+		["7425","Mallorca Championships - Mens Singles",[1655337600,1656115200]],
+		["7305","Rothesay International Eastbourne - Womens Singles",[1655337600,1656115200]],
+		["7715","Milan - Mens Singles",[1655424000,1656201600]],
+		["7723","Oeiras 3 - Mens Singles",[1655424000,1656201600]],
+		["7427","Rothesay International Eastbourne - Mens Singles",[1655424000,1656115200]],
+		["7729","Villa Allende - Mens Singles",[1655424000,1656201600]],
+		["7430","Wimbledon - Mens Doubles",[1655769600,1657411200]],
+		["7429","Wimbledon - Mens Singles",[1655769600,1657411200]],
+		["7431","Wimbledon - Mixed Doubles",[1655769600,1657411200]],
+		["7310","Wimbledon - Womens Doubles",[1655769600,1657411200]],
+		["7309","Wimbledon - Womens Singles",[1655769600,1657411200]],
+		["7725","Luedenscheid - Mens Singles",[1656028800,1656806400]],
+		["7731","Malaga Open - Mens Singles",[1656028800,1656806400]],
+		["7733","Troyes - Mens Singles",[1656028800,1656806400]],
+		["7658","Grand Est Open 88 - Womens Singles",[1656633600,1657411200]],
+		["7656","Nordea Open - Womens Singles",[1656633600,1657324800]],
+		["7573","Hungarian Grand Prix - Womens Singles",[1657238400,1658016000]],
+		["7542","Infosys Hall of Fame Open - Mens Singles",[1657238400,1658016000]],
+		["7569","Ladies Open Lausanne - Womens Singles",[1657238400,1658016000]],
+		["7544","Nordea Open - Mens Singles",[1657238400,1658016000]],
+		["7575","Hamburg European Open - Womens Singles",[1657756800,1658534400]],
+		["7577","33rd Palermo Ladies Open - Womens Singles",[1657843200,1658620800]],
+		["7546","EFG Swiss Open Gstaad - Mens Singles",[1657843200,1658620800]],
+		["7548","Hamburg European Open - Mens Singles",[1657843200,1658620800]],
+		["7585","BNP Paribas Poland Open - Womens Singles",[1658448000,1659225600]],
+		["7550","Generali Open - Mens Singles",[1658448000,1659139200]],
+		["7581","Livesport Prague Open 2022 - Womens Singles",[1658448000,1659225600]],
+		["7552","Plava Laguna Croatia Open Umag - Mens Singles",[1658448000,1659225600]],
+		["7554","Truist Atlanta Open presented by Fiserv - Mens Singles",[1658448000,1659225600]],
+		["7556","Abierto de Tenis Mifel - Mens Singles",[1659052800,1659744000]],
+		["7660","BCR Iasi Open - Womens Singles",[1659052800,1659830400]],
+		["7558","Citi Open - Mens Singles",[1659052800,1659830400]],
+		["7589","Mubadala Silicon Valley Classic - Womens Singles",[1659052800,1659830400]],
+		["7561","National Bank Open presented by Rogers - Mens Doubles",[1659571200,1660435200]],
+		["7560","National Bank Open presented by Rogers - Mens Singles",[1659657600,1660435200]],
+		["7593","National Bank Open presented by Rogers - Womens Singles",[1659657600,1660435200]],
+		["7662","Thoreau Tennis Open 125 - Womens Singles",[1659657600,1660435200]],
+		["7664","Odlum Brown Vanopen - Womens Singles",[1660176000,1661040000]],
+		["7563","Western & Southern Open - Mens Doubles",[1660176000,1661040000]],
+		["7562","Western & Southern Open - Mens Singles",[1660262400,1661040000]],
+		["7595","Western & Southern Open - Womens Singles",[1660262400,1661040000]],
+		["7603","Championnats Banque Nationale de Granby - Womens Singles",[1660780800,1661558400]],
+		["7597","Tennis in the Land - Womens Singles",[1660780800,1661558400]],
+		["7564","Winston-Salem Open - Mens Singles",[1660780800,1661558400]],
+		["7567","US Open - Mens Doubles",[1661126400,1662854400]],
+		["7566","US Open - Mens Singles",[1661126400,1662854400]],
+		["7568","US Open - Mixed Doubles",[1661126400,1662854400]],
+		["7602","US Open - Womens Doubles",[1661126400,1662854400]],
+		["7601","US Open - Womens Singles",[1661126400,1662854400]],
+		["7642","Zavarovalnica Sava Portoroz - Womens Singles",[1662681600,1663459200]],
+		["7578","Astana Open - Mens Singles",[1663286400,1664064000]],
+		["7644","Budapest Open 125 - Womens Singles",[1663286400,1664064000]],
+		["7571","Moselle Open - Mens Singles",[1663286400,1664064000]],
+		["7639","Laver Cup - Mens National_teams",[1663804800,1664064000]],
+		["7583","Chengdu Open - Mens Singles",[1663891200,1664668800]],
+		["7587","Sofia Open - Mens Singles",[1663891200,1664668800]],
+		["7591","Zhuhai Championships - Mens Singles",[1663891200,1664668800]],
+		["7598","China Open - Mens Singles",[1664496000,1665273600]],
+		["7605","Rakuten Japan Open Tennis Championships - Mens Singles",[1664496000,1665273600]],
+		["7622","Rolex Shanghai Masters - Mens Doubles",[1665014400,1665878400]],
+		["7621","Rolex Shanghai Masters - Mens Singles",[1665014400,1665878400]],
+		["7607","European Open - Mens Singles",[1665705600,1666483200]],
+		["7609","Stockholm Open - Mens Singles",[1665705600,1666483200]],
+		["7668","Abierto Tampico - Womens Singles",[1666310400,1667088000]],
+		["7613","Erste Bank Open - Mens Singles",[1666310400,1667088000]],
+		["7615","Swiss Indoors Basel - Mens Singles",[1666310400,1667088000]],
+		["7670","Dow Tennis Classic - Womens Singles",[1666915200,1667692800]],
+		["7680","Puerto Vallarta Open - Womens Singles",[1666915200,1667692800]],
+		["7617","Rolex Paris Masters - Mens Doubles",[1666915200,1667692800]],
+		["7318","Rolex Paris Masters - Mens Singles",[1666915200,1667692800]],
+		["7672","Buenos Aires Open - Womens Singles",[1667520000,1668297600]],
+		["7618","Intesa Sanpaolo Next Gen ATP Finals - Mens Singles",[1667779200,1668211200]],
+		["7674","Montevideo Open - Womens Singles",[1668124800,1668902400]],
+		["7620","Nitto ATP Finals - Mens Doubles",[1668211200,1668902400]],
+		["7619","Nitto ATP Finals - Mens Singles",[1668211200,1668902400]],
+		["7676","Open Angers Arena Loire - Womens Singles",[1669939200,1670716800]],
+		["7678","Open BLS de Limoges - Womens Singles",[1670544000,1671321600]]
+	]
+	let tennisDates = {};
 
-	switch(query['competition']){
+	for(let i of tennisArray){
+
+		let d = i[2]
 		
-		/*AFL*/
-		case '11686'://AFL
-		case '11595'://AFLW
+		if((now10 >= d[0]) && (now10 <= (d[1] + (2419200 / 2)))){
+			tennisDates[i[0]] = i[1]
+		}
+	}
 
-		if(!!fixturesWidget){
-			fixturesWidget.innerHTML = (`
+	for(let i of Object.keys(tennisDates)){
+		Opta('select[name="tennis"]').append(`<option value="live_scores|tennis|${i}|2022">${tennisDates[i].replace(/_/g,'')}</option>`)
+	}
+	/*CURATE TENNIS MENU*/
+
+	Opta('.newsnet_sport_nav_container .dropdown select').on('change',(e)=>{
+
+		let val = e.target.value;//store the option value for later use
+		let keys = val.split('|');//split the option value into array
+
+		loadWidget({//define object keys as array values and pass to load function
+			widget: keys[0],
+			sport: keys[1],
+			competition: keys[2],
+			season: keys[3],
+			match: keys[4],
+			tournament: keys[5],
+			race: keys[6],
+		});
+
+		Opta('.newsnet_sport_nav_container .dropdown select').prop('value','null');//reset all select elements
+		e.target.value = val;//restore active select element to user selection
+		e.target.blur();//remove focus from the select element - necessary for correct display in firefox browser
+	});
+
+	Opta('.sport_button').on('click',(e)=>{
+		loadWidget({sport: e.target.name})
+	})
+};
+
+constructNav();
+//end of function to construct navigation menu - the above will need to be edited to accommodate menu curation
+
+//function to populate sports widgets
+const loadWidget = (obj)=>{
+
+	let sportWidgetWrapper = document.getElementById('sport-widget-wrapper');
+
+	/*afl*/
+	if(obj['sport'] == 'afl'){
+
+		if(obj['widget'] == 'fixtures'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget widget="fixtures" 
 				template="normal" 
-				competition="${query['competition']}" 
-				season="${query['season']}" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
 				show_venue="true" 
 				match_status="all" 
 				grouping="date" 
@@ -519,32 +565,44 @@ document.onready = ()=>{
 				show_crests="true" 
 				date_format="ll" 
 				time_format="HH:mm" 
-				month_date_format="MMMM"
-
-				team_link="" 
-				match_link="afl-match-summary.html" 
+				month_date_format="MMMM" 
+				match_link="?sport=afl&widget=match_summary" 
 				pre_match="10" 
-					
 				show_logo="false" 
 				show_title="true" 
 				breakpoints="400" 
 				sport="afl" 
-
 				image_size="medium"
-
 				></opta-widget>
-			`)
-			//team_link="afl-teams.html" 
-		};
+			</div>
+			<!--advertisement banner-->
+			<div class="content">
+				<opta-widget 
+				widget="standings" 
+				template="normal" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				show_rank="true" 
+				show_key="true" 
+				sorting="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="460" 
+				sport="afl"
+				></opta-widget>
+			</div>
+			`
+		}
 
-		if(!!matchWidget){
-			matchWidget.innerHTML = (`
+		if(obj['widget'] == 'match_summary'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget 
 				widget="match_summary" 
 				template="normal" 
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				match="${query['match']}" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				match="${obj['match']}" 
 				live="true" 
 				show_match_header="true" 
 				show_score="true" 
@@ -558,53 +616,27 @@ document.onready = ()=>{
 				competition_naming="full" 
 				team_naming="full" 
 				player_naming="full" 
-
-				team_link="" 
-				player_link="" 
-
 				show_title="true" 
 				show_logo="false" 
 				show_live="true" 
 				breakpoints="400, 700" 
 				sport="afl"
 				></opta-widget>
-			`)
-			// team_link="afl-teams.html" 
-			// player_link="afl-players.html" 
-		};
+			</div>
+			`
+		}
+	}
 
-		if(!!standingsWidget){
-			standingsWidget.innerHTML = (`
-				<opta-widget 
-				widget="standings" 
-				template="normal" 
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				show_rank="true" 
-				show_key="true" 
-				sorting="true" 
-				show_logo="false" 
-				show_title="true" 
-				breakpoints="460" 
-				sport="afl"
-				></opta-widget>
-			`)
-		};
+	/*basketball (nbl)*/
+	if(obj['sport'] == 'basketball'){
 
-		break;
-		/*AFL*/
-
-		/*Basketball (NBL)*/
-		case '5wdi9kmiurd2rjx2f7ew92wm6'://NBL
-
-		if(!!fixturesWidget){
-			fixturesWidget.innerHTML = (`
+		if(obj['widget'] == 'scoreboard'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget 
 				widget="scoreboard" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
 				template="normal" 
 				live="true" 
 				show_venue="true" 
@@ -622,30 +654,22 @@ document.onready = ()=>{
 				month_date_format="MMMM" 
 				competition_naming="full" 
 				team_naming="full" 
-				team_link="basketball-rosters.html" 
-				
+				team_link="?sport=basketball&widget=rosters" 
 				pre_match="10" 
-				
 				show_live="true" 
 				show_logo="false" 
 				show_title="true" 
 				breakpoints="400" 
 				sport="basketball" 
-
 				image_size="medium"
 				></opta-widget>
-			`);
-			// matchWidget.innerHTML = (``);
-		};
-
-		if(!!standingsWidget){
-			standingsWidget.innerHTML = (`
-				<opta-widget 
+			</div>
+			<!--advertisement banner-->
+			<div class="content">
+			<opta-widget 
 				widget="standings" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
 				template="normal" 
 				navigation="tabs" 
 				default_nav="1" 
@@ -655,23 +679,24 @@ document.onready = ()=>{
 				show_crests="false" 
 				sorting="true" 
 				team_naming="full" 
-				team_link="basketball-rosters.html" 
+				team_link="?sport=basketball&widget=rosters" 
 				show_logo="false" 
 				show_title="true" 
 				breakpoints="460" 
-				sport="basketball"></opta-widget>
-			`);
-		};
+				sport="basketball"
+				></opta-widget>
+			</div>
+			`
+		}
 
-		if(!!rostersWidget){
-			rostersWidget.innerHTML = (`
+		if(obj['widget'] == 'rosters'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget 
 				widget="rosters" 
-
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				team="${query['team']}" 
-
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				team="${obj['team']}" 
 				template="normal" 
 				column_count="1" 
 				show_position="true" 
@@ -698,91 +723,31 @@ document.onready = ()=>{
 				breakpoints="400" 
 				sport="basketball"
 				></opta-widget>
-			`)
-		};
+			</div>
+			`
+		}
+	}
 
-		break;
-		/*Basketball (NBL)*/
-		
-		/*Cricket*/
-		case 'all':
-		// case '2764':
-		// case '2971':
-		// case '2832'://KFC big bash 21/22//
-		case '2780':
-		case '2781':
-		case '2784':
-		case '2785':
-		case '2813':
-		case '2816':
-		case '2831':
-		case '2832':
-		case '2852':
-		case '2856':
-		case '2857':
-		case '2858':
-		case '2859':
-		case '2860':
-		case '2861':
-		case '2863':
-		case '2864':
-		case '2868':
-		case '2869':
-		case '2878':
-		case '2879':
-		case '2880':
-		case '2881':
-		case '2882':
-		case '2886':
-		case '2903':
-		case '2904':
-		case '2905':
-		case '2908':
-		case '2911':
-		case '2913':
-		case '2914':
-		case '2917':
-		case '2920':
-		case '2922':
-		case '2934':
-		case '2938':
-		case '2939':
-		case '2940':
-		case '2945':
-		case '2946':
-		case '2953':
-		case '2954':
-		case '2955':
-		case '2956':
-		case '2957':
-		case '2960':
-		case '2966':
-		case '2969':
-		case '2970':
-		case '2971':
-		case '2972':
-		case '2975':
-		case '2976':
-		case '2978':
-		case '2986':
-		
-		if(!!fixturesWidget){
-			//fixtures_type="${query['fixtures_type']}" 
-			fixturesWidget.innerHTML = (`
+	/*cricket*/
+	if(obj['sport'] == 'cricket'){
+
+		if(!obj['season'] || obj['season'] == undefined){
+			obj['season'] = '0'
+		}
+
+		if(obj['widget'] == 'fixtures'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget widget="fixtures" 
-
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
 				template="normal" 
 				live="true" 
 				show_venue="true" 
 				match_status="all" 
 				grouping="month" 
 				show_grouping="true" 
-				
 				navigation="tabs_more" 
-				
 				default_nav="1" 
 				start_on_current="true" 
 				sub_grouping="date" 
@@ -794,30 +759,48 @@ document.onready = ()=>{
 				month_date_format="MMMM" 
 				competition_naming="full" 
 				team_naming="full" 
-				match_link="cricket-match.html" 
+				match_link="?sport=cricket&widget=score_card" 
 				pre_match="false" 
 				show_live="true" 
 				show_logo="false" 
-				
-
-				
 				show_title="true" 
 				breakpoints="400" 
 				sport="cricket" 
 				></opta-widget>
-			`);
-			//title="${title}" 
-		};
+			</div>
+			<!--advertisement banner-->
+			<div class="content">
+				<opta-widget widget="standings" 
+				template="normal" 
+				live="true" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				navigation="none" 
+				default_nav="1" 
+				show_key="true" 
+				show_crests="true" 
+				points_in_first_column="true" 
+				competition_naming="full" 
+				team_naming="full" 
+				sorting="true" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400, 700" 
+				sport="cricket"
+				></opta-widget>
+			</div>
+			`
+		}
 
-		if(!!scorecardWidget){
-			scorecardWidget.innerHTML = (`
+		if(obj['widget'] == 'score_card'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget 
 				widget="score_card" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				match="${query['match']}" 
-				
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				match="${obj['match']}" 
 				template="normal" 
 				live="true" 
 				show_match_header="true" 
@@ -850,111 +833,28 @@ document.onready = ()=>{
 				show_unfinished_partnerships="true" 
 				team_naming="full" 
 				player_naming="last_name" 
-				
 				show_logo="false" 
 				show_title="true" 
 				breakpoints="400, 700" 
 				sport="cricket"
 				></opta-widget>
-			`);
-			//team_link="cricket-teams.html" 
-		};
+			</div>
+			`
+		}
+	}
 
-		if(!!standingsWidget){
+	/*golf*/
+	if(obj['sport'] == 'golf'){
 
-			if(!query['season']){
-				query['season'] = '0'
-			}
-
-			standingsWidget.innerHTML = (`
-				<opta-widget widget="standings" 
-				template="normal" 
-				live="true" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				
-				navigation="none" 
-				default_nav="1" 
-				show_key="true" 
-				show_crests="true" 
-				points_in_first_column="true" 
-				competition_naming="full" 
-				team_naming="full" 
-				
-				sorting="true" 
-				show_live="true" 
-				show_logo="false" 
-				show_title="true" 
-				breakpoints="400, 700" 
-				sport="cricket"
-				></opta-widget>
-			`);
-			//team_link="cricket-teams.html" 
-		};
-
-		break;
-		/*Cricket*/
-
-		/*Golf*/
-		case '3c5msl8moic00eu49b06aumsp':
-		
-		if(!!scheduleWidget){
-			scheduleWidget.innerHTML = (`
-				<opta-widget 
-				widget="schedule" 
-				template="normal" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				
-				order_by="date_ascending" 
-				show_date="true" 
-				date_format="D MMM" 
-				show_dates_combined="false" 
-				show_course_name="true" 
-				show_winner="true" 
-				tournament_link="golf-tournament.html" 
-				show_logo="false" 
-				show_title="true" 
-				breakpoints="400" 
-				sport="golf"
-				></opta-widget>
-			`);
-		};
-
-		if(!!matchWidget){
-			matchWidget.innerHTML = (`
-				<opta-widget 
-				widget="team_match_play" 
-				template="normal" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				match="${query['tournament']}" 
-				
-				show_crests="false" 
-				show_team_scores="true" 
-				show_match_scores="true" 
-				player_naming="full" 
-				show_logo="true" 
-				show_title="true" 
-				breakpoints="400" 
-				sport="golf"
-				></opta-widget>
-			`);
-		};
-
-		if(!!leaderboardWidget){
-			leaderboardWidget.innerHTML = (`
+		if(obj['widget'] == 'leaderboard'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget 
 				widget="leaderboard" 
 				template="normal" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				match="${query['tournament']}" 
-				
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				match="${obj['tournament']}" 
 				live="true" 
 				show_date="true" 
 				date_format="D MMM" 
@@ -973,31 +873,73 @@ document.onready = ()=>{
 				breakpoints="400" 
 				sport="golf"
 				></opta-widget>
-			`);
-		};
+			</div>
+			`
+		}
 
-		break;
-		/*Golf*/
+		if(obj['widget'] == 'schedule'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="schedule" 
+				template="normal" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				order_by="date_ascending" 
+				show_date="true" 
+				date_format="D MMM" 
+				show_dates_combined="false" 
+				show_course_name="true" 
+				show_winner="true" 
+				tournament_link="?sport=golf&widget=leaderboard" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="golf"
+				></opta-widget>
+			</div>
+			`
+		}
 
-		/*Motorsport*/
-		case '1m5x4n07f2kqkiczebja5etiq'://FIA F1 World Championship
-		case '2e554vbpw7g0ykhl0rziuabxl'://FIM MotoGP World Championship
-		case '2ecsbewwstw5jn9h7kpv2joix'://V8 Supercars
+		if(obj['widget'] == 'team_match_play'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="team_match_play" 
+				template="normal" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				match="${obj['tournament']}" 
+				show_crests="false" 
+				show_team_scores="true" 
+				show_match_scores="true" 
+				player_naming="full" 
+				show_logo="true" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="golf"
+				></opta-widget>
+			</div>
+			`
+		}
+	}
 
-		let title;
+	/*motorsport*/
+	if(obj['sport'] == 'motorsport'){
 
-		if(query['competition'] == '1m5x4n07f2kqkiczebja5etiq'){title = 'FIA F1 World Championship'}
-		if(query['competition'] == '2e554vbpw7g0ykhl0rziuabxl'){title = 'FIM MotoGP World Championship'}
-		if(query['competition'] == '2ecsbewwstw5jn9h7kpv2joix'){title = 'V8 Supercars'}
+		let defaultNav = '2';
 
-		if(!!calendarWidget){
-			calendarWidget.innerHTML = (`
+		if(obj['competition'] == '1m5x4n07f2kqkiczebja5etiq'){title = 'Formula 1'; defaultNav = '3'}
+		if(obj['competition'] == '2e554vbpw7g0ykhl0rziuabxl'){title = 'MotoGP'}
+		if(obj['competition'] == '2ecsbewwstw5jn9h7kpv2joix'){title = 'V8 Supercars'}
+
+		if(obj['widget'] == 'calendar'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget 
 				widget="calendar" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
 				template="normal" 
 				show_details="true" 
 				order_by="date_ascending" 
@@ -1005,69 +947,20 @@ document.onready = ()=>{
 				competition_naming="full" 
 				team_naming="full" 
 				player_naming="full" 
-				race_link="motorsport-race.html" 
+				race_link="?sport=motorsport&widget=live_race" 
 				show_logo="false" 
 				title="${title} Calendar" 
 				show_title="true" 
 				breakpoints="400" 
 				sport="motorsport"
 				></opta-widget>
-			`);
-		};
-
-		if(!!raceWidget){
-
-			let defaultNav = '3';
-
-			if(query['competition'] != '1m5x4n07f2kqkiczebja5etiq'){
-				defaultNav = '2';
-			}
-
-			raceWidget.innerHTML = (`
-				<opta-widget 
-				widget="live_race" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				race="${query['race']}" 
-				
-				template="normal" 
-				live="true" 
-				show_live="true" 
-				show_flags="true" 
-				show_race_header="true" 
-				show_laps="true" 
-				show_competition_name="true" 
-				competition_naming="full" 
-				show_race_name="true" 
-				race_naming="full" 
-				navigation="tabs" 
-				
-				default_nav="${defaultNav}" 
-				
-				show_date="true" 
-				date_format="dddd D MMMM YYYY HH:mm" 
-				show_practices="true" 
-				show_qualifying="true" 
-				team_naming="full" 
-				player_naming="full" 
-				show_logo="false" 
-				show_title="true" 
-				breakpoints="400, 700" 
-				sport="motorsport"
-				></opta-widget>
-			`);
-			//navigation="dropdown" 
-		};
-
-		if(!!standingsWidget){
-			standingsWidget.innerHTML = (`
+			</div>
+			<!--advertisement banner-->
+			<div class="content">
 				<opta-widget 
 				widget="standings" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
 				template="normal" 
 				navigation="tabs" 
 				default_nav="1" 
@@ -1081,116 +974,123 @@ document.onready = ()=>{
 				breakpoints="460" 
 				sport="motorsport"
 				></opta-widget>
-			`);
-		};
+			</div>
+			`
+		}
 
-		break;
-		/*Motorsport*/
+		if(obj['widget'] == 'live_race'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="live_race" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				race="${obj['race']}" 
+				template="normal" 
+				live="true" 
+				show_live="true" 
+				show_flags="true" 
+				show_race_header="true" 
+				show_laps="true" 
+				show_competition_name="true" 
+				competition_naming="full" 
+				show_race_name="true" 
+				race_naming="full" 
+				navigation="tabs" 
+				default_nav="${defaultNav}" 
+				show_date="true" 
+				date_format="dddd D MMMM YYYY HH:mm" 
+				show_practices="true" 
+				show_qualifying="true" 
+				team_naming="full" 
+				player_naming="full" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400, 700" 
+				sport="motorsport"
+				></opta-widget>
+			</div>
+			`
+		}
+	}
 
-		/*Rugby League*/
-		case '3'://National Rugby League
-		case '6'://State of Origin
-		case '86'://NRL Women's Premiership
-		case '87'://Women's State of Origin
-		
-		if(document.location.href.indexOf('rugbyleague') >= 0){
+	/*rugby league*/
+	if(obj['sport'] == 'rugbyleague'){
 
-			if(!!fixturesWidget){
-				fixturesWidget.innerHTML = (`
+		if(obj['widget'] == 'fixtures'){
+
+			if(obj['competition'] == '3' || obj['competition'] == '86'){
+				sportWidgetWrapper.innerHTML = `
+				<div class="content">
 					<opta-widget 
-					widget="fixtures" 
-					
-					competition="${query['competition']}" 
-					season="${query['season']}" 
-					
-					template="normal" 
-					live="true" 
-
-					days_before="" 
-					days_ahead="" 
-
-					show_venue="true" 
-					match_status="all" 
-					grouping="date" 
-					show_grouping="true" 
-					
-					navigation="tabs_scroll" 
-					
-					default_nav="1" 
-					start_on_current="true" 
-					sub_grouping="date" 
-					show_subgrouping="false" 
-					order_by="date_ascending" 
-					show_crests="true" 
-					date_format="dddd D MMMM YYYY" 
-					month_date_format="MMMM" 
-					competition_naming="full" 
-					team_naming="full" 
-					
-					team_link="" 
-					
-					pre_match="false" 
-					show_live="true" 
-					show_logo="false" 
-					show_title="true" 
-					breakpoints="400" 
-
-					image_size="medium" 
-
-					sport="rugbyleague">
-						<opta-widget sport="rugbyleague" 
-						widget="match_summary" 
+						widget="fixtures" 
+						competition="${obj['competition']}" 
+						season="${obj['season']}" 
 						template="normal" 
 						live="true" 
-						competition="" 
-						season="" 
-						match="" 
-						show_match_header="true" 
-						show_crests="true" 
-						show_cards="true" 
-						show_date="true" 
-						date_format="dddd D MMMM YYYY" 
-						show_competition_name="true" 
-						competition_naming="full" 
-						show_referee="true" 
+						days_before="" 
+						days_ahead="" 
 						show_venue="true" 
-						show_tooltips="true" 
-						show_tries="true" 
-						show_conversions="true" 
-						show_penalties="true" 
-						show_drop_goals="all" 
-						show_subs="true" 
-						show_cards="all" 
-						team_link="" 
-						
-						player_link="" 
-						
-						team_naming="" 
-						player_naming="last_name" 
+						match_status="all" 
+						grouping="date" 
+						show_grouping="true" 
+						navigation="tabs_scroll" 
+						default_nav="1" 
+						start_on_current="true" 
+						sub_grouping="date" 
+						show_subgrouping="false" 
+						order_by="date_ascending" 
+						show_crests="true" 
+						date_format="dddd D MMMM YYYY" 
+						month_date_format="MMMM" 
+						competition_naming="full" 
+						team_naming="full" 
+						pre_match="false" 
 						show_live="true" 
 						show_logo="false" 
-						title="" 
 						show_title="true" 
-						breakpoints="400"></opta-widget>
+						breakpoints="400" 
+						image_size="medium" 
+						sport="rugbyleague">
+						<opta-widget sport="rugbyleague" 
+							widget="match_summary" 
+							template="normal" 
+							live="true" 
+							competition="" 
+							season="" 
+							match="" 
+							show_match_header="true" 
+							show_crests="true" 
+							show_cards="true" 
+							show_date="true" 
+							date_format="dddd D MMMM YYYY" 
+							show_competition_name="true" 
+							competition_naming="full" 
+							show_referee="true" 
+							show_venue="true" 
+							show_tooltips="true" 
+							show_tries="true" 
+							show_conversions="true" 
+							show_penalties="true" 
+							show_drop_goals="all" 
+							show_subs="true" 
+							show_cards="all" 
+							team_naming="" 
+							player_naming="last_name" 
+							show_live="true" 
+							show_logo="false" 
+							title="" 
+							show_title="true" 
+							breakpoints="400">
+						</opta-widget>
 					</opta-widget>
-				`);
-				// navigation="tabs_scroll" 
-				// team_link="rugbyleague-teams.html" 
-				// player_link="rugbyleague-players.html" 
-			};
-
-			if(!!matchWidget){
-				matchWidget.innerHTML = (``);
-			};
-
-			if(!!standingsWidget){
-				standingsWidget.innerHTML = (`
+				</div>
+				<!--advertisement banner-->
+				<div class="content">
 					<opta-widget 
 					widget="standings" 
-					
-					competition="${query['competition']}" 
-					season="${query['season']}" 
-					
+					competition="${obj['competition']}" 
+					season="${obj['season']}" 
 					template="normal" 
 					live="true" 
 					navigation="tabs" 
@@ -1201,9 +1101,6 @@ document.onready = ()=>{
 					show_form="6" 
 					competition_naming="full" 
 					team_naming="full" 
-					
-					team_link="" 
-
 					date_format="dddd D MMMM YYYY" 
 					sorting="true" 
 					show_live="true" 
@@ -1212,278 +1109,291 @@ document.onready = ()=>{
 					breakpoints="400,700" 
 					sport="rugbyleague"
 					></opta-widget>
-				`);
-				// team_link="rugbyleague-teams.html" 
-			};
-			break;
-		}
-		/*Rugby League*/
+				</div>
+				`
+			}
 
-		/*Rugby Union*/
-		case '3'://International
-		case '205'://Super Rugby Pacific
-		case '209'://Six Nations
-		case '210'://Rugby World Cup
-		case '214'://The Rugby Championship
-		case '221'://British & Irish Lions
-		case '249'://Women's Rugby World Cup
-
-		if(document.location.href.indexOf('rugbyunion') >= 0){
-
-			if(!!fixturesWidget){
-				fixturesWidget.innerHTML = (`
+			if(obj['competition'] == '6' || obj['competition'] == '87'){
+				sportWidgetWrapper.innerHTML = `
+				<div class="content">
 					<opta-widget 
-					widget="fixtures" 
-					
-					competition="${query['competition']}" 
-					season="${query['season']}" 
-					
-					template="normal" 
-					live="true" 
-
-					days_before="" 
-					days_ahead="" 
-
-					show_venue="true" 
-					match_status="all" 
-					
-					grouping="month" 
-					show_grouping="true" 
-					
-					navigation="dropdown" 
-				
-					default_nav="1" 
-					start_on_current="true" 
-					
-					sub_grouping="date" 
-					show_subgrouping="true" 
-					
-					order_by="date_ascending" 
-					show_crests="true" 
-					date_format="dddd D MMMM YYYY" 
-					month_date_format="MMMM" 
-					competition_naming="full" 
-					team_naming="full" 
-
-					team_link="rugbyunion-squads.html" 
-					match_link="" 
-					pre_match="false" 
-
-					show_live="true" 
-					show_logo="false" 
-					show_title="true" 
-					breakpoints="400" 
-
-					image_size="medium" 
-
-					sport="rugby">
-						<opta-widget sport="rugby" 
-						widget="match_summary" 
+						widget="fixtures" 
+						competition="${obj['competition']}" 
+						season="${obj['season']}" 
 						template="normal" 
 						live="true" 
-						competition="" 
-						season="" 
-						match="" 
-						show_match_header="true" 
-						show_crests="true" 
-						show_cards="true" 
-						show_date="true" 
-						date_format="dddd D MMMM YYYY" 
-						show_competition_name="true" 
-						competition_naming="full" 
-						show_referee="true" 
+						days_before="" 
+						days_ahead="" 
 						show_venue="true" 
-						show_tooltips="true" 
-						show_tries="true" 
-						show_conversions="true" 
-						show_penalties="true" 
-						show_drop_goals="all" 
-						show_subs="true" 
-						show_cards="all" 
-
-						team_link="rugbyunion-squads.html" 
-						player_link="" 
-
-						team_naming="" 
-						player_naming="last_name" 
+						match_status="all" 
+						grouping="date" 
+						show_grouping="true" 
+						navigation="tabs_scroll" 
+						default_nav="1" 
+						start_on_current="true" 
+						sub_grouping="date" 
+						show_subgrouping="false" 
+						order_by="date_ascending" 
+						show_crests="true" 
+						date_format="dddd D MMMM YYYY" 
+						month_date_format="MMMM" 
+						competition_naming="full" 
+						team_naming="full" 
+						pre_match="false" 
 						show_live="true" 
 						show_logo="false" 
-						title="" 
 						show_title="true" 
-						breakpoints="400"></opta-widget>
+						breakpoints="400" 
+						image_size="medium" 
+						sport="rugbyleague">
+						<opta-widget sport="rugbyleague" 
+							widget="match_summary" 
+							template="normal" 
+							live="true" 
+							competition="" 
+							season="" 
+							match="" 
+							show_match_header="true" 
+							show_crests="true" 
+							show_cards="true" 
+							show_date="true" 
+							date_format="dddd D MMMM YYYY" 
+							show_competition_name="true" 
+							competition_naming="full" 
+							show_referee="true" 
+							show_venue="true" 
+							show_tooltips="true" 
+							show_tries="true" 
+							show_conversions="true" 
+							show_penalties="true" 
+							show_drop_goals="all" 
+							show_subs="true" 
+							show_cards="all" 
+							team_naming="" 
+							player_naming="last_name" 
+							show_live="true" 
+							show_logo="false" 
+							title="" 
+							show_title="true" 
+							breakpoints="400">
+						</opta-widget>
 					</opta-widget>
-				`);
-				//pre_match="10080" 
-				//team_link="rugbyunion-squads.html" 
-				//match_link="rugbyunion-match.html" 
-				//player_link="rugbyunion-players.html" 
-			};
-
-			// if(!!matchWidget){
-			// 	matchWidget.innerHTML = (`
-			// 		<opta-widget 
-			// 		widget="match_preview" 
-					
-			// 		competition="${query['competition']}" 
-			// 		season="${query['season']}" 
-			// 		match="${query['match']}" 
-					
-			// 		template="normal" 
-			// 		navigation="tabs" 
-			// 		default_nav="1" 
-			// 		show_match_header="true" 
-			// 		show_crests="false" 
-			// 		show_competition_name="true" 
-			// 		show_venue="true" 
-			// 		show_date="true" 
-			// 		date_format="dddd D MMMM YYYY" 
-			// 		time_format="HH:mm" 
-			// 		show_form="6" 
-			// 		show_previous_meetings="6" 
-			// 		show_tooltips="false" 
-			// 		competition_naming="full" 
-			// 		team_naming="full" 
-			// 		team_link="rugbyunion-squads.html" 
-			// 		show_logo="false" 
-			// 		show_title="true" 
-			// 		breakpoints="400, 700" sport="rugby"
-			// 		></opta-widget>
-			// 	`);
-			// 	//navigation="dropdown" 
-			// };
-
-			if(!!standingsWidget){
-				standingsWidget.innerHTML = (`
-					<opta-widget 
-					widget="standings" 
-					
-					competition="${query['competition']}" 
-					season="${query['season']}" 
-					
-					template="normal" 
-					live="true" 
-					navigation="tabs" 
-					default_nav="1" 
-					show_key="true" 
-					show_crests="true" 
-					points_in_first_column="false" 
-					show_form="6" 
-					competition_naming="full" 
-					team_naming="full" 
-					
-					team_link="rugbyunion-squads.html" 
-					
-					date_format="dddd D MMMM YYYY" 
-					sorting="true" 
-					show_live="true" 
-					show_logo="false" 
-					show_title="true" 
-					breakpoints="400,700" 
-					sport="rugby"
-					></opta-widget>
-				`);
-			};
-
-			if(!!squadsWidget){
-				squadsWidget.innerHTML = (`
-					<opta-widget 
-					widget="squad" 
-					
-					competition="${query['competition']}" 
-					season="${query['season']}" 
-					team="${query['team']}" 
-					
-					template="normal" 
-					column_count="1" 
-					show_position="true" 
-					show_images="false" 
-					show_wingers="true" 
-					show_full_backs="true" 
-					show_centres="true" 
-					show_fly_halves="true" 
-					show_scrum_halves="true" 
-					show_number_eights="true" 
-					show_flankers="true" 
-					show_locks="true" 
-					show_hookers="true" 
-					show_props="true" 
-					order_by="name" 
-					group_by_position="true" 
-					team_naming="full" 
-					player_naming="full" 
-					show_logo="false" 
-					show_title="true" 
-					breakpoints="400" 
-					sport="rugby">
-						<opta-widget 
-						sport="rugby" 
-						widget="player_profile" 
-						template="normal" 
-						competition="" 
-						season="" team="" 
-						player="" 
-						show_images="true" 
-						show_country="true" 
-						show_flags="true" 
-						show_date_of_birth="true" 
-						show_position="true" 
-						show_height="true" 
-						show_weight="true" 
-						show_place_of_birth="true" 
-						date_format="D MMMM YYYY" 
-						height_units="m" 
-						weight_units="kg" 
-						breakpoints="400"></opta-widget>
-					</opta-widget>
-				`)
+				</div>
+				`
 			}
-			break;
-		};
-		/*Rugby Union*/
+		}
 
-		/*Football*/
-		
-		case '3'://	UEFA European Championship Finals	2020
-		case '4'://	World Cup	2022
-		case '5'://	Champions League	2021
-		case '6'://	UEFA Europa League	2021
-		case '8'://	English Premier League	2021
-		case '21'://	Italian Serie A	2021
-		case '22'://	German Bundesliga	2021
-		case '23'://	Spanish La Liga	2021
-		case '24'://	French Ligue 1	2021
-		case '88'://	Internationals	2022
-		case '214'://	Australian A-League Men	10001
-		case '341'://	Asian World Cup Qualifiers	1000022
-		case '378'://	Olympic Football Tournament	2021
-		case '379'://	AFC Asian Cup	2018
-		case '408'://	Women's World Cup	2022
-		case '551'://	Internationals Women	2022
-		case '578'://	Olympic Women's Tournament	2021
-		case '684'://	Australian A-League Women	2021
-		case '731'://	AFC Women's Asian Cup	2021
-		case '734'://	Olympic Women's Tournament Qualifying Asia	2019
-		case '1009'://	FFA Cup of Nations	2019
-		case '1125'://	UEFA Europa Conference League	2021
-		case '1136'://	Olympics Intercontinental Play-offs Women	2020
-
-		if(!!fixturesWidget){
-			fixturesWidget.innerHTML = (`
-				<opta-widget 
-				widget="fixtures" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				
+		if(obj['widget'] == 'match_summary'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget sport="rugbyleague" 
+				widget="match_summary" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				match="${obj['match']}" 
 				template="normal" 
 				live="true" 
+				show_match_header="true" 
+				show_crests="true" 
+				show_cards="true" 
+				show_date="true" 
+				date_format="dddd D MMMM YYYY" 
+				show_competition_name="true" 
+				competition_naming="full" 
+				show_referee="true" 
+				show_venue="true" 
+				show_tooltips="true" 
+				show_tries="true" 
+				show_conversions="true" 
+				show_penalties="true" 
+				show_drop_goals="all" 
+				show_subs="true" 
+				show_cards="all" 
+				team_naming="" 
+				player_naming="last_name" 
+				show_live="true" 
+				show_logo="false" 
+				title="" 
+				show_title="true" 
+				breakpoints="400">
+				</opta-widget>
+			</div>
+			`
+		}
+	}
+
+	/*rugby union*/
+	if(obj['sport'] == 'rugby'){
+		
+		if(obj['widget'] == 'fixtures'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="fixtures" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				template="normal" 
+				live="true" 
+				days_before="" 
+				days_ahead="" 
 				show_venue="true" 
 				match_status="all" 
 				grouping="month" 
 				show_grouping="true" 
-				
+				navigation="dropdown" 
+				default_nav="1" 
+				start_on_current="true" 
+				sub_grouping="date" 
+				show_subgrouping="true" 
+				order_by="date_ascending" 
+				show_crests="true" 
+				date_format="dddd D MMMM YYYY" 
+				month_date_format="MMMM" 
+				competition_naming="full" 
+				team_naming="full" 
+				team_link="?sport=rugby&widget=squad" 
+				pre_match="false" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				image_size="medium" 
+				sport="rugby">
+					<opta-widget sport="rugby" 
+					widget="match_summary" 
+					template="normal" 
+					live="true" 
+					competition="" 
+					season="" 
+					match="" 
+					show_match_header="true" 
+					show_crests="true" 
+					show_cards="true" 
+					show_date="true" 
+					date_format="dddd D MMMM YYYY" 
+					show_competition_name="true" 
+					competition_naming="full" 
+					show_referee="true" 
+					show_venue="true" 
+					show_tooltips="true" 
+					show_tries="true" 
+					show_conversions="true" 
+					show_penalties="true" 
+					show_drop_goals="all" 
+					show_subs="true" 
+					show_cards="all" 
+					team_link="?sport=rugby&widget=squad" 
+					team_naming="" 
+					player_naming="last_name" 
+					show_live="true" 
+					show_logo="false" 
+					title="" 
+					show_title="true" 
+					breakpoints="400">
+					</opta-widget>
+				</opta-widget>
+			</div>
+			<!--advertisement banner-->
+			<div class="content">
+				<opta-widget 
+				widget="standings" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				template="normal" 
+				live="true" 
 				navigation="tabs" 
-				
+				default_nav="1" 
+				show_key="true" 
+				show_crests="true" 
+				points_in_first_column="false" 
+				show_form="6" 
+				competition_naming="full" 
+				team_naming="full" 
+				team_link="?sport=rugby&widget=squad" 
+				date_format="dddd D MMMM YYYY" 
+				sorting="true" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400,700" 
+				sport="rugby"
+				></opta-widget>
+			</div>
+			`
+		}
+		if(obj['widget'] == 'squad'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="squad" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				team="${obj['team']}" 
+				template="normal" 
+				column_count="1" 
+				show_position="true" 
+				show_images="false" 
+				show_wingers="true" 
+				show_full_backs="true" 
+				show_centres="true" 
+				show_fly_halves="true" 
+				show_scrum_halves="true" 
+				show_number_eights="true" 
+				show_flankers="true" 
+				show_locks="true" 
+				show_hookers="true" 
+				show_props="true" 
+				order_by="name" 
+				group_by_position="true" 
+				team_naming="full" 
+				player_naming="full" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="rugby">
+					<opta-widget 
+					sport="rugby" 
+					widget="player_profile" 
+					template="normal" 
+					competition="" 
+					season="" team="" 
+					player="" 
+					show_images="true" 
+					show_country="true" 
+					show_flags="true" 
+					show_date_of_birth="true" 
+					show_position="true" 
+					show_height="true" 
+					show_weight="true" 
+					show_place_of_birth="true" 
+					date_format="D MMMM YYYY" 
+					height_units="m" 
+					weight_units="kg" 
+					breakpoints="400">
+					</opta-widget>
+				</opta-widget>
+			</div>
+			`
+		}
+	}
+
+	/*football*/
+	if(obj['sport'] == 'football'){
+
+		if(obj['widget'] == 'fixtures'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="fixtures" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				template="normal" 
+				live="true" 
+				show_venue="true" 
+				match_status="all" 
+				grouping="matchday" 
+				show_grouping="true" 
+				navigation="dropdown" 
 				default_nav="1" 
 				start_on_current="true" 
 				sub_grouping="date" 
@@ -1495,8 +1405,8 @@ document.onready = ()=>{
 				month_date_format="MMMM" 
 				competition_naming="full" 
 				team_naming="full" 
-				team_link="football-squads.html" 
-				match_link="?sport=football&widget=match" 
+				team_link="?sport=football&widget=squad" 
+				match_link="?sport=football&widget=match_preview" 
 				pre_match="1440" 
 				show_live="true" 
 				show_logo="false" 
@@ -1524,25 +1434,63 @@ document.onready = ()=>{
 					show_venue="true" 
 					show_shootouts="false" 
 					player_naming="last_name" 
-					player_link="" 
 					show_tooltips="true" 
 					show_logo="false" 
 					breakpoints="400">
 					</opta-widget>
 				</opta-widget>
-			`);
-			//pre_match="10080" 
-		};
+			</div>
+			<!--advertisement banner-->
+			<!--<div class="banner-wr mar-40-0">
+				<div class="banner">
+					<div class="banner__img">
+						<div id="div-1" data-google-query-id="CK7s14yrmvgCFRGT5god468JZQ">
+							<div id="google_ads_iframe_/135062774/newsnet.index_0__container__" style="border: 0pt none; margin: auto; text-align: center;">
+								<iframe id="google_ads_iframe_/135062774/newsnet.index_0" name="google_ads_iframe_/135062774/newsnet.index_0" title="3rd party ad content" width="970" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" role="region" aria-label="Advertisement" tabindex="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-gtm-yt-inspected-4="true" data-load-complete="true"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--advertisement banner-->
+			<div class="content">
+				<opta-widget
+				widget="standings"
+				competition="${obj['competition']}"
+				season="${obj['season']}"
+				template="normal"
+				live="false"
+				default_nav="1"
+				side="combined"
+				data_detail="default"
+				show_key="false"
+				show_crests="true"
+				points_in_first_column="false"
+				lose_before_draw="false"
+				show_form="6"
+				competition_naming="full"
+				team_naming="full"
+				date_format="dddd D MMMM YYYY"
+				sorting="true"
+				show_live="true"
+				show_relegation_average="false"
+				show_logo="false"
+				show_title="true"
+				breakpoints="400,700"
+				sport="football"
+				></opta-widget>
+			</div>
+			`
+		}
 		
-		if(!!matchWidget){
-			matchWidget.innerHTML = (`
+		if(obj['widget'] == 'match_preview'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget 
-				widget="match_preview" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				match="${query['match']}" 
-				
+				widget="match_preview" 	
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				match="${obj['match']}" 
 				template="normal" 
 				navigation="tabs_more" 
 				default_nav="2" 
@@ -1562,24 +1510,20 @@ document.onready = ()=>{
 				competition_naming="full" 
 				team_naming="full" 
 				player_naming="full" 
-				team_link="football-squads.html" 
+				team_link="?sport=football&widget=squad" 
 				show_logo="false" 
 				show_title="true" 
 				breakpoints="460, 700" 
 				sport="football"
 				></opta-widget>
-			`);
-		};
-
-		if(!!startingFormationsWidget){
-			startingFormationsWidget.innerHTML = (`
+			</div>
+			<!--advertisement banner-->
+			<div class="content">
 				<opta-widget 
 				widget="starting_formations" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				match="${query['match']}" 
-				
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				match="${obj['match']}" 
 				template="normal" 
 				orientation="horizontal" 
 				show_match_header="true" 
@@ -1597,50 +1541,18 @@ document.onready = ()=>{
 				breakpoints="400, 700" 
 				sport="football"
 				></opta-widget>
-			`)
-		};
-		
-		if(!!standingsWidget){
-			standingsWidget.innerHTML = (`
-				<opta-widget
-					widget="standings"
-					
-					competition="${query['competition']}"
-					season="${query['season']}"
-					
-					template="normal"
-					live="false"
-					default_nav="1"
-					side="combined"
-					data_detail="default"
-					show_key="false"
-					show_crests="true"
-					points_in_first_column="false"
-					lose_before_draw="false"
-					show_form="6"
-					competition_naming="full"
-					team_naming="full"
-					date_format="dddd D MMMM YYYY"
-					sorting="true"
-					show_live="true"
-					show_relegation_average="false"
-					show_logo="false"
-					show_title="true"
-					breakpoints="400,700"
-					sport="football"
-				></opta-widget>
-			`);
-		};
+			</div>
+			`
+		}
 
-		if(!!squadsWidget){
-			squadsWidget.innerHTML = (`
+		if(obj['widget'] == 'squad'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget 
 				widget="squad" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				team="${query['team']}" 
-				
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				team="${obj['team']}" 
 				template="headshots" 
 				show_position="true" 
 				show_images="true" 
@@ -1666,263 +1578,21 @@ document.onready = ()=>{
 				breakpoints="400" 
 				sport="football"
 				></opta-widget>
-			`)
+			</div>
+			`
 		}
+	}
 
-		break;
-		/*Football*/
-
-		/*Tennis*/
-		case "7315"://ATP Cup - Mens National_teams
-		case "7347"://Bendigo International - Mens Singles
-		case "7335"://Adelaide International 1 - Mens Singles
-		case "7357"://Adelaide International 1 - Womens Singles
-		case "7451"://Citta' Di Forli' 1 - Mens Singles
-		case "7355"://Dove Men+Care Legion Sudamericana Tigre - Mens Singles
-		case "7351"://Traralgon International - Mens Singles
-		case "7441"://Melbourne Summer Set - Mens Singles
-		case "7447"://Melbourne Summer Set 1 - Womens Singles
-		case "7449"://Melbourne Summer Set 2 - Womens Singles
-		case "7313"://Adelaide International 2 - Mens Singles
-		case "7369"://Adelaide International 2 - Womens Singles
-		case "7245"://Australian Open - Mens Doubles
-		case "7244"://Australian Open - Mens Singles
-		case "7248"://Australian Open - Mixed Doubles
-		case "7247"://Australian Open - Womens Doubles
-		case "7246"://Australian Open - Womens Singles
-		case "7361"://Circuito Dove Men Care - Mens Singles
-		case "7359"://Citta' Di Forli' 2 - Mens Singles
-		case "7455"://Sydney Tennis Classic - Mens Singles
-		case "7453"://Sydney Tennis Classic - Womens Singles
-		case "7365"://Citta' Di Forli' 3 - Mens Singles
-		case "7363"://Dove Men+Care Legion Sudamericana Concepcion - Mens Singles
-		case "7433"://Dove Men+Care Challenger Bolivia - Mens Singles
-		case "7370"://Open Quimper Bretagne Occidentale - Mens Singles
-		case "7367"://Tennis Ohio Championships - Mens Singles
-		case "7339"://Open Sud de France - Mens Singles
-		case "7337"://Cordoba Open - Mens Singles
-		case "7373"://Cleveland Open - Mens Singles
-		case "7341"://Tata Open Maharashtra - Mens Singles
-		case "7343"://ABN Amro World Tennis Tournament - Mens Singles
-		case "7345"://Argentina Open - Mens Singles
-		case "7261"://St. Petersburg Ladies Trophy - Womens Singles
-		case "7375"://Bengaluru Open 1 - Mens Singles
-		case "7439"://Challenger Cherbourg - La Manche - Mens Singles
-		case "7349"://Dallas Open - Mens Singles
-		case "7353"://Delray Beach Open - Mens Singles
-		case "7263"://Dubai Duty Free Tennis Championships - Womens Singles
-		case "7379"://Qatar ExxonMobil Open - Mens Singles
-		case "7381"://Rio Open presented by Claro - Mens Singles
-		case "7443"://Bengaluru Open 2 - Mens Singles
-		case "7445"://Citta' Di Forli' 4 - Mens Singles
-		case "7377"://Open 13 Provence - Mens Singles
-		case "7383"://Abierto Mexicano Telcel presentado por HSBC - Mens Singles
-		case "7265"://Qatar Total Energies Open - Womens Singles
-		case "7267"://Abierto Akron Zapopan - Womens Singles
-		case "7385"://Chile Dove Men+Care Open - Mens Singles
-		case "7389"://Dubai Duty Free Tennis Championships - Mens Singles
-		case "7459"://Citta' Di Forli' 5 - Mens Singles
-		case "7457"://Terega Open - Mens Singles
-		case "7522"://Turin - Mens Singles
-		case "7269"://Abierto GNP Seguros 2022 - Womens Singles
-		case "7271"://Open 6ème Sens Métropole de Lyon - Womens Singles
-		case "7488"://Gran Canaria Challenger 1 - Mens Singles
-		case "7467"://Abierto GNP Seguros - Mens Singles
-		case "7469"://Challenger Santiago Chile - Mens Singles
-		case "7490"://Roseto Degli Abruzzi 1 - Mens Singles
-		case "7387"://BNP Paribas Open - Mens Singles
-		case "7273"://BNP Paribas Open - Womens Singles
-		case "7388"://BNP Paribas Open - Mens Doubles
-		case "7473"://Challenger del Biobio - Mens Singles
-		case "7492"://Regione Abruzzo Aterno Gas & Power Cup - Mens Singles
-		case "7471"://Arizona Tennis Classic - Mens Singles
-		case "7494"://Dove Men+Care Challenger Bolivia 2 - Mens Singles
-		case "7520"://Falkensteiner Punta Skala - Zadar Open - Mens Singles
-		case "7481"://FlowBank Challenger Biel/Bienne - Mens Singles
-		case "7477"://Play In Challenger - Mens Singles
-		case "7392"://Miami Open presented by Itau - Mens Doubles
-		case "7391"://Miami Open presented by Itau - Mens Singles
-		case "7275"://Miami Open presented by Itau - Womens Singles
-		case "7483"://AnyTech365 Andalucia Open - Mens Singles
-		case "7485"://Challenger Banca stato Città di Lugano - Mens Singles
-		case "7500"://Circuito Dove Men+Care Pereira - Mens Singles
-		case "7496"://Oeiras Challenger 1 - Mens Singles
-		case "7498"://Open Saint-Brieuc Harmonie Mutuelle - Mens Singles
-		case "7666"://AnyTech365 Andalucia Open - Womens Singles
-		case "7279"://Copa Colsanitas presentado por Zurich - Womens Singles
-		case "7277"://Credit One Charleston Open - Womens Singles
-		case "7393"://Fayez Sarofim & Co. U.S. Men's Clay Court Championship - Mens Singles
-		case "7502"://Challenger de Salinas Copa Banco Guayaquil - Mens Singles
-		case "7504"://Costa Cálida Región de Murcia - Mens Singles
-		case "7395"://Grand Prix Hassan II - Mens Singles
-		case "7518"://Mexico City Open - Mens Singles
-		case "7506"://Oeiras 2 - Mens Singles
-		case "7508"://Sanremo Challenger - Mens Singles
-		case "7398"://Rolex Monte-Carlo Masters - Mens Doubles
-		case "7397"://Rolex Monte-Carlo Masters - Mens Singles
-		case "7516"://Elizabeth Moore Sarasota Open - Mens Singles
-		case "7510"://Open Citta Della Disfida - Mens Singles
-		case "7513"://Open Comunidad de Madrid - Mens Singles
-		case "7514"://San Luis Open BMW - Mens Singles
-		case "7399"://Barcelona Open Banc Sabadell - Mens Singles
-		case "7281"://Porsche Tennis Grand Prix - Womens Singles
-		case "7538"://San Marcos Open Aguascalientes - Mens Singles
-		case "7401"://Serbia Open - Mens Singles
-		case "7623"://Split Open - Mens Singles
-		case "7524"://Tallahassee Tennis Challenger - Mens Singles
-		case "7283"://TEB BNP Paribas Tennis Championship Istanbul - Womens Singles
-		case "7526"://TK Sparta Prague Open - Mens Singles
-		case "7403"://BMW Open by American Express - Mens Singles
-		case "7405"://Millennium Estoril Open - Mens Singles
-		case "7540"://Dove Men+Care Challenger Buenos Aires 2 - Mens Singles
-		case "7530"://Morelos Open - Mens Singles
-		case "7534"://Ostra Group Open by Moneta - Mens Singles
-		case "7536"://Rome Garden Open - Mens Singles
-		case "7532"://Savannah Challenger presented by St. Joseph's/Candler - Mens Singles
-		case "7407"://Mutua Madrid Open - Mens Singles
-		case "7285"://Mutua Madrid Open - Womens Singles
-		case "7408"://Mutua Madrid Open - Mens Doubles
-		case "7637"://Danube Upper Austria Open - Mens Singles
-		case "7693"://Dove Men+Care Salvador De Bahia - Mens Singles
-		case "7627"://I.CLTK Prague Open - Mens Singles
-		case "7640"://L 'Open 35 de Saint Malo - Womens Singles
-		case "7625"://Open Pays d'Aix CEPAC - Mens Singles
-		case "7695"://Dove Men+Care Coquimbo - Mens Singles
-		case "7410"://Internazionali BNL d'Italia - Mens Doubles
-		case "7409"://Internazionali BNL d'Italia - Mens Singles
-		case "7287"://Internazionali BNL d'Italia - Womens Singles
-		case "7629"://BNP Paribas Primrose - Mens Singles
-		case "7631"://Neckarcup Heilbronn - Mens Singles
-		case "7633"://Shymkent 1 - Mens Singles
-		case "7635"://Zagreb Open - Mens Singles
-		case "7646"://Trophee Lagardere - Womens Singles
-		case "7648"://Liqui Moly Open - Womens Singles
-		case "7411"://Gonet Geneva Open - Mens Singles
-		case "7291"://Grand Prix Sar La Princesse Lalla Meryem - Womens Singles
-		case "7289"://Internationaux de Strasbourg - Womens Singles
-		case "7413"://Open Parc Auvergne-Rhone-Alpes Lyon - Mens Singles
-		case "7687"://Challenger Francavilla al Mare - Mens Singles
-		case "7683"://Shymkent Challenger II - Mens Singles
-		case "7685"://Tunis Open - Mens Singles
-		case "7416"://French Open - Mens Doubles
-		case "7415"://French Open - Mens Singles
-		case "7432"://French Open - Mixed Doubles
-		case "7296"://French Open - Womens Doubles
-		case "7295"://French Open - Womens Singles
-		case "7689"://Internazionali di Tennis - Citta di Vicenza - Mens Singles
-		case "7697"://Saturn Oil Open - Mens Singles
-		case "7699"://Baptist Health Little Rock Open - Mens Singles
-		case "7727"://Forli 6 - Mens Singles
-		case "7719"://Poznan Open - Mens Singles
-		case "7691"://Surbiton Trophy - Mens Singles
-		case "7717"://Unicredit Czech Open - Mens Singles
-		case "7650"://Makarska Open - Womens Singles
-		case "7652"://BBVA Open Internacional De Valencia - Womens Singles
-		case "7703"://Internazionali di Tennis - Città di Perugia - Mens Singles
-		case "7707"://Kooperativa Bratislava Open - Mens Singles
-		case "7417"://Libema Open - Mens Singles
-		case "7297"://Libema Open - Womens Singles
-		case "7705"://Open Sopra Steria de Lyon - Mens Singles
-		case "7709"://Orlando Open - Mens Singles
-		case "7701"://Rothesay Open Nottingham - Mens Singles
-		case "7299"://Rothesay Open Nottingham - Womens Singles
-		case "7419"://Weissenhof - Mens Singles
-		case "7303"://Bett1 Open - Womens Singles
-		case "7713"://Blois Challenger - Mens Singles
-		case "7421"://Cinch Championships - Mens Singles
-		case "7721"://Corrientes Challenger - Mens Singles
-		case "7711"://Ilkley Challenger - Mens Singles
-		case "7301"://Rothesay Classic Birmingham - Womens Singles
-		case "7423"://Terra Wortmann Open - Mens Singles
-		case "7654"://Veneto Open Internazionali Confindustria Venezia E Rovigo - Womens Singles
-		case "7307"://Bad Homburg Open presented by Engel & Volkers - Womens Singles
-		case "7425"://Mallorca Championships - Mens Singles
-		case "7305"://Rothesay International Eastbourne - Womens Singles
-		case "7715"://Milan - Mens Singles
-		case "7723"://Oeiras 3 - Mens Singles
-		case "7427"://Rothesay International Eastbourne - Mens Singles
-		case "7729"://Villa Allende - Mens Singles
-		case "7430"://Wimbledon - Mens Doubles
-		case "7429"://Wimbledon - Mens Singles
-		case "7431"://Wimbledon - Mixed Doubles
-		case "7310"://Wimbledon - Womens Doubles
-		case "7309"://Wimbledon - Womens Singles
-		case "7725"://Luedenscheid - Mens Singles
-		case "7731"://Malaga Open - Mens Singles
-		case "7733"://Troyes - Mens Singles
-		case "7658"://Grand Est Open 88 - Womens Singles
-		case "7656"://Nordea Open - Womens Singles
-		case "7573"://Hungarian Grand Prix - Womens Singles
-		case "7542"://Infosys Hall of Fame Open - Mens Singles
-		case "7569"://Ladies Open Lausanne - Womens Singles
-		case "7544"://Nordea Open - Mens Singles
-		case "7575"://Hamburg European Open - Womens Singles
-		case "7577"://33rd Palermo Ladies Open - Womens Singles
-		case "7546"://EFG Swiss Open Gstaad - Mens Singles
-		case "7548"://Hamburg European Open - Mens Singles
-		case "7585"://BNP Paribas Poland Open - Womens Singles
-		case "7550"://Generali Open - Mens Singles
-		case "7581"://Livesport Prague Open 2022 - Womens Singles
-		case "7552"://Plava Laguna Croatia Open Umag - Mens Singles
-		case "7554"://Truist Atlanta Open presented by Fiserv - Mens Singles
-		case "7556"://Abierto de Tenis Mifel - Mens Singles
-		case "7660"://BCR Iasi Open - Womens Singles
-		case "7558"://Citi Open - Mens Singles
-		case "7589"://Mubadala Silicon Valley Classic - Womens Singles
-		case "7561"://National Bank Open presented by Rogers - Mens Doubles
-		case "7560"://National Bank Open presented by Rogers - Mens Singles
-		case "7593"://National Bank Open presented by Rogers - Womens Singles
-		case "7662"://Thoreau Tennis Open 125 - Womens Singles
-		case "7664"://Odlum Brown Vanopen - Womens Singles
-		case "7563"://Western & Southern Open - Mens Doubles
-		case "7562"://Western & Southern Open - Mens Singles
-		case "7595"://Western & Southern Open - Womens Singles
-		case "7603"://Championnats Banque Nationale de Granby - Womens Singles
-		case "7597"://Tennis in the Land - Womens Singles
-		case "7564"://Winston-Salem Open - Mens Singles
-		case "7567"://US Open - Mens Doubles
-		case "7566"://US Open - Mens Singles
-		case "7568"://US Open - Mixed Doubles
-		case "7602"://US Open - Womens Doubles
-		case "7601"://US Open - Womens Singles
-		case "7642"://Zavarovalnica Sava Portoroz - Womens Singles
-		case "7578"://Astana Open - Mens Singles
-		case "7644"://Budapest Open 125 - Womens Singles
-		case "7571"://Moselle Open - Mens Singles
-		case "7639"://Laver Cup - Mens National_teams
-		case "7583"://Chengdu Open - Mens Singles
-		case "7587"://Sofia Open - Mens Singles
-		case "7591"://Zhuhai Championships - Mens Singles
-		case "7598"://China Open - Mens Singles
-		case "7605"://Rakuten Japan Open Tennis Championships - Mens Singles
-		case "7622"://Rolex Shanghai Masters - Mens Doubles
-		case "7621"://Rolex Shanghai Masters - Mens Singles
-		case "7607"://European Open - Mens Singles
-		case "7609"://Stockholm Open - Mens Singles
-		case "7668"://Abierto Tampico - Womens Singles
-		case "7613"://Erste Bank Open - Mens Singles
-		case "7615"://Swiss Indoors Basel - Mens Singles
-		case "7670"://Dow Tennis Classic - Womens Singles
-		case "7680"://Puerto Vallarta Open - Womens Singles
-		case "7617"://Rolex Paris Masters - Mens Doubles
-		case "7318"://Rolex Paris Masters - Mens Singles
-		case "7672"://Buenos Aires Open - Womens Singles
-		case "7618"://Intesa Sanpaolo Next Gen ATP Finals - Mens Singles
-		case "7674"://Montevideo Open - Womens Singles
-		case "7620"://Nitto ATP Finals - Mens Doubles
-		case "7619"://Nitto ATP Finals - Mens Singles
-		case "7676"://Open Angers Arena Loire - Womens Singles
-		case "7678"://Open BLS de Limoges - Womens Singles
-
-		if(!!liveScoresWidget){
-			// console.log('aaa')
-			liveScoresWidget.innerHTML = (`
+	/*tennis*/
+	if(obj['sport'] == 'tennis'){
+		
+		if(obj['widget'] == 'live_scores'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
 				<opta-widget 
 				widget="live_scores" 
-				
-				competition="${query['competition']}" 
-				season="${query['season']}" 
-				
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
 				template="normal" 
 				live="true" 
 				match_status="all" 
@@ -1945,27 +1615,20 @@ document.onready = ()=>{
 				breakpoints="400" 
 				sport="tennis"
 				></opta-widget>
-			`)
-		}else{
-
-		};
-		if(!!scheduleWidget){
-			scheduleWidget.innerHTML = (`
+			</div>
+			<!--advertisement banner-->
+			<!--<div class="content">
 				<opta-widget 
 				widget="schedule" 
 				template="normal" 
-				
 				competition="0" 
-				season="${query['season']}" 
-				
+				season="${obj['season']}" 
 				grouping="month" 
 				show_grouping="true" 
 				sub_grouping="date" 
 				show_subgrouping="true" 
 				type="all" 
-				
 				navigation="dropdown" 
-				
 				default_nav="1" 
 				start_on_current="true" 
 				order_by="date_ascending" 
@@ -1975,27 +1638,105 @@ document.onready = ()=>{
 				show_surface="true" 
 				show_country="true" 
 				show_internationals="true" 
-
-				match_link="match" 
-
+				match_link="?sport=tennis&widget=live_scores" 
 				pre_match="false" 
 				show_logo="false" 
 				show_title="true" 
 				breakpoints="400" 
 				sport="tennis"
-				></opta-widget>
-			`)
-		};
-		//competition="${query['competition']}" 
-		//match_link="tennis-match.html"
-		break;
-		/*Tennis*/
+				></opta-widget>-->
+			</div>
+			`
+		}
 	}
-}
 
+	/*us-sports*/
+	/*mlb*/
+	if(obj['sport'] == 'mlb'){
 
+		sportWidgetWrapper.innerHTML = `
+		<div class="content">
+			<div id="shs-baseball-scoreboard" data-shs-league="mlb" data-shs-client-id="news">
+				<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.standalone.min.js"></script>
+				<img src="assets/images/loader.svg">
+			</div>
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<div class="one-col" id="shs-baseball-league-schedule" data-shs-league="mlb" data-shs-client-id="news"></div>
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<div class="one-col" id="shs-baseball-standings" data-shs-league="mlb" data-shs-client-id="news"></div>
+		</div>
+		`
+	}
 
-var opta_settings = {
+	/*nba*/
+	if(obj['sport'] == 'nba'){
+
+		sportWidgetWrapper.innerHTML = `
+		<div class="content">
+			<div id="shs-basketball-scoreboard" data-shs-league="nba" data-shs-client-id="news"></div>
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<div id="shs-basketball-league-schedule" data-shs-league="nba" data-shs-client-id="news"></div>
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<div id="shs-basketball-standings" data-shs-league="nba" data-shs-client-id="news"></div>
+		</div>
+		`
+	}
+
+	/*nfl*/
+	if(obj['sport'] == 'nfl'){
+
+		sportWidgetWrapper.innerHTML = `
+		<div class="content">
+			<div id="shs-football-scoreboard" data-shs-league="nfl" data-shs-client-id="news"></div>
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<div id="shs-football-league-schedule" data-shs-league="nfl" data-shs-client-id="news"></div>
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<div id="shs-football-standings" data-shs-league="nfl" data-shs-client-id="news"></div>
+		</div>
+		`
+	}
+
+	Opta.start();//call this method to invoke widgets
+};
+//end of function to populate sports widgets
+
+Opta.events.subscribe('widget.drawn', (widget)=> {
+
+	Opta(document).on('click','.Opta a',(e)=>{//catch click event on in-widget anchors
+		e.preventDefault();//prevent changing url
+		let sport = getQueryParams(e.target.href)['sport'];//store the sport name
+		Opta(`select[name="${sport}"]`).prop('value','null');//use the stored sport name to reset the nav menu item
+		loadWidget(getQueryParams(e.target.href));//pass the target href as an object to the load function
+	})
+
+	if(widget.widget.attr.sport === 'football') {
+		Opta('.Opta-MatchLink').html('Match Preview');//customise link description
+	}
+
+	if(widget.widget.attr.sport === 'cricket') {
+		Opta('.Opta-MatchLink').html('Scorecard');//customise link description
+	}
+
+	if(widget.widget.attr.sport === 'afl') {
+		Opta('.Opta-MatchLink').html('Match Summary');//customise link description
+	}
+});
+
+//settings for Opta widget initialisation - link_callback customises the behaviour of in-widget hyperlinks e.g. match-page, squads etc.
+// let opta_settings = {
+var opta_settings = {//changed from let to var as it has been declared earlier
 	subscription_id: 'b7b73f836f5975bc4752b7b54aced1da',
 	language: 'en_GB',
 	timezone: 'user',
@@ -2031,6 +1772,6 @@ var opta_settings = {
 			link += `&title=${e.title}`;
 		};
 
-		return link;		
+		return link;
 	}
 };
