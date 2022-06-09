@@ -232,7 +232,7 @@ const constructNav = ()=>{
 		let d = i[2]
 
 		for(let j of d){
-			// console.log(j)
+
 			let before = new Date(j).getTime() - 2419200000;//four weeks before now
 			let after = new Date(j).getTime() + 2419200000;//four weeks after now
 
@@ -240,9 +240,8 @@ const constructNav = ()=>{
 				cricketDates[i[0]] = i[1]
 			}
 		}
-		// console.log('- - - - -')
 	}
-	// console.log(cricketDates)
+
 	for(let i of Object.keys(cricketDates)){
 		Opta('select[name="cricket"]').append(`<option value="fixtures|cricket|${i}|0">${cricketDates[i].replace(/_/g,'')}</option>`)
 	}
@@ -502,9 +501,9 @@ const constructNav = ()=>{
 			tennisDates[i[0]] = i[1]
 		}
 	}
-	console.warn(tennisDates)
+
 	for(let i of Object.keys(tennisDates)){
-		Opta('select[name="tennis"]').append(`<option value="live_scores|tennis|${i}|0">${tennisDates[i].replace(/_/g,'')}</option>`)
+		Opta('select[name="tennis"]').append(`<option value="live_scores|tennis|${i}|2022">${tennisDates[i].replace(/_/g,'')}</option>`)
 	}
 	/*CURATE TENNIS MENU*/
 
