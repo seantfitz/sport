@@ -497,7 +497,7 @@ const constructNav = ()=>{
 
 		let d = i[2]
 		
-		if((now10 >= d[0]) && (now10 <= (d[1] + (2419200 / 2)))){
+		if((now10 >= d[0]) && (now10 <= (d[1] + (2419200 / 2)))){//From start date to two weeks after conclusion
 			tennisDates[i[0]] = i[1]
 		}
 	}
