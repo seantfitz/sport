@@ -53,54 +53,54 @@ const constructNav = ()=>{
 			<button name="golf">PGA Tour</button>
 			<select name="golf" size="0">
 				<option value="null" disabled selected>Select Tournament</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|18yplyv63nvempg754v3n7ro">Fortinet Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4w92lfpwekuw4540bcn7e02dw">Sanderson Farms Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|c7zprf6boimr76qyg7o5f9o9g">Shriners Children's Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|cqp7zwj2e8p57tzzor78pjaqc">CJ Cup 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3p8r0uf7hnuzogcx3yfj1n85w">Zozo Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|2xn6tvp73zj7mi74iwcvtp6hg">Bermuda Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9yvf32hknprfayygf74v0cis4">World Wide Technology Championship at Mayakoba 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3fj3ql60p10jr6it2xtgncmxg">Houston Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|diki72qkk78m9bk20i3sefxn8">The RSM Classic 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|55md7quoblp1d05o5s7ibfaj8">Hero World Challenge 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1are53lbn6a3yp9k8m8gb52c4">Sentry Tournament of Champions 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1t6fz5nnv6trhcvu5efiikcgk">Sony Open in Hawaii 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|6z9hwz0wihtcz75a0wlposl5g">The American Express 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|clfuxmmehe2g2j2ld9wkfzi8k">Farmers Insurance Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|2pgnfiojm9o23rb1j4y8o7ml0">AT&T Pebble Beach Pro-Am 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|7d86vgb3joqox4q3ztov7kqhg">Waste Management Phoenix Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|f36l5by9jzdyrabdifq5yp0r8">The Genesis Invitational 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|46du9wjcwnvohuonz8xvktvro">The Honda Classic 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4eo03r63w2ykotbu6hod314wk">Arnold Palmer Invitational 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|ep8g33afkpoa84b33da26rvh0">Puerto Rico Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|8ah1du618msplo7p5b1naxmhg">The Players Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|eysv5tdrpt0xnugzg8c0b766s">Valspar Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3tqp680ctuk1s8x5k9gn05bmc">WGC-Dell Technologies Match Play 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|15hb1vel355hhodiw43f2nhg4">Corales Puntacana Resort and Club Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4oczsvupjte5u83djscpczris">Valero Texas Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|8o7k7pbhrhdpv224fl89sosgk">Masters Tournament 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|955jibmkjd5tgbdxo4fmcij9w">RBC Heritage 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|e7qpx9px6yg3lfpi59o7edo9g">Zurich Classic of New Orleans 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|ew5tl4zk2xsp01xpgnjy9adxw">Mexico Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9wrdi1o1paqgq080xo0exbb4k">Wells Fargo Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|crd8burydrctmv517xt8dzoyc">AT&T Byron Nelson 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|dbcc0412nrwd7lnyrg5a56wb8">PGA Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1i1h8r7d59xjl4z0d37lp0kr8">Charles Schwab Challenge 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4m7a502dp035tsapx8iyaoowk">The Memorial Tournament 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9j80xw60xr2etrramc4co82dw">RBC Canadian Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|dijjsnn1fr964fgzg46n99u6s">U.S. Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1mfegwhd4ews9in2uqw5lxiqc">Travelers Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|6b6del617ytlmhxljhsxs8glw">John Deere Classic 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|6xmro8ccq7xw8pmz5ccmk8x78">Genesis Scottish Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9nefpl4p8n551epci1b7is4yc">Barbasol Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3k6d0a2ty05upi8pjuxmc0sus">Barracuda Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|7qw75iise1342nmpu9mldak9g">The Open Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|322i6wv14woi9pmsibpnwoq38">3M Open 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|cp4ij4htuazb7tyzydephdyqc">Rocket Mortgage Classic 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|l9z0trpgbfuddhlqts5ffn6c">Wyndham Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|2g740je2hc3f9k5liu9mg6ec4">FedEx St. Jude Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|879rrcxp93of3e20987zcu0ic">BMW Championship 2022</option>
-				<option value="schedule|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|bn7hb6s6zqaowc77bndzyr9ck">TOUR Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|18yplyv63nvempg754v3n7ro">Fortinet Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4w92lfpwekuw4540bcn7e02dw">Sanderson Farms Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|c7zprf6boimr76qyg7o5f9o9g">Shriners Children's Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|cqp7zwj2e8p57tzzor78pjaqc">CJ Cup 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3p8r0uf7hnuzogcx3yfj1n85w">Zozo Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|2xn6tvp73zj7mi74iwcvtp6hg">Bermuda Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9yvf32hknprfayygf74v0cis4">World Wide Technology Championship at Mayakoba 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3fj3ql60p10jr6it2xtgncmxg">Houston Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|diki72qkk78m9bk20i3sefxn8">The RSM Classic 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|55md7quoblp1d05o5s7ibfaj8">Hero World Challenge 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1are53lbn6a3yp9k8m8gb52c4">Sentry Tournament of Champions 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1t6fz5nnv6trhcvu5efiikcgk">Sony Open in Hawaii 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|6z9hwz0wihtcz75a0wlposl5g">The American Express 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|clfuxmmehe2g2j2ld9wkfzi8k">Farmers Insurance Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|2pgnfiojm9o23rb1j4y8o7ml0">AT&T Pebble Beach Pro-Am 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|7d86vgb3joqox4q3ztov7kqhg">Waste Management Phoenix Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|f36l5by9jzdyrabdifq5yp0r8">The Genesis Invitational 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|46du9wjcwnvohuonz8xvktvro">The Honda Classic 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4eo03r63w2ykotbu6hod314wk">Arnold Palmer Invitational 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|ep8g33afkpoa84b33da26rvh0">Puerto Rico Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|8ah1du618msplo7p5b1naxmhg">The Players Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|eysv5tdrpt0xnugzg8c0b766s">Valspar Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3tqp680ctuk1s8x5k9gn05bmc">WGC-Dell Technologies Match Play 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|15hb1vel355hhodiw43f2nhg4">Corales Puntacana Resort and Club Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4oczsvupjte5u83djscpczris">Valero Texas Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|8o7k7pbhrhdpv224fl89sosgk">Masters Tournament 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|955jibmkjd5tgbdxo4fmcij9w">RBC Heritage 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|e7qpx9px6yg3lfpi59o7edo9g">Zurich Classic of New Orleans 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|ew5tl4zk2xsp01xpgnjy9adxw">Mexico Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9wrdi1o1paqgq080xo0exbb4k">Wells Fargo Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|crd8burydrctmv517xt8dzoyc">AT&T Byron Nelson 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|dbcc0412nrwd7lnyrg5a56wb8">PGA Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1i1h8r7d59xjl4z0d37lp0kr8">Charles Schwab Challenge 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|4m7a502dp035tsapx8iyaoowk">The Memorial Tournament 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9j80xw60xr2etrramc4co82dw">RBC Canadian Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|dijjsnn1fr964fgzg46n99u6s">U.S. Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|1mfegwhd4ews9in2uqw5lxiqc">Travelers Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|6b6del617ytlmhxljhsxs8glw">John Deere Classic 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|6xmro8ccq7xw8pmz5ccmk8x78">Genesis Scottish Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|9nefpl4p8n551epci1b7is4yc">Barbasol Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|3k6d0a2ty05upi8pjuxmc0sus">Barracuda Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|7qw75iise1342nmpu9mldak9g">The Open Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|322i6wv14woi9pmsibpnwoq38">3M Open 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|cp4ij4htuazb7tyzydephdyqc">Rocket Mortgage Classic 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|l9z0trpgbfuddhlqts5ffn6c">Wyndham Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|2g740je2hc3f9k5liu9mg6ec4">FedEx St. Jude Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|879rrcxp93of3e20987zcu0ic">BMW Championship 2022</option>
+				<option value="leaderboard|golf|3c5msl8moic00eu49b06aumsp|405fzvlo157c392mbz8odw9p0|undefined|bn7hb6s6zqaowc77bndzyr9ck">TOUR Championship 2022</option>
 			</select>
 		</div>
 
@@ -509,7 +509,6 @@ const constructNav = ()=>{
 	});
 
 	Opta('.sport_button').on('click',(e)=>{
-		console.log({sport: e.target.name})
 		loadWidget({sport: e.target.name})
 	})
 };
@@ -519,7 +518,7 @@ constructNav();
 
 //function to populate sports widgets
 const loadWidget = (obj)=>{
-	console.log(obj)
+
 	let sportWidgetWrapper = document.getElementById('sport-widget-wrapper');
 
 	/*afl*/
@@ -828,6 +827,37 @@ const loadWidget = (obj)=>{
 	/*golf*/
 	if(obj['sport'] == 'golf'){
 
+		if(obj['widget'] == 'leaderboard'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="leaderboard" 
+				template="normal" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				match="${obj['tournament']}" 
+				live="true" 
+				show_date="true" 
+				date_format="D MMM" 
+				show_dates_combined="false" 
+				show_competition_name="false" 
+				show_season_name="true" 
+				show_course_name="true" 
+				show_position="true" 
+				show_rounds="true" 
+				show_nationality="true" 
+				player_highlighting="false" 
+				player_naming="full" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="golf"
+				></opta-widget>
+			</div>
+			`
+		}
+
 		if(obj['widget'] == 'schedule'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
@@ -866,37 +896,6 @@ const loadWidget = (obj)=>{
 				show_match_scores="true" 
 				player_naming="full" 
 				show_logo="true" 
-				show_title="true" 
-				breakpoints="400" 
-				sport="golf"
-				></opta-widget>
-			</div>
-			`
-		}
-
-		if(obj['widget'] == 'leaderboard'){
-			sportWidgetWrapper.innerHTML = `
-			<div class="content">
-				<opta-widget 
-				widget="leaderboard" 
-				template="normal" 
-				competition="${obj['competition']}" 
-				season="${obj['season']}" 
-				match="${obj['tournament']}" 
-				live="true" 
-				show_date="true" 
-				date_format="D MMM" 
-				show_dates_combined="false" 
-				show_competition_name="false" 
-				show_season_name="true" 
-				show_course_name="true" 
-				show_position="true" 
-				show_rounds="true" 
-				show_nationality="true" 
-				player_highlighting="false" 
-				player_naming="full" 
-				show_live="true" 
-				show_logo="false" 
 				show_title="true" 
 				breakpoints="400" 
 				sport="golf"
@@ -1373,9 +1372,9 @@ const loadWidget = (obj)=>{
 				live="true" 
 				show_venue="true" 
 				match_status="all" 
-				grouping="month" 
+				grouping="matchday" 
 				show_grouping="true" 
-				navigation="tabs" 
+				navigation="dropdown" 
 				default_nav="1" 
 				start_on_current="true" 
 				sub_grouping="date" 
@@ -1421,6 +1420,18 @@ const loadWidget = (obj)=>{
 					breakpoints="400">
 					</opta-widget>
 				</opta-widget>
+			</div>
+			<!--advertisement banner-->
+			<div class="banner-wr mar-40-0">
+				<div class="banner">
+					<div class="banner__img">
+						<div id="div-1" data-google-query-id="CK7s14yrmvgCFRGT5god468JZQ">
+							<div id="google_ads_iframe_/135062774/newsnet.index_0__container__" style="border: 0pt none; margin: auto; text-align: center;">
+								<iframe id="google_ads_iframe_/135062774/newsnet.index_0" name="google_ads_iframe_/135062774/newsnet.index_0" title="3rd party ad content" width="970" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" role="region" aria-label="Advertisement" tabindex="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-gtm-yt-inspected-4="true" data-load-complete="true"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<!--advertisement banner-->
 			<div class="content">
@@ -1684,30 +1695,23 @@ const loadWidget = (obj)=>{
 
 Opta.events.subscribe('widget.drawn', (widget)=> {
 
-	// Opta('.Opta a, a.Opta-TeamLink.Opta-Ext').on('click',(e)=>{
-
-	// 	if(widget.widget.attr.sport === 'basketball') {
-	// 		alert(e.target.href)
-	// 	}
-		
-	// 	console.log(getQueryParams(e.target.href))
-		
-	// 	e.preventDefault();
-		
-	// 	let sport = getQueryParams(e.target.href)['sport'];
-	// 	Opta(`select[name="${sport}"]`).prop('value','null');
-	// 	loadWidget(getQueryParams(e.target.href))
-	// })
-
-	Opta(document).on('click','.Opta a',(e)=>{
-		e.preventDefault();console.log(getQueryParams(e.target.href))
-		let sport = getQueryParams(e.target.href)['sport'];
-		Opta(`select[name="${sport}"]`).prop('value','null');
-		loadWidget(getQueryParams(e.target.href))
+	Opta(document).on('click','.Opta a',(e)=>{//catch click event on in-widget anchors
+		e.preventDefault();//prevent changing url
+		let sport = getQueryParams(e.target.href)['sport'];//store the sport name
+		Opta(`select[name="${sport}"]`).prop('value','null');//use the stored sport name to reset the nav menu item
+		loadWidget(getQueryParams(e.target.href));//pass the target href as an object to the load function
 	})
 
 	if(widget.widget.attr.sport === 'football') {
-		Opta('.Opta-MatchLink').html('Match preview')
+		Opta('.Opta-MatchLink').html('Match Preview');//customise link description
+	}
+
+	if(widget.widget.attr.sport === 'cricket') {
+		Opta('.Opta-MatchLink').html('Scorecard');//customise link description
+	}
+
+	if(widget.widget.attr.sport === 'afl') {
+		Opta('.Opta-MatchLink').html('Match Summary');//customise link description
 	}
 });
 
