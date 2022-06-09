@@ -1422,7 +1422,7 @@ const loadWidget = (obj)=>{
 				</opta-widget>
 			</div>
 			<!--advertisement banner-->
-			<div class="banner-wr mar-40-0">
+			<!--<div class="banner-wr mar-40-0">
 				<div class="banner">
 					<div class="banner__img">
 						<div id="div-1" data-google-query-id="CK7s14yrmvgCFRGT5god468JZQ">
@@ -1432,7 +1432,7 @@ const loadWidget = (obj)=>{
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>-->
 			<!--advertisement banner-->
 			<div class="content">
 				<opta-widget
