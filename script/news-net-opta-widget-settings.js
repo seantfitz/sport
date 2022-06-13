@@ -1656,20 +1656,19 @@ const loadWidget = (obj)=>{
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
-			<div id="shs-baseball-scoreboard" data-shs-league="mlb" data-shs-client-id="news">
-				<script type="text/javascript" src="https://widgets-assets.stats.com/js/baseball-scoreboard.standalone.min.js"></script>
-				<img src="assets/images/loader.svg">
-			</div>
+			<iframe class="shs-baseball-frame" id="shs-baseball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/scoreboard.html"></iframe>
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<div class="one-col" id="shs-baseball-league-schedule" data-shs-league="mlb" data-shs-client-id="news"></div>
+			<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/schedule.html"></iframe>
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<div class="one-col" id="shs-baseball-standings" data-shs-league="mlb" data-shs-client-id="news"></div>
+			<iframe class="shs-baseball-frame" id="shs-baseball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/standings.html"></iframe>
 		</div>
 		`
+		iFrameResize({log:false},'.shs-baseball-frame');
+		return false;//exit the function before calling Opta.start() - it's not needed here
 	}
 
 	/*nba*/
@@ -1677,17 +1676,19 @@ const loadWidget = (obj)=>{
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
-			<div id="shs-basketball-scoreboard" data-shs-league="nba" data-shs-client-id="news"></div>
+			<iframe class="shs-basketball-frame" id="shs-basketball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/scoreboard.html"></iframe>
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<div id="shs-basketball-league-schedule" data-shs-league="nba" data-shs-client-id="news"></div>
+			<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/schedule.html"></iframe>
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<div id="shs-basketball-standings" data-shs-league="nba" data-shs-client-id="news"></div>
+			<iframe class="shs-basketball-frame" id="shs-basketball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/standings.html"></iframe>
 		</div>
 		`
+		iFrameResize({log:false},'.shs-basketball-frame');
+		return false;//exit the function before calling Opta.start() - it's not needed here
 	}
 
 	/*nfl*/
@@ -1695,17 +1696,19 @@ const loadWidget = (obj)=>{
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
-			<div id="shs-football-scoreboard" data-shs-league="nfl" data-shs-client-id="news"></div>
+			<iframe class="shs-football-frame" id="shs-football-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/scoreboard.html"></iframe>
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<div id="shs-football-league-schedule" data-shs-league="nfl" data-shs-client-id="news"></div>
+			<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/schedule.html"></iframe>
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<div id="shs-football-standings" data-shs-league="nfl" data-shs-client-id="news"></div>
+			<iframe class="shs-football-frame" id="shs-football-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/standings.html"></iframe>
 		</div>
 		`
+		iFrameResize({log:false},'.shs-football-frame');
+		return false;//exit the function before calling Opta.start() - it's not needed here
 	}
 
 	Opta.start();//call this method to invoke widgets
