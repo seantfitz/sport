@@ -67,28 +67,31 @@
 			if(len < csv.length){
 				getCSV();
 			}else{
-				// console.log(obj)
+
 				let keys = Object.keys(obj);
-				// console.log(keys)
+
 				for(let i of keys){
+
 					out[i] = []
-					// console.log(obj[i])
+					
 					for(let j = 1; j < obj[i].length; j++){
-						
+
 						let k = obj[i][j];
 
-						if(k[0] == 'TRUE'){
-							out[i][j] = k;
-							out[i][j].shift();
-							// console.log(i,k)
+						if(k[8] == 'TRUE'){
+							k.splice(8,1);
+							out[i].push(k);
 						}else{
-							// console.log(i,k)
+							console.error(k)
 						}
 					}
+
+					// out[i].shift();
 				}
+
 				console.log(out)
+
 				document.querySelector('body').innerHTML = `<textarea>${JSON.stringify(out)}</textarea>`;
-				
 				document.querySelector('textarea').addEventListener('focus',(e)=>{
 					e.target.select()
 				})
