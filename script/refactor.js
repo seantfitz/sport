@@ -12,21 +12,9 @@ const getQueryParams = (qs)=>{
 	return params;
 };
 
-const fields = {
-	football:['standings','compId','name','season'],
-	us:['standings','name'],
-	golf:['compId','name','date'],
-	tennis:['compId','name','description','country','surface','start','end'],
-	basketball:['standings','compId','name','season','date'],
-	motorsport:['standings','compId','name','season','date'],
-	cricket:['standings','compId','name'],
-	rugby:['standings','compId','name','season'],
-	rugbyleague:['standings','compID','name','season'],
-	afl:['standings','compId','name','season'],
-}
-
+//function to fetch the JSON for navigation / menu curation
 const loadNavCuration = ()=>{
-	let info = fetch('script/nav_curation.json',{
+	let info = fetch('https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/sport-scoreboard/nav-curation.json',{
 		method: 'get',
 		headers: {'Content-Type': 'application/json'}
 	})
@@ -41,7 +29,7 @@ const loadNavCuration = ()=>{
 	.then(constructNav);
 };
 
-//function to construct navigation menu - this will need to be edited to accommodate menu curation
+//function to construct navigation menu - this has been edited to accommodate menu curation - updated 15/06/2022
 const constructNav = ()=>{
 
 	let newsnet_sport_nav_container = document.getElementsByClassName('newsnet_sport_nav_container')[0];
@@ -103,7 +91,7 @@ const constructNav = ()=>{
 		let i = navList['tennis'][0];
 		nav_tennis = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
 	}
-console.log(navList['basketball'])
+
 	if(navList['basketball'].length > 1){
 		nav_basketball += '<div class="dropdown"><button name="basketball">Basketball</button><select name="basketball" size="0"><option value="null" disabled selected>Select Competition</option>';
 		for(let i of navList['basketball']){
@@ -211,9 +199,9 @@ console.log(navList['basketball'])
 	});
 
 	Opta('.sport_button').on('click',(e)=>{
-		// loadWidget({sport: e.target.name})
-		let keys = e.target.name.split('|');//split the option value into array
-console.log(keys)
+
+		let keys = e.target.name.split('|');//split the name attribute into array
+
 		loadWidget({//define object keys as array values and pass to load function
 			widget: keys[0],
 			sport: keys[1],
@@ -228,20 +216,17 @@ console.log(keys)
 		Opta('.newsnet_sport_nav_container .dropdown select').prop('value','null');//reset all select elements
 	})
 };
-
-// constructNav();
-loadNavCuration();
-//end of function to construct navigation menu - the above will need to be edited to accommodate menu curation
+//end of function to construct navigation menu - the above has been edited to accommodate menu curation - updated 15/06/2022
 
 //function to populate sports widgets
 const loadWidget = (obj)=>{
-console.log(obj)
+
 	let sportWidgetWrapper = document.getElementById('sport-widget-wrapper');
 
 	/*afl*/
 	if(obj['sport'] == 'afl'){
 
-		if(obj['widget'] == 'fixtures'){
+		if(obj['widget'] == 'fixtures' && obj['standings'] == 'TRUE'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
 				<opta-widget widget="fixtures" 
@@ -292,6 +277,41 @@ console.log(obj)
 			`
 		}
 
+		if(obj['widget'] == 'fixtures' && obj['standings'] != 'TRUE'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget widget="fixtures" 
+				template="normal" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				show_venue="true" 
+				match_status="all" 
+				grouping="date" 
+				show_grouping="true" 
+				navigation="tabs_scroll" 
+				default_nav="1" 
+				show_date_picker="true" 
+				start_on_current="true" 
+				sub_grouping="date" 
+				show_subgrouping="false" 
+				order_by="date_ascending" 
+				away_team_first="false" 
+				show_crests="true" 
+				date_format="ll" 
+				time_format="HH:mm" 
+				month_date_format="MMMM" 
+				match_link="?sport=afl&widget=match_summary" 
+				pre_match="10" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="afl" 
+				image_size="medium"
+				></opta-widget>
+			</div>
+			`
+		}
+
 		if(obj['widget'] == 'match_summary'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
@@ -328,7 +348,7 @@ console.log(obj)
 	/*basketball (nbl)*/
 	if(obj['sport'] == 'basketball'){
 
-		if(obj['widget'] == 'scoreboard'){
+		if(obj['widget'] == 'scoreboard' && obj['standings'] == 'TRUE'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
 				<opta-widget 
@@ -387,6 +407,43 @@ console.log(obj)
 			`
 		}
 
+		if(obj['widget'] == 'scoreboard' && obj['standings'] != 'TRUE'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="scoreboard" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				template="normal" 
+				live="true" 
+				show_venue="true" 
+				grouping="date" 
+				show_grouping="true" 
+				show_date_picker="true" 
+				navigation="tabs_scroll" 
+				default_nav="1" 
+				start_on_current="true" 
+				order_by="date_ascending" 
+				away_team_first="false" 
+				show_crests="false" 
+				date_format="dddd D MMMM YYYY" 
+				time_format="HH:mm" 
+				month_date_format="MMMM" 
+				competition_naming="full" 
+				team_naming="full" 
+				team_link="?sport=basketball&widget=rosters" 
+				pre_match="10" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="basketball" 
+				image_size="medium"
+				></opta-widget>
+			</div>
+			`
+		}
+
 		if(obj['widget'] == 'rosters'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
@@ -433,7 +490,7 @@ console.log(obj)
 			obj['season'] = '0'
 		}
 
-		if(obj['widget'] == 'fixtures'){
+		if(obj['widget'] == 'fixtures' && obj['standings'] == 'TRUE'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
 				<opta-widget widget="fixtures" 
@@ -491,6 +548,42 @@ console.log(obj)
 			`
 		}
 
+		if(obj['widget'] == 'fixtures' && obj['standings'] != 'TRUE'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget widget="fixtures" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				template="normal" 
+				live="true" 
+				show_venue="true" 
+				match_status="all" 
+				grouping="month" 
+				show_grouping="true" 
+				navigation="tabs_more" 
+				default_nav="1" 
+				start_on_current="true" 
+				sub_grouping="date" 
+				show_subgrouping="true" 
+				order_by="date_ascending" 
+				show_crests="true" 
+				show_competition_name="true" 
+				date_format="dddd D MMMM YYYY" 
+				month_date_format="MMMM" 
+				competition_naming="full" 
+				team_naming="full" 
+				match_link="?sport=cricket&widget=score_card" 
+				pre_match="false" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="cricket" 
+				></opta-widget>
+			</div>
+			`
+		}
+
 		if(obj['widget'] == 'score_card'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
@@ -541,7 +634,7 @@ console.log(obj)
 		}
 	}
 
-	/*golf*/
+	/*golf *** */
 	if(obj['sport'] == 'golf'){
 
 		if(obj['widget'] == 'leaderboard'){
@@ -631,7 +724,7 @@ console.log(obj)
 		if(obj['competition'] == '2e554vbpw7g0ykhl0rziuabxl'){title = 'MotoGP'}
 		if(obj['competition'] == '2ecsbewwstw5jn9h7kpv2joix'){title = 'V8 Supercars'}
 
-		if(obj['widget'] == 'calendar'){
+		if(obj['widget'] == 'calendar' && obj['standings'] == 'TRUE'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
 				<opta-widget 
@@ -670,6 +763,31 @@ console.log(obj)
 				show_logo="false" 
 				show_title="true" 
 				breakpoints="460" 
+				sport="motorsport"
+				></opta-widget>
+			</div>
+			`
+		}
+
+		if(obj['widget'] == 'calendar' && obj['standings'] != 'TRUE'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="calendar" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				template="normal" 
+				show_details="true" 
+				order_by="date_ascending" 
+				date_format="dddd D MMMM YYYY" 
+				competition_naming="full" 
+				team_naming="full" 
+				player_naming="full" 
+				race_link="?sport=motorsport&widget=live_race" 
+				show_logo="false" 
+				title="${title} Calendar" 
+				show_title="true" 
+				breakpoints="400" 
 				sport="motorsport"
 				></opta-widget>
 			</div>
@@ -715,170 +833,167 @@ console.log(obj)
 	/*rugby league*/
 	if(obj['sport'] == 'rugbyleague'){
 
-		if(obj['widget'] == 'fixtures'){
-
-			if(obj['competition'] == '3' || obj['competition'] == '86'){
-				sportWidgetWrapper.innerHTML = `
-				<div class="content">
-					<opta-widget 
-						widget="fixtures" 
-						competition="${obj['competition']}" 
-						season="${obj['season']}" 
-						template="normal" 
-						live="true" 
-						days_before="" 
-						days_ahead="" 
-						show_venue="true" 
-						match_status="all" 
-						grouping="date" 
-						show_grouping="true" 
-						navigation="tabs_scroll" 
-						default_nav="1" 
-						start_on_current="true" 
-						sub_grouping="date" 
-						show_subgrouping="false" 
-						order_by="date_ascending" 
-						show_crests="true" 
-						date_format="dddd D MMMM YYYY" 
-						month_date_format="MMMM" 
-						competition_naming="full" 
-						team_naming="full" 
-						pre_match="false" 
-						show_live="true" 
-						show_logo="false" 
-						show_title="true" 
-						breakpoints="400" 
-						image_size="medium" 
-						sport="rugbyleague">
-						<opta-widget sport="rugbyleague" 
-							widget="match_summary" 
-							template="normal" 
-							live="true" 
-							competition="" 
-							season="" 
-							match="" 
-							show_match_header="true" 
-							show_crests="true" 
-							show_cards="true" 
-							show_date="true" 
-							date_format="dddd D MMMM YYYY" 
-							show_competition_name="true" 
-							competition_naming="full" 
-							show_referee="true" 
-							show_venue="true" 
-							show_tooltips="true" 
-							show_tries="true" 
-							show_conversions="true" 
-							show_penalties="true" 
-							show_drop_goals="all" 
-							show_subs="true" 
-							show_cards="all" 
-							team_naming="" 
-							player_naming="last_name" 
-							show_live="true" 
-							show_logo="false" 
-							title="" 
-							show_title="true" 
-							breakpoints="400">
-						</opta-widget>
-					</opta-widget>
-				</div>
-				<!--advertisement banner-->
-				<div class="content">
-					<opta-widget 
-					widget="standings" 
+		if(obj['widget'] == 'fixtures' && obj['standings'] == 'TRUE'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+					widget="fixtures" 
 					competition="${obj['competition']}" 
 					season="${obj['season']}" 
 					template="normal" 
 					live="true" 
-					navigation="tabs" 
+					days_before="" 
+					days_ahead="" 
+					show_venue="true" 
+					match_status="all" 
+					grouping="date" 
+					show_grouping="true" 
+					navigation="tabs_scroll" 
 					default_nav="1" 
-					show_key="true" 
+					start_on_current="true" 
+					sub_grouping="date" 
+					show_subgrouping="false" 
+					order_by="date_ascending" 
 					show_crests="true" 
-					points_in_first_column="false" 
-					show_form="6" 
+					date_format="dddd D MMMM YYYY" 
+					month_date_format="MMMM" 
 					competition_naming="full" 
 					team_naming="full" 
-					date_format="dddd D MMMM YYYY" 
-					sorting="true" 
+					pre_match="false" 
 					show_live="true" 
 					show_logo="false" 
 					show_title="true" 
-					breakpoints="400,700" 
-					sport="rugbyleague"
-					></opta-widget>
-				</div>
-				`
-			}
-
-			if(obj['competition'] == '6' || obj['competition'] == '87'){
-				sportWidgetWrapper.innerHTML = `
-				<div class="content">
-					<opta-widget 
-						widget="fixtures" 
-						competition="${obj['competition']}" 
-						season="${obj['season']}" 
+					breakpoints="400" 
+					image_size="medium" 
+					sport="rugbyleague">
+					<opta-widget sport="rugbyleague" 
+						widget="match_summary" 
 						template="normal" 
 						live="true" 
-						days_before="" 
-						days_ahead="" 
-						show_venue="true" 
-						match_status="all" 
-						grouping="date" 
-						show_grouping="true" 
-						navigation="tabs_scroll" 
-						default_nav="1" 
-						start_on_current="true" 
-						sub_grouping="date" 
-						show_subgrouping="false" 
-						order_by="date_ascending" 
+						competition="" 
+						season="" 
+						match="" 
+						show_match_header="true" 
 						show_crests="true" 
+						show_cards="true" 
+						show_date="true" 
 						date_format="dddd D MMMM YYYY" 
-						month_date_format="MMMM" 
+						show_competition_name="true" 
 						competition_naming="full" 
-						team_naming="full" 
-						pre_match="false" 
+						show_referee="true" 
+						show_venue="true" 
+						show_tooltips="true" 
+						show_tries="true" 
+						show_conversions="true" 
+						show_penalties="true" 
+						show_drop_goals="all" 
+						show_subs="true" 
+						show_cards="all" 
+						team_naming="" 
+						player_naming="last_name" 
 						show_live="true" 
 						show_logo="false" 
+						title="" 
 						show_title="true" 
-						breakpoints="400" 
-						image_size="medium" 
-						sport="rugbyleague">
-						<opta-widget sport="rugbyleague" 
-							widget="match_summary" 
-							template="normal" 
-							live="true" 
-							competition="" 
-							season="" 
-							match="" 
-							show_match_header="true" 
-							show_crests="true" 
-							show_cards="true" 
-							show_date="true" 
-							date_format="dddd D MMMM YYYY" 
-							show_competition_name="true" 
-							competition_naming="full" 
-							show_referee="true" 
-							show_venue="true" 
-							show_tooltips="true" 
-							show_tries="true" 
-							show_conversions="true" 
-							show_penalties="true" 
-							show_drop_goals="all" 
-							show_subs="true" 
-							show_cards="all" 
-							team_naming="" 
-							player_naming="last_name" 
-							show_live="true" 
-							show_logo="false" 
-							title="" 
-							show_title="true" 
-							breakpoints="400">
-						</opta-widget>
+						breakpoints="400">
 					</opta-widget>
-				</div>
-				`
-			}
+				</opta-widget>
+			</div>
+			<!--advertisement banner-->
+			<div class="content">
+				<opta-widget 
+				widget="standings" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				template="normal" 
+				live="true" 
+				navigation="tabs" 
+				default_nav="1" 
+				show_key="true" 
+				show_crests="true" 
+				points_in_first_column="false" 
+				show_form="6" 
+				competition_naming="full" 
+				team_naming="full" 
+				date_format="dddd D MMMM YYYY" 
+				sorting="true" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400,700" 
+				sport="rugbyleague"
+				></opta-widget>
+			</div>
+			`
+		}
+
+		if(obj['widget'] == 'fixtures' && obj['standings'] != 'TRUE'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+					widget="fixtures" 
+					competition="${obj['competition']}" 
+					season="${obj['season']}" 
+					template="normal" 
+					live="true" 
+					days_before="" 
+					days_ahead="" 
+					show_venue="true" 
+					match_status="all" 
+					grouping="date" 
+					show_grouping="true" 
+					navigation="tabs_scroll" 
+					default_nav="1" 
+					start_on_current="true" 
+					sub_grouping="date" 
+					show_subgrouping="false" 
+					order_by="date_ascending" 
+					show_crests="true" 
+					date_format="dddd D MMMM YYYY" 
+					month_date_format="MMMM" 
+					competition_naming="full" 
+					team_naming="full" 
+					pre_match="false" 
+					show_live="true" 
+					show_logo="false" 
+					show_title="true" 
+					breakpoints="400" 
+					image_size="medium" 
+					sport="rugbyleague">
+					<opta-widget sport="rugbyleague" 
+						widget="match_summary" 
+						template="normal" 
+						live="true" 
+						competition="" 
+						season="" 
+						match="" 
+						show_match_header="true" 
+						show_crests="true" 
+						show_cards="true" 
+						show_date="true" 
+						date_format="dddd D MMMM YYYY" 
+						show_competition_name="true" 
+						competition_naming="full" 
+						show_referee="true" 
+						show_venue="true" 
+						show_tooltips="true" 
+						show_tries="true" 
+						show_conversions="true" 
+						show_penalties="true" 
+						show_drop_goals="all" 
+						show_subs="true" 
+						show_cards="all" 
+						team_naming="" 
+						player_naming="last_name" 
+						show_live="true" 
+						show_logo="false" 
+						title="" 
+						show_title="true" 
+						breakpoints="400">
+					</opta-widget>
+				</opta-widget>
+			</div>
+			`
 		}
 
 		if(obj['widget'] == 'match_summary'){
@@ -923,7 +1038,7 @@ console.log(obj)
 	/*rugby union*/
 	if(obj['sport'] == 'rugby'){
 		
-		if(obj['widget'] == 'fixtures'){
+		if(obj['widget'] == 'fixtures' && obj['standings'] == 'TRUE'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
 				<opta-widget 
@@ -1019,6 +1134,78 @@ console.log(obj)
 			</div>
 			`
 		}
+
+		if(obj['widget'] == 'fixtures' && obj['standings'] != 'TRUE'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="fixtures" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				template="normal" 
+				live="true" 
+				days_before="" 
+				days_ahead="" 
+				show_venue="true" 
+				match_status="all" 
+				grouping="month" 
+				show_grouping="true" 
+				navigation="dropdown" 
+				default_nav="1" 
+				start_on_current="true" 
+				sub_grouping="date" 
+				show_subgrouping="true" 
+				order_by="date_ascending" 
+				show_crests="true" 
+				date_format="dddd D MMMM YYYY" 
+				month_date_format="MMMM" 
+				competition_naming="full" 
+				team_naming="full" 
+				team_link="?sport=rugby&widget=squad" 
+				pre_match="false" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				image_size="medium" 
+				sport="rugby">
+					<opta-widget sport="rugby" 
+					widget="match_summary" 
+					template="normal" 
+					live="true" 
+					competition="" 
+					season="" 
+					match="" 
+					show_match_header="true" 
+					show_crests="true" 
+					show_cards="true" 
+					show_date="true" 
+					date_format="dddd D MMMM YYYY" 
+					show_competition_name="true" 
+					competition_naming="full" 
+					show_referee="true" 
+					show_venue="true" 
+					show_tooltips="true" 
+					show_tries="true" 
+					show_conversions="true" 
+					show_penalties="true" 
+					show_drop_goals="all" 
+					show_subs="true" 
+					show_cards="all" 
+					team_link="?sport=rugby&widget=squad" 
+					team_naming="" 
+					player_naming="last_name" 
+					show_live="true" 
+					show_logo="false" 
+					title="" 
+					show_title="true" 
+					breakpoints="400">
+					</opta-widget>
+				</opta-widget>
+			</div>
+			`
+		}
+
 		if(obj['widget'] == 'squad'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
@@ -1078,7 +1265,7 @@ console.log(obj)
 	/*football*/
 	if(obj['sport'] == 'football'){
 
-		if(obj['widget'] == 'fixtures'){
+		if(obj['widget'] == 'fixtures' && obj['standings'] == 'TRUE'){
 			sportWidgetWrapper.innerHTML = `
 			<div class="content">
 				<opta-widget 
@@ -1139,18 +1326,6 @@ console.log(obj)
 				</opta-widget>
 			</div>
 			<!--advertisement banner-->
-			<!--<div class="banner-wr mar-40-0">
-				<div class="banner">
-					<div class="banner__img">
-						<div id="div-1" data-google-query-id="CK7s14yrmvgCFRGT5god468JZQ">
-							<div id="google_ads_iframe_/135062774/newsnet.index_0__container__" style="border: 0pt none; margin: auto; text-align: center;">
-								<iframe id="google_ads_iframe_/135062774/newsnet.index_0" name="google_ads_iframe_/135062774/newsnet.index_0" title="3rd party ad content" width="970" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" role="region" aria-label="Advertisement" tabindex="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-gtm-yt-inspected-4="true" data-load-complete="true"></iframe>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>-->
-			<!--advertisement banner-->
 			<div class="content">
 				<opta-widget
 				widget="standings"
@@ -1177,6 +1352,69 @@ console.log(obj)
 				breakpoints="400,700"
 				sport="football"
 				></opta-widget>
+			</div>
+			`
+		}
+
+		if(obj['widget'] == 'fixtures' && obj['standings'] != 'TRUE'){
+			sportWidgetWrapper.innerHTML = `
+			<div class="content">
+				<opta-widget 
+				widget="fixtures" 
+				competition="${obj['competition']}" 
+				season="${obj['season']}" 
+				template="normal" 
+				live="true" 
+				show_venue="true" 
+				match_status="all" 
+				grouping="matchday" 
+				show_grouping="true" 
+				navigation="dropdown" 
+				default_nav="1" 
+				start_on_current="true" 
+				sub_grouping="date" 
+				show_subgrouping="true" 
+				order_by="date_ascending" 
+				show_crests="true" 
+				date_format="dddd D MMMM YYYY" 
+				time_format="HH:mm" 
+				month_date_format="MMMM" 
+				competition_naming="full" 
+				team_naming="full" 
+				team_link="?sport=football&widget=squad" 
+				match_link="?sport=football&widget=match_preview" 
+				pre_match="1440" 
+				show_live="true" 
+				show_logo="false" 
+				show_title="true" 
+				breakpoints="400" 
+				sport="football" 
+				image_size="medium">
+					<opta-widget 
+					sport="football" 
+					widget="match_summary" 
+					template="normal" 
+					live="true" 
+					competition="" 
+					season="" 
+					match="" 
+					show_match_header="true" 
+					show_attendance="true" 
+					show_cards="all" 
+					show_crests="true" 
+					show_goals="true" 
+					show_goals_combined="false" 
+					show_penalties_missed="false" 
+					show_referee="true" 
+					show_subs="true" 
+					show_venue="true" 
+					show_shootouts="false" 
+					player_naming="last_name" 
+					show_tooltips="true" 
+					show_logo="false" 
+					breakpoints="400">
+					</opta-widget>
+				</opta-widget>
 			</div>
 			`
 		}
@@ -1281,7 +1519,7 @@ console.log(obj)
 		}
 	}
 
-	/*tennis*/
+	/*tennis *** */
 	if(obj['sport'] == 'tennis'){
 		
 		if(obj['widget'] == 'live_scores'){
@@ -1350,7 +1588,28 @@ console.log(obj)
 
 	/*us-sports*/
 	/*mlb*/
-	if(obj['sport'] == 'mlb'){
+	if(obj['sport'] == 'mlb' && obj['standings'] == 'TRUE'){
+
+		sportWidgetWrapper.innerHTML = `
+		<div class="content">
+			<iframe class="shs-baseball-frame" id="shs-baseball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/mlb/scoreboard.html"></iframe>
+			<!--<iframe class="shs-baseball-frame" id="shs-baseball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/scoreboard.html"></iframe>-->
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<iframe class="shs-baseball-frame" id="shs-baseball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/mlb/standings.html"></iframe>
+			<!--<iframe class="shs-baseball-frame" id="shs-baseball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/standings.html"></iframe>-->
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/mlb/schedule.html"></iframe>
+			<!--<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/schedule.html"></iframe>-->
+		</div>
+		`
+		iFrameResize({log:false},'.shs-baseball-frame');
+		return false;//exit the function before calling Opta.start() - it's not needed here
+	}
+	if(obj['sport'] == 'mlb' && obj['standings'] != 'TRUE'){
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
@@ -1362,18 +1621,34 @@ console.log(obj)
 			<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/mlb/schedule.html"></iframe>
 			<!--<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/schedule.html"></iframe>-->
 		</div>
-		<!--advertisement banner-->
-		<div class="content">
-			<iframe class="shs-baseball-frame" id="shs-baseball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/mlb/standings.html"></iframe>
-			<!--<iframe class="shs-baseball-frame" id="shs-baseball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/standings.html"></iframe>-->
-		</div>
 		`
 		iFrameResize({log:false},'.shs-baseball-frame');
 		return false;//exit the function before calling Opta.start() - it's not needed here
 	}
 
 	/*nba*/
-	if(obj['sport'] == 'nba'){
+	if(obj['sport'] == 'nba' && obj['standings'] == 'TRUE'){
+
+		sportWidgetWrapper.innerHTML = `
+		<div class="content">
+			<iframe class="shs-basketball-frame" id="shs-basketball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nba/scoreboard.html"></iframe>
+			<!--<iframe class="shs-basketball-frame" id="shs-basketball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/scoreboard.html"></iframe>-->
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<iframe class="shs-basketball-frame" id="shs-basketball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nba/standings.html"></iframe>
+			<!--<iframe class="shs-basketball-frame" id="shs-basketball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/standings.html"></iframe>-->
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nba/schedule.html"></iframe>
+			<!--<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/schedule.html"></iframe>-->
+		</div>
+		`
+		iFrameResize({log:false},'.shs-basketball-frame');
+		return false;//exit the function before calling Opta.start() - it's not needed here
+	}
+	if(obj['sport'] == 'nba' && obj['standings'] != 'TRUE'){
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
@@ -1385,18 +1660,34 @@ console.log(obj)
 			<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nba/schedule.html"></iframe>
 			<!--<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/schedule.html"></iframe>-->
 		</div>
-		<!--advertisement banner-->
-		<div class="content">
-			<iframe class="shs-basketball-frame" id="shs-basketball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nba/standings.html"></iframe>
-			<!--<iframe class="shs-basketball-frame" id="shs-basketball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/standings.html"></iframe>-->
-		</div>
 		`
 		iFrameResize({log:false},'.shs-basketball-frame');
 		return false;//exit the function before calling Opta.start() - it's not needed here
 	}
 
 	/*nfl*/
-	if(obj['sport'] == 'nfl'){
+	if(obj['sport'] == 'nfl' && obj['standings'] == 'TRUE'){
+
+		sportWidgetWrapper.innerHTML = `
+		<div class="content">
+			<iframe class="shs-football-frame" id="shs-football-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nfl/scoreboard.html"></iframe>
+			<!--<iframe class="shs-football-frame" id="shs-football-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/scoreboard.html"></iframe>-->
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<iframe class="shs-football-frame" id="shs-football-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nfl/standings.html"></iframe>
+			<!--<iframe class="shs-football-frame" id="shs-football-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/standings.html"></iframe>-->
+		</div>
+		<!--advertisement banner-->
+		<div class="content">
+			<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nfl/schedule.html"></iframe>
+			<!--<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/schedule.html"></iframe>-->
+		</div>
+		`
+		iFrameResize({log:false},'.shs-football-frame');
+		return false;//exit the function before calling Opta.start() - it's not needed here
+	}
+	if(obj['sport'] == 'nfl' && obj['standings'] != 'TRUE'){
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
@@ -1408,18 +1699,12 @@ console.log(obj)
 			<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nfl/schedule.html"></iframe>
 			<!--<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/schedule.html"></iframe>-->
 		</div>
-		<!--advertisement banner-->
-		<div class="content">
-			<iframe class="shs-football-frame" id="shs-football-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nfl/standings.html"></iframe>
-			<!--<iframe class="shs-football-frame" id="shs-football-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/standings.html"></iframe>-->
-		</div>
 		`
 		iFrameResize({log:false},'.shs-football-frame');
 		return false;//exit the function before calling Opta.start() - it's not needed here
 	}
-console.log('* * * * *')
+
 	Opta.start();//call this method to invoke Opta widgets
-	console.log('*!*!*!*!*')
 };
 //end of function to populate sports widgets
 
@@ -1486,3 +1771,5 @@ var opta_settings = {//changed from let to var as it has been declared earlier
 		return link;
 	}
 };
+
+loadNavCuration();

@@ -307,7 +307,8 @@
 
 /*OPTA LOADER*/
 .Opta p.Opta-Load {
-    background: #fff url("../assets/images/loader.svg") no-repeat center 50px;
+    /*background: #fff url("../assets/images/loader.svg") no-repeat center 50px;*/
+    background: #fff url("https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/assets/images/opta-sports-widgets/loader.svg") no-repeat center 50px;
     /*text-align: center;*/
     /*padding: 20px 10px 40px 10px;*/
     /*border: none;*/
