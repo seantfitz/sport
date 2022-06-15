@@ -16,6 +16,7 @@ const getQueryParams = (qs)=>{
 const loadNavCuration = ()=>{
 
 	// let url = 'https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/sport-scoreboard/nav-curation.json';
+	// let url = 'https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/sport-scoreboard/nav-curation.js'
 	let url = 'script/nav-curation.json';
 	
 	let info = fetch(url,{
