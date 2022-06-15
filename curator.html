@@ -130,12 +130,12 @@
 
 					Opta('#saveJSON').on('click',()=>{
 						let blob = new Blob([JSON.stringify(out)], {type: "text/plain;charset=utf-8"});
-						saveAs(blob, "nav_curation.json");
+						saveAs(blob, "nav-curation.json");
 					})
 
 					Opta('#saveJS').on('click',()=>{
 						let blob = new Blob([JSON.stringify(out)], {type: "text/plain;charset=utf-8"});
-						saveAs(blob, "nav_curation.js");
+						saveAs(blob, "nav-curation.js");
 					})
 				}
 			}
