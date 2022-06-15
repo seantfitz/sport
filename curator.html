@@ -27,8 +27,9 @@
 			align-items: center;
 			justify-content: center;
 		}
-		#saveBtn{
+		.saveBtn{
 			display: none;
+			margin: 0 20px;
 		}
 	</style>
 
@@ -46,7 +47,8 @@
 	<div class="newsnet_sport_nav_container"></div>
 	<div id="sport-widget-wrapper"></div>
 	<div id="btnBox">
-		<button id="saveBtn">Save JSON</button>
+		<button class="saveBtn" id="saveJSON">Save JSON</button>
+		<button class="saveBtn" id="saveJS">Save JS</button>
 	</div>
 	<div id="infoBox"></div>
 
@@ -124,10 +126,16 @@
 						e.target.select()
 					})
 
-					Opta('#saveBtn').css('display','block').on('click',(e)=>{
-						// alert(e)
+					Opta('.saveBtn').css('display','block');
+
+					Opta('#saveJSON').on('click',()=>{
 						let blob = new Blob([JSON.stringify(out)], {type: "text/plain;charset=utf-8"});
 						saveAs(blob, "nav_curation.json");
+					})
+
+					Opta('#saveJS').on('click',()=>{
+						let blob = new Blob([JSON.stringify(out)], {type: "text/plain;charset=utf-8"});
+						saveAs(blob, "nav_curation.js");
 					})
 				}
 			}
