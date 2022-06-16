@@ -25,6 +25,13 @@
 			min-height: 45px;
 			background: url("https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/assets/images/opta-sports-widgets/loader.svg") no-repeat center 30px;
 			text-transform: uppercase;
+			display: none;
+		}
+		#linkBox{
+			max-width: 1200px;
+			display: flex;
+			margin: 30px auto;
+			justify-content: space-evenly;
 		}
 		#btnBox{
 			margin: 30px auto;
@@ -50,7 +57,20 @@
 
 	<div class="newsnet_sport_nav_container"></div>
 	<div id="sport-widget-wrapper"></div>
+	<div id="linkBox">
+		<a href="https://docs.google.com/spreadsheets/d/1Xg3KmBHyYmZ4DzKR_Gs0Y3fzvJPetngTC6jNelRCho0/edit#gid=0" target="_blank">Football</a>
+		<a href="https://docs.google.com/spreadsheets/d/1U5Cpf6fr6etrsZs0Umou-e2Trqi6eeWfwdHwW7kQmlQ/edit#gid=0" target="_blank">US Sports</a>
+		<a href="https://docs.google.com/spreadsheets/d/1c36Tq4fQANm0lCfbme_WcmniMWjyPYbdkIQICxuFh0g/edit#gid=0" target="_blank">Golf</a>
+		<a href="https://docs.google.com/spreadsheets/d/10qOWsUtloJzb_Pf4Z7n05-Mg0jr72SqmigFAqoP7V48/edit#gid=1032932632" target="_blank">Tennis</a>
+		<a href="https://docs.google.com/spreadsheets/d/1EFptdu8mXsFl_PxwNgQEHBpFQvR_XM3wuqP3TZf6lyc/edit#gid=0" target="_blank">Basketball</a>
+		<a href="https://docs.google.com/spreadsheets/d/1ZHQXSFGgYczUDYbSIyemTA2QEWpqbnhKyh7ubLuYP0U/edit#gid=0" target="_blank">Motorsport</a>
+		<a href="https://docs.google.com/spreadsheets/d/1V8rZKHjKo8f5I0ZykBqYgFr33XeXSZXZ2aXDBOTdmhw/edit#gid=0" target="_blank">Cricket</a>
+		<a href="https://docs.google.com/spreadsheets/d/1zgWjyOelGWc5xnbnzHCNJBe5RhtTnqtqU9HLyzqqitA/edit#gid=0" target="_blank">Rugby Union</a>
+		<a href="https://docs.google.com/spreadsheets/d/1ntVivIoz4JSpOsyEuyjn7ByKQtcwlBDfHIiOymeT6os/edit#gid=0" target="_blank">Rugby League</a>
+		<a href="https://docs.google.com/spreadsheets/d/1RFez6jA6bjy3BcXuEAYasml4rWgkytR13wOPRriYv6A/edit#gid=0" target="_blank">AFL</a>
+	</div>
 	<div id="btnBox">
+		<button id="getCSV">Get CSV</button>
 		<button class="saveBtn" id="saveJSON">Save JSON</button>
 		<!-- <button class="saveBtn" id="saveJS">Save JS</button> -->
 	</div>
@@ -80,11 +100,7 @@
 		
 		let xhr = new XMLHttpRequest();
 		let csv = [csv_football,csv_ussports,csv_golf,csv_tennis,csv_basketball,csv_motorsport,csv_cricket,csv_rugbyunion,csv_rugbyleague,csv_afl];
-		// let csv = [csv_football,csv_ussports,csv_golf];
 		let str = ['football','ussports','golf','tennis','basketball','motorsport','cricket','rugby','rugbyleague','afl'];
-		let obj = {};
-		let len = Object.keys(obj).length;
-		let out = {};
 
 		const getCSV = ()=>{
 			document.querySelector('#infoBox').innerHTML = `getting ${str[len]}`
@@ -130,7 +146,7 @@
 						e.target.select()
 					})
 
-					Opta('.saveBtn').css('display','block');
+					Opta('.saveBtn, #getCSV').css('display','block');
 
 					Opta('#saveJSON').on('click',()=>{
 						let blob = new Blob([JSON.stringify(out)], {type: "text/plain;charset=utf-8"});
@@ -146,7 +162,6 @@
 		}
 
 		/* * * * */
-
 		const getQueryParams = (qs)=>{
 			qs = qs.split('+').join(' ');
 
@@ -1859,8 +1874,7 @@
 		});
 
 		//settings for Opta widget initialisation - link_callback customises the behaviour of in-widget hyperlinks e.g. match-page, squads etc.
-		// let opta_settings = {
-		var opta_settings = {//changed from let to var as it has been declared earlier
+		let opta_settings = {
 			subscription_id: 'b7b73f836f5975bc4752b7b54aced1da',
 			language: 'en_GB',
 			timezone: 'user',
@@ -1900,7 +1914,16 @@
 			}
 		};
 
-		getCSV();
+		Opta('#getCSV').on('click',()=>{
+
+			window['obj'] = {};
+			window['len'] = Object.keys(obj).length;
+			window['out'] = {};
+
+			Opta('#getCSV').css('display','none');
+			Opta('#infoBox').css('display','block');
+			getCSV();
+		});
 	</script>
 </body>
 </html>
