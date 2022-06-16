@@ -1736,8 +1736,7 @@ Opta.events.subscribe('widget.drawn', (widget)=> {
 });
 
 //settings for Opta widget initialisation - link_callback customises the behaviour of in-widget hyperlinks e.g. match-page, squads etc.
-// let opta_settings = {
-var opta_settings = {//changed from let to var as it has been declared earlier
+var opta_settings = {//MUST ber var NOT let - errors occur otherwise
 	subscription_id: 'b7b73f836f5975bc4752b7b54aced1da',
 	language: 'en_GB',
 	timezone: 'user',
