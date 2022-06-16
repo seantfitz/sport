@@ -50,7 +50,8 @@
 	<link rel="stylesheet" href="../css/news-net-sport-nav-styling.css">
 
 	<script type='text/javascript' src='https://secure.widget.cloud.opta.net/v3/v3.opta-widgets.js?ver=5.9.3' id='opta-js-js'></script>
-	<script src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/assets/script/FileSaver.min.js" defer></script>
+	<script src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/assets/script/FileSaver.min.js"></script>
+	<script type="text/javascript" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/assets/script/iframeSizer.min.js"></script>
 </head>
 
 <body>
@@ -1846,9 +1847,7 @@
 				iFrameResize({log:false},'.shs-football-frame');
 				return false;//exit the function before calling Opta.start() - it's not needed here
 			}
-			console.log('a')
 			Opta.start();//call this method to invoke Opta widgets
-			console.log('b')
 		};
 		//end of function to populate sports widgets
 
