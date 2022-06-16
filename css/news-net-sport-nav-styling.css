@@ -38,6 +38,7 @@
 	-webkit-transition: color 0.3s;
 	transition: color 0.3s;
 	cursor: pointer;
+	white-space: nowrap;
 }
 .dropdown:hover button{
 	color: #de2508;
@@ -70,4 +71,3 @@ select:focus{
 }
 
 /**************************/
-
