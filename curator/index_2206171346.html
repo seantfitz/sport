@@ -233,10 +233,13 @@
 			if (!newsnet_sport_nav_container) {
 				return;
 			}
+			console.log(navList)
 
 			newsnet_sport_nav_container.innerHTML = '<div class="sport_nav_title">Scoreboard</div>';
 
 			for(let i of Object.keys(navList)){
+				window[`nav_${i}`] = '';
+				console.log(navList[i])
 
 				let l = navList[i];
 				let string = 'Competition';
@@ -247,20 +250,153 @@
 						string = 'Tournament';
 					}
 
-					let menuItem = `<div class="dropdown"><button name="${l[0][1]}">${l[0][l[0].length - 1]}</button><select name="${l[0][1]}" size="0"><option value="null" disabled selected>Select ${string}</option>`;
+					var drop = `<div class="dropdown"><button name="${l[0][1]}">${l[0][l[0].length - 1]}</button><select name="${l[0][1]}" size="0"><option value="null" disabled selected>Select ${string}</option>`;
 
 					for(let j of l){
-						menuItem += `<option value="${j[0]}|${j[1]}|${j[2]}|${j[3]}|${j[4]}|${j[5]}|${j[6]}|${j[8]}">${j[7]}</option>`
+						drop += `<option value="${j[0]}|${j[1]}|${j[2]}|${j[3]}|${j[4]}|${j[5]}|${j[6]}|${j[8]}">${j[7]}</option>`
 					}
 
-					menuItem += '</select></div>';
-
-					newsnet_sport_nav_container.innerHTML += menuItem;
+					drop += '</select></div>';
 				}else if(l.length == 1){
 					let j = l[0];
-					newsnet_sport_nav_container.innerHTML += `<div class="dropdown"><button class="sport_button" name="${j[0]}|${j[1]}|${j[2]}|${j[3]}|${j[4]}|${j[5]}|${j[6]}|${j[8]}">${j[7]}</button></div>`;
+					var drop = `<div class="dropdown"><button class="sport_button" name="${j[0]}|${j[1]}|${j[2]}|${j[3]}|${j[4]}|${j[5]}|${j[6]}|${j[8]}">${j[7]}</button></div>`;
 				}
+
+				newsnet_sport_nav_container.innerHTML += drop;
 			}
+
+			// if(navList['football'].length > 1){
+			// 	nav_football += `<div class="dropdown"><button name="football">${navList['football'][0][navList['football'][0].length - 1]}</button><select name="football" size="0"><option value="null" disabled selected>Select Competition</option>`;
+			// 	for(let i of navList['football']){
+			// 		nav_football += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+			// 	}
+			// 	nav_football += '</select></div>';
+			// }else if(navList['football'].length == 1){
+			// 	let i = navList['football'][0];
+			// 	nav_football = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+			// }
+
+			// if(navList['worldcup'].length > 1){
+			// 	nav_football += `<div class="dropdown"><button name="worldcup">${navList['worldcup'][0][navList['worldcup'][0].length - 1]}</button><select name="worldcup" size="0"><option value="null" disabled selected>Select Competition</option>`;
+			// 	for(let i of navList['worldcup']){
+			// 		nav_football += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+			// 	}
+			// 	nav_football += '</select></div>';
+			// }else if(navList['worldcup'].length == 1){
+			// 	let i = navList['worldcup'][0];
+			// 	nav_football = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+			// }
+
+			// if(navList['nfl'].length > 0){
+			// 	for(let i of navList['nfl']){
+			// 		if(i[1] == 'nfl'){nav_nfl = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`}
+			// 	}
+			// }
+			// if(navList['nba'].length > 0){
+			// 	for(let i of navList['nba']){
+			// 		if(i[1] == 'nba'){nav_nba = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`}
+			// 	}
+			// }
+			// if(navList['mlb'].length > 0){
+			// 	for(let i of navList['mlb']){
+			// 		if(i[1] == 'mlb'){nav_mlb = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`}
+			// 	}
+			// }
+
+			// if(navList['golf'].length > 1){
+			// 	nav_golf += `<div class="dropdown"><button name="golf">${navList['golf'][0][navList['golf'][0].length - 1]}</button><select name="golf" size="0"><option value="null" disabled selected>Select Tournament</option>`;
+			// 	for(let i of navList['golf']){
+			// 		nav_golf += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+			// 	}
+			// 	nav_golf += '</select></div>';
+			// }else if(navList['golf'].length == 1){
+			// 	let i = navList['golf'][0];
+			// 	nav_golf = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+			// }
+
+			// if(navList['tennis'].length > 1){
+			// 	nav_tennis += `<div class="dropdown"><button name="tennis">${navList['tennis'][0][navList['tennis'][0].length - 1]}</button><select name="tennis" size="0"><option value="null" disabled selected>Select Tournament</option>`;
+			// 	for(let i of navList['tennis']){
+			// 		nav_tennis += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+			// 	}
+			// 	nav_tennis += '</select></div>';
+			// }else if(navList['tennis'].length == 1){
+			// 	let i = navList['tennis'][0];
+			// 	nav_tennis = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+			// }
+
+			// if(navList['basketball'].length > 1){
+			// 	nav_basketball += `<div class="dropdown"><button name="basketball">${navList['basketball'][0][navList['basketball'][0].length - 1]}</button><select name="basketball" size="0"><option value="null" disabled selected>Select Competition</option>`;
+			// 	for(let i of navList['basketball']){
+			// 		nav_basketball += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+			// 	}
+			// 	nav_basketball += '</select></div>';
+			// }else if(navList['basketball'].length == 1){
+			// 	let i = navList['basketball'][0];
+			// 	nav_basketball = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+			// }
+
+			// if(navList['motorsport'].length > 1){
+			// 	nav_motorsport += `<div class="dropdown"><button name="motorsport">${navList['motorsport'][0][navList['motorsport'][0].length - 1]}</button><select name="motorsport" size="0"><option value="null" disabled selected>Select Competition</option>`;
+			// 	for(let i of navList['motorsport']){
+			// 		nav_motorsport += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+			// 	}
+			// 	nav_motorsport += '</select></div>';
+			// }else if(navList['motorsport'].length == 1){
+			// 	let i = navList['motorsport'][0];
+			// 	nav_motorsport = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+			// }
+
+			// if(navList['cricket'].length > 1){
+			// 	nav_cricket += `<div class="dropdown"><button name="cricket">${navList['cricket'][0][navList['cricket'][0].length - 1]}</button><select name="cricket" size="0"><option value="null" disabled selected>Select Competition</option>`;
+			// 	for(let i of navList['cricket']){
+			// 		nav_cricket += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+			// 	}
+			// 	nav_cricket += '</select></div>';
+			// }else if(navList['cricket'].length == 1){
+			// 	let i = navList['cricket'][0];
+			// 	nav_cricket = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+			// }
+
+			// if(navList['rugby'].length > 1){
+			// 	nav_rugby += `<div class="dropdown"><button name="rugby">${navList['rugby'][0][navList['rugby'][0].length - 1]}</button><select name="rugby" size="0"><option value="null" disabled selected>Select Competition</option>`;
+			// 	for(let i of navList['rugby']){
+			// 		nav_rugby += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+			// 	}
+			// 	nav_rugby += '</select></div>';
+			// }else if(navList['rugby'].length == 1){
+			// 	let i = navList['rugby'][0];
+			// 	nav_rugby = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+			// }
+
+			// if(navList['rugbyleague'].length > 1){
+			// 	nav_rugbyleague += `<div class="dropdown"><button name="rugbyleague">${navList['rugbyleague'][0][navList['rugbyleague'][0].length - 1]}</button><select name="rugbyleague" size="0"><option value="null" disabled selected>Select Competition</option>`;
+			// 	for(let i of navList['rugbyleague']){
+			// 		nav_rugbyleague += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+			// 	}
+			// 	nav_rugbyleague += '</select></div>';
+			// }else if(navList['rugbyleague'].length == 1){
+			// 	let i = navList['rugbyleague'][0];
+			// 	nav_rugbyleague = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+			// }
+
+			// if(navList['afl'].length > 1){
+			// 	nav_afl += `<div class="dropdown"><button name="afl">${navList['afl'][0][navList['afl'][0].length - 1]}</button><select name="afl" size="0"><option value="null" disabled selected>Select Competition</option>`;
+			// 	for(let i of navList['afl']){
+			// 		nav_afl += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+			// 	}
+			// 	nav_afl += '</select></div>';
+			// }else if(navList['afl'].length == 1){
+			// 	let i = navList['afl'][0];
+			// 	nav_afl = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+			// }
+
+			// newsnet_sport_nav_container.innerHTML = '<div class="sport_nav_title">Scoreboard</div>';
+
+			// for(let i of Object.keys(navList)){
+			// 	console.log(`nav_${i}`)
+			// 	newsnet_sport_nav_container.innerHTML += window[`nav_${i}`];
+			// }
 
 			Opta('.newsnet_sport_nav_container .dropdown select').on('change',(e)=>{
 
@@ -1844,7 +1980,7 @@
 			window['len'] = Object.keys(obj).length;
 			window['out'] = {};
 
-			Opta('#getCSV, #listBox, .saveBtn').css('display','none');
+			Opta('#getCSV, #listBox').css('display','none');
 			Opta('#infoBox').css('display','block');
 			getCSV();
 		});

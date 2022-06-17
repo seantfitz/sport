@@ -16,6 +16,7 @@ const getQueryParams = (qs)=>{
 const loadNavCuration = ()=>{
 
 	// let url = 'https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/sport-scoreboard/nav-curation.json';
+	// let url = 'https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/sport-scoreboard/nav-curation.js'
 	let url = 'script/nav-curation.json';
 	
 	let info = fetch(url,{
@@ -33,7 +34,7 @@ const loadNavCuration = ()=>{
 	.then(constructNav);
 };
 
-//function to construct navigation menu - this has been edited to accommodate menu curation - updated 17/06/2022
+//function to construct navigation menu - this has been edited to accommodate menu curation - updated 15/06/2022
 const constructNav = ()=>{
 
 	let newsnet_sport_nav_container = document.getElementsByClassName('newsnet_sport_nav_container')[0];
@@ -42,33 +43,144 @@ const constructNav = ()=>{
 		return;
 	}
 
-	newsnet_sport_nav_container.innerHTML = '<div class="sport_nav_title">Scoreboard</div>';
+	let nav_football = '';
+	let nav_nfl = '';
+	let nav_nba = '';
+	let nav_mlb = '';
+	let nav_golf = '';
+	let nav_tennis = '';
+	let nav_basketball = '';
+	let nav_motorsport = '';
+	let nav_cricket = '';
+	let nav_rugby = '';
+	let nav_rugbyleague = '';
+	let nav_afl = '';
 
-	for(let i of Object.keys(navList)){
+	if(navList['football'].length > 1){
+		nav_football += '<div class="dropdown"><button name="football">Football</button><select name="football" size="0"><option value="null" disabled selected>Select Competition</option>';
+		for(let i of navList['football']){
+			nav_football += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+		}
+		nav_football += '</select></div>';
+	}else if(navList['football'].length == 1){
+		let i = navList['football'][0];
+		nav_football = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+	}
 
-		let l = navList[i];
-		let string = 'Competition';
-
-		if(l.length > 1){
-
-			if(l[0][1] == 'golf' || l[0][1] == 'tennis'){
-				string = 'Tournament';
-			}
-
-			let menuItem = `<div class="dropdown"><button name="${l[0][1]}">${l[0][l[0].length - 1]}</button><select name="${l[0][1]}" size="0"><option value="null" disabled selected>Select ${string}</option>`;
-
-			for(let j of l){
-				menuItem += `<option value="${j[0]}|${j[1]}|${j[2]}|${j[3]}|${j[4]}|${j[5]}|${j[6]}|${j[8]}">${j[7]}</option>`
-			}
-
-			menuItem += '</select></div>';
-
-			newsnet_sport_nav_container.innerHTML += menuItem;
-		}else if(l.length == 1){
-			let j = l[0];
-			newsnet_sport_nav_container.innerHTML += `<div class="dropdown"><button class="sport_button" name="${j[0]}|${j[1]}|${j[2]}|${j[3]}|${j[4]}|${j[5]}|${j[6]}|${j[8]}">${j[7]}</button></div>`;
+	if(navList['ussports'].length > 0){
+		for(let i of navList['ussports']){
+			if(i[1] == 'nfl'){nav_nfl = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`}
+			if(i[1] == 'nba'){nav_nba = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`}
+			if(i[1] == 'mlb'){nav_mlb = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`}
 		}
 	}
+
+	if(navList['golf'].length > 1){
+		nav_golf += '<div class="dropdown"><button name="golf">PGA Tour</button><select name="golf" size="0"><option value="null" disabled selected>Select Tournament</option>';
+		for(let i of navList['golf']){
+			nav_golf += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+		}
+		nav_golf += '</select></div>';
+	}else if(navList['golf'].length == 1){
+		let i = navList['golf'][0];
+		nav_golf = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+	}
+
+	if(navList['tennis'].length > 1){
+		nav_tennis += '<div class="dropdown"><button name="tennis">Tennis</button><select name="tennis" size="0"><option value="null" disabled selected>Select Tournament</option>';
+		for(let i of navList['tennis']){
+			nav_tennis += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+		}
+		nav_tennis += '</select></div>';
+	}else if(navList['tennis'].length == 1){
+		let i = navList['tennis'][0];
+		nav_tennis = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+	}
+
+	if(navList['basketball'].length > 1){
+		nav_basketball += '<div class="dropdown"><button name="basketball">Basketball</button><select name="basketball" size="0"><option value="null" disabled selected>Select Competition</option>';
+		for(let i of navList['basketball']){
+			nav_basketball += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+		}
+		nav_basketball += '</select></div>';
+	}else if(navList['basketball'].length == 1){
+		let i = navList['basketball'][0];
+		nav_basketball = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+	}
+
+	if(navList['motorsport'].length > 1){
+		nav_motorsport += '<div class="dropdown"><button name="motorsport">Motorsport</button><select name="motorsport" size="0"><option value="null" disabled selected>Select Competition</option>';
+		for(let i of navList['motorsport']){
+			nav_motorsport += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+		}
+		nav_motorsport += '</select></div>';
+	}else if(navList['motorsport'].length == 1){
+		let i = navList['motorsport'][0];
+		nav_motorsport = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+	}
+
+	if(navList['cricket'].length > 1){
+		nav_cricket += '<div class="dropdown"><button name="cricket">Cricket</button><select name="cricket" size="0"><option value="null" disabled selected>Select Competition</option>';
+		for(let i of navList['cricket']){
+			nav_cricket += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+		}
+		nav_cricket += '</select></div>';
+	}else if(navList['cricket'].length == 1){
+		let i = navList['cricket'][0];
+		nav_cricket = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+	}
+
+	if(navList['rugby'].length > 1){
+		nav_rugby += '<div class="dropdown"><button name="rugby">Rugby Union</button><select name="rugby" size="0"><option value="null" disabled selected>Select Competition</option>';
+		for(let i of navList['rugby']){
+			nav_rugby += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+		}
+		nav_rugby += '</select></div>';
+	}else if(navList['rugby'].length == 1){
+		let i = navList['rugby'][0];
+		nav_rugby = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+	}
+
+	if(navList['rugbyleague'].length > 1){
+		nav_rugbyleague += '<div class="dropdown"><button name="rugbyleague">Rugby League</button><select name="rugbyleague" size="0"><option value="null" disabled selected>Select Competition</option>';
+		for(let i of navList['rugbyleague']){
+			nav_rugbyleague += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+		}
+		nav_rugbyleague += '</select></div>';
+	}else if(navList['rugbyleague'].length == 1){
+		let i = navList['rugbyleague'][0];
+		nav_rugbyleague = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+	}
+
+	if(navList['afl'].length > 1){
+		nav_afl += '<div class="dropdown"><button name="afl">AFL</button><select name="afl" size="0"><option value="null" disabled selected>Select Competition</option>';
+		for(let i of navList['afl']){
+			nav_afl += `<option value="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</option>`;
+		}
+		nav_afl += '</select></div>';
+	}else if(navList['afl'].length == 1){
+		let i = navList['afl'][0];
+		nav_afl = `<div class="dropdown"><button class="sport_button" name="${i[0]}|${i[1]}|${i[2]}|${i[3]}|${i[4]}|${[5]}|${i[6]}|${i[8]}">${i[7]}</button></div>`;
+	}
+
+	newsnet_sport_nav_container.innerHTML = `
+		<div class="sport_nav_title">
+			Scoreboard
+		</div>
+
+		${nav_football}
+		${nav_nfl}
+		${nav_nba}
+		${nav_mlb}
+		${nav_golf}
+		${nav_tennis}
+		${nav_basketball}
+		${nav_motorsport}
+		${nav_cricket}
+		${nav_rugby}
+		${nav_rugbyleague}
+		${nav_afl}
+	`
 
 	Opta('.newsnet_sport_nav_container .dropdown select').on('change',(e)=>{
 
@@ -109,7 +221,7 @@ const constructNav = ()=>{
 		Opta('.newsnet_sport_nav_container .dropdown select').prop('value','null');//reset all select elements
 	})
 };
-//end of function to construct navigation menu - the above has been edited to accommodate menu curation - updated 17/06/2022
+//end of function to construct navigation menu - the above has been edited to accommodate menu curation - updated 15/06/2022
 
 //function to populate sports widgets
 const loadWidget = (obj)=>{
@@ -1485,15 +1597,18 @@ const loadWidget = (obj)=>{
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
-			<iframe class="shs-baseball-frame" id="shs-baseball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/scoreboard.html"></iframe>
+			<iframe class="shs-baseball-frame" id="shs-baseball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/mlb/scoreboard.html"></iframe>
+			<!--<iframe class="shs-baseball-frame" id="shs-baseball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/scoreboard.html"></iframe>-->
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<iframe class="shs-baseball-frame" id="shs-baseball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/standings.html"></iframe>
+			<iframe class="shs-baseball-frame" id="shs-baseball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/mlb/standings.html"></iframe>
+			<!--<iframe class="shs-baseball-frame" id="shs-baseball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/standings.html"></iframe>-->
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/schedule.html"></iframe>
+			<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/mlb/schedule.html"></iframe>
+			<!--<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/schedule.html"></iframe>-->
 		</div>
 		`
 		iFrameResize({log:false},'.shs-baseball-frame');
@@ -1503,11 +1618,13 @@ const loadWidget = (obj)=>{
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
-			<iframe class="shs-baseball-frame" id="shs-baseball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/scoreboard.html"></iframe>
+			<iframe class="shs-baseball-frame" id="shs-baseball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/mlb/scoreboard.html"></iframe>
+			<!--<iframe class="shs-baseball-frame" id="shs-baseball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/scoreboard.html"></iframe>-->
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/schedule.html"></iframe>
+			<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/mlb/schedule.html"></iframe>
+			<!--<iframe class="shs-baseball-frame" id="shs-baseball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/mlb/schedule.html"></iframe>-->
 		</div>
 		`
 		iFrameResize({log:false},'.shs-baseball-frame');
@@ -1519,15 +1636,18 @@ const loadWidget = (obj)=>{
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
-			<iframe class="shs-basketball-frame" id="shs-basketball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/scoreboard.html"></iframe>
+			<iframe class="shs-basketball-frame" id="shs-basketball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nba/scoreboard.html"></iframe>
+			<!--<iframe class="shs-basketball-frame" id="shs-basketball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/scoreboard.html"></iframe>-->
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<iframe class="shs-basketball-frame" id="shs-basketball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/standings.html"></iframe>
+			<iframe class="shs-basketball-frame" id="shs-basketball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nba/standings.html"></iframe>
+			<!--<iframe class="shs-basketball-frame" id="shs-basketball-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/standings.html"></iframe>-->
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/schedule.html"></iframe>
+			<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nba/schedule.html"></iframe>
+			<!--<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/schedule.html"></iframe>-->
 		</div>
 		`
 		iFrameResize({log:false},'.shs-basketball-frame');
@@ -1537,11 +1657,13 @@ const loadWidget = (obj)=>{
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
-			<iframe class="shs-basketball-frame" id="shs-basketball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/scoreboard.html"></iframe>
+			<iframe class="shs-basketball-frame" id="shs-basketball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nba/scoreboard.html"></iframe>
+			<!--<iframe class="shs-basketball-frame" id="shs-basketball-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/scoreboard.html"></iframe>-->
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/schedule.html"></iframe>
+			<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nba/schedule.html"></iframe>
+			<!--<iframe class="shs-basketball-frame" id="shs-basketball-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nba/schedule.html"></iframe>-->
 		</div>
 		`
 		iFrameResize({log:false},'.shs-basketball-frame');
@@ -1553,15 +1675,18 @@ const loadWidget = (obj)=>{
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
-			<iframe class="shs-football-frame" id="shs-football-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/scoreboard.html"></iframe>
+			<iframe class="shs-football-frame" id="shs-football-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nfl/scoreboard.html"></iframe>
+			<!--<iframe class="shs-football-frame" id="shs-football-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/scoreboard.html"></iframe>-->
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<iframe class="shs-football-frame" id="shs-football-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/standings.html"></iframe>
+			<iframe class="shs-football-frame" id="shs-football-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nfl/standings.html"></iframe>
+			<!--<iframe class="shs-football-frame" id="shs-football-standings-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/standings.html"></iframe>-->
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/schedule.html"></iframe>
+			<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nfl/schedule.html"></iframe>
+			<!--<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/schedule.html"></iframe>-->
 		</div>
 		`
 		iFrameResize({log:false},'.shs-football-frame');
@@ -1571,11 +1696,13 @@ const loadWidget = (obj)=>{
 
 		sportWidgetWrapper.innerHTML = `
 		<div class="content">
-			<iframe class="shs-football-frame" id="shs-football-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/scoreboard.html"></iframe>
+			<iframe class="shs-football-frame" id="shs-football-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nfl/scoreboard.html"></iframe>
+			<!--<iframe class="shs-football-frame" id="shs-football-scoreboard-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/scoreboard.html"></iframe>-->
 		</div>
 		<!--advertisement banner-->
 		<div class="content">
-			<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/schedule.html"></iframe>
+			<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="us-sports/nfl/schedule.html"></iframe>
+			<!--<iframe class="shs-football-frame" id="shs-football-league-schedule-frame" frameborder="0" style="min-width: 100%; min-height: 400px; margin-bottom: 30px;" src="https://newsnet-bucket.s3.ap-southeast-2.amazonaws.com/us-sports/nfl/schedule.html"></iframe>-->
 		</div>
 		`
 		iFrameResize({log:false},'.shs-football-frame');
